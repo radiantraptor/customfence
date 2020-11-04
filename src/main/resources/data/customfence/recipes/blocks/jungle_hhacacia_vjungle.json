@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "ABA",
+    "CBC" 
+   ],
+  "key": {
+    "A": {
+        "item": "minecraft:acacia_planks"
+      },
+    "B": {
+        "item": "minecraft:jungle_planks"
+      },
+    "C": {
+        "item": "minecraft:stick"
+      }
+  },
+  "result": {
+    "item": "customfence:jungle_hhacacia_vjungle",
+    "count": 4
+  }
+}

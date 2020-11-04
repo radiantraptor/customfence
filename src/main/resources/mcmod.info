@@ -1,0 +1,15 @@
+[
+{
+  "modid": "customfence",
+  "name": "Custom Fences And Gates",
+  "description": "A couple of new fences and fence gates",
+  "version": "1-16-3",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["RadiantRaptor"],
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
