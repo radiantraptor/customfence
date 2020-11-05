@@ -452,9 +452,9 @@ public class ModItems {
     public static final RegistryObject<Item> redSandstoneBuilding = ITEMS.register("red_sandstone_building", () -> new BlockItem(ModBlocks.redSandstoneBuilding.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
     public static final RegistryObject<Item> redSandstoneCastle = ITEMS.register("red_sandstone_castle", () -> new BlockItem(ModBlocks.redSandstoneCastle.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
     
-    public static final RegistryObject<Item> brickModern = ITEMS.register("brick_modern", () -> new BlockItem(ModBlocks.brickModern.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
-    public static final RegistryObject<Item> brickBuilding = ITEMS.register("brick_building", () -> new BlockItem(ModBlocks.brickBuilding.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
-    public static final RegistryObject<Item> brickCastle = ITEMS.register("brick_castle", () -> new BlockItem(ModBlocks.brickCastle.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
+    public static final RegistryObject<Item> bricksModern = ITEMS.register("bricks_modern", () -> new BlockItem(ModBlocks.bricksModern.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
+    public static final RegistryObject<Item> bricksBuilding = ITEMS.register("bricks_building", () -> new BlockItem(ModBlocks.bricksBuilding.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
+    public static final RegistryObject<Item> bricksCastle = ITEMS.register("bricks_castle", () -> new BlockItem(ModBlocks.bricksCastle.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
     
     public static final RegistryObject<Item> prismarineModern = ITEMS.register("prismarine_modern", () -> new BlockItem(ModBlocks.prismarineModern.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
     public static final RegistryObject<Item> prismarineBuilding = ITEMS.register("prismarine_building", () -> new BlockItem(ModBlocks.prismarineBuilding.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));

@@ -450,9 +450,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> redSandstoneBuilding = BLOCKS.register("red_sandstone_building", () -> new Wall(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0f, 6.0f).sound(SoundType.STONE)));
     public static final RegistryObject<Block> redSandstoneCastle = BLOCKS.register("red_sandstone_castle", () -> new Wall(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0f, 6.0f).sound(SoundType.STONE)));
     
-    public static final RegistryObject<Block> brickModern = BLOCKS.register("brick_modern", () -> new Wall(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0f, 6.0f).sound(SoundType.STONE)));
-    public static final RegistryObject<Block> brickBuilding = BLOCKS.register("brick_building", () -> new Wall(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0f, 6.0f).sound(SoundType.STONE)));
-    public static final RegistryObject<Block> brickCastle = BLOCKS.register("brick_castle", () -> new Wall(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0f, 6.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> bricksModern = BLOCKS.register("bricks_modern", () -> new Wall(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0f, 6.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> bricksBuilding = BLOCKS.register("bricks_building", () -> new Wall(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0f, 6.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> bricksCastle = BLOCKS.register("bricks_castle", () -> new Wall(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0f, 6.0f).sound(SoundType.STONE)));
     
     public static final RegistryObject<Block> prismarineModern = BLOCKS.register("prismarine_modern", () -> new Wall(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0f, 6.0f).sound(SoundType.STONE)));
     public static final RegistryObject<Block> prismarineBuilding = BLOCKS.register("prismarine_building", () -> new Wall(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0f, 6.0f).sound(SoundType.STONE)));

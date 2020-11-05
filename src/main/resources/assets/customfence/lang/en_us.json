@@ -431,9 +431,9 @@
     "block.customfence.red_sandstone_building": "Red Sandstone Wall Building",
     "block.customfence.red_sandstone_castle": "Red Sandstone Wall Castle",
     
-    "block.customfence.brick_modern": "Brick Wall Modern",
-    "block.customfence.brick_building": "Brick Wall Building",
-    "block.customfence.brick_castle": "Brick Wall Castle",
+    "block.customfence.bricks_modern": "Brick Wall Modern",
+    "block.customfence.bricks_building": "Brick Wall Building",
+    "block.customfence.bricks_castle": "Brick Wall Castle",
     
     "block.customfence.prismarine_modern": "Prismarine Wall Modern",
     "block.customfence.prismarine_building": "Prismarine Wall Building",
