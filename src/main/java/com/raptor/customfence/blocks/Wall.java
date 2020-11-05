@@ -2,6 +2,8 @@ package com.raptor.customfence.blocks;
 
 import net.minecraft.block.*;
 import net.minecraft.item.BlockItemUseContext;
+import net.minecraft.state.DirectionProperty;
+import net.minecraft.state.EnumProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.*;
@@ -59,7 +61,30 @@ public class Wall extends WallBlock {
 
     public Wall(Properties properties) {
         super(properties);
+        this.setDefaultState(stateContainer.getBaseState().with(BlockStateProperties.FACING,Direction.UP));
 
+    }
+
+    @Override
+    protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
+        builder.add(WALL_HEIGHT_NORTH);
+        builder.add(WALL_HEIGHT_EAST);
+        builder.add(WALL_HEIGHT_SOUTH);
+        builder.add(WALL_HEIGHT_WEST);
+        builder.add(BlockStateProperties.UP);
+        builder.add(BlockStateProperties.WATERLOGGED);
+        builder.add(BlockStateProperties.FACING);
+
+    }
+
+    @Override
+    public BlockState getStateForPlacement(BlockItemUseContext context) {
+        return super.getStateForPlacement(context);
+    }
+
+    @Override
+    public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {
+        return super.updatePostPlacement(stateIn, facing, facingState, worldIn, currentPos, facingPos);
     }
 
     public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {

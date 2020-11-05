@@ -3,7 +3,7 @@
   "modid": "customfence",
   "name": "Custom Fences And Gates",
   "description": "A couple of new fences and fence gates",
-  "version": "1-16-3",
+  "version": "1.0",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",

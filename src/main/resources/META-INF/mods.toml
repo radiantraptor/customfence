@@ -1,9 +1,9 @@
 modLoader="javafml"
-loaderVersion="[34,)"
+loaderVersion="[35,)"
 license="GNU GPLv3"
 
 [[mods]]
 modId="customfence"
-version="1-16-3"
+version="1-16-4"
 displayName="Customfence"
 description="A couple of new fences and fence gates and walls"

@@ -431,9 +431,9 @@
     "block.customfence.red_sandstone_building": "Rote Sandsteinmauer Wand",
     "block.customfence.red_sandstone_castle": "Rote Sandsteinmauer Burg",
     
-    "block.customfence.bricks_modern": "Ziegelsteinmauer Modern",
-    "block.customfence.bricks_building": "Ziegelsteinmauer Wand",
-    "block.customfence.bricks_castle": "Ziegelsteinmauer Burg",
+    "block.customfence.brick_modern": "Ziegelmauer Modern",
+    "block.customfence.brick_building": "Ziegelmauer Wand",
+    "block.customfence.brick_castle": "Ziegelmauer Burg",
     
     "block.customfence.prismarine_modern": "Prismarinmauer Modern",
     "block.customfence.prismarine_building": "Prismarinmauer Wand",
