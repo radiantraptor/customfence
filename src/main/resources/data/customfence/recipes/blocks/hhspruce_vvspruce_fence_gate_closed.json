@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "A A",
+    "C C" 
+   ],
+  "key": {
+    "A": {
+        "item": "minecraft:spruce_planks"
+      },
+    "C": {
+        "item": "minecraft:stick"
+      }
+  },
+  "result": {
+    "item": "customfence:hhspruce_vvspruce_fence_gate_closed",
+    "count": 2
+  }
+}
