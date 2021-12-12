@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Specification-Title: examplemod
+Specification-Vendor: examplemodsareus
+Specification-Version: 1
+Implementation-Title: ForgeTutorial
+Implementation-Version: 1-18-1
+Implementation-Vendor: examplemodsareus
+Implementation-Timestamp: 2021-12-01T21:04:55+0100
+

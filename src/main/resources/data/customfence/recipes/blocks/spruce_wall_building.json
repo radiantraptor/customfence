@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "A",
+    "A",
+    "A"
+   ],
+  "key": {
+    "A": {
+        "item": "minecraft:spruce_planks"
+      }
+  },
+  "result": {
+    "item": "customfence:spruce_wall_building",
+    "count": 3
+  }
+}

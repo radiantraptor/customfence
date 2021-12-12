@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AA",
+    "AA",
+    "AA"
+   ],
+  "key": {
+    "A": {
+        "item": "minecraft:stone"
+      }
+  },
+  "result": {
+    "item": "customfence:stone_building",
+    "count": 6
+  }
+}
