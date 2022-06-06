@@ -1,15 +1,29 @@
 package com.raptor.customfence_fabric.init;
 
+import com.google.common.collect.ImmutableMap;
 import com.raptor.customfence_fabric.Main;
-import com.raptor.customfence_fabric.blocks.Fence;
-import com.raptor.customfence_fabric.blocks.FenceGate;
-import com.raptor.customfence_fabric.blocks.Wall;
-import com.raptor.customfence_fabric.blocks.WoodWall;
+import com.raptor.customfence_fabric.blocks.*;
+import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.block.*;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.*;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
+import net.minecraft.util.ActionResult;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.World;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Optional;
+import java.util.Random;
 
 
 @SuppressWarnings({"WeakerAccess", "unused"})
@@ -55,6 +69,11 @@ public class ModBlocks {
     public static final Block HHCrimsonVVCrimsonGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block HHCrimsonXXCrimsonGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
 
+    public static final Block HHMangroveGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block HHHMangroveGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block HHMangroveVVMangroveGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block HHMangroveXXMangroveGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+
     public static final Block spruceHHOak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block spruceHHHOak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block spruceHHOakVSpruce = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
@@ -67,6 +86,8 @@ public class ModBlocks {
     public static final Block spruceHHHOakVVVVSpruceVVVVSpruce = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block spruceHHHOakVVVVSpruceVVVVSpruceGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block spruceHHOakXXOak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block spruceHHSpruceVVVVOak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block spruceHHSpruceVVVVOakGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
 
     public static final Block oakHHSpruce = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block oakHHHSpruce = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
@@ -80,6 +101,8 @@ public class ModBlocks {
     public static final Block oakHHHSpruceVVVVOakVVVVOak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block oakHHHSpruceVVVVOakVVVVOakGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block oakHHSpruceXXSpruce = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block oakHHOakVVVVSpruce = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block oakHHOakVVVVSpruceGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
 
     public static final Block oakHHBirch = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block oakHHHBirch = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
@@ -93,6 +116,8 @@ public class ModBlocks {
     public static final Block oakHHHBirchVVVVOakVVVVOak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block oakHHHBirchVVVVOakVVVVOakGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block oakHHBirchXXBirch = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block oakHHOakVVVVBirch = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block oakHHOakVVVVBirchGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
 
     public static final Block birchHHOak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block birchHHHOak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
@@ -106,6 +131,8 @@ public class ModBlocks {
     public static final Block birchHHHOakVVVVBirchVVVVBirch = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block birchHHHOakVVVVBirchVVVVBirchGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block birchHHOakXXOak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block birchHHBirchVVVVOak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block birchHHBirchVVVVOakGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
 
     public static final Block spruceHHBirch = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block spruceHHHBirch = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
@@ -119,6 +146,8 @@ public class ModBlocks {
     public static final Block spruceHHHBirchVVVVSpruceVVVVSpruce = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block spruceHHHBirchVVVVSpruceVVVVSpruceGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block spruceHHBirchXXBirch = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block spruceHHSpruceVVVVBirch = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block spruceHHSpruceVVVVBirchGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
 
     public static final Block birchHHSpruce = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block birchHHHSpruce = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
@@ -132,6 +161,8 @@ public class ModBlocks {
     public static final Block birchHHHSpruceVVVVBirchVVVVBirch = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block birchHHHSpruceVVVVBirchVVVVBirchGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block birchHHSpruceXXSpruce = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block birchHHBirchVVVVSpruce = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block birchHHBirchVVVVSpruceGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
 
     public static final Block darkoakHHSpruce = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block darkoakHHHSpruce = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
@@ -145,6 +176,8 @@ public class ModBlocks {
     public static final Block darkoakHHHSpruceVVVVDarkoakVVVVDarkoak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block darkoakHHHSpruceVVVVDarkoakVVVVDarkoakGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block darkoakHHSpruceXXSpruce = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block darkoakHHDarkoakVVVVSpruce = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block darkoakHHDarkoakVVVVSpruceGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
 
     public static final Block spruceHHDarkoak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block spruceHHHDarkoak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
@@ -158,6 +191,8 @@ public class ModBlocks {
     public static final Block spruceHHHDarkoakVVVVSpruceVVVVSpruce = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block spruceHHHDarkoakVVVVSpruceVVVVSpruceGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block spruceHHDarkoakXXDarkoak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block spruceHHSpruceVVVVDarkoak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block spruceHHSpruceVVVVDarkoakGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
 
     public static final Block darkoakHHOak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block darkoakHHHOak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
@@ -171,6 +206,8 @@ public class ModBlocks {
     public static final Block darkoakHHHOakVVVVDarkoakVVVVDarkoak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block darkoakHHHOakVVVVDarkoakVVVVDarkoakGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block darkoakHHOakXXOak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block darkoakHHDarkoakVVVVOak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block darkoakHHDarkoakVVVVOakGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
 
     public static final Block oakHHDarkoak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block oakHHHDarkoak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
@@ -184,6 +221,8 @@ public class ModBlocks {
     public static final Block oakHHHDarkoakVVVVOakVVVVOak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block oakHHHDarkoakVVVVOakVVVVOakGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block oakHHDarkoakXXDarkoak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block oakHHOakVVVVDarkoak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block oakHHOakVVVVDarkoakGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
 
     public static final Block darkoakHHJungle = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block darkoakHHHJungle = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
@@ -197,6 +236,8 @@ public class ModBlocks {
     public static final Block darkoakHHHJungleVVVVDarkoakVVVVDarkoak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block darkoakHHHJungleVVVVDarkoakVVVVDarkoakGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block darkoakHHJungleXXJungle = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block darkoakHHDarkoakVVVVJungle = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block darkoakHHDarkoakVVVVJungleGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
 
     public static final Block jungleHHDarkoak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block jungleHHHDarkoak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
@@ -210,6 +251,8 @@ public class ModBlocks {
     public static final Block jungleHHHDarkoakVVVVJungleVVVVJungle = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block jungleHHHDarkoakVVVVJungleVVVVJungleGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block jungleHHDarkoakXXDarkoak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block jungleHHJungleVVVVDarkoak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block jungleHHJungleVVVVDarkoakGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
 
     public static final Block acaciaHHJungle = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block acaciaHHHJungle = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
@@ -223,6 +266,8 @@ public class ModBlocks {
     public static final Block acaciaHHHJungleVVVVAcaciaVVVVAcacia = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block acaciaHHHJungleVVVVAcaciaVVVVAcaciaGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block acaciaHHJungleXXJungle = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block acaciaHHAcaciaVVVVJungle = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block acaciaHHAcaciaVVVVJungleGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
 
     public static final Block jungleHHAcacia = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block jungleHHHAcacia = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
@@ -236,6 +281,8 @@ public class ModBlocks {
     public static final Block jungleHHHAcaciaVVVVJungleVVVVJungle = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block jungleHHHAcaciaVVVVJungleVVVVJungleGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block jungleHHAcaciaXXAcacia = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block jungleHHJungleVVVVAcacia = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block jungleHHJungleVVVVAcaciaGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
 
     public static final Block acaciaHHBirch = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block acaciaHHHBirch = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
@@ -249,6 +296,8 @@ public class ModBlocks {
     public static final Block acaciaHHHBirchVVVVAcaciaVVVVAcacia = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block acaciaHHHBirchVVVVAcaciaVVVVAcaciaGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block acaciaHHBirchXXBirch = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block acaciaHHAcaciaVVVVBirch = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block acaciaHHAcaciaVVVVBirchGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
 
     public static final Block birchHHAcacia = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block birchHHHAcacia = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
@@ -262,6 +311,8 @@ public class ModBlocks {
     public static final Block birchHHHAcaciaVVVVBirchVVVVBirch = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block birchHHHAcaciaVVVVBirchVVVVBirchGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block birchHHAcaciaXXAcacia = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block birchHHBirchVVVVAcacia = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block birchHHBirchVVVVAcaciaGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
 
     public static final Block jungleHHBirch = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block jungleHHHBirch = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
@@ -275,6 +326,8 @@ public class ModBlocks {
     public static final Block jungleHHHBirchVVVVJungleVVVVJungle = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block jungleHHHBirchVVVVJungleVVVVJungleGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block jungleHHBirchXXBirch = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block jungleHHJungleVVVVBirch = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block jungleHHJungleVVVVBirchGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
 
     public static final Block birchHHJungle = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block birchHHHJungle = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
@@ -288,6 +341,8 @@ public class ModBlocks {
     public static final Block birchHHHJungleVVVVBirchVVVVBirch = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block birchHHHJungleVVVVBirchVVVVBirchGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block birchHHJungleXXJungle = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block birchHHBirchVVVVJungle = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block birchHHBirchVVVVJungleGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
 
     public static final Block warpedHHBirch = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block warpedHHHBirch = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
@@ -301,6 +356,8 @@ public class ModBlocks {
     public static final Block warpedHHHBirchVVVVWarpedVVVVWarped = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block warpedHHHBirchVVVVWarpedVVVVWarpedGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block warpedHHBirchXXBirch = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block warpedHHWarpedVVVVBirch = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block warpedHHWarpedVVVVBirchGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
 
     public static final Block birchHHWarped = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block birchHHHWarped = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
@@ -314,6 +371,8 @@ public class ModBlocks {
     public static final Block birchHHHWarpedVVVVBirchVVVVBirch = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block birchHHHWarpedVVVVBirchVVVVBirchGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block birchHHWarpedXXWarped = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block birchHHBirchVVVVWarped = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block birchHHBirchVVVVWarpedGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
 
     public static final Block warpedHHOak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block warpedHHHOak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
@@ -327,6 +386,8 @@ public class ModBlocks {
     public static final Block warpedHHHOakVVVVWarpedVVVVWarped = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block warpedHHHOakVVVVWarpedVVVVWarpedGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block warpedHHOakXXOak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block warpedHHWarpedVVVVOak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block warpedHHWarpedVVVVOakGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
 
     public static final Block oakHHWarped = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block oakHHHWarped = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
@@ -340,6 +401,8 @@ public class ModBlocks {
     public static final Block oakHHHWarpedVVVVOakVVVVOak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block oakHHHWarpedVVVVOakVVVVOakGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block oakHHWarpedXXWarped = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block oakHHOakVVVVWarped = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block oakHHOakVVVVWarpedGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
 
     public static final Block warpedHHSpruce = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block warpedHHHSpruce = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
@@ -353,6 +416,8 @@ public class ModBlocks {
     public static final Block warpedHHHSpruceVVVVWarpedVVVVWarped = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block warpedHHHSpruceVVVVWarpedVVVVWarpedGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block warpedHHSpruceXXSpruce = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block warpedHHWarpedVVVVSpruce = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block warpedHHWarpedVVVVSpruceGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
 
     public static final Block spruceHHWarped = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block spruceHHHWarped = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
@@ -366,6 +431,8 @@ public class ModBlocks {
     public static final Block spruceHHHWarpedVVVVSpruceVVVVSpruce = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block spruceHHHWarpedVVVVSpruceVVVVSpruceGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block spruceHHWarpedXXWarped = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block spruceHHSpruceVVVVWarped = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block spruceHHSpruceVVVVWarpedGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
 
     public static final Block crimsonHHJungle = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block crimsonHHHJungle = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
@@ -379,6 +446,8 @@ public class ModBlocks {
     public static final Block crimsonHHHJungleVVVVCrimsonVVVVCrimson = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block crimsonHHHJungleVVVVCrimsonVVVVCrimsonGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block crimsonHHJungleXXJungle = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block crimsonHHCrimsonVVVVJungle = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block crimsonHHCrimsonVVVVJungleGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
 
     public static final Block jungleHHCrimson = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block jungleHHHCrimson = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
@@ -392,6 +461,8 @@ public class ModBlocks {
     public static final Block jungleHHHCrimsonVVVVJungleVVVVJungle = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block jungleHHHCrimsonVVVVJungleVVVVJungleGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block jungleHHCrimsonXXCrimson = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block jungleHHJungleVVVVCrimson = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block jungleHHJungleVVVVCrimsonGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
 
     public static final Block crimsonHHOak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block crimsonHHHOak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
@@ -405,6 +476,8 @@ public class ModBlocks {
     public static final Block crimsonHHHOakVVVVCrimsonVVVVCrimson = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block crimsonHHHOakVVVVCrimsonVVVVCrimsonGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block crimsonHHOakXXOak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block crimsonHHCrimsonVVVVOak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block crimsonHHCrimsonVVVVOakGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
 
     public static final Block oakHHCrimson = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block oakHHHCrimson = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
@@ -418,6 +491,8 @@ public class ModBlocks {
     public static final Block oakHHHCrimsonVVVVOakVVVVOak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block oakHHHCrimsonVVVVOakVVVVOakGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block oakHHCrimsonXXCrimson = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block oakHHOakVVVVCrimson = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block oakHHOakVVVVCrimsonGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
 
     public static final Block crimsonHHDarkoak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block crimsonHHHDarkoak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
@@ -431,6 +506,8 @@ public class ModBlocks {
     public static final Block crimsonHHHDarkoakVVVVCrimsonVVVVCrimson = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block crimsonHHHDarkoakVVVVCrimsonVVVVCrimsonGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block crimsonHHDarkoakXXDarkoak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block crimsonHHCrimsonVVVVDarkoak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block crimsonHHCrimsonVVVVDarkoakGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
 
     public static final Block darkoakHHCrimson = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block darkoakHHHCrimson = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
@@ -444,6 +521,158 @@ public class ModBlocks {
     public static final Block darkoakHHHCrimsonVVVVDarkoakVVVVDarkoak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block darkoakHHHCrimsonVVVVDarkoakVVVVDarkoakGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block darkoakHHCrimsonXXCrimson = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block darkoakHHDarkoakVVVVCrimson = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block darkoakHHDarkoakVVVVCrimsonGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+
+    public static final Block mangroveHHOak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHHOak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHOakVMangrove = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHOakVMangroveGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHOakVVOak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHMangroveVVVOak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHMangroveVVVOakGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHMangroveVVOak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHMangroveVVOakGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHHOakVVVVMangroveVVVVMangrove = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHHOakVVVVMangroveVVVVMangroveGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHOakXXOak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHMangroveVVVVOak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHMangroveVVVVOakGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+
+    public static final Block oakHHMangrove = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block oakHHHMangrove = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block oakHHMangroveVOak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block oakHHMangroveVOakGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block oakHHMangroveVVMangrove = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block oakHHOakVVVMangrove = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block oakHHOakVVVMangroveGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block oakHHOakVVMangrove = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block oakHHOakVVMangroveGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block oakHHHMangroveVVVVOakVVVVOak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block oakHHHMangroveVVVVOakVVVVOakGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block oakHHMangroveXXMangrove = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block oakHHOakVVVVMangrove = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block oakHHOakVVVVMangroveGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+
+    public static final Block mangroveHHBirch = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHHBirch = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHBirchVMangrove = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHBirchVMangroveGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHBirchVVBirch = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHMangroveVVVBirch = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHMangroveVVVBirchGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHMangroveVVBirch = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHMangroveVVBirchGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHHBirchVVVVMangroveVVVVMangrove = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHHBirchVVVVMangroveVVVVMangroveGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHBirchXXBirch = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHMangroveVVVVBirch = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHMangroveVVVVBirchGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+
+    public static final Block birchHHMangrove = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block birchHHHMangrove = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block birchHHMangroveVBirch = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block birchHHMangroveVBirchGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block birchHHMangroveVVMangrove = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block birchHHBirchVVVMangrove = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block birchHHBirchVVVMangroveGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block birchHHBirchVVMangrove = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block birchHHBirchVVMangroveGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block birchHHHMangroveVVVVBirchVVVVBirch = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block birchHHHMangroveVVVVBirchVVVVBirchGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block birchHHMangroveXXMangrove = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block birchHHBirchVVVVMangrove = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block birchHHBirchVVVVMangroveGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+
+    public static final Block mangroveHHJungle = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHHJungle = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHJungleVMangrove = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHJungleVMangroveGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHJungleVVJungle = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHMangroveVVVJungle = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHMangroveVVVJungleGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHMangroveVVJungle = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHMangroveVVJungleGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHHJungleVVVVMangroveVVVVMangrove = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHHJungleVVVVMangroveVVVVMangroveGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHJungleXXJungle = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHMangroveVVVVJungle = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHMangroveVVVVJungleGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+
+    public static final Block jungleHHMangrove = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block jungleHHHMangrove = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block jungleHHMangroveVJungle = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block jungleHHMangroveVJungleGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block jungleHHMangroveVVMangrove = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block jungleHHJungleVVVMangrove = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block jungleHHJungleVVVMangroveGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block jungleHHJungleVVMangrove = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block jungleHHJungleVVMangroveGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block jungleHHHMangroveVVVVJungleVVVVJungle = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block jungleHHHMangroveVVVVJungleVVVVJungleGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block jungleHHMangroveXXMangrove = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block jungleHHJungleVVVVMangrove = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block jungleHHJungleVVVVMangroveGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+
+    public static final Block mangroveHHDarkoak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHHDarkoak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHDarkoakVMangrove = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHDarkoakVMangroveGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHDarkoakVVDarkoak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHMangroveVVVDarkoak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHMangroveVVVDarkoakGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHMangroveVVDarkoak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHMangroveVVDarkoakGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHHDarkoakVVVVMangroveVVVVMangrove = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHHDarkoakVVVVMangroveVVVVMangroveGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHDarkoakXXDarkoak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHMangroveVVVVDarkoak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHMangroveVVVVDarkoakGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+
+    public static final Block darkoakHHMangrove = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block darkoakHHHMangrove = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block darkoakHHMangroveVDarkoak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block darkoakHHMangroveVDarkoakGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block darkoakHHMangroveVVMangrove = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block darkoakHHDarkoakVVVMangrove = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block darkoakHHDarkoakVVVMangroveGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block darkoakHHDarkoakVVMangrove = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block darkoakHHDarkoakVVMangroveGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block darkoakHHHMangroveVVVVDarkoakVVVVDarkoak = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block darkoakHHHMangroveVVVVDarkoakVVVVDarkoakGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block darkoakHHMangroveXXMangrove = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block darkoakHHDarkoakVVVVMangrove = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block darkoakHHDarkoakVVVVMangroveGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+
+    public static final Block mangroveHHWarped = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHHWarped = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHWarpedVMangrove = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHWarpedVMangroveGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHWarpedVVWarped = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHMangroveVVVWarped = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHMangroveVVVWarpedGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHMangroveVVWarped = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHMangroveVVWarpedGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHHWarpedVVVVMangroveVVVVMangrove = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHHWarpedVVVVMangroveVVVVMangroveGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHWarpedXXWarped = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHMangroveVVVVWarped = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block mangroveHHMangroveVVVVWarpedGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+
+    public static final Block warpedHHMangrove = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block warpedHHHMangrove = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block warpedHHMangroveVWarped = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block warpedHHMangroveVWarpedGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block warpedHHMangroveVVMangrove = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block warpedHHWarpedVVVMangrove = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block warpedHHWarpedVVVMangroveGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block warpedHHWarpedVVMangrove = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block warpedHHWarpedVVMangroveGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block warpedHHHMangroveVVVVWarpedVVVVWarped = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block warpedHHHMangroveVVVVWarpedVVVVWarpedGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block warpedHHMangroveXXMangrove = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block warpedHHWarpedVVVVMangrove = new Fence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block warpedHHWarpedVVVVMangroveGate = new FenceGate(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
 
     public static final Block cobblestoneModern = new Wall(FabricBlockSettings.of(Material.STONE).requiresTool().strength(2.0F, 6.0F).sounds(BlockSoundGroup.STONE));
     public static final Block cobblestoneBuilding = new Wall(FabricBlockSettings.of(Material.STONE).requiresTool().strength(2.0F, 6.0F).sounds(BlockSoundGroup.STONE));
@@ -542,6 +771,48 @@ public class ModBlocks {
     public static final Block crimsonWallBuilding = new WoodWall(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block warpedWallBuilding = new WoodWall(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
 
+    public static final Block cobblestoneCopperFence = new MetalFence(WeatheringFence.WeatherState.UNAFFECTED, FabricBlockSettings.of(Material.METAL).strength(3.0F, 6.0F).sounds(BlockSoundGroup.STONE));
+    public static final Block cobblestoneExposedCopperFence = new MetalFence(WeatheringFence.WeatherState.EXPOSED, FabricBlockSettings.of(Material.METAL).strength(3.0F, 6.0F).sounds(BlockSoundGroup.STONE));
+    public static final Block cobblestoneWeatheredCopperFence = new MetalFence(WeatheringFence.WeatherState.WEATHERED, FabricBlockSettings.of(Material.METAL).strength(3.0F, 6.0F).sounds(BlockSoundGroup.STONE));
+    public static final Block cobblestoneOxidizedCopperFence = new MetalFence(WeatheringFence.WeatherState.OXIDIZED, FabricBlockSettings.of(Material.METAL).strength(3.0F, 6.0F).sounds(BlockSoundGroup.STONE));
+
+    public static final Block copperFenceGate = new MetalFenceGate(WeatheringFence.WeatherState.UNAFFECTED, FabricBlockSettings.of(Material.METAL).strength(3.0F, 6.0F).sounds(BlockSoundGroup.COPPER));
+    public static final Block exposedCopperFenceGate = new MetalFenceGate(WeatheringFence.WeatherState.EXPOSED, FabricBlockSettings.of(Material.METAL).strength(3.0F, 6.0F).sounds(BlockSoundGroup.COPPER));
+    public static final Block weatheredCopperFenceGate = new MetalFenceGate(WeatheringFence.WeatherState.WEATHERED, FabricBlockSettings.of(Material.METAL).strength(3.0F, 6.0F).sounds(BlockSoundGroup.COPPER));
+    public static final Block oxidizedCopperFenceGate = new MetalFenceGate(WeatheringFence.WeatherState.OXIDIZED, FabricBlockSettings.of(Material.METAL).strength(3.0F, 6.0F).sounds(BlockSoundGroup.COPPER));
+
+    public static final Block cobblestoneWaxedCopperFence = new MetalFence(WeatheringFence.WeatherState.UNAFFECTED, FabricBlockSettings.of(Material.METAL).strength(3.0F, 6.0F).sounds(BlockSoundGroup.STONE));
+    public static final Block cobblestoneWaxedExposedCopperFence = new MetalFence(WeatheringFence.WeatherState.EXPOSED, FabricBlockSettings.of(Material.METAL).strength(3.0F, 6.0F).sounds(BlockSoundGroup.STONE));
+    public static final Block cobblestoneWaxedWeatheredCopperFence = new MetalFence(WeatheringFence.WeatherState.WEATHERED, FabricBlockSettings.of(Material.METAL).strength(3.0F, 6.0F).sounds(BlockSoundGroup.STONE));
+    public static final Block cobblestoneWaxedOxidizedCopperFence = new MetalFence(WeatheringFence.WeatherState.OXIDIZED, FabricBlockSettings.of(Material.METAL).strength(3.0F, 6.0F).sounds(BlockSoundGroup.STONE));
+
+    public static final Block waxedCopperFenceGate = new MetalFenceGate(WeatheringFence.WeatherState.UNAFFECTED, FabricBlockSettings.of(Material.METAL).strength(3.0F, 6.0F).sounds(BlockSoundGroup.COPPER));
+    public static final Block waxedExposedCopperFenceGate = new MetalFenceGate(WeatheringFence.WeatherState.EXPOSED, FabricBlockSettings.of(Material.METAL).strength(3.0F, 6.0F).sounds(BlockSoundGroup.COPPER));
+    public static final Block waxedWeatheredCopperFenceGate = new MetalFenceGate(WeatheringFence.WeatherState.WEATHERED, FabricBlockSettings.of(Material.METAL).strength(3.0F, 6.0F).sounds(BlockSoundGroup.COPPER));
+    public static final Block waxedOxidizedCopperFenceGate = new MetalFenceGate(WeatheringFence.WeatherState.OXIDIZED, FabricBlockSettings.of(Material.METAL).strength(3.0F, 6.0F).sounds(BlockSoundGroup.COPPER));
+
+    public static final Block cobblestoneIronFence = new MetalFence(WeatheringFence.WeatherState.UNAFFECTED, FabricBlockSettings.of(Material.METAL).strength(3.0F, 6.0F).sounds(BlockSoundGroup.STONE));
+    public static final Block cobblestoneExposedIronFence = new MetalFence(WeatheringFence.WeatherState.EXPOSED, FabricBlockSettings.of(Material.METAL).strength(3.0F, 6.0F).sounds(BlockSoundGroup.STONE));
+    public static final Block cobblestoneWeatheredIronFence = new MetalFence(WeatheringFence.WeatherState.WEATHERED, FabricBlockSettings.of(Material.METAL).strength(3.0F, 6.0F).sounds(BlockSoundGroup.STONE));
+    public static final Block cobblestoneOxidizedIronFence = new MetalFence(WeatheringFence.WeatherState.OXIDIZED, FabricBlockSettings.of(Material.METAL).strength(3.0F, 6.0F).sounds(BlockSoundGroup.STONE));
+
+    public static final Block ironFenceGate = new MetalFenceGate(WeatheringFence.WeatherState.UNAFFECTED, FabricBlockSettings.of(Material.METAL).strength(3.0F, 6.0F).sounds(BlockSoundGroup.COPPER));
+    public static final Block exposedIronFenceGate = new MetalFenceGate(WeatheringFence.WeatherState.EXPOSED, FabricBlockSettings.of(Material.METAL).strength(3.0F, 6.0F).sounds(BlockSoundGroup.COPPER));
+    public static final Block weatheredIronFenceGate = new MetalFenceGate(WeatheringFence.WeatherState.WEATHERED, FabricBlockSettings.of(Material.METAL).strength(3.0F, 6.0F).sounds(BlockSoundGroup.COPPER));
+    public static final Block oxidizedIronFenceGate = new MetalFenceGate(WeatheringFence.WeatherState.OXIDIZED, FabricBlockSettings.of(Material.METAL).strength(3.0F, 6.0F).sounds(BlockSoundGroup.COPPER));
+
+    public static final Block cobblestoneWaxedIronFence = new MetalFence(WeatheringFence.WeatherState.UNAFFECTED, FabricBlockSettings.of(Material.METAL).strength(3.0F, 6.0F).sounds(BlockSoundGroup.STONE));
+    public static final Block cobblestoneWaxedExposedIronFence = new MetalFence(WeatheringFence.WeatherState.EXPOSED, FabricBlockSettings.of(Material.METAL).strength(3.0F, 6.0F).sounds(BlockSoundGroup.STONE));
+    public static final Block cobblestoneWaxedWeatheredIronFence = new MetalFence(WeatheringFence.WeatherState.WEATHERED, FabricBlockSettings.of(Material.METAL).strength(3.0F, 6.0F).sounds(BlockSoundGroup.STONE));
+    public static final Block cobblestoneWaxedOxidizedIronFence = new MetalFence(WeatheringFence.WeatherState.OXIDIZED, FabricBlockSettings.of(Material.METAL).strength(3.0F, 6.0F).sounds(BlockSoundGroup.STONE));
+
+    public static final Block waxedIronFenceGate = new MetalFenceGate(WeatheringFence.WeatherState.UNAFFECTED, FabricBlockSettings.of(Material.METAL).strength(3.0F, 6.0F).sounds(BlockSoundGroup.COPPER));
+    public static final Block waxedExposedIronFenceGate = new MetalFenceGate(WeatheringFence.WeatherState.EXPOSED, FabricBlockSettings.of(Material.METAL).strength(3.0F, 6.0F).sounds(BlockSoundGroup.COPPER));
+    public static final Block waxedWeatheredIronFenceGate = new MetalFenceGate(WeatheringFence.WeatherState.WEATHERED, FabricBlockSettings.of(Material.METAL).strength(3.0F, 6.0F).sounds(BlockSoundGroup.COPPER));
+    public static final Block waxedOxidizedIronFenceGate = new MetalFenceGate(WeatheringFence.WeatherState.OXIDIZED, FabricBlockSettings.of(Material.METAL).strength(3.0F, 6.0F).sounds(BlockSoundGroup.COPPER));
+
+    public static final Block cobblestoneGoldFence = new MetalFence(WeatheringFence.WeatherState.UNAFFECTED, FabricBlockSettings.of(Material.METAL).strength(3.0F, 6.0F).sounds(BlockSoundGroup.STONE));
+    public static final Block goldFenceGate = new MetalFenceGate(WeatheringFence.WeatherState.UNAFFECTED, FabricBlockSettings.of(Material.METAL).strength(3.0F, 6.0F).sounds(BlockSoundGroup.COPPER));
 
     public static void registerBlocks() {
 
@@ -585,6 +856,11 @@ public class ModBlocks {
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "hhcrimson_vvcrimson_fence_gate_closed"), HHCrimsonVVCrimsonGate);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "hhcrimson_xxcrimson_fence_gate_closed"), HHCrimsonXXCrimsonGate);
 
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "hhmangrove_fence_gate_closed"), HHMangroveGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "hhhmangrove_fence_gate_closed"), HHHMangroveGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "hhmangrove_vvmangrove_fence_gate_closed"), HHMangroveVVMangroveGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "hhmangrove_xxmangrove_fence_gate_closed"), HHMangroveXXMangroveGate);
+
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "spruce_hhoak"), spruceHHOak);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "spruce_hhhoak"), spruceHHHOak);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "spruce_hhoak_vspruce"), spruceHHOakVSpruce);
@@ -597,6 +873,8 @@ public class ModBlocks {
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "spruce_hhhoak_vvvvspruce_vvvvspruce"), spruceHHHOakVVVVSpruceVVVVSpruce);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "spruce_hhhoak_vvvvspruce_vvvvspruce_fence_gate_closed"), spruceHHHOakVVVVSpruceVVVVSpruceGate);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "spruce_hhoak_xxoak"), spruceHHOakXXOak);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "spruce_hhspruce_vvvvoak"), spruceHHSpruceVVVVOak);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "spruce_hhspruce_vvvvoak_fence_gate_closed"), spruceHHSpruceVVVVOakGate);
 
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oak_hhspruce"), oakHHSpruce);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oak_hhhspruce"), oakHHHSpruce);
@@ -610,6 +888,8 @@ public class ModBlocks {
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oak_hhhspruce_vvvvoak_vvvvoak"), oakHHHSpruceVVVVOakVVVVOak);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oak_hhhspruce_vvvvoak_vvvvoak_fence_gate_closed"), oakHHHSpruceVVVVOakVVVVOakGate);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oak_hhspruce_xxspruce"), oakHHSpruceXXSpruce);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oak_hhoak_vvvvspruce"), oakHHOakVVVVSpruce);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oak_hhoak_vvvvspruce_fence_gate_closed"), oakHHOakVVVVSpruceGate);
 
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oak_hhbirch"), oakHHBirch);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oak_hhhbirch"), oakHHHBirch);
@@ -623,6 +903,8 @@ public class ModBlocks {
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oak_hhhbirch_vvvvoak_vvvvoak"), oakHHHBirchVVVVOakVVVVOak);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oak_hhhbirch_vvvvoak_vvvvoak_fence_gate_closed"), oakHHHBirchVVVVOakVVVVOakGate);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oak_hhbirch_xxbirch"), oakHHBirchXXBirch);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oak_hhoak_vvvvbirch"), oakHHOakVVVVBirch);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oak_hhoak_vvvvbirch_fence_gate_closed"), oakHHOakVVVVBirchGate);
 
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "birch_hhoak"), birchHHOak);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "birch_hhhoak"), birchHHHOak);
@@ -636,6 +918,8 @@ public class ModBlocks {
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "birch_hhhoak_vvvvbirch_vvvvbirch"), birchHHHOakVVVVBirchVVVVBirch);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "birch_hhhoak_vvvvbirch_vvvvbirch_fence_gate_closed"), birchHHHOakVVVVBirchVVVVBirchGate);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "birch_hhoak_xxoak"), birchHHOakXXOak);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "birch_hhbirch_vvvvoak"), birchHHBirchVVVVOak);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "birch_hhbirch_vvvvoak_fence_gate_closed"), birchHHBirchVVVVOakGate);
 
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "spruce_hhbirch"), spruceHHBirch);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "spruce_hhhbirch"), spruceHHHBirch);
@@ -649,6 +933,8 @@ public class ModBlocks {
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "spruce_hhhbirch_vvvvspruce_vvvvspruce"), spruceHHHBirchVVVVSpruceVVVVSpruce);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "spruce_hhhbirch_vvvvspruce_vvvvspruce_fence_gate_closed"), spruceHHHBirchVVVVSpruceVVVVSpruceGate);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "spruce_hhbirch_xxbirch"), spruceHHBirchXXBirch);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "spruce_hhspruce_vvvvbirch"), spruceHHSpruceVVVVBirch);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "spruce_hhspruce_vvvvbirch_fence_gate_closed"), spruceHHSpruceVVVVBirchGate);
 
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "birch_hhspruce"), birchHHSpruce);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "birch_hhhspruce"), birchHHHSpruce);
@@ -662,6 +948,8 @@ public class ModBlocks {
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "birch_hhhspruce_vvvvbirch_vvvvbirch"), birchHHHSpruceVVVVBirchVVVVBirch);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "birch_hhhspruce_vvvvbirch_vvvvbirch_fence_gate_closed"), birchHHHSpruceVVVVBirchVVVVBirchGate);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "birch_hhspruce_xxspruce"), birchHHSpruceXXSpruce);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "birch_hhbirch_vvvvspruce"), birchHHBirchVVVVSpruce);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "birch_hhbirch_vvvvspruce_fence_gate_closed"), birchHHBirchVVVVSpruceGate);
 
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "dark_oak_hhspruce"), darkoakHHSpruce);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "dark_oak_hhhspruce"), darkoakHHHSpruce);
@@ -675,6 +963,8 @@ public class ModBlocks {
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "dark_oak_hhhspruce_vvvvdark_oak_vvvvdark_oak"), darkoakHHHSpruceVVVVDarkoakVVVVDarkoak);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "dark_oak_hhhspruce_vvvvdark_oak_vvvvdark_oak_fence_gate_closed"), darkoakHHHSpruceVVVVDarkoakVVVVDarkoakGate);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "dark_oak_hhspruce_xxspruce"), darkoakHHSpruceXXSpruce);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "dark_oak_hhdark_oak_vvvvspruce"), darkoakHHDarkoakVVVVSpruce);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "dark_oak_hhdark_oak_vvvvspruce_fence_gate_closed"), darkoakHHDarkoakVVVVSpruceGate);
 
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "spruce_hhdark_oak"), spruceHHDarkoak);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "spruce_hhhdark_oak"), spruceHHHDarkoak);
@@ -688,6 +978,8 @@ public class ModBlocks {
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "spruce_hhhdark_oak_vvvvspruce_vvvvspruce"), spruceHHHDarkoakVVVVSpruceVVVVSpruce);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "spruce_hhhdark_oak_vvvvspruce_vvvvspruce_fence_gate_closed"), spruceHHHDarkoakVVVVSpruceVVVVSpruceGate);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "spruce_hhdark_oak_xxdark_oak"), spruceHHDarkoakXXDarkoak);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "spruce_hhspruce_vvvvdark_oak"), spruceHHSpruceVVVVDarkoak);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "spruce_hhspruce_vvvvdark_oak_fence_gate_closed"), spruceHHSpruceVVVVDarkoakGate);
 
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "dark_oak_hhoak"), darkoakHHOak);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "dark_oak_hhhoak"), darkoakHHHOak);
@@ -701,6 +993,8 @@ public class ModBlocks {
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "dark_oak_hhhoak_vvvvdark_oak_vvvvdark_oak"), darkoakHHHOakVVVVDarkoakVVVVDarkoak);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "dark_oak_hhhoak_vvvvdark_oak_vvvvdark_oak_fence_gate_closed"), darkoakHHHOakVVVVDarkoakVVVVDarkoakGate);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "dark_oak_hhoak_xxoak"), darkoakHHOakXXOak);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "dark_oak_hhdark_oak_vvvvoak"), darkoakHHDarkoakVVVVOak);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "dark_oak_hhdark_oak_vvvvoak_fence_gate_closed"), darkoakHHDarkoakVVVVOakGate);
 
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oak_hhdark_oak"), oakHHDarkoak);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oak_hhhdark_oak"), oakHHHDarkoak);
@@ -714,6 +1008,8 @@ public class ModBlocks {
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oak_hhhdark_oak_vvvvoak_vvvvoak"), oakHHHDarkoakVVVVOakVVVVOak);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oak_hhhdark_oak_vvvvoak_vvvvoak_fence_gate_closed"), oakHHHDarkoakVVVVOakVVVVOakGate);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oak_hhdark_oak_xxdark_oak"), oakHHDarkoakXXDarkoak);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oak_hhoak_vvvvdark_oak"), oakHHOakVVVVDarkoak);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oak_hhoak_vvvvdark_oak_fence_gate_closed"), oakHHOakVVVVDarkoakGate);
 
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "dark_oak_hhjungle"), darkoakHHJungle);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "dark_oak_hhhjungle"), darkoakHHHJungle);
@@ -727,6 +1023,8 @@ public class ModBlocks {
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "dark_oak_hhhjungle_vvvvdark_oak_vvvvdark_oak"), darkoakHHHJungleVVVVDarkoakVVVVDarkoak);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "dark_oak_hhhjungle_vvvvdark_oak_vvvvdark_oak_fence_gate_closed"), darkoakHHHJungleVVVVDarkoakVVVVDarkoakGate);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "dark_oak_hhjungle_xxjungle"), darkoakHHJungleXXJungle);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "dark_oak_hhdark_oak_vvvvjungle"), darkoakHHDarkoakVVVVJungle);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "dark_oak_hhdark_oak_vvvvjungle_fence_gate_closed"), darkoakHHDarkoakVVVVJungleGate);
 
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "jungle_hhdark_oak"), jungleHHDarkoak);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "jungle_hhhdark_oak"), jungleHHHDarkoak);
@@ -740,6 +1038,8 @@ public class ModBlocks {
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "jungle_hhhdark_oak_vvvvjungle_vvvvjungle"), jungleHHHDarkoakVVVVJungleVVVVJungle);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "jungle_hhhdark_oak_vvvvjungle_vvvvjungle_fence_gate_closed"), jungleHHHDarkoakVVVVJungleVVVVJungleGate);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "jungle_hhdark_oak_xxdark_oak"), jungleHHDarkoakXXDarkoak);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "jungle_hhjungle_vvvvdark_oak"), jungleHHJungleVVVVDarkoak);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "jungle_hhjungle_vvvvdark_oak_fence_gate_closed"), jungleHHJungleVVVVDarkoakGate);
 
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "acacia_hhjungle"), acaciaHHJungle);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "acacia_hhhjungle"), acaciaHHHJungle);
@@ -753,6 +1053,8 @@ public class ModBlocks {
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "acacia_hhhjungle_vvvvacacia_vvvvacacia"), acaciaHHHJungleVVVVAcaciaVVVVAcacia);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "acacia_hhhjungle_vvvvacacia_vvvvacacia_fence_gate_closed"), acaciaHHHJungleVVVVAcaciaVVVVAcaciaGate);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "acacia_hhjungle_xxjungle"), acaciaHHJungleXXJungle);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "acacia_hhacacia_vvvvjungle"), acaciaHHAcaciaVVVVJungle);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "acacia_hhacacia_vvvvjungle_fence_gate_closed"), acaciaHHAcaciaVVVVJungleGate);
 
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "jungle_hhacacia"), jungleHHAcacia);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "jungle_hhhacacia"), jungleHHHAcacia);
@@ -766,6 +1068,8 @@ public class ModBlocks {
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "jungle_hhhacacia_vvvvjungle_vvvvjungle"), jungleHHHAcaciaVVVVJungleVVVVJungle);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "jungle_hhhacacia_vvvvjungle_vvvvjungle_fence_gate_closed"), jungleHHHAcaciaVVVVJungleVVVVJungleGate);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "jungle_hhacacia_xxacacia"), jungleHHAcaciaXXAcacia);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "jungle_hhjungle_vvvvacacia"), jungleHHJungleVVVVAcacia);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "jungle_hhjungle_vvvvacacia_fence_gate_closed"), jungleHHJungleVVVVAcaciaGate);
 
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "acacia_hhbirch"), acaciaHHBirch);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "acacia_hhhbirch"), acaciaHHHBirch);
@@ -779,6 +1083,8 @@ public class ModBlocks {
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "acacia_hhhbirch_vvvvacacia_vvvvacacia"), acaciaHHHBirchVVVVAcaciaVVVVAcacia);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "acacia_hhhbirch_vvvvacacia_vvvvacacia_fence_gate_closed"), acaciaHHHBirchVVVVAcaciaVVVVAcaciaGate);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "acacia_hhbirch_xxbirch"), acaciaHHBirchXXBirch);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "acacia_hhacacia_vvvvbirch"), acaciaHHAcaciaVVVVBirch);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "acacia_hhacacia_vvvvbirch_fence_gate_closed"), acaciaHHAcaciaVVVVBirchGate);
 
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "birch_hhacacia"), birchHHAcacia);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "birch_hhhacacia"), birchHHHAcacia);
@@ -792,6 +1098,8 @@ public class ModBlocks {
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "birch_hhhacacia_vvvvbirch_vvvvbirch"), birchHHHAcaciaVVVVBirchVVVVBirch);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "birch_hhhacacia_vvvvbirch_vvvvbirch_fence_gate_closed"), birchHHHAcaciaVVVVBirchVVVVBirchGate);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "birch_hhacacia_xxacacia"), birchHHAcaciaXXAcacia);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "birch_hhbirch_vvvvacacia"), birchHHBirchVVVVAcacia);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "birch_hhbirch_vvvvacacia_fence_gate_closed"), birchHHBirchVVVVAcaciaGate);
 
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "jungle_hhbirch"), jungleHHBirch);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "jungle_hhhbirch"), jungleHHHBirch);
@@ -805,6 +1113,8 @@ public class ModBlocks {
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "jungle_hhhbirch_vvvvjungle_vvvvjungle"), jungleHHHBirchVVVVJungleVVVVJungle);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "jungle_hhhbirch_vvvvjungle_vvvvjungle_fence_gate_closed"), jungleHHHBirchVVVVJungleVVVVJungleGate);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "jungle_hhbirch_xxbirch"), jungleHHBirchXXBirch);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "jungle_hhjungle_vvvvbirch"), jungleHHJungleVVVVBirch);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "jungle_hhjungle_vvvvbirch_fence_gate_closed"), jungleHHJungleVVVVBirchGate);
 
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "birch_hhjungle"), birchHHJungle);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "birch_hhhjungle"), birchHHHJungle);
@@ -818,6 +1128,8 @@ public class ModBlocks {
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "birch_hhhjungle_vvvvbirch_vvvvbirch"), birchHHHJungleVVVVBirchVVVVBirch);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "birch_hhhjungle_vvvvbirch_vvvvbirch_fence_gate_closed"), birchHHHJungleVVVVBirchVVVVBirchGate);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "birch_hhjungle_xxjungle"), birchHHJungleXXJungle);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "birch_hhbirch_vvvvjungle"), birchHHBirchVVVVJungle);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "birch_hhbirch_vvvvjungle_fence_gate_closed"), birchHHBirchVVVVJungleGate);
 
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "warped_hhbirch"), warpedHHBirch);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "warped_hhhbirch"), warpedHHHBirch);
@@ -831,6 +1143,8 @@ public class ModBlocks {
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "warped_hhhbirch_vvvvwarped_vvvvwarped"), warpedHHHBirchVVVVWarpedVVVVWarped);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "warped_hhhbirch_vvvvwarped_vvvvwarped_fence_gate_closed"), warpedHHHBirchVVVVWarpedVVVVWarpedGate);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "warped_hhbirch_xxbirch"), warpedHHBirchXXBirch);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "warped_hhwarped_vvvvbirch"), warpedHHWarpedVVVVBirch);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "warped_hhwarped_vvvvbirch_fence_gate_closed"), warpedHHWarpedVVVVBirchGate);
 
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "birch_hhwarped"), birchHHWarped);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "birch_hhhwarped"), birchHHHWarped);
@@ -844,6 +1158,8 @@ public class ModBlocks {
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "birch_hhhwarped_vvvvbirch_vvvvbirch"), birchHHHWarpedVVVVBirchVVVVBirch);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "birch_hhhwarped_vvvvbirch_vvvvbirch_fence_gate_closed"), birchHHHWarpedVVVVBirchVVVVBirchGate);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "birch_hhwarped_xxwarped"), birchHHWarpedXXWarped);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "birch_hhbirch_vvvvwarped"), birchHHBirchVVVVWarped);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "birch_hhbirch_vvvvwarped_fence_gate_closed"), birchHHBirchVVVVWarpedGate);
 
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "warped_hhoak"), warpedHHOak);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "warped_hhhoak"), warpedHHHOak);
@@ -857,6 +1173,8 @@ public class ModBlocks {
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "warped_hhhoak_vvvvwarped_vvvvwarped"), warpedHHHOakVVVVWarpedVVVVWarped);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "warped_hhhoak_vvvvwarped_vvvvwarped_fence_gate_closed"), warpedHHHOakVVVVWarpedVVVVWarpedGate);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "warped_hhoak_xxoak"), warpedHHOakXXOak);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "warped_hhwarped_vvvvoak"), warpedHHWarpedVVVVOak);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "warped_hhwarped_vvvvoak_fence_gate_closed"), warpedHHWarpedVVVVOakGate);
 
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oak_hhwarped"), oakHHWarped);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oak_hhhwarped"), oakHHHWarped);
@@ -870,6 +1188,8 @@ public class ModBlocks {
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oak_hhhwarped_vvvvoak_vvvvoak"), oakHHHWarpedVVVVOakVVVVOak);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oak_hhhwarped_vvvvoak_vvvvoak_fence_gate_closed"), oakHHHWarpedVVVVOakVVVVOakGate);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oak_hhwarped_xxwarped"), oakHHWarpedXXWarped);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oak_hhoak_vvvvwarped"), oakHHOakVVVVWarped);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oak_hhoak_vvvvwarped_fence_gate_closed"), oakHHOakVVVVWarpedGate);
 
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "warped_hhspruce"), warpedHHSpruce);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "warped_hhhspruce"), warpedHHHSpruce);
@@ -883,6 +1203,8 @@ public class ModBlocks {
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "warped_hhhspruce_vvvvwarped_vvvvwarped"), warpedHHHSpruceVVVVWarpedVVVVWarped);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "warped_hhhspruce_vvvvwarped_vvvvwarped_fence_gate_closed"), warpedHHHSpruceVVVVWarpedVVVVWarpedGate);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "warped_hhspruce_xxspruce"), warpedHHSpruceXXSpruce);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "warped_hhwarped_vvvvspruce"), warpedHHWarpedVVVVSpruce);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "warped_hhwarped_vvvvspruce_fence_gate_closed"), warpedHHWarpedVVVVSpruceGate);
 
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "spruce_hhwarped"), spruceHHWarped);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "spruce_hhhwarped"), spruceHHHWarped);
@@ -896,6 +1218,8 @@ public class ModBlocks {
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "spruce_hhhwarped_vvvvspruce_vvvvspruce"), spruceHHHWarpedVVVVSpruceVVVVSpruce);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "spruce_hhhwarped_vvvvspruce_vvvvspruce_fence_gate_closed"), spruceHHHWarpedVVVVSpruceVVVVSpruceGate);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "spruce_hhwarped_xxwarped"), spruceHHWarpedXXWarped);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "spruce_hhspruce_vvvvwarped"), spruceHHSpruceVVVVWarped);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "spruce_hhspruce_vvvvwarped_fence_gate_closed"), spruceHHSpruceVVVVWarpedGate);
 
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "crimson_hhjungle"), crimsonHHJungle);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "crimson_hhhjungle"), crimsonHHHJungle);
@@ -909,6 +1233,8 @@ public class ModBlocks {
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "crimson_hhhjungle_vvvvcrimson_vvvvcrimson"), crimsonHHHJungleVVVVCrimsonVVVVCrimson);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "crimson_hhhjungle_vvvvcrimson_vvvvcrimson_fence_gate_closed"), crimsonHHHJungleVVVVCrimsonVVVVCrimsonGate);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "crimson_hhjungle_xxjungle"), crimsonHHJungleXXJungle);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "crimson_hhcrimson_vvvvjungle"), crimsonHHCrimsonVVVVJungle);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "crimson_hhcrimson_vvvvjungle_fence_gate_closed"), crimsonHHCrimsonVVVVJungleGate);
 
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "jungle_hhcrimson"), jungleHHCrimson);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "jungle_hhhcrimson"), jungleHHHCrimson);
@@ -922,6 +1248,8 @@ public class ModBlocks {
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "jungle_hhhcrimson_vvvvjungle_vvvvjungle"), jungleHHHCrimsonVVVVJungleVVVVJungle);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "jungle_hhhcrimson_vvvvjungle_vvvvjungle_fence_gate_closed"), jungleHHHCrimsonVVVVJungleVVVVJungleGate);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "jungle_hhcrimson_xxcrimson"), jungleHHCrimsonXXCrimson);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "jungle_hhjungle_vvvvcrimson"), jungleHHJungleVVVVCrimson);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "jungle_hhjungle_vvvvcrimson_fence_gate_closed"), jungleHHJungleVVVVCrimsonGate);
 
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "crimson_hhoak"), crimsonHHOak);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "crimson_hhhoak"), crimsonHHHOak);
@@ -935,6 +1263,8 @@ public class ModBlocks {
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "crimson_hhhoak_vvvvcrimson_vvvvcrimson"), crimsonHHHOakVVVVCrimsonVVVVCrimson);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "crimson_hhhoak_vvvvcrimson_vvvvcrimson_fence_gate_closed"), crimsonHHHOakVVVVCrimsonVVVVCrimsonGate);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "crimson_hhoak_xxoak"), crimsonHHOakXXOak);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "crimson_hhcrimson_vvvvoak"), crimsonHHCrimsonVVVVOak);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "crimson_hhcrimson_vvvvoak_fence_gate_closed"), crimsonHHCrimsonVVVVOakGate);
 
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oak_hhcrimson"), oakHHCrimson);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oak_hhhcrimson"), oakHHHCrimson);
@@ -948,6 +1278,8 @@ public class ModBlocks {
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oak_hhhcrimson_vvvvoak_vvvvoak"), oakHHHCrimsonVVVVOakVVVVOak);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oak_hhhcrimson_vvvvoak_vvvvoak_fence_gate_closed"), oakHHHCrimsonVVVVOakVVVVOakGate);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oak_hhcrimson_xxcrimson"), oakHHCrimsonXXCrimson);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oak_hhoak_vvvvcrimson"), oakHHOakVVVVCrimson);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oak_hhoak_vvvvcrimson_fence_gate_closed"), oakHHOakVVVVCrimsonGate);
 
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "crimson_hhdark_oak"), crimsonHHDarkoak);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "crimson_hhhdark_oak"), crimsonHHHDarkoak);
@@ -961,6 +1293,8 @@ public class ModBlocks {
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "crimson_hhhdark_oak_vvvvcrimson_vvvvcrimson"), crimsonHHHDarkoakVVVVCrimsonVVVVCrimson);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "crimson_hhhdark_oak_vvvvcrimson_vvvvcrimson_fence_gate_closed"), crimsonHHHDarkoakVVVVCrimsonVVVVCrimsonGate);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "crimson_hhdark_oak_xxdark_oak"), crimsonHHDarkoakXXDarkoak);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "crimson_hhcrimson_vvvvdark_oak"), crimsonHHCrimsonVVVVDarkoak);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "crimson_hhcrimson_vvvvdark_oak_fence_gate_closed"), crimsonHHCrimsonVVVVDarkoakGate);
 
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "dark_oak_hhcrimson"), darkoakHHCrimson);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "dark_oak_hhhcrimson"), darkoakHHHCrimson);
@@ -974,6 +1308,158 @@ public class ModBlocks {
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "dark_oak_hhhcrimson_vvvvdark_oak_vvvvdark_oak"), darkoakHHHCrimsonVVVVDarkoakVVVVDarkoak);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "dark_oak_hhhcrimson_vvvvdark_oak_vvvvdark_oak_fence_gate_closed"), darkoakHHHCrimsonVVVVDarkoakVVVVDarkoakGate);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "dark_oak_hhcrimson_xxcrimson"), darkoakHHCrimsonXXCrimson);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "dark_oak_hhdark_oak_vvvvcrimson"), darkoakHHDarkoakVVVVCrimson);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "dark_oak_hhdark_oak_vvvvcrimson_fence_gate_closed"), darkoakHHDarkoakVVVVCrimsonGate);
+
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhoak"), mangroveHHOak);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhhoak"), mangroveHHHOak);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhoak_vmangrove"), mangroveHHOakVMangrove);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhoak_vmangrove_fence_gate_closed"), mangroveHHOakVMangroveGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhoak_vvoak"), mangroveHHOakVVOak);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhmangrove_vvvoak"), mangroveHHMangroveVVVOak);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhmangrove_vvvoak_fence_gate_closed"), mangroveHHMangroveVVVOakGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhmangrove_vvoak"), mangroveHHMangroveVVOak);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhmangrove_vvoak_fence_gate_closed"), mangroveHHMangroveVVOakGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhhoak_vvvvmangrove_vvvvmangrove"), mangroveHHHOakVVVVMangroveVVVVMangrove);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhhoak_vvvvmangrove_vvvvmangrove_fence_gate_closed"), mangroveHHHOakVVVVMangroveVVVVMangroveGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhoak_xxoak"), mangroveHHOakXXOak);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhmangrove_vvvvoak"), mangroveHHMangroveVVVVOak);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhmangrove_vvvvoak_fence_gate_closed"), mangroveHHMangroveVVVVOakGate);
+
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oak_hhmangrove"), oakHHMangrove);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oak_hhhmangrove"), oakHHHMangrove);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oak_hhmangrove_voak"), oakHHMangroveVOak);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oak_hhmangrove_voak_fence_gate_closed"), oakHHMangroveVOakGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oak_hhmangrove_vvmangrove"), oakHHMangroveVVMangrove);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oak_hhoak_vvvmangrove"), oakHHOakVVVMangrove);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oak_hhoak_vvvmangrove_fence_gate_closed"), oakHHOakVVVMangroveGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oak_hhoak_vvmangrove"), oakHHOakVVMangrove);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oak_hhoak_vvmangrove_fence_gate_closed"), oakHHOakVVMangroveGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oak_hhhmangrove_vvvvoak_vvvvoak"), oakHHHMangroveVVVVOakVVVVOak);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oak_hhhmangrove_vvvvoak_vvvvoak_fence_gate_closed"), oakHHHMangroveVVVVOakVVVVOakGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oak_hhmangrove_xxmangrove"), oakHHMangroveXXMangrove);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oak_hhoak_vvvvmangrove"), oakHHOakVVVVMangrove);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oak_hhoak_vvvvmangrove_fence_gate_closed"), oakHHOakVVVVMangroveGate);
+
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhbirch"), mangroveHHBirch);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhhbirch"), mangroveHHHBirch);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhbirch_vmangrove"), mangroveHHBirchVMangrove);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhbirch_vmangrove_fence_gate_closed"), mangroveHHBirchVMangroveGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhbirch_vvbirch"), mangroveHHBirchVVBirch);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhmangrove_vvvbirch"), mangroveHHMangroveVVVBirch);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhmangrove_vvvbirch_fence_gate_closed"), mangroveHHMangroveVVVBirchGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhmangrove_vvbirch"), mangroveHHMangroveVVBirch);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhmangrove_vvbirch_fence_gate_closed"), mangroveHHMangroveVVBirchGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhhbirch_vvvvmangrove_vvvvmangrove"), mangroveHHHBirchVVVVMangroveVVVVMangrove);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhhbirch_vvvvmangrove_vvvvmangrove_fence_gate_closed"), mangroveHHHBirchVVVVMangroveVVVVMangroveGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhbirch_xxbirch"), mangroveHHBirchXXBirch);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhmangrove_vvvvbirch"), mangroveHHMangroveVVVVBirch);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhmangrove_vvvvbirch_fence_gate_closed"), mangroveHHMangroveVVVVBirchGate);
+
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "birch_hhmangrove"), birchHHMangrove);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "birch_hhhmangrove"), birchHHHMangrove);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "birch_hhmangrove_vbirch"), birchHHMangroveVBirch);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "birch_hhmangrove_vbirch_fence_gate_closed"), birchHHMangroveVBirchGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "birch_hhmangrove_vvmangrove"), birchHHMangroveVVMangrove);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "birch_hhbirch_vvvmangrove"), birchHHBirchVVVMangrove);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "birch_hhbirch_vvvmangrove_fence_gate_closed"), birchHHBirchVVVMangroveGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "birch_hhbirch_vvmangrove"), birchHHBirchVVMangrove);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "birch_hhbirch_vvmangrove_fence_gate_closed"), birchHHBirchVVMangroveGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "birch_hhhmangrove_vvvvbirch_vvvvbirch"), birchHHHMangroveVVVVBirchVVVVBirch);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "birch_hhhmangrove_vvvvbirch_vvvvbirch_fence_gate_closed"), birchHHHMangroveVVVVBirchVVVVBirchGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "birch_hhmangrove_xxmangrove"), birchHHMangroveXXMangrove);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "birch_hhbirch_vvvvmangrove"), birchHHBirchVVVVMangrove);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "birch_hhbirch_vvvvmangrove_fence_gate_closed"), birchHHBirchVVVVMangroveGate);
+
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhjungle"), mangroveHHJungle);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhhjungle"), mangroveHHHJungle);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhjungle_vmangrove"), mangroveHHJungleVMangrove);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhjungle_vmangrove_fence_gate_closed"), mangroveHHJungleVMangroveGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhjungle_vvjungle"), mangroveHHJungleVVJungle);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhmangrove_vvvjungle"), mangroveHHMangroveVVVJungle);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhmangrove_vvvjungle_fence_gate_closed"), mangroveHHMangroveVVVJungleGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhmangrove_vvjungle"), mangroveHHMangroveVVJungle);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhmangrove_vvjungle_fence_gate_closed"), mangroveHHMangroveVVJungleGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhhjungle_vvvvmangrove_vvvvmangrove"), mangroveHHHJungleVVVVMangroveVVVVMangrove);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhhjungle_vvvvmangrove_vvvvmangrove_fence_gate_closed"), mangroveHHHJungleVVVVMangroveVVVVMangroveGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhjungle_xxjungle"), mangroveHHJungleXXJungle);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhmangrove_vvvvjungle"), mangroveHHMangroveVVVVJungle);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhmangrove_vvvvjungle_fence_gate_closed"), mangroveHHMangroveVVVVJungleGate);
+
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "jungle_hhmangrove"), jungleHHMangrove);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "jungle_hhhmangrove"), jungleHHHMangrove);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "jungle_hhmangrove_vjungle"), jungleHHMangroveVJungle);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "jungle_hhmangrove_vjungle_fence_gate_closed"), jungleHHMangroveVJungleGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "jungle_hhmangrove_vvmangrove"), jungleHHMangroveVVMangrove);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "jungle_hhjungle_vvvmangrove"), jungleHHJungleVVVMangrove);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "jungle_hhjungle_vvvmangrove_fence_gate_closed"), jungleHHJungleVVVMangroveGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "jungle_hhjungle_vvmangrove"), jungleHHJungleVVMangrove);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "jungle_hhjungle_vvmangrove_fence_gate_closed"), jungleHHJungleVVMangroveGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "jungle_hhhmangrove_vvvvjungle_vvvvjungle"), jungleHHHMangroveVVVVJungleVVVVJungle);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "jungle_hhhmangrove_vvvvjungle_vvvvjungle_fence_gate_closed"), jungleHHHMangroveVVVVJungleVVVVJungleGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "jungle_hhmangrove_xxmangrove"), jungleHHMangroveXXMangrove);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "jungle_hhjungle_vvvvmangrove"), jungleHHJungleVVVVMangrove);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "jungle_hhjungle_vvvvmangrove_fence_gate_closed"), jungleHHJungleVVVVMangroveGate);
+
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhdark_oak"), mangroveHHDarkoak);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhhdark_oak"), mangroveHHHDarkoak);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhdark_oak_vmangrove"), mangroveHHDarkoakVMangrove);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhdark_oak_vmangrove_fence_gate_closed"), mangroveHHDarkoakVMangroveGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhdark_oak_vvdark_oak"), mangroveHHDarkoakVVDarkoak);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhmangrove_vvvdark_oak"), mangroveHHMangroveVVVDarkoak);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhmangrove_vvvdark_oak_fence_gate_closed"), mangroveHHMangroveVVVDarkoakGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhmangrove_vvdark_oak"), mangroveHHMangroveVVDarkoak);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhmangrove_vvdark_oak_fence_gate_closed"), mangroveHHMangroveVVDarkoakGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhhdark_oak_vvvvmangrove_vvvvmangrove"), mangroveHHHDarkoakVVVVMangroveVVVVMangrove);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhhdark_oak_vvvvmangrove_vvvvmangrove_fence_gate_closed"), mangroveHHHDarkoakVVVVMangroveVVVVMangroveGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhdark_oak_xxdark_oak"), mangroveHHDarkoakXXDarkoak);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhmangrove_vvvvdark_oak"), mangroveHHMangroveVVVVDarkoak);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhmangrove_vvvvdark_oak_fence_gate_closed"), mangroveHHMangroveVVVVDarkoakGate);
+
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "dark_oak_hhmangrove"), darkoakHHMangrove);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "dark_oak_hhhmangrove"), darkoakHHHMangrove);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "dark_oak_hhmangrove_vdark_oak"), darkoakHHMangroveVDarkoak);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "dark_oak_hhmangrove_vdark_oak_fence_gate_closed"), darkoakHHMangroveVDarkoakGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "dark_oak_hhmangrove_vvmangrove"), darkoakHHMangroveVVMangrove);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "dark_oak_hhdark_oak_vvvmangrove"), darkoakHHDarkoakVVVMangrove);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "dark_oak_hhdark_oak_vvvmangrove_fence_gate_closed"), darkoakHHDarkoakVVVMangroveGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "dark_oak_hhdark_oak_vvmangrove"), darkoakHHDarkoakVVMangrove);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "dark_oak_hhdark_oak_vvmangrove_fence_gate_closed"), darkoakHHDarkoakVVMangroveGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "dark_oak_hhhmangrove_vvvvdark_oak_vvvvdark_oak"), darkoakHHHMangroveVVVVDarkoakVVVVDarkoak);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "dark_oak_hhhmangrove_vvvvdark_oak_vvvvdark_oak_fence_gate_closed"), darkoakHHHMangroveVVVVDarkoakVVVVDarkoakGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "dark_oak_hhmangrove_xxmangrove"), darkoakHHMangroveXXMangrove);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "dark_oak_hhdark_oak_vvvvmangrove"), darkoakHHDarkoakVVVVMangrove);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "dark_oak_hhdark_oak_vvvvmangrove_fence_gate_closed"), darkoakHHDarkoakVVVVMangroveGate);
+
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhwarped"), mangroveHHWarped);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhhwarped"), mangroveHHHWarped);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhwarped_vmangrove"), mangroveHHWarpedVMangrove);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhwarped_vmangrove_fence_gate_closed"), mangroveHHWarpedVMangroveGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhwarped_vvwarped"), mangroveHHWarpedVVWarped);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhmangrove_vvvwarped"), mangroveHHMangroveVVVWarped);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhmangrove_vvvwarped_fence_gate_closed"), mangroveHHMangroveVVVWarpedGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhmangrove_vvwarped"), mangroveHHMangroveVVWarped);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhmangrove_vvwarped_fence_gate_closed"), mangroveHHMangroveVVWarpedGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhhwarped_vvvvmangrove_vvvvmangrove"), mangroveHHHWarpedVVVVMangroveVVVVMangrove);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhhwarped_vvvvmangrove_vvvvmangrove_fence_gate_closed"), mangroveHHHWarpedVVVVMangroveVVVVMangroveGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhwarped_xxwarped"), mangroveHHWarpedXXWarped);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhmangrove_vvvvwarped"), mangroveHHMangroveVVVVWarped);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "mangrove_hhmangrove_vvvvwarped_fence_gate_closed"), mangroveHHMangroveVVVVWarpedGate);
+
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "warped_hhmangrove"), warpedHHMangrove);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "warped_hhhmangrove"), warpedHHHMangrove);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "warped_hhmangrove_vwarped"), warpedHHMangroveVWarped);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "warped_hhmangrove_vwarped_fence_gate_closed"), warpedHHMangroveVWarpedGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "warped_hhmangrove_vvmangrove"), warpedHHMangroveVVMangrove);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "warped_hhwarped_vvvmangrove"), warpedHHWarpedVVVMangrove);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "warped_hhwarped_vvvmangrove_fence_gate_closed"), warpedHHWarpedVVVMangroveGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "warped_hhwarped_vvmangrove"), warpedHHWarpedVVMangrove);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "warped_hhwarped_vvmangrove_fence_gate_closed"), warpedHHWarpedVVMangroveGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "warped_hhhmangrove_vvvvwarped_vvvvwarped"), warpedHHHMangroveVVVVWarpedVVVVWarped);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "warped_hhhmangrove_vvvvwarped_vvvvwarped_fence_gate_closed"), warpedHHHMangroveVVVVWarpedVVVVWarpedGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "warped_hhmangrove_xxmangrove"), warpedHHMangroveXXMangrove);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "warped_hhwarped_vvvvmangrove"), warpedHHWarpedVVVVMangrove);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "warped_hhwarped_vvvvmangrove_fence_gate_closed"), warpedHHWarpedVVVVMangroveGate);
 
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "cobblestone_modern"), cobblestoneModern);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "cobblestone_building"), cobblestoneBuilding);
@@ -1072,7 +1558,49 @@ public class ModBlocks {
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "crimson_wall_building"), crimsonWallBuilding);
         Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "warped_wall_building"), warpedWallBuilding);
 
-    }
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "cobblestone_copper_fence"), cobblestoneCopperFence);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "cobblestone_exposed_copper_fence"), cobblestoneExposedCopperFence);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "cobblestone_weathered_copper_fence"), cobblestoneWeatheredCopperFence);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "cobblestone_oxidized_copper_fence"), cobblestoneOxidizedCopperFence);
 
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "copper_fence_gate_closed"), copperFenceGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "exposed_copper_fence_gate_closed"), exposedCopperFenceGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "weathered_copper_fence_gate_closed"), weatheredCopperFenceGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oxidized_copper_fence_gate_closed"), oxidizedCopperFenceGate);
+
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "cobblestone_waxed_copper_fence"), cobblestoneWaxedCopperFence);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "cobblestone_waxed_exposed_copper_fence"), cobblestoneWaxedExposedCopperFence);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "cobblestone_waxed_weathered_copper_fence"), cobblestoneWaxedWeatheredCopperFence);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "cobblestone_waxed_oxidized_copper_fence"), cobblestoneWaxedOxidizedCopperFence);
+
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "waxed_copper_fence_gate_closed"), waxedCopperFenceGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "waxed_exposed_copper_fence_gate_closed"), waxedExposedCopperFenceGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "waxed_weathered_copper_fence_gate_closed"), waxedWeatheredCopperFenceGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "waxed_oxidized_copper_fence_gate_closed"), waxedOxidizedCopperFenceGate);
+
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "cobblestone_iron_fence"), cobblestoneIronFence);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "cobblestone_exposed_iron_fence"), cobblestoneExposedIronFence);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "cobblestone_weathered_iron_fence"), cobblestoneWeatheredIronFence);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "cobblestone_oxidized_iron_fence"), cobblestoneOxidizedIronFence);
+
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "iron_fence_gate_closed"), ironFenceGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "exposed_iron_fence_gate_closed"), exposedIronFenceGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "weathered_iron_fence_gate_closed"), weatheredIronFenceGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "oxidized_iron_fence_gate_closed"), oxidizedIronFenceGate);
+
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "cobblestone_waxed_iron_fence"), cobblestoneWaxedIronFence);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "cobblestone_waxed_exposed_iron_fence"), cobblestoneWaxedExposedIronFence);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "cobblestone_waxed_weathered_iron_fence"), cobblestoneWaxedWeatheredIronFence);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "cobblestone_waxed_oxidized_iron_fence"), cobblestoneWaxedOxidizedIronFence);
+
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "waxed_iron_fence_gate_closed"), waxedIronFenceGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "waxed_exposed_iron_fence_gate_closed"), waxedExposedIronFenceGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "waxed_weathered_iron_fence_gate_closed"), waxedWeatheredIronFenceGate);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "waxed_oxidized_iron_fence_gate_closed"), waxedOxidizedIronFenceGate);
+
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "cobblestone_gold_fence"), cobblestoneGoldFence);
+        Registry.register(Registry.BLOCK, new Identifier(Main.MOD_ID, "gold_fence_gate_closed"), goldFenceGate);
+
+    }
 
 }

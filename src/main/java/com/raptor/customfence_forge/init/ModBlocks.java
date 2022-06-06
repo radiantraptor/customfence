@@ -2,14 +2,22 @@ package com.raptor.customfence_forge.init;
 
 import com.raptor.customfence_forge.Main;
 import com.raptor.customfence_forge.blocks.*;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.item.HoneycombItem;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.MaterialColor;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 @SuppressWarnings({"WeakerAccess", "unused"})
+@Mod.EventBusSubscriber(modid = Main.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ModBlocks {
 
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Main.MOD_ID);
@@ -54,6 +62,11 @@ public class ModBlocks {
     public static final RegistryObject<Block> HHCrimsonVVCrimsonGate = BLOCKS.register("hhcrimson_vvcrimson_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> HHCrimsonXXCrimsonGate = BLOCKS.register("hhcrimson_xxcrimson_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
 
+    public static final RegistryObject<Block> HHMangroveGate = BLOCKS.register("hhmangrove_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> HHHMangroveGate = BLOCKS.register("hhhmangrove_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> HHMangroveVVMangroveGate = BLOCKS.register("hhmangrove_vvmangrove_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> HHMangroveXXMangroveGate = BLOCKS.register("hhmangrove_xxmangrove_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+
     public static final RegistryObject<Block> spruceHHOak = BLOCKS.register("spruce_hhoak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> spruceHHHOak = BLOCKS.register("spruce_hhhoak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> spruceHHOakVSpruce = BLOCKS.register("spruce_hhoak_vspruce", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
@@ -66,6 +79,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> spruceHHHOakVVVVSpruceVVVVSpruce = BLOCKS.register("spruce_hhhoak_vvvvspruce_vvvvspruce", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> spruceHHHOakVVVVSpruceVVVVSpruceGate = BLOCKS.register("spruce_hhhoak_vvvvspruce_vvvvspruce_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> spruceHHOakXXOak = BLOCKS.register("spruce_hhoak_xxoak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> spruceHHSpruceVVVVOak = BLOCKS.register("spruce_hhspruce_vvvvoak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> spruceHHSpruceVVVVOakGate = BLOCKS.register("spruce_hhspruce_vvvvoak_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
 
     public static final RegistryObject<Block> oakHHSpruce = BLOCKS.register("oak_hhspruce", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> oakHHHSpruce = BLOCKS.register("oak_hhhspruce", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
@@ -79,6 +94,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> oakHHHSpruceVVVVOakVVVVOak = BLOCKS.register("oak_hhhspruce_vvvvoak_vvvvoak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> oakHHHSpruceVVVVOakVVVVOakGate = BLOCKS.register("oak_hhhspruce_vvvvoak_vvvvoak_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> oakHHSpruceXXSpruce = BLOCKS.register("oak_hhspruce_xxspruce", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> oakHHOakVVVVSpruce = BLOCKS.register("oak_hhoak_vvvvspruce", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> oakHHOakVVVVSpruceGate = BLOCKS.register("oak_hhoak_vvvvspruce_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
 
     public static final RegistryObject<Block> oakHHBirch = BLOCKS.register("oak_hhbirch", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> oakHHHBirch = BLOCKS.register("oak_hhhbirch", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
@@ -92,6 +109,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> oakHHHBirchVVVVOakVVVVOak = BLOCKS.register("oak_hhhbirch_vvvvoak_vvvvoak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> oakHHHBirchVVVVOakVVVVOakGate = BLOCKS.register("oak_hhhbirch_vvvvoak_vvvvoak_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> oakHHBirchXXBirch = BLOCKS.register("oak_hhbirch_xxbirch", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> oakHHOakVVVVBirch = BLOCKS.register("oak_hhoak_vvvvbirch", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> oakHHOakVVVVBirchGate = BLOCKS.register("oak_hhoak_vvvvbirch_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
 
     public static final RegistryObject<Block> birchHHOak = BLOCKS.register("birch_hhoak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> birchHHHOak = BLOCKS.register("birch_hhhoak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
@@ -105,6 +124,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> birchHHHOakVVVVBirchVVVVBirch = BLOCKS.register("birch_hhhoak_vvvvbirch_vvvvbirch", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> birchHHHOakVVVVBirchVVVVBirchGate = BLOCKS.register("birch_hhhoak_vvvvbirch_vvvvbirch_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> birchHHOakXXOak = BLOCKS.register("birch_hhoak_xxoak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> birchHHBirchVVVVOak = BLOCKS.register("birch_hhbirch_vvvvoak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> birchHHBirchVVVVOakGate = BLOCKS.register("birch_hhbirch_vvvvoak_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
 
     public static final RegistryObject<Block> spruceHHBirch = BLOCKS.register("spruce_hhbirch", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> spruceHHHBirch = BLOCKS.register("spruce_hhhbirch", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
@@ -118,6 +139,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> spruceHHHBirchVVVVSpruceVVVVSpruce = BLOCKS.register("spruce_hhhbirch_vvvvspruce_vvvvspruce", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> spruceHHHBirchVVVVSpruceVVVVSpruceGate = BLOCKS.register("spruce_hhhbirch_vvvvspruce_vvvvspruce_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> spruceHHBirchXXBirch = BLOCKS.register("spruce_hhbirch_xxbirch", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> spruceHHSpruceVVVVBirch = BLOCKS.register("spruce_hhspruce_vvvvbirch", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> spruceHHSpruceVVVVBirchGate = BLOCKS.register("spruce_hhspruce_vvvvbirch_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
 
     public static final RegistryObject<Block> birchHHSpruce = BLOCKS.register("birch_hhspruce", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> birchHHHSpruce = BLOCKS.register("birch_hhhspruce", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
@@ -131,6 +154,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> birchHHHSpruceVVVVBirchVVVVBirch = BLOCKS.register("birch_hhhspruce_vvvvbirch_vvvvbirch", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> birchHHHSpruceVVVVBirchVVVVBirchGate = BLOCKS.register("birch_hhhspruce_vvvvbirch_vvvvbirch_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> birchHHSpruceXXSpruce = BLOCKS.register("birch_hhspruce_xxspruce", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> birchHHBirchVVVVSpruce = BLOCKS.register("birch_hhbirch_vvvvspruce", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> birchHHBirchVVVVSpruceGate = BLOCKS.register("birch_hhbirch_vvvvspruce_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
 
     public static final RegistryObject<Block> darkoakHHSpruce = BLOCKS.register("dark_oak_hhspruce", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> darkoakHHHSpruce = BLOCKS.register("dark_oak_hhhspruce", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
@@ -144,6 +169,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> darkoakHHHSpruceVVVVDarkoakVVVVDarkoak = BLOCKS.register("dark_oak_hhhspruce_vvvvdark_oak_vvvvdark_oak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> darkoakHHHSpruceVVVVDarkoakVVVVDarkoakGate = BLOCKS.register("dark_oak_hhhspruce_vvvvdark_oak_vvvvdark_oak_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> darkoakHHSpruceXXSpruce = BLOCKS.register("dark_oak_hhspruce_xxspruce", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> darkoakHHDarkoakVVVVSpruce = BLOCKS.register("dark_oak_hhdark_oak_vvvvspruce", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> darkoakHHDarkoakVVVVSpruceGate = BLOCKS.register("dark_oak_hhdark_oak_vvvvspruce_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
 
     public static final RegistryObject<Block> spruceHHDarkoak = BLOCKS.register("spruce_hhdark_oak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> spruceHHHDarkoak = BLOCKS.register("spruce_hhhdark_oak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
@@ -157,6 +184,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> spruceHHHDarkoakVVVVSpruceVVVVSpruce = BLOCKS.register("spruce_hhhdark_oak_vvvvspruce_vvvvspruce", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> spruceHHHDarkoakVVVVSpruceVVVVSpruceGate = BLOCKS.register("spruce_hhhdark_oak_vvvvspruce_vvvvspruce_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> spruceHHDarkoakXXDarkoak = BLOCKS.register("spruce_hhdark_oak_xxdark_oak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> spruceHHSpruceVVVVDarkoak = BLOCKS.register("spruce_hhspruce_vvvvdark_oak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> spruceHHSpruceVVVVDarkoakGate = BLOCKS.register("spruce_hhspruce_vvvvdark_oak_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
 
     public static final RegistryObject<Block> darkoakHHOak = BLOCKS.register("dark_oak_hhoak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> darkoakHHHOak = BLOCKS.register("dark_oak_hhhoak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
@@ -170,6 +199,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> darkoakHHHOakVVVVDarkoakVVVVDarkoak = BLOCKS.register("dark_oak_hhhoak_vvvvdark_oak_vvvvdark_oak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> darkoakHHHOakVVVVDarkoakVVVVDarkoakGate = BLOCKS.register("dark_oak_hhhoak_vvvvdark_oak_vvvvdark_oak_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> darkoakHHOakXXOak = BLOCKS.register("dark_oak_hhoak_xxoak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> darkoakHHDarkoakVVVVOak = BLOCKS.register("dark_oak_hhdark_oak_vvvvoak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> darkoakHHDarkoakVVVVOakGate = BLOCKS.register("dark_oak_hhdark_oak_vvvvoak_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
 
     public static final RegistryObject<Block> oakHHDarkoak = BLOCKS.register("oak_hhdark_oak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> oakHHHDarkoak = BLOCKS.register("oak_hhhdark_oak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
@@ -183,6 +214,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> oakHHHDarkoakVVVVOakVVVVOak = BLOCKS.register("oak_hhhdark_oak_vvvvoak_vvvvoak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> oakHHHDarkoakVVVVOakVVVVOakGate = BLOCKS.register("oak_hhhdark_oak_vvvvoak_vvvvoak_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> oakHHDarkoakXXDarkoak = BLOCKS.register("oak_hhdark_oak_xxdark_oak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> oakHHOakVVVVDarkoak = BLOCKS.register("oak_hhoak_vvvvdark_oak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> oakHHOakVVVVDarkoakGate = BLOCKS.register("oak_hhoak_vvvvdark_oak_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
 
     public static final RegistryObject<Block> darkoakHHJungle = BLOCKS.register("dark_oak_hhjungle", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> darkoakHHHJungle = BLOCKS.register("dark_oak_hhhjungle", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
@@ -196,6 +229,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> darkoakHHHJungleVVVVDarkoakVVVVDarkoak = BLOCKS.register("dark_oak_hhhjungle_vvvvdark_oak_vvvvdark_oak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> darkoakHHHJungleVVVVDarkoakVVVVDarkoakGate = BLOCKS.register("dark_oak_hhhjungle_vvvvdark_oak_vvvvdark_oak_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> darkoakHHJungleXXJungle = BLOCKS.register("dark_oak_hhjungle_xxjungle", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> darkoakHHDarkoakVVVVJungle = BLOCKS.register("dark_oak_hhdark_oak_vvvvjungle", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> darkoakHHDarkoakVVVVJungleGate = BLOCKS.register("dark_oak_hhdark_oak_vvvvjungle_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
 
     public static final RegistryObject<Block> jungleHHDarkoak = BLOCKS.register("jungle_hhdark_oak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> jungleHHHDarkoak = BLOCKS.register("jungle_hhhdark_oak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
@@ -209,6 +244,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> jungleHHHDarkoakVVVVJungleVVVVJungle = BLOCKS.register("jungle_hhhdark_oak_vvvvjungle_vvvvjungle", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> jungleHHHDarkoakVVVVJungleVVVVJungleGate = BLOCKS.register("jungle_hhhdark_oak_vvvvjungle_vvvvjungle_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> jungleHHDarkoakXXDarkoak = BLOCKS.register("jungle_hhdark_oak_xxdark_oak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> jungleHHJungleVVVVDarkoak = BLOCKS.register("jungle_hhjungle_vvvvdark_oak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> jungleHHJungleVVVVDarkoakGate = BLOCKS.register("jungle_hhjungle_vvvvdark_oak_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
 
     public static final RegistryObject<Block> acaciaHHJungle = BLOCKS.register("acacia_hhjungle", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> acaciaHHHJungle = BLOCKS.register("acacia_hhhjungle", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
@@ -222,6 +259,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> acaciaHHHJungleVVVVAcaciaVVVVAcacia = BLOCKS.register("acacia_hhhjungle_vvvvacacia_vvvvacacia", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> acaciaHHHJungleVVVVAcaciaVVVVAcaciaGate = BLOCKS.register("acacia_hhhjungle_vvvvacacia_vvvvacacia_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> acaciaHHJungleXXJungle = BLOCKS.register("acacia_hhjungle_xxjungle", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> acaciaHHAcaciaVVVVJungle = BLOCKS.register("acacia_hhacacia_vvvvjungle", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> acaciaHHAcaciaVVVVJungleGate = BLOCKS.register("acacia_hhacacia_vvvvjungle_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
 
     public static final RegistryObject<Block> jungleHHAcacia = BLOCKS.register("jungle_hhacacia", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> jungleHHHAcacia = BLOCKS.register("jungle_hhhacacia", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
@@ -235,6 +274,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> jungleHHHAcaciaVVVVJungleVVVVJungle = BLOCKS.register("jungle_hhhacacia_vvvvjungle_vvvvjungle", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> jungleHHHAcaciaVVVVJungleVVVVJungleGate = BLOCKS.register("jungle_hhhacacia_vvvvjungle_vvvvjungle_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> jungleHHAcaciaXXAcacia = BLOCKS.register("jungle_hhacacia_xxacacia", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> jungleHHJungleVVVVAcacia = BLOCKS.register("jungle_hhjungle_vvvvacacia", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> jungleHHJungleVVVVAcaciaGate = BLOCKS.register("jungle_hhjungle_vvvvacacia_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
 
     public static final RegistryObject<Block> acaciaHHBirch = BLOCKS.register("acacia_hhbirch", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> acaciaHHHBirch = BLOCKS.register("acacia_hhhbirch", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
@@ -248,6 +289,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> acaciaHHHBirchVVVVAcaciaVVVVAcacia = BLOCKS.register("acacia_hhhbirch_vvvvacacia_vvvvacacia", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> acaciaHHHBirchVVVVAcaciaVVVVAcaciaGate = BLOCKS.register("acacia_hhhbirch_vvvvacacia_vvvvacacia_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> acaciaHHBirchXXBirch = BLOCKS.register("acacia_hhbirch_xxbirch", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> acaciaHHAcaciaVVVVBirch = BLOCKS.register("acacia_hhacacia_vvvvbirch", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> acaciaHHAcaciaVVVVBirchGate = BLOCKS.register("acacia_hhacacia_vvvvbirch_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
 
     public static final RegistryObject<Block> birchHHAcacia = BLOCKS.register("birch_hhacacia", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> birchHHHAcacia = BLOCKS.register("birch_hhhacacia", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
@@ -261,6 +304,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> birchHHHAcaciaVVVVBirchVVVVBirch = BLOCKS.register("birch_hhhacacia_vvvvbirch_vvvvbirch", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> birchHHHAcaciaVVVVBirchVVVVBirchGate = BLOCKS.register("birch_hhhacacia_vvvvbirch_vvvvbirch_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> birchHHAcaciaXXAcacia = BLOCKS.register("birch_hhacacia_xxacacia", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> birchHHBirchVVVVAcacia = BLOCKS.register("birch_hhbirch_vvvvacacia", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> birchHHBirchVVVVAcaciaGate = BLOCKS.register("birch_hhbirch_vvvvacacia_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
 
     public static final RegistryObject<Block> jungleHHBirch = BLOCKS.register("jungle_hhbirch", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> jungleHHHBirch = BLOCKS.register("jungle_hhhbirch", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
@@ -274,6 +319,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> jungleHHHBirchVVVVJungleVVVVJungle = BLOCKS.register("jungle_hhhbirch_vvvvjungle_vvvvjungle", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> jungleHHHBirchVVVVJungleVVVVJungleGate = BLOCKS.register("jungle_hhhbirch_vvvvjungle_vvvvjungle_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> jungleHHBirchXXBirch = BLOCKS.register("jungle_hhbirch_xxbirch", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> jungleHHJungleVVVVBirch = BLOCKS.register("jungle_hhjungle_vvvvbirch", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> jungleHHJungleVVVVBirchGate = BLOCKS.register("jungle_hhjungle_vvvvbirch_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
 
     public static final RegistryObject<Block> birchHHJungle = BLOCKS.register("birch_hhjungle", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> birchHHHJungle = BLOCKS.register("birch_hhhjungle", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
@@ -287,6 +334,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> birchHHHJungleVVVVBirchVVVVBirch = BLOCKS.register("birch_hhhjungle_vvvvbirch_vvvvbirch", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> birchHHHJungleVVVVBirchVVVVBirchGate = BLOCKS.register("birch_hhhjungle_vvvvbirch_vvvvbirch_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> birchHHJungleXXJungle = BLOCKS.register("birch_hhjungle_xxjungle", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> birchHHBirchVVVVJungle = BLOCKS.register("birch_hhbirch_vvvvjungle", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> birchHHBirchVVVVJungleGate = BLOCKS.register("birch_hhbirch_vvvvjungle_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
 
     public static final RegistryObject<Block> warpedHHBirch = BLOCKS.register("warped_hhbirch", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> warpedHHHBirch = BLOCKS.register("warped_hhhbirch", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
@@ -300,6 +349,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> warpedHHHBirchVVVVWarpedVVVVWarped = BLOCKS.register("warped_hhhbirch_vvvvwarped_vvvvwarped", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> warpedHHHBirchVVVVWarpedVVVVWarpedGate = BLOCKS.register("warped_hhhbirch_vvvvwarped_vvvvwarped_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> warpedHHBirchXXBirch = BLOCKS.register("warped_hhbirch_xxbirch", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> warpedHHWarpedVVVVBirch = BLOCKS.register("warped_hhwarped_vvvvbirch", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> warpedHHWarpedVVVVBirchGate = BLOCKS.register("warped_hhwarped_vvvvbirch_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
 
     public static final RegistryObject<Block> birchHHWarped = BLOCKS.register("birch_hhwarped", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> birchHHHWarped = BLOCKS.register("birch_hhhwarped", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
@@ -313,6 +364,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> birchHHHWarpedVVVVBirchVVVVBirch = BLOCKS.register("birch_hhhwarped_vvvvbirch_vvvvbirch", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> birchHHHWarpedVVVVBirchVVVVBirchGate = BLOCKS.register("birch_hhhwarped_vvvvbirch_vvvvbirch_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> birchHHWarpedXXWarped = BLOCKS.register("birch_hhwarped_xxwarped", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> birchHHBirchVVVVWarped = BLOCKS.register("birch_hhbirch_vvvvwarped", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> birchHHBirchVVVVWarpedGate = BLOCKS.register("birch_hhbirch_vvvvwarped_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
 
     public static final RegistryObject<Block> warpedHHOak = BLOCKS.register("warped_hhoak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> warpedHHHOak = BLOCKS.register("warped_hhhoak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
@@ -326,6 +379,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> warpedHHHOakVVVVWarpedVVVVWarped = BLOCKS.register("warped_hhhoak_vvvvwarped_vvvvwarped", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> warpedHHHOakVVVVWarpedVVVVWarpedGate = BLOCKS.register("warped_hhhoak_vvvvwarped_vvvvwarped_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> warpedHHOakXXOak = BLOCKS.register("warped_hhoak_xxoak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> warpedHHWarpedVVVVOak = BLOCKS.register("warped_hhwarped_vvvvoak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> warpedHHWarpedVVVVOakGate = BLOCKS.register("warped_hhwarped_vvvvoak_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
 
     public static final RegistryObject<Block> oakHHWarped = BLOCKS.register("oak_hhwarped", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> oakHHHWarped = BLOCKS.register("oak_hhhwarped", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
@@ -339,6 +394,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> oakHHHWarpedVVVVOakVVVVOak = BLOCKS.register("oak_hhhwarped_vvvvoak_vvvvoak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> oakHHHWarpedVVVVOakVVVVOakGate = BLOCKS.register("oak_hhhwarped_vvvvoak_vvvvoak_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> oakHHWarpedXXWarped = BLOCKS.register("oak_hhwarped_xxwarped", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> oakHHOakVVVVWarped = BLOCKS.register("oak_hhoak_vvvvwarped", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> oakHHOakVVVVWarpedGate = BLOCKS.register("oak_hhoak_vvvvwarped_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
 
     public static final RegistryObject<Block> warpedHHSpruce = BLOCKS.register("warped_hhspruce", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> warpedHHHSpruce = BLOCKS.register("warped_hhhspruce", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
@@ -352,6 +409,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> warpedHHHSpruceVVVVWarpedVVVVWarped = BLOCKS.register("warped_hhhspruce_vvvvwarped_vvvvwarped", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> warpedHHHSpruceVVVVWarpedVVVVWarpedGate = BLOCKS.register("warped_hhhspruce_vvvvwarped_vvvvwarped_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> warpedHHSpruceXXSpruce = BLOCKS.register("warped_hhspruce_xxspruce", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> warpedHHWarpedVVVVSpruce = BLOCKS.register("warped_hhwarped_vvvvspruce", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> warpedHHWarpedVVVVSpruceGate = BLOCKS.register("warped_hhwarped_vvvvspruce_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
 
     public static final RegistryObject<Block> spruceHHWarped = BLOCKS.register("spruce_hhwarped", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> spruceHHHWarped = BLOCKS.register("spruce_hhhwarped", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
@@ -365,6 +424,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> spruceHHHWarpedVVVVSpruceVVVVSpruce = BLOCKS.register("spruce_hhhwarped_vvvvspruce_vvvvspruce", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> spruceHHHWarpedVVVVSpruceVVVVSpruceGate = BLOCKS.register("spruce_hhhwarped_vvvvspruce_vvvvspruce_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> spruceHHWarpedXXWarped = BLOCKS.register("spruce_hhwarped_xxwarped", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> spruceHHSpruceVVVVWarped = BLOCKS.register("spruce_hhspruce_vvvvwarped", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> spruceHHSpruceVVVVWarpedGate = BLOCKS.register("spruce_hhspruce_vvvvwarped_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
 
     public static final RegistryObject<Block> crimsonHHJungle = BLOCKS.register("crimson_hhjungle", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> crimsonHHHJungle = BLOCKS.register("crimson_hhhjungle", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
@@ -378,6 +439,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> crimsonHHHJungleVVVVCrimsonVVVVCrimson = BLOCKS.register("crimson_hhhjungle_vvvvcrimson_vvvvcrimson", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> crimsonHHHJungleVVVVCrimsonVVVVCrimsonGate = BLOCKS.register("crimson_hhhjungle_vvvvcrimson_vvvvcrimson_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> crimsonHHJungleXXJungle = BLOCKS.register("crimson_hhjungle_xxjungle", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> crimsonHHCrimsonVVVVJungle = BLOCKS.register("crimson_hhcrimson_vvvvjungle", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> crimsonHHCrimsonVVVVJungleGate = BLOCKS.register("crimson_hhcrimson_vvvvjungle_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
 
     public static final RegistryObject<Block> jungleHHCrimson = BLOCKS.register("jungle_hhcrimson", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> jungleHHHCrimson = BLOCKS.register("jungle_hhhcrimson", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
@@ -391,6 +454,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> jungleHHHCrimsonVVVVJungleVVVVJungle = BLOCKS.register("jungle_hhhcrimson_vvvvjungle_vvvvjungle", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> jungleHHHCrimsonVVVVJungleVVVVJungleGate = BLOCKS.register("jungle_hhhcrimson_vvvvjungle_vvvvjungle_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> jungleHHCrimsonXXCrimson = BLOCKS.register("jungle_hhcrimson_xxcrimson", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> jungleHHJungleVVVVCrimson = BLOCKS.register("jungle_hhjungle_vvvvcrimson", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> jungleHHJungleVVVVCrimsonGate = BLOCKS.register("jungle_hhjungle_vvvvcrimson_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
 
     public static final RegistryObject<Block> crimsonHHOak = BLOCKS.register("crimson_hhoak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> crimsonHHHOak = BLOCKS.register("crimson_hhhoak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
@@ -404,6 +469,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> crimsonHHHOakVVVVCrimsonVVVVCrimson = BLOCKS.register("crimson_hhhoak_vvvvcrimson_vvvvcrimson", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> crimsonHHHOakVVVVCrimsonVVVVCrimsonGate = BLOCKS.register("crimson_hhhoak_vvvvcrimson_vvvvcrimson_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> crimsonHHOakXXOak = BLOCKS.register("crimson_hhoak_xxoak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> crimsonHHCrimsonVVVVOak = BLOCKS.register("crimson_hhcrimson_vvvvoak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> crimsonHHCrimsonVVVVOakGate = BLOCKS.register("crimson_hhcrimson_vvvvoak_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
 
     public static final RegistryObject<Block> oakHHCrimson = BLOCKS.register("oak_hhcrimson", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> oakHHHCrimson = BLOCKS.register("oak_hhhcrimson", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
@@ -417,6 +484,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> oakHHHCrimsonVVVVOakVVVVOak = BLOCKS.register("oak_hhhcrimson_vvvvoak_vvvvoak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> oakHHHCrimsonVVVVOakVVVVOakGate = BLOCKS.register("oak_hhhcrimson_vvvvoak_vvvvoak_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> oakHHCrimsonXXCrimson = BLOCKS.register("oak_hhcrimson_xxcrimson", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> oakHHOakVVVVCrimson = BLOCKS.register("oak_hhoak_vvvvcrimson", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> oakHHOakVVVVCrimsonGate = BLOCKS.register("oak_hhoak_vvvvcrimson_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
 
     public static final RegistryObject<Block> crimsonHHDarkoak = BLOCKS.register("crimson_hhdark_oak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> crimsonHHHDarkoak = BLOCKS.register("crimson_hhhdark_oak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
@@ -430,6 +499,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> crimsonHHHDarkoakVVVVCrimsonVVVVCrimson = BLOCKS.register("crimson_hhhdark_oak_vvvvcrimson_vvvvcrimson", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> crimsonHHHDarkoakVVVVCrimsonVVVVCrimsonGate = BLOCKS.register("crimson_hhhdark_oak_vvvvcrimson_vvvvcrimson_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> crimsonHHDarkoakXXDarkoak = BLOCKS.register("crimson_hhdark_oak_xxdark_oak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> crimsonHHCrimsonVVVVDarkoak = BLOCKS.register("crimson_hhcrimson_vvvvdark_oak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> crimsonHHCrimsonVVVVDarkoakGate = BLOCKS.register("crimson_hhcrimson_vvvvdark_oak_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
 
     public static final RegistryObject<Block> darkoakHHCrimson = BLOCKS.register("dark_oak_hhcrimson", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> darkoakHHHCrimson = BLOCKS.register("dark_oak_hhhcrimson", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
@@ -443,6 +514,158 @@ public class ModBlocks {
     public static final RegistryObject<Block> darkoakHHHCrimsonVVVVDarkoakVVVVDarkoak = BLOCKS.register("dark_oak_hhhcrimson_vvvvdark_oak_vvvvdark_oak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> darkoakHHHCrimsonVVVVDarkoakVVVVDarkoakGate = BLOCKS.register("dark_oak_hhhcrimson_vvvvdark_oak_vvvvdark_oak_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> darkoakHHCrimsonXXCrimson = BLOCKS.register("dark_oak_hhcrimson_xxcrimson", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> darkoakHHDarkoakVVVVCrimson = BLOCKS.register("dark_oak_hhdark_oak_vvvvcrimson", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> darkoakHHDarkoakVVVVCrimsonGate = BLOCKS.register("dark_oak_hhdark_oak_vvvvcrimson_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+
+    public static final RegistryObject<Block> mangroveHHOak = BLOCKS.register("mangrove_hhoak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHHOak = BLOCKS.register("mangrove_hhhoak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHOakVMangrove = BLOCKS.register("mangrove_hhoak_vmangrove", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHOakVMangroveGate = BLOCKS.register("mangrove_hhoak_vmangrove_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHOakVVOak = BLOCKS.register("mangrove_hhoak_vvoak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHMangroveVVVOak = BLOCKS.register("mangrove_hhmangrove_vvvoak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHMangroveVVVOakGate = BLOCKS.register("mangrove_hhmangrove_vvvoak_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHMangroveVVOak = BLOCKS.register("mangrove_hhmangrove_vvoak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHMangroveVVOakGate = BLOCKS.register("mangrove_hhmangrove_vvoak_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHHOakVVVVMangroveVVVVMangrove = BLOCKS.register("mangrove_hhhoak_vvvvmangrove_vvvvmangrove", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHHOakVVVVMangroveVVVVMangroveGate = BLOCKS.register("mangrove_hhhoak_vvvvmangrove_vvvvmangrove_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHOakXXOak = BLOCKS.register("mangrove_hhoak_xxoak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHMangroveVVVVOak = BLOCKS.register("mangrove_hhmangrove_vvvvoak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHMangroveVVVVOakGate = BLOCKS.register("mangrove_hhmangrove_vvvvoak_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+
+    public static final RegistryObject<Block> oakHHMangrove = BLOCKS.register("oak_hhmangrove", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> oakHHHMangrove = BLOCKS.register("oak_hhhmangrove", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> oakHHMangroveVOak = BLOCKS.register("oak_hhmangrove_voak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> oakHHMangroveVOakGate = BLOCKS.register("oak_hhmangrove_voak_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> oakHHMangroveVVMangrove = BLOCKS.register("oak_hhmangrove_vvmangrove", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> oakHHOakVVVMangrove = BLOCKS.register("oak_hhoak_vvvmangrove", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> oakHHOakVVVMangroveGate = BLOCKS.register("oak_hhoak_vvvmangrove_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> oakHHOakVVMangrove = BLOCKS.register("oak_hhoak_vvmangrove", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> oakHHOakVVMangroveGate = BLOCKS.register("oak_hhoak_vvmangrove_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> oakHHHMangroveVVVVOakVVVVOak = BLOCKS.register("oak_hhhmangrove_vvvvoak_vvvvoak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> oakHHHMangroveVVVVOakVVVVOakGate = BLOCKS.register("oak_hhhmangrove_vvvvoak_vvvvoak_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> oakHHMangroveXXMangrove = BLOCKS.register("oak_hhmangrove_xxmangrove", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> oakHHOakVVVVMangrove = BLOCKS.register("oak_hhoak_vvvvmangrove", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> oakHHOakVVVVMangroveGate = BLOCKS.register("oak_hhoak_vvvvmangrove_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+
+    public static final RegistryObject<Block> mangroveHHBirch = BLOCKS.register("mangrove_hhbirch", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHHBirch = BLOCKS.register("mangrove_hhhbirch", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHBirchVMangrove = BLOCKS.register("mangrove_hhbirch_vmangrove", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHBirchVMangroveGate = BLOCKS.register("mangrove_hhbirch_vmangrove_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHBirchVVBirch = BLOCKS.register("mangrove_hhbirch_vvbirch", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHMangroveVVVBirch = BLOCKS.register("mangrove_hhmangrove_vvvbirch", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHMangroveVVVBirchGate = BLOCKS.register("mangrove_hhmangrove_vvvbirch_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHMangroveVVBirch = BLOCKS.register("mangrove_hhmangrove_vvbirch", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHMangroveVVBirchGate = BLOCKS.register("mangrove_hhmangrove_vvbirch_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHHBirchVVVVMangroveVVVVMangrove = BLOCKS.register("mangrove_hhhbirch_vvvvmangrove_vvvvmangrove", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHHBirchVVVVMangroveVVVVMangroveGate = BLOCKS.register("mangrove_hhhbirch_vvvvmangrove_vvvvmangrove_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHBirchXXBirch = BLOCKS.register("mangrove_hhbirch_xxbirch", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHMangroveVVVVBirch = BLOCKS.register("mangrove_hhmangrove_vvvvbirch", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHMangroveVVVVBirchGate = BLOCKS.register("mangrove_hhmangrove_vvvvbirch_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+
+    public static final RegistryObject<Block> birchHHMangrove = BLOCKS.register("birch_hhmangrove", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> birchHHHMangrove = BLOCKS.register("birch_hhhmangrove", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> birchHHMangroveVBirch = BLOCKS.register("birch_hhmangrove_vbirch", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> birchHHMangroveVBirchGate = BLOCKS.register("birch_hhmangrove_vbirch_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> birchHHMangroveVVMangrove = BLOCKS.register("birch_hhmangrove_vvmangrove", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> birchHHBirchVVVMangrove = BLOCKS.register("birch_hhbirch_vvvmangrove", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> birchHHBirchVVVMangroveGate = BLOCKS.register("birch_hhbirch_vvvmangrove_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> birchHHBirchVVMangrove = BLOCKS.register("birch_hhbirch_vvmangrove", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> birchHHBirchVVMangroveGate = BLOCKS.register("birch_hhbirch_vvmangrove_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> birchHHHMangroveVVVVBirchVVVVBirch = BLOCKS.register("birch_hhhmangrove_vvvvbirch_vvvvbirch", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> birchHHHMangroveVVVVBirchVVVVBirchGate = BLOCKS.register("birch_hhhmangrove_vvvvbirch_vvvvbirch_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> birchHHMangroveXXMangrove = BLOCKS.register("birch_hhmangrove_xxmangrove", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> birchHHBirchVVVVMangrove = BLOCKS.register("birch_hhbirch_vvvvmangrove", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> birchHHBirchVVVVMangroveGate = BLOCKS.register("birch_hhbirch_vvvvmangrove_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+
+    public static final RegistryObject<Block> mangroveHHJungle = BLOCKS.register("mangrove_hhjungle", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHHJungle = BLOCKS.register("mangrove_hhhjungle", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHJungleVMangrove = BLOCKS.register("mangrove_hhjungle_vmangrove", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHJungleVMangroveGate = BLOCKS.register("mangrove_hhjungle_vmangrove_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHJungleVVJungle = BLOCKS.register("mangrove_hhjungle_vvjungle", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHMangroveVVVJungle = BLOCKS.register("mangrove_hhmangrove_vvvjungle", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHMangroveVVVJungleGate = BLOCKS.register("mangrove_hhmangrove_vvvjungle_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHMangroveVVJungle = BLOCKS.register("mangrove_hhmangrove_vvjungle", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHMangroveVVJungleGate = BLOCKS.register("mangrove_hhmangrove_vvjungle_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHHJungleVVVVMangroveVVVVMangrove = BLOCKS.register("mangrove_hhhjungle_vvvvmangrove_vvvvmangrove", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHHJungleVVVVMangroveVVVVMangroveGate = BLOCKS.register("mangrove_hhhjungle_vvvvmangrove_vvvvmangrove_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHJungleXXJungle = BLOCKS.register("mangrove_hhjungle_xxjungle", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHMangroveVVVVJungle = BLOCKS.register("mangrove_hhmangrove_vvvvjungle", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHMangroveVVVVJungleGate = BLOCKS.register("mangrove_hhmangrove_vvvvjungle_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+
+    public static final RegistryObject<Block> jungleHHMangrove = BLOCKS.register("jungle_hhmangrove", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> jungleHHHMangrove = BLOCKS.register("jungle_hhhmangrove", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> jungleHHMangroveVJungle = BLOCKS.register("jungle_hhmangrove_vjungle", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> jungleHHMangroveVJungleGate = BLOCKS.register("jungle_hhmangrove_vjungle_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> jungleHHMangroveVVMangrove = BLOCKS.register("jungle_hhmangrove_vvmangrove", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> jungleHHJungleVVVMangrove = BLOCKS.register("jungle_hhjungle_vvvmangrove", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> jungleHHJungleVVVMangroveGate = BLOCKS.register("jungle_hhjungle_vvvmangrove_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> jungleHHJungleVVMangrove = BLOCKS.register("jungle_hhjungle_vvmangrove", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> jungleHHJungleVVMangroveGate = BLOCKS.register("jungle_hhjungle_vvmangrove_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> jungleHHHMangroveVVVVJungleVVVVJungle = BLOCKS.register("jungle_hhhmangrove_vvvvjungle_vvvvjungle", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> jungleHHHMangroveVVVVJungleVVVVJungleGate = BLOCKS.register("jungle_hhhmangrove_vvvvjungle_vvvvjungle_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> jungleHHMangroveXXMangrove = BLOCKS.register("jungle_hhmangrove_xxmangrove", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> jungleHHJungleVVVVMangrove = BLOCKS.register("jungle_hhjungle_vvvvmangrove", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> jungleHHJungleVVVVMangroveGate = BLOCKS.register("jungle_hhjungle_vvvvmangrove_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+
+    public static final RegistryObject<Block> mangroveHHDarkoak = BLOCKS.register("mangrove_hhdark_oak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHHDarkoak = BLOCKS.register("mangrove_hhhdark_oak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHDarkoakVMangrove = BLOCKS.register("mangrove_hhdark_oak_vmangrove", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHDarkoakVMangroveGate = BLOCKS.register("mangrove_hhdark_oak_vmangrove_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHDarkoakVVDarkoak = BLOCKS.register("mangrove_hhdark_oak_vvdark_oak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHMangroveVVVDarkoak = BLOCKS.register("mangrove_hhmangrove_vvvdark_oak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHMangroveVVVDarkoakGate = BLOCKS.register("mangrove_hhmangrove_vvvdark_oak_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHMangroveVVDarkoak = BLOCKS.register("mangrove_hhmangrove_vvdark_oak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHMangroveVVDarkoakGate = BLOCKS.register("mangrove_hhmangrove_vvdark_oak_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHHDarkoakVVVVMangroveVVVVMangrove = BLOCKS.register("mangrove_hhhdark_oak_vvvvmangrove_vvvvmangrove", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHHDarkoakVVVVMangroveVVVVMangroveGate = BLOCKS.register("mangrove_hhhdark_oak_vvvvmangrove_vvvvmangrove_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHDarkoakXXDarkoak = BLOCKS.register("mangrove_hhdark_oak_xxdark_oak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHMangroveVVVVDarkoak = BLOCKS.register("mangrove_hhmangrove_vvvvdark_oak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHMangroveVVVVDarkoakGate = BLOCKS.register("mangrove_hhmangrove_vvvvdark_oak_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+
+    public static final RegistryObject<Block> darkoakHHMangrove = BLOCKS.register("dark_oak_hhmangrove", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> darkoakHHHMangrove = BLOCKS.register("dark_oak_hhhmangrove", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> darkoakHHMangroveVDarkoak = BLOCKS.register("dark_oak_hhmangrove_vdark_oak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> darkoakHHMangroveVDarkoakGate = BLOCKS.register("dark_oak_hhmangrove_vdark_oak_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> darkoakHHMangroveVVMangrove = BLOCKS.register("dark_oak_hhmangrove_vvmangrove", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> darkoakHHDarkoakVVVMangrove = BLOCKS.register("dark_oak_hhdark_oak_vvvmangrove", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> darkoakHHDarkoakVVVMangroveGate = BLOCKS.register("dark_oak_hhdark_oak_vvvmangrove_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> darkoakHHDarkoakVVMangrove = BLOCKS.register("dark_oak_hhdark_oak_vvmangrove", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> darkoakHHDarkoakVVMangroveGate = BLOCKS.register("dark_oak_hhdark_oak_vvmangrove_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> darkoakHHHMangroveVVVVDarkoakVVVVDarkoak = BLOCKS.register("dark_oak_hhhmangrove_vvvvdark_oak_vvvvdark_oak", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> darkoakHHHMangroveVVVVDarkoakVVVVDarkoakGate = BLOCKS.register("dark_oak_hhhmangrove_vvvvdark_oak_vvvvdark_oak_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> darkoakHHMangroveXXMangrove = BLOCKS.register("dark_oak_hhmangrove_xxmangrove", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> darkoakHHDarkoakVVVVMangrove = BLOCKS.register("dark_oak_hhdark_oak_vvvvmangrove", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> darkoakHHDarkoakVVVVMangroveGate = BLOCKS.register("dark_oak_hhdark_oak_vvvvmangrove_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+
+    public static final RegistryObject<Block> mangroveHHWarped = BLOCKS.register("mangrove_hhwarped", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHHWarped = BLOCKS.register("mangrove_hhhwarped", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHWarpedVMangrove = BLOCKS.register("mangrove_hhwarped_vmangrove", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHWarpedVMangroveGate = BLOCKS.register("mangrove_hhwarped_vmangrove_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHWarpedVVWarped = BLOCKS.register("mangrove_hhwarped_vvwarped", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHMangroveVVVWarped = BLOCKS.register("mangrove_hhmangrove_vvvwarped", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHMangroveVVVWarpedGate = BLOCKS.register("mangrove_hhmangrove_vvvwarped_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHMangroveVVWarped = BLOCKS.register("mangrove_hhmangrove_vvwarped", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHMangroveVVWarpedGate = BLOCKS.register("mangrove_hhmangrove_vvwarped_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHHWarpedVVVVMangroveVVVVMangrove = BLOCKS.register("mangrove_hhhwarped_vvvvmangrove_vvvvmangrove", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHHWarpedVVVVMangroveVVVVMangroveGate = BLOCKS.register("mangrove_hhhwarped_vvvvmangrove_vvvvmangrove_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHWarpedXXWarped = BLOCKS.register("mangrove_hhwarped_xxwarped", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHMangroveVVVVWarped = BLOCKS.register("mangrove_hhmangrove_vvvvwarped", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> mangroveHHMangroveVVVVWarpedGate = BLOCKS.register("mangrove_hhmangrove_vvvvwarped_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+
+    public static final RegistryObject<Block> warpedHHMangrove = BLOCKS.register("warped_hhmangrove", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> warpedHHHMangrove = BLOCKS.register("warped_hhhmangrove", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> warpedHHMangroveVWarped = BLOCKS.register("warped_hhmangrove_vwarped", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> warpedHHMangroveVWarpedGate = BLOCKS.register("warped_hhmangrove_vwarped_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> warpedHHMangroveVVMangrove = BLOCKS.register("warped_hhmangrove_vvmangrove", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> warpedHHWarpedVVVMangrove = BLOCKS.register("warped_hhwarped_vvvmangrove", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> warpedHHWarpedVVVMangroveGate = BLOCKS.register("warped_hhwarped_vvvmangrove_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> warpedHHWarpedVVMangrove = BLOCKS.register("warped_hhwarped_vvmangrove", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> warpedHHWarpedVVMangroveGate = BLOCKS.register("warped_hhwarped_vvmangrove_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> warpedHHHMangroveVVVVWarpedVVVVWarped = BLOCKS.register("warped_hhhmangrove_vvvvwarped_vvvvwarped", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> warpedHHHMangroveVVVVWarpedVVVVWarpedGate = BLOCKS.register("warped_hhhmangrove_vvvvwarped_vvvvwarped_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> warpedHHMangroveXXMangrove = BLOCKS.register("warped_hhmangrove_xxmangrove", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> warpedHHWarpedVVVVMangrove = BLOCKS.register("warped_hhwarped_vvvvmangrove", () -> new Fence(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> warpedHHWarpedVVVVMangroveGate = BLOCKS.register("warped_hhwarped_vvvvmangrove_fence_gate_closed", () -> new FenceGate(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
 
     public static final RegistryObject<Block> cobblestoneModern = BLOCKS.register("cobblestone_modern", () -> new Wall(Block.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(2.0f, 6.0f).sound(SoundType.STONE)));
     public static final RegistryObject<Block> cobblestoneBuilding = BLOCKS.register("cobblestone_building", () -> new Wall(Block.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(2.0f, 6.0f).sound(SoundType.STONE)));
@@ -540,5 +763,63 @@ public class ModBlocks {
     public static final RegistryObject<Block> darkoakWallBuilding = BLOCKS.register("dark_oak_wall_building", () -> new WoodWall(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> crimsonWallBuilding = BLOCKS.register("crimson_wall_building", () -> new WoodWall(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> warpedWallBuilding = BLOCKS.register("warped_wall_building", () -> new WoodWall(Block.Properties.of(Material.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+
+    public static final RegistryObject<Block> cobblestoneCopperFence = BLOCKS.register("cobblestone_copper_fence", () -> new MetalFence(WeatheringFence.WeatherState.UNAFFECTED, BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_ORANGE).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> cobblestoneExposedCopperFence = BLOCKS.register("cobblestone_exposed_copper_fence", () -> new MetalFence(WeatheringFence.WeatherState.EXPOSED, BlockBehaviour.Properties.of(Material.METAL, MaterialColor.TERRACOTTA_LIGHT_GRAY).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> cobblestoneWeatheredCopperFence = BLOCKS.register("cobblestone_weathered_copper_fence", () -> new MetalFence(WeatheringFence.WeatherState.WEATHERED, BlockBehaviour.Properties.of(Material.METAL, MaterialColor.WARPED_STEM).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> cobblestoneOxidizedCopperFence = BLOCKS.register("cobblestone_oxidized_copper_fence", () -> new MetalFence(WeatheringFence.WeatherState.OXIDIZED, BlockBehaviour.Properties.of(Material.METAL, MaterialColor.WARPED_NYLIUM).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> copperFenceGate = BLOCKS.register("copper_fence_gate_closed", () -> new MetalFenceGate(WeatheringFence.WeatherState.UNAFFECTED, Block.Properties.of(Material.METAL, MaterialColor.COLOR_ORANGE).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.COPPER)));
+    public static final RegistryObject<Block> exposedCopperFenceGate = BLOCKS.register("exposed_copper_fence_gate_closed", () -> new MetalFenceGate(WeatheringFence.WeatherState.EXPOSED, Block.Properties.of(Material.METAL, MaterialColor.TERRACOTTA_LIGHT_GRAY).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.COPPER)));
+    public static final RegistryObject<Block> weatheredCopperFenceGate = BLOCKS.register("weathered_copper_fence_gate_closed", () -> new MetalFenceGate(WeatheringFence.WeatherState.WEATHERED, Block.Properties.of(Material.METAL, MaterialColor.WARPED_STEM).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.COPPER)));
+    public static final RegistryObject<Block> oxidizedCopperFenceGate = BLOCKS.register("oxidized_copper_fence_gate_closed", () -> new MetalFenceGate(WeatheringFence.WeatherState.OXIDIZED, Block.Properties.of(Material.METAL, MaterialColor.WARPED_NYLIUM).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.COPPER)));
+
+    public static final RegistryObject<Block> cobblestoneWaxedCopperFence = BLOCKS.register("cobblestone_waxed_copper_fence", () -> new MetalFence(WeatheringFence.WeatherState.UNAFFECTED, BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_ORANGE).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> cobblestoneWaxedExposedCopperFence = BLOCKS.register("cobblestone_waxed_exposed_copper_fence", () -> new MetalFence(WeatheringFence.WeatherState.EXPOSED, BlockBehaviour.Properties.of(Material.METAL, MaterialColor.TERRACOTTA_LIGHT_GRAY).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> cobblestoneWaxedWeatheredCopperFence = BLOCKS.register("cobblestone_waxed_weathered_copper_fence", () -> new MetalFence(WeatheringFence.WeatherState.WEATHERED, BlockBehaviour.Properties.of(Material.METAL, MaterialColor.WARPED_STEM).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> cobblestoneWaxedOxidizedCopperFence = BLOCKS.register("cobblestone_waxed_oxidized_copper_fence", () -> new MetalFence(WeatheringFence.WeatherState.OXIDIZED, BlockBehaviour.Properties.of(Material.METAL, MaterialColor.WARPED_NYLIUM).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> waxedCopperFenceGate = BLOCKS.register("waxed_copper_fence_gate_closed", () -> new MetalFenceGate(WeatheringFence.WeatherState.UNAFFECTED, Block.Properties.of(Material.METAL, MaterialColor.COLOR_ORANGE).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.COPPER)));
+    public static final RegistryObject<Block> waxedExposedCopperFenceGate = BLOCKS.register("waxed_exposed_copper_fence_gate_closed", () -> new MetalFenceGate(WeatheringFence.WeatherState.EXPOSED, Block.Properties.of(Material.METAL, MaterialColor.TERRACOTTA_LIGHT_GRAY).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.COPPER)));
+    public static final RegistryObject<Block> waxedWeatheredCopperFenceGate = BLOCKS.register("waxed_weathered_copper_fence_gate_closed", () -> new MetalFenceGate(WeatheringFence.WeatherState.WEATHERED, Block.Properties.of(Material.METAL, MaterialColor.WARPED_STEM).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.COPPER)));
+    public static final RegistryObject<Block> waxedOxidizedCopperFenceGate = BLOCKS.register("waxed_oxidized_copper_fence_gate_closed", () -> new MetalFenceGate(WeatheringFence.WeatherState.OXIDIZED, Block.Properties.of(Material.METAL, MaterialColor.WARPED_NYLIUM).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.COPPER)));
+
+    public static final RegistryObject<Block> cobblestoneIronFence = BLOCKS.register("cobblestone_iron_fence", () -> new MetalFence(WeatheringFence.WeatherState.UNAFFECTED, BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_ORANGE).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> cobblestoneExposedIronFence = BLOCKS.register("cobblestone_exposed_iron_fence", () -> new MetalFence(WeatheringFence.WeatherState.EXPOSED, BlockBehaviour.Properties.of(Material.METAL, MaterialColor.TERRACOTTA_LIGHT_GRAY).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> cobblestoneWeatheredIronFence = BLOCKS.register("cobblestone_weathered_iron_fence", () -> new MetalFence(WeatheringFence.WeatherState.WEATHERED, BlockBehaviour.Properties.of(Material.METAL, MaterialColor.WARPED_STEM).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> cobblestoneOxidizedIronFence = BLOCKS.register("cobblestone_oxidized_iron_fence", () -> new MetalFence(WeatheringFence.WeatherState.OXIDIZED, BlockBehaviour.Properties.of(Material.METAL, MaterialColor.WARPED_NYLIUM).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> ironFenceGate = BLOCKS.register("iron_fence_gate_closed", () -> new MetalFenceGate(WeatheringFence.WeatherState.UNAFFECTED, Block.Properties.of(Material.METAL, MaterialColor.COLOR_ORANGE).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.COPPER)));
+    public static final RegistryObject<Block> exposedIronFenceGate = BLOCKS.register("exposed_iron_fence_gate_closed", () -> new MetalFenceGate(WeatheringFence.WeatherState.EXPOSED, Block.Properties.of(Material.METAL, MaterialColor.TERRACOTTA_LIGHT_GRAY).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.COPPER)));
+    public static final RegistryObject<Block> weatheredIronFenceGate = BLOCKS.register("weathered_iron_fence_gate_closed", () -> new MetalFenceGate(WeatheringFence.WeatherState.WEATHERED, Block.Properties.of(Material.METAL, MaterialColor.WARPED_STEM).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.COPPER)));
+    public static final RegistryObject<Block> oxidizedIronFenceGate = BLOCKS.register("oxidized_iron_fence_gate_closed", () -> new MetalFenceGate(WeatheringFence.WeatherState.OXIDIZED, Block.Properties.of(Material.METAL, MaterialColor.WARPED_NYLIUM).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.COPPER)));
+
+    public static final RegistryObject<Block> cobblestoneWaxedIronFence = BLOCKS.register("cobblestone_waxed_iron_fence", () -> new MetalFence(WeatheringFence.WeatherState.UNAFFECTED, BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_ORANGE).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> cobblestoneWaxedExposedIronFence = BLOCKS.register("cobblestone_waxed_exposed_iron_fence", () -> new MetalFence(WeatheringFence.WeatherState.EXPOSED, BlockBehaviour.Properties.of(Material.METAL, MaterialColor.TERRACOTTA_LIGHT_GRAY).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> cobblestoneWaxedWeatheredIronFence = BLOCKS.register("cobblestone_waxed_weathered_iron_fence", () -> new MetalFence(WeatheringFence.WeatherState.WEATHERED, BlockBehaviour.Properties.of(Material.METAL, MaterialColor.WARPED_STEM).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> cobblestoneWaxedOxidizedIronFence = BLOCKS.register("cobblestone_waxed_oxidized_iron_fence", () -> new MetalFence(WeatheringFence.WeatherState.OXIDIZED, BlockBehaviour.Properties.of(Material.METAL, MaterialColor.WARPED_NYLIUM).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> waxedIronFenceGate = BLOCKS.register("waxed_iron_fence_gate_closed", () -> new MetalFenceGate(WeatheringFence.WeatherState.UNAFFECTED, Block.Properties.of(Material.METAL, MaterialColor.COLOR_ORANGE).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.COPPER)));
+    public static final RegistryObject<Block> waxedExposedIronFenceGate = BLOCKS.register("waxed_exposed_iron_fence_gate_closed", () -> new MetalFenceGate(WeatheringFence.WeatherState.EXPOSED, Block.Properties.of(Material.METAL, MaterialColor.TERRACOTTA_LIGHT_GRAY).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.COPPER)));
+    public static final RegistryObject<Block> waxedWeatheredIronFenceGate = BLOCKS.register("waxed_weathered_iron_fence_gate_closed", () -> new MetalFenceGate(WeatheringFence.WeatherState.WEATHERED, Block.Properties.of(Material.METAL, MaterialColor.WARPED_STEM).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.COPPER)));
+    public static final RegistryObject<Block> waxedOxidizedIronFenceGate = BLOCKS.register("waxed_oxidized_iron_fence_gate_closed", () -> new MetalFenceGate(WeatheringFence.WeatherState.OXIDIZED, Block.Properties.of(Material.METAL, MaterialColor.WARPED_NYLIUM).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.COPPER)));
+
+    public static final RegistryObject<Block> cobblestoneGoldFence = BLOCKS.register("cobblestone_gold_fence", () -> new MetalFence(WeatheringFence.WeatherState.UNAFFECTED, BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_ORANGE).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> goldFenceGate = BLOCKS.register("gold_fence_gate_closed", () -> new MetalFenceGate(WeatheringFence.WeatherState.UNAFFECTED, Block.Properties.of(Material.METAL, MaterialColor.COLOR_ORANGE).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.COPPER)));
+
+    @SubscribeEvent()
+    public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
+        if (event.getItemStack().getItem() instanceof HoneycombItem) {
+            if (WaxedMetal.getWaxed(event.getWorld().getBlockState(event.getPos())).orElse(null) != null) {
+                event.getWorld().levelEvent(event.getPlayer(), 3003, event.getPos(), 0);
+                event.getWorld().setBlockAndUpdate(event.getPos(), WaxedMetal.getWaxed(event.getWorld().getBlockState(event.getPos())).orElse(null));
+                if (event.getPlayer() != null && !event.getPlayer().isCreative()) {
+                    event.getItemStack().shrink(1);
+                }
+                event.setCanceled(true);
+                event.setCancellationResult(InteractionResult.sidedSuccess(event.getWorld().isClientSide));
+            }
+        }
+    }
 
 }

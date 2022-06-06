@@ -12,127 +12,51 @@ import net.minecraft.world.BlockView;
 public class WoodWall extends FenceBlock {
 
     VoxelShape BUILD_POST_BB = Block.createCuboidShape(4.0F, 0.0F, 4.0F, 12.0F, 16.0F, 12.0F);
-    VoxelShape BUILD_NORTH_BB = Block.createCuboidShape(4.0F, 0.0F, 0.0F, 12.0F, 16.0F, 4.0F);
-    VoxelShape BUILD_EAST_BB = Block.createCuboidShape(12.0F, 0.0F, 4.0F, 16.0F, 16.0F, 12.0F);
-    VoxelShape BUILD_SOUTH_BB = Block.createCuboidShape(4.0F, 0.0F, 12.0F, 12.0F, 16.0F, 16.0F);
-    VoxelShape BUILD_WEST_BB = Block.createCuboidShape(0.0F, 0.0F, 4.0F, 4.0F, 16.0F, 12.0F);
-    VoxelShape BUILD_POST_NORTH_BB = Block.createCuboidShape(4.0F, 0.0F, 0.0F, 12.0F, 16.0F, 12.0F);
-    VoxelShape BUILD_POST_EAST_BB = Block.createCuboidShape(4.0F, 0.0F, 4.0F, 16.0F, 16.0F, 12.0F);
-    VoxelShape BUILD_POST_SOUTH_BB = Block.createCuboidShape(4.0F, 0.0F, 4.0F, 12.0F, 16.0F, 16.0F);
-    VoxelShape BUILD_POST_WEST_BB = Block.createCuboidShape(0.0F, 0.0F, 4.0F, 12.0F, 16.0F, 12.0F);
-    VoxelShape BUILD_POST_NORTH_SOUTH_BB = Block.createCuboidShape(4.0F, 0.0F, 0.0F, 12.0F, 16.0F, 16.0F);
-    VoxelShape BUILD_POST_EAST_WEST_BB = Block.createCuboidShape(0.0F, 0.0F, 4.0F, 16.0F, 16.0F, 12.0F);
+    VoxelShape BUILD_NORTH_BB = Block.createCuboidShape(4.0F, 0.0F, 0.0F, 12.0F, 16.0F, 12.0F);
+    VoxelShape BUILD_EAST_BB = Block.createCuboidShape(4.0F, 0.0F, 4.0F, 16.0F, 16.0F, 12.0F);
+    VoxelShape BUILD_SOUTH_BB = Block.createCuboidShape(4.0F, 0.0F, 4.0F, 12.0F, 16.0F, 16.0F);
+    VoxelShape BUILD_WEST_BB = Block.createCuboidShape(0.0F, 0.0F, 4.0F, 12.0F, 16.0F, 12.0F);
 
-    VoxelShape BUILD_POST_NORTH_SOUTH_CB = Block.createCuboidShape(4.0F, 0.0F, 0.0F, 12.0F, 24.0F, 16.0F);
-    VoxelShape BUILD_POST_EAST_WEST_CB = Block.createCuboidShape(0.0F, 0.0F, 4.0F, 16.0F, 24.0F, 12.0F);
+    VoxelShape BUILD_POST_CB = Block.createCuboidShape(4.0F, 0.0F, 4.0F, 12.0F, 24.0F, 12.0F);
+    VoxelShape BUILD_NORTH_CB = Block.createCuboidShape(4.0F, 0.0F, 0.0F, 12.0F, 24.0F, 12.0F);
+    VoxelShape BUILD_EAST_CB = Block.createCuboidShape(4.0F, 0.0F, 4.0F, 16.0F, 24.0F, 12.0F);
+    VoxelShape BUILD_SOUTH_CB = Block.createCuboidShape(4.0F, 0.0F, 4.0F, 12.0F, 24.0F, 16.0F);
+    VoxelShape BUILD_WEST_CB = Block.createCuboidShape(0.0F, 0.0F, 4.0F, 12.0F, 24.0F, 12.0F);
 
 
     public WoodWall(Settings setting) {
-
         super(setting);
     }
 
 
+    public VoxelShape makebuildShapes (BlockState state, VoxelShape post, VoxelShape north, VoxelShape east, VoxelShape south, VoxelShape west) {
+        VoxelShape shape = post;
+        if (state.toString().contains("north=true")) {
+            shape = VoxelShapes.union(shape, north);
+        }
+        if (state.toString().contains("east=true")) {
+            shape = VoxelShapes.union(shape, east);
+        }
+        if (state.toString().contains("south=true")) {
+            shape = VoxelShapes.union(shape, south);
+        }
+        if (state.toString().contains("west=true")) {
+            shape = VoxelShapes.union(shape, west);
+        }
+        return shape;
+    }
+
+
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        if (state.toString().contains("building")) {
-            if (state.toString().contains("north=false")) {
-                if (state.toString().contains("east=false")) {
-                    if (state.toString().contains("south=false")) {
-                        if (state.toString().contains("west=false")) {
-                            return BUILD_POST_BB;
-                        }
-                        else {
-                            return BUILD_POST_WEST_BB;
-                        }
-                    }
-                    else {
-                        if (state.toString().contains("west=false")) {
-                            return BUILD_POST_SOUTH_BB;
-                        }
-                        else {
-                            return VoxelShapes.union(BUILD_POST_SOUTH_BB, BUILD_WEST_BB);
-                        }
-                    }
-                }
-                else {
-                    if (state.toString().contains("south=false")) {
-                        if (state.toString().contains("west=false")) {
-                            return BUILD_POST_EAST_BB;
-                        }
-                        else {
-                            return BUILD_POST_EAST_WEST_BB;
-                        }
-                    }
-                    else {
-                        if (state.toString().contains("west=false")) {
-                            return VoxelShapes.union(BUILD_POST_EAST_BB, BUILD_SOUTH_BB);
-                        }
-                        else {
-                            return VoxelShapes.union(BUILD_POST_EAST_WEST_BB, BUILD_SOUTH_BB);
-                        }
-                    }
-                }
-            }
-            else {
-                if (state.toString().contains("east=false")) {
-                    if (state.toString().contains("south=false")) {
-                        if (state.toString().contains("west=false")) {
-                            return BUILD_POST_NORTH_BB;
-                        }
-                        else {
-                            return VoxelShapes.union(BUILD_POST_NORTH_BB, BUILD_WEST_BB);
-                        }
-                    }
-                    else {
-                        if (state.toString().contains("west=false")) {
-                            return BUILD_POST_NORTH_SOUTH_BB;
-                        }
-                        else {
-                            return VoxelShapes.union(BUILD_POST_NORTH_SOUTH_BB, BUILD_WEST_BB);
-                        }
-                    }
-                }
-                else {
-                    if (state.toString().contains("south=false")) {
-                        if (state.toString().contains("west=false")) {
-                            return VoxelShapes.union(BUILD_POST_NORTH_BB, BUILD_EAST_BB);
-                        }
-                        else {
-                            return VoxelShapes.union(BUILD_POST_EAST_WEST_BB, BUILD_NORTH_BB);
-                        }
-                    }
-                    else {
-                        if (state.toString().contains("west=false")) {
-                            return VoxelShapes.union(BUILD_POST_NORTH_SOUTH_BB, BUILD_EAST_BB);
-                        }
-                        else {
-                            return VoxelShapes.union(BUILD_POST_NORTH_SOUTH_BB, BUILD_EAST_BB, BUILD_WEST_BB);
-                        }
-                    }
-                }
-            }
-        }
-        else {
-            return super.getOutlineShape(state, world, pos, context);
-        }
+        VoxelShape shape;
+        shape = makebuildShapes(state, BUILD_POST_BB, BUILD_NORTH_BB, BUILD_EAST_BB, BUILD_SOUTH_BB, BUILD_WEST_BB);
+        return shape;
     }
 
     public VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-
-        if (state.toString().contains("building")) {
-            if (!state.toString().contains("north=false") && state.toString().contains("east=false") && !state.toString().contains("south=false") && state.toString().contains("west=false") ) {
-                return BUILD_POST_NORTH_SOUTH_CB;
-            }
-            else if (state.toString().contains("north=false") && !state.toString().contains("east=false") && state.toString().contains("south=false") && !state.toString().contains("west=false")) {
-                return BUILD_POST_EAST_WEST_CB;
-            }
-            else {
-                return super.getCollisionShape(state, world, pos, context);
-            }
-        }
-        else {
-            return super.getCollisionShape(state, world, pos, context);
-        }
+        VoxelShape shape;
+        shape = makebuildShapes(state, BUILD_POST_CB, BUILD_NORTH_CB, BUILD_EAST_CB, BUILD_SOUTH_CB, BUILD_WEST_CB);
+        return shape;
     }
 
 
