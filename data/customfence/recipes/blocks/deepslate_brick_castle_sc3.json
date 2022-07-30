@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+ "ingredient": {
+    "item": "minecraft:deepslate_bricks"
+  },
+  "result": "customfence:deepslate_brick_castle",
+  "count": 1
+}

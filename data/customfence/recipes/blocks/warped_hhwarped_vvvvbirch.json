@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "bab",
+    "aaa",
+    "cbc"
+   ],
+  "key": {
+    "a": {
+        "item": "minecraft:birch_planks"
+      },
+    "b": {
+        "item": "minecraft:warped_planks"
+      },
+    "c": {
+        "item": "minecraft:stick"
+      }
+  },
+  "result": {
+    "item": "customfence:warped_hhwarped_vvvvbirch",
+    "count": 4
+  }
+}
