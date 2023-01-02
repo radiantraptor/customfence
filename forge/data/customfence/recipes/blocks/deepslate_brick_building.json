@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AA",
+    "AA",
+    "AA"
+   ],
+  "key": {
+    "A": {
+        "item": "minecraft:deepslate_bricks"
+      }
+  },
+  "result": {
+    "item": "customfence:deepslate_brick_building",
+    "count": 6
+  }
+}

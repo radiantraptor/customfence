@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    " A "
+   ],
+  "key": {
+    "A": {
+        "item": "minecraft:iron_ingot"
+      }
+  },
+  "result": {
+    "item": "customfence:iron_fence_gate_closed",
+    "count": 4
+  }
+}
+ 

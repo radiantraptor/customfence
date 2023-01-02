@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "A",
+    "A",
+    "A"
+   ],
+  "key": {
+    "A": {
+        "item": "minecraft:bamboo_planks"
+      }
+  },
+  "result": {
+    "item": "customfence:bamboo_wall_building",
+    "count": 3
+  }
+}

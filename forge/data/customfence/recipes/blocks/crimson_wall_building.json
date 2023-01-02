@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "A",
+    "A",
+    "A"
+   ],
+  "key": {
+    "A": {
+        "item": "minecraft:crimson_planks"
+      }
+  },
+  "result": {
+    "item": "customfence:crimson_wall_building",
+    "count": 3
+  }
+}

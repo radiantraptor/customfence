@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BAB",
+    "AAA",
+    "C C"
+   ],
+  "key": {
+    "A": {
+        "item": "minecraft:mangrove_planks"
+      },
+    "B": {
+        "item": "minecraft:warped_planks"
+      },
+    "C": {
+        "item": "minecraft:stick"
+      }
+  },
+  "result": {
+    "item": "customfence:warped_hhwarped_vvvvmangrove_fence_gate_closed",
+    "count": 2
+  }
+}

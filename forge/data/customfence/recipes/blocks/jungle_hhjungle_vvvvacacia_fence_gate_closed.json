@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "bab",
+    "aaa",
+    "c c"
+   ],
+  "key": {
+    "a": {
+        "item": "minecraft:acacia_planks"
+      },
+    "b": {
+        "item": "minecraft:jungle_planks"
+      },
+    "c": {
+        "item": "minecraft:stick"
+      }
+  },
+  "result": {
+    "item": "customfence:jungle_hhjungle_vvvvacacia_fence_gate_closed",
+    "count": 2
+  }
+}

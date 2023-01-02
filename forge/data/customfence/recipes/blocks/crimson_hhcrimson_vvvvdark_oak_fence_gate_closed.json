@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "bab",
+    "aaa",
+    "c c"
+   ],
+  "key": {
+    "a": {
+        "item": "minecraft:dark_oak_planks"
+      },
+    "b": {
+        "item": "minecraft:crimson_planks"
+      },
+    "c": {
+        "item": "minecraft:stick"
+      }
+  },
+  "result": {
+    "item": "customfence:crimson_hhcrimson_vvvvdark_oak_fence_gate_closed",
+    "count": 2
+  }
+}

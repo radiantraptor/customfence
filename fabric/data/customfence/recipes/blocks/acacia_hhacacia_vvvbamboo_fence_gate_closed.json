@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "B B",
+    "AAA",
+    "C C"
+   ],
+  "key": {
+    "A": {
+        "item": "minecraft:bamboo_planks"
+      },
+    "B": {
+        "item": "minecraft:acacia_planks"
+      },
+    "C": {
+        "item": "minecraft:stick"
+      }
+  },
+  "result": {
+    "item": "customfence:acacia_hhacacia_vvvbamboo_fence_gate_closed",
+    "count": 2
+  }
+}
