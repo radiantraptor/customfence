@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "A A",
+    "AAA"
+   ],
+  "key": {
+    "A": {
+        "item": "minecraft:red_sandstone"
+      }
+  },
+  "result": {
+    "item": "customfence:red_sandstone_modern",
+    "count": 5
+  }
+}

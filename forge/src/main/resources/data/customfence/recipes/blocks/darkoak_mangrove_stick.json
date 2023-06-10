@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "B B",
+    "CBC"
+   ],
+  "key": {
+    "A": {
+        "item": "minecraft:mangrove_planks"
+      },
+    "B": {
+        "item": "minecraft:dark_oak_planks"
+      },
+    "C": {
+        "item": "minecraft:stick"
+      }
+  },
+  "result": {
+    "item": "customfence:darkoak_mangrove_stick",
+    "count": 4
+  }
+}

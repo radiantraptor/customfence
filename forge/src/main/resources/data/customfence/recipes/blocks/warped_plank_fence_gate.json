@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "A A",
+    "C C" 
+   ],
+  "key": {
+    "A": {
+        "item": "minecraft:warped_planks"
+      },
+    "C": {
+        "item": "minecraft:stick"
+      }
+  },
+  "result": {
+    "item": "customfence:warped_plank_fence_gate",
+    "count": 2
+  }
+}

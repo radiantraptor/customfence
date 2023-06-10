@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    " A "
+   ],
+  "key": {
+    "A": {
+        "item": "minecraft:copper_ingot"
+      }
+  },
+  "result": {
+    "item": "customfence:copper_fence_gate",
+    "count": 4
+  }
+}
+ 

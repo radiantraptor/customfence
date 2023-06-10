@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aaa",
+    "aba",
+    "cbc" 
+   ],
+  "key": {
+    "a": {
+        "item": "minecraft:mangrove_planks"
+      },
+    "b": {
+        "item": "minecraft:cherry_planks"
+      },
+    "c": {
+        "item": "minecraft:stick"
+      }
+  },
+  "result": {
+    "item": "customfence:cherry_mangrove_decoration",
+    "count": 4
+  }
+}
