@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "B B",
+    "AAA",
+    "C C"
+   ],
+  "key": {
+    "A": {
+        "item": "minecraft:birch_planks"
+      },
+    "B": {
+        "item": "minecraft:spruce_planks"
+      },
+    "C": {
+        "item": "minecraft:stick"
+      }
+  },
+  "result": {
+    "item": "customfence:spruce_birch_garden_fence_gate",
+    "count": 2
+  }
+}

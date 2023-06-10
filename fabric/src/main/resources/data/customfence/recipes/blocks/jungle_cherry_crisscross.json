@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "a a",
+    "aaa",
+    "cbc" 
+   ],
+  "key": {
+    "a": {
+        "item": "minecraft:cherry_planks"
+      },
+    "b": {
+        "item": "minecraft:jungle_planks"
+      },
+    "c": {
+        "item": "minecraft:stick"
+      }
+  },
+  "result": {
+    "item": "customfence:jungle_cherry_crisscross",
+    "count": 4
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "customfence",
+  "version": "${version}",
+
+  "name": "Customfence",
+  "description": "A couple of new fences and fence gates and walls",
+  "authors": [
+    "raptor"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
+  },
+
+  "license": "GNU GPLv3",
+  "icon": "assets/customfence/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.raptor.customfence_fabric.Main"
+    ]
+  },
+  "mixins": [
+    "customfence.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.14.6",
+    "fabric": "*",
+    "minecraft": "~1.20",
+    "java": ">=17"
+  }
+}

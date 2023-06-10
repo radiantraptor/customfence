@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BAB",
+    "AAA",
+    "C C"
+   ],
+  "key": {
+    "A": {
+        "item": "minecraft:bamboo_planks"
+      },
+    "B": {
+        "item": "minecraft:spruce_planks"
+      },
+    "C": {
+        "item": "minecraft:stick"
+      }
+  },
+  "result": {
+    "item": "customfence:spruce_bamboo_spire_fence_gate",
+    "count": 2
+  }
+}

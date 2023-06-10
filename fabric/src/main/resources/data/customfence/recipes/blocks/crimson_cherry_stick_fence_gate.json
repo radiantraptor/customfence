@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aaa",
+    "b b",
+    "c c"
+   ],
+  "key": {
+    "a": {
+        "item": "minecraft:cherry_planks"
+      },
+    "b": {
+        "item": "minecraft:crimson_planks"
+      },
+    "c": {
+        "item": "minecraft:stick"
+      }
+  },
+  "result": {
+    "item": "customfence:crimson_cherry_stick_fence_gate",
+    "count": 2
+  }
+}

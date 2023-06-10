@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "A A",
+    "CBC"
+   ],
+  "key": {
+    "A": {
+        "item": "minecraft:bamboo_planks"
+      },
+    "B": {
+        "item": "minecraft:oak_planks"
+      },
+    "C": {
+        "item": "minecraft:stick"
+      }
+  },
+  "result": {
+    "item": "customfence:oak_bamboo_plank",
+    "count": 4
+  }
+}

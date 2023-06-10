@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "B B",
+    "C C"
+   ],
+  "key": {
+    "A": {
+        "item": "minecraft:warped_planks"
+      },
+    "B": {
+        "item": "minecraft:bamboo_planks"
+      },
+    "C": {
+        "item": "minecraft:stick"
+      }
+  },
+  "result": {
+    "item": "customfence:bamboo_warped_stick_fence_gate",
+    "count": 2
+  }
+}

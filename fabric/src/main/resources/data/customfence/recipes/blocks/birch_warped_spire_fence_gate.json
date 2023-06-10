@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "bab",
+    "aaa",
+    "c c"
+   ],
+  "key": {
+    "a": {
+        "item": "minecraft:warped_planks"
+      },
+    "b": {
+        "item": "minecraft:birch_planks"
+      },
+    "c": {
+        "item": "minecraft:stick"
+      }
+  },
+  "result": {
+    "item": "customfence:birch_warped_spire_fence_gate",
+    "count": 2
+  }
+}

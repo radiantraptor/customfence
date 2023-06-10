@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "ABA",
+    "C C"
+   ],
+  "key": {
+    "A": {
+        "item": "minecraft:jungle_planks"
+      },
+    "B": {
+        "item": "minecraft:mangrove_planks"
+      },
+    "C": {
+        "item": "minecraft:stick"
+      }
+  },
+  "result": {
+    "item": "customfence:mangrove_jungle_decoration_fence_gate",
+    "count": 2
+  }
+}

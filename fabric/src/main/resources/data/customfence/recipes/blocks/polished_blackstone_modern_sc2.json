@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:polished_blackstone"
+  },
+  "result": "customfence:polished_blackstone_modern",
+  "count": 1
+}

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "AAA",
+    "CBC" 
+   ],
+  "key": {
+    "A": {
+        "item": "minecraft:spruce_planks"
+      },
+    "B": {
+        "item": "minecraft:warped_planks"
+      },
+    "C": {
+        "item": "minecraft:stick"
+      }
+  },
+  "result": {
+    "item": "customfence:warped_spruce_classic",
+    "count": 4
+  }
+}
