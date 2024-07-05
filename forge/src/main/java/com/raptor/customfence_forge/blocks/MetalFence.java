@@ -19,8 +19,9 @@ public class MetalFence extends FenceBlock implements WeatheringFence {
     }
 
 
+
     public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-        this.onRandomTick(state, level, pos, random);
+        this.changeOverTime(state, level, pos, random);
     }
 
     //public void onRandomTick(BlockState state, ServerLevel level, BlockPos pos, Random random) {

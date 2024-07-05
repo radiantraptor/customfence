@@ -6,7 +6,7 @@ import com.google.common.collect.ImmutableBiMap;
 import java.util.Optional;
 import java.util.function.Supplier;
 
-import com.raptor.customfence_forge.config.ModTabConfig;
+import com.raptor.customfence_forge.config.ConfigHandler;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import com.raptor.customfence_forge.init.ModBlocksMetalFence;
@@ -15,22 +15,36 @@ import com.raptor.customfence_forge.init.ModBlocksMetalFence;
 public interface WeatheringFence extends net.minecraft.world.level.block.ChangeOverTimeBlock<WeatheringFence.WeatherState> {
 
     Supplier<BiMap<Block, Block>> NEXT_BY_BLOCK = Suppliers.memoize(() -> {
-        if (ModTabConfig.metal_oxidation.get().booleanValue() == true) {
+        if (ConfigHandler.COMMON.metal_oxidation.get() == true) {
             return ImmutableBiMap.<Block, Block>builder()
 
-                    .put(ModBlocksMetalFence.COBBLESTONE_COPPER_FENCE.get(), ModBlocksMetalFence.COBBLESTONE_EXPOSED_COPPER_FENCE.get())
-                    .put(ModBlocksMetalFence.COBBLESTONE_EXPOSED_COPPER_FENCE.get(), ModBlocksMetalFence.COBBLESTONE_WEATHERED_COPPER_FENCE.get())
-                    .put(ModBlocksMetalFence.COBBLESTONE_WEATHERED_COPPER_FENCE.get(), ModBlocksMetalFence.COBBLESTONE_OXIDIZED_COPPER_FENCE.get())
-                    .put(ModBlocksMetalFence.COPPER_FENCE_GATE.get(), ModBlocksMetalFence.EXPOSED_COPPER_FENCE_GATE.get())
-                    .put(ModBlocksMetalFence.EXPOSED_COPPER_FENCE_GATE.get(), ModBlocksMetalFence.WEATHERED_COPPER_FENCE_GATE.get())
-                    .put(ModBlocksMetalFence.WEATHERED_COPPER_FENCE_GATE.get(), ModBlocksMetalFence.OXIDIZED_COPPER_FENCE_GATE.get())
+                    .put(ModBlocksMetalFence.COBBLESTONE_COPPER_MANSION_FENCE.get(), ModBlocksMetalFence.COBBLESTONE_EXPOSED_COPPER_MANSION_FENCE.get())
+                    .put(ModBlocksMetalFence.COBBLESTONE_EXPOSED_COPPER_MANSION_FENCE.get(), ModBlocksMetalFence.COBBLESTONE_WEATHERED_COPPER_MANSION_FENCE.get())
+                    .put(ModBlocksMetalFence.COBBLESTONE_WEATHERED_COPPER_MANSION_FENCE.get(), ModBlocksMetalFence.COBBLESTONE_OXIDIZED_COPPER_MANSION_FENCE.get())
+                    .put(ModBlocksMetalFence.COPPER_MANSION_FENCE_GATE.get(), ModBlocksMetalFence.EXPOSED_COPPER_MANSION_FENCE_GATE.get())
+                    .put(ModBlocksMetalFence.EXPOSED_COPPER_MANSION_FENCE_GATE.get(), ModBlocksMetalFence.WEATHERED_COPPER_MANSION_FENCE_GATE.get())
+                    .put(ModBlocksMetalFence.WEATHERED_COPPER_MANSION_FENCE_GATE.get(), ModBlocksMetalFence.OXIDIZED_COPPER_MANSION_FENCE_GATE.get())
 
-                    .put(ModBlocksMetalFence.COBBLESTONE_IRON_FENCE.get(), ModBlocksMetalFence.COBBLESTONE_EXPOSED_IRON_FENCE.get())
-                    .put(ModBlocksMetalFence.COBBLESTONE_EXPOSED_IRON_FENCE.get(), ModBlocksMetalFence.COBBLESTONE_WEATHERED_IRON_FENCE.get())
-                    .put(ModBlocksMetalFence.COBBLESTONE_WEATHERED_IRON_FENCE.get(), ModBlocksMetalFence.COBBLESTONE_OXIDIZED_IRON_FENCE.get())
-                    .put(ModBlocksMetalFence.IRON_FENCE_GATE.get(), ModBlocksMetalFence.EXPOSED_IRON_FENCE_GATE.get())
-                    .put(ModBlocksMetalFence.EXPOSED_IRON_FENCE_GATE.get(), ModBlocksMetalFence.WEATHERED_IRON_FENCE_GATE.get())
-                    .put(ModBlocksMetalFence.WEATHERED_IRON_FENCE_GATE.get(), ModBlocksMetalFence.OXIDIZED_IRON_FENCE_GATE.get())
+                    .put(ModBlocksMetalFence.COBBLESTONE_IRON_MANSION_FENCE.get(), ModBlocksMetalFence.COBBLESTONE_EXPOSED_IRON_MANSION_FENCE.get())
+                    .put(ModBlocksMetalFence.COBBLESTONE_EXPOSED_IRON_MANSION_FENCE.get(), ModBlocksMetalFence.COBBLESTONE_WEATHERED_IRON_MANSION_FENCE.get())
+                    .put(ModBlocksMetalFence.COBBLESTONE_WEATHERED_IRON_MANSION_FENCE.get(), ModBlocksMetalFence.COBBLESTONE_OXIDIZED_IRON_MANSION_FENCE.get())
+                    .put(ModBlocksMetalFence.IRON_MANSION_FENCE_GATE.get(), ModBlocksMetalFence.EXPOSED_IRON_MANSION_FENCE_GATE.get())
+                    .put(ModBlocksMetalFence.EXPOSED_IRON_MANSION_FENCE_GATE.get(), ModBlocksMetalFence.WEATHERED_IRON_MANSION_FENCE_GATE.get())
+                    .put(ModBlocksMetalFence.WEATHERED_IRON_MANSION_FENCE_GATE.get(), ModBlocksMetalFence.OXIDIZED_IRON_MANSION_FENCE_GATE.get())
+
+                    .put(ModBlocksMetalFence.COBBLESTONE_COPPER_MESH_FENCE.get(), ModBlocksMetalFence.COBBLESTONE_EXPOSED_COPPER_MESH_FENCE.get())
+                    .put(ModBlocksMetalFence.COBBLESTONE_EXPOSED_COPPER_MESH_FENCE.get(), ModBlocksMetalFence.COBBLESTONE_WEATHERED_COPPER_MESH_FENCE.get())
+                    .put(ModBlocksMetalFence.COBBLESTONE_WEATHERED_COPPER_MESH_FENCE.get(), ModBlocksMetalFence.COBBLESTONE_OXIDIZED_COPPER_MESH_FENCE.get())
+                    .put(ModBlocksMetalFence.COPPER_MESH_FENCE_GATE.get(), ModBlocksMetalFence.EXPOSED_COPPER_MESH_FENCE_GATE.get())
+                    .put(ModBlocksMetalFence.EXPOSED_COPPER_MESH_FENCE_GATE.get(), ModBlocksMetalFence.WEATHERED_COPPER_MESH_FENCE_GATE.get())
+                    .put(ModBlocksMetalFence.WEATHERED_COPPER_MESH_FENCE_GATE.get(), ModBlocksMetalFence.OXIDIZED_COPPER_MESH_FENCE_GATE.get())
+
+                    .put(ModBlocksMetalFence.COBBLESTONE_IRON_MESH_FENCE.get(), ModBlocksMetalFence.COBBLESTONE_EXPOSED_IRON_MESH_FENCE.get())
+                    .put(ModBlocksMetalFence.COBBLESTONE_EXPOSED_IRON_MESH_FENCE.get(), ModBlocksMetalFence.COBBLESTONE_WEATHERED_IRON_MESH_FENCE.get())
+                    .put(ModBlocksMetalFence.COBBLESTONE_WEATHERED_IRON_MESH_FENCE.get(), ModBlocksMetalFence.COBBLESTONE_OXIDIZED_IRON_MESH_FENCE.get())
+                    .put(ModBlocksMetalFence.IRON_MESH_FENCE_GATE.get(), ModBlocksMetalFence.EXPOSED_IRON_MESH_FENCE_GATE.get())
+                    .put(ModBlocksMetalFence.EXPOSED_IRON_MESH_FENCE_GATE.get(), ModBlocksMetalFence.WEATHERED_IRON_MESH_FENCE_GATE.get())
+                    .put(ModBlocksMetalFence.WEATHERED_IRON_MESH_FENCE_GATE.get(), ModBlocksMetalFence.OXIDIZED_IRON_MESH_FENCE_GATE.get())
 
                     .build();
         }

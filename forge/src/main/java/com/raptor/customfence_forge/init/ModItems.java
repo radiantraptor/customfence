@@ -1078,49 +1078,96 @@ public class ModItems {
     
     //END WOODENWALLS AND BEGIN METALLFENCES
 
-    public static final RegistryObject<Item> COBBLESTONE_COPPER_FENCE = ITEMS.register("cobblestone_copper_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_COPPER_FENCE.get(), new Item.Properties()));
-    public static final RegistryObject<Item> COBBLESTONE_EXPOSED_COPPER_FENCE = ITEMS.register("cobblestone_exposed_copper_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_EXPOSED_COPPER_FENCE.get(), new Item.Properties()));
-    public static final RegistryObject<Item> COBBLESTONE_WEATHERED_COPPER_FENCE = ITEMS.register("cobblestone_weathered_copper_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_WEATHERED_COPPER_FENCE.get(), new Item.Properties()));
-    public static final RegistryObject<Item> COBBLESTONE_OXIDIZED_COPPER_FENCE = ITEMS.register("cobblestone_oxidized_copper_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_OXIDIZED_COPPER_FENCE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> COBBLESTONE_COPPER_MANSION_FENCE = ITEMS.register("cobblestone_copper_mansion_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_COPPER_MANSION_FENCE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> COBBLESTONE_EXPOSED_COPPER_MANSION_FENCE = ITEMS.register("cobblestone_exposed_copper_mansion_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_EXPOSED_COPPER_MANSION_FENCE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> COBBLESTONE_WEATHERED_COPPER_MANSION_FENCE = ITEMS.register("cobblestone_weathered_copper_mansion_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_WEATHERED_COPPER_MANSION_FENCE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> COBBLESTONE_OXIDIZED_COPPER_MANSION_FENCE = ITEMS.register("cobblestone_oxidized_copper_mansion_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_OXIDIZED_COPPER_MANSION_FENCE.get(), new Item.Properties()));
 
-    public static final RegistryObject<Item> COPPER_FENCE_GATE = ITEMS.register("copper_fence_gate", () -> new BlockItem(ModBlocksMetalFence.COPPER_FENCE_GATE.get(), new Item.Properties()));
-    public static final RegistryObject<Item> EXPOSED_COPPER_FENCE_GATE = ITEMS.register("exposed_copper_fence_gate", () -> new BlockItem(ModBlocksMetalFence.EXPOSED_COPPER_FENCE_GATE.get(), new Item.Properties()));
-    public static final RegistryObject<Item> WEATHERED_COPPER_FENCE_GATE = ITEMS.register("weathered_copper_fence_gate", () -> new BlockItem(ModBlocksMetalFence.WEATHERED_COPPER_FENCE_GATE.get(), new Item.Properties()));
-    public static final RegistryObject<Item> OXIDIZED_COPPER_FENCE_GATE = ITEMS.register("oxidized_copper_fence_gate", () -> new BlockItem(ModBlocksMetalFence.OXIDIZED_COPPER_FENCE_GATE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> COPPER_MANSION_FENCE_GATE = ITEMS.register("copper_mansion_fence_gate", () -> new BlockItem(ModBlocksMetalFence.COPPER_MANSION_FENCE_GATE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> EXPOSED_COPPER_MANSION_FENCE_GATE = ITEMS.register("exposed_copper_mansion_fence_gate", () -> new BlockItem(ModBlocksMetalFence.EXPOSED_COPPER_MANSION_FENCE_GATE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> WEATHERED_COPPER_MANSION_FENCE_GATE = ITEMS.register("weathered_copper_mansion_fence_gate", () -> new BlockItem(ModBlocksMetalFence.WEATHERED_COPPER_MANSION_FENCE_GATE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> OXIDIZED_COPPER_MANSION_FENCE_GATE = ITEMS.register("oxidized_copper_mansion_fence_gate", () -> new BlockItem(ModBlocksMetalFence.OXIDIZED_COPPER_MANSION_FENCE_GATE.get(), new Item.Properties()));
 
-    public static final RegistryObject<Item> COBBLESTONE_WAXED_COPPER_FENCE = ITEMS.register("cobblestone_waxed_copper_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_WAXED_COPPER_FENCE.get(), new Item.Properties()));
-    public static final RegistryObject<Item> COBBLESTONE_WAXED_EXPOSED_COPPER_FENCE = ITEMS.register("cobblestone_waxed_exposed_copper_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_WAXED_EXPOSED_COPPER_FENCE.get(), new Item.Properties()));
-    public static final RegistryObject<Item> COBBLESTONE_WAXED_WEATHERED_COPPER_FENCE = ITEMS.register("cobblestone_waxed_weathered_copper_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_WAXED_WEATHERED_COPPER_FENCE.get(), new Item.Properties()));
-    public static final RegistryObject<Item> COBBLESTONE_WAXED_OXIDIZED_COPPER_FENCE = ITEMS.register("cobblestone_waxed_oxidized_copper_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_WAXED_OXIDIZED_COPPER_FENCE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> COBBLESTONE_WAXED_COPPER_MANSION_FENCE = ITEMS.register("cobblestone_waxed_copper_mansion_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_WAXED_COPPER_MANSION_FENCE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> COBBLESTONE_WAXED_EXPOSED_COPPER_MANSION_FENCE = ITEMS.register("cobblestone_waxed_exposed_copper_mansion_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_WAXED_EXPOSED_COPPER_MANSION_FENCE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> COBBLESTONE_WAXED_WEATHERED_COPPER_MANSION_FENCE = ITEMS.register("cobblestone_waxed_weathered_copper_mansion_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_WAXED_WEATHERED_COPPER_MANSION_FENCE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> COBBLESTONE_WAXED_OXIDIZED_COPPER_MANSION_FENCE = ITEMS.register("cobblestone_waxed_oxidized_copper_mansion_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_WAXED_OXIDIZED_COPPER_MANSION_FENCE.get(), new Item.Properties()));
 
-    public static final RegistryObject<Item> WAXED_COPPER_FENCE_GATE = ITEMS.register("waxed_copper_fence_gate", () -> new BlockItem(ModBlocksMetalFence.WAXED_COPPER_FENCE_GATE.get(), new Item.Properties()));
-    public static final RegistryObject<Item> WAXED_EXPOSED_COPPER_FENCE_GATE = ITEMS.register("waxed_exposed_copper_fence_gate", () -> new BlockItem(ModBlocksMetalFence.WAXED_EXPOSED_COPPER_FENCE_GATE.get(), new Item.Properties()));
-    public static final RegistryObject<Item> WAXED_WEATHERED_COPPER_FENCE_GATE = ITEMS.register("waxed_weathered_copper_fence_gate", () -> new BlockItem(ModBlocksMetalFence.WAXED_WEATHERED_COPPER_FENCE_GATE.get(), new Item.Properties()));
-    public static final RegistryObject<Item> WAXED_OXIDIZED_COPPER_FENCE_GATE = ITEMS.register("waxed_oxidized_copper_fence_gate", () -> new BlockItem(ModBlocksMetalFence.WAXED_OXIDIZED_COPPER_FENCE_GATE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> WAXED_COPPER_MANSION_FENCE_GATE = ITEMS.register("waxed_copper_mansion_fence_gate", () -> new BlockItem(ModBlocksMetalFence.WAXED_COPPER_MANSION_FENCE_GATE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> WAXED_EXPOSED_COPPER_MANSION_FENCE_GATE = ITEMS.register("waxed_exposed_copper_mansion_fence_gate", () -> new BlockItem(ModBlocksMetalFence.WAXED_EXPOSED_COPPER_MANSION_FENCE_GATE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> WAXED_WEATHERED_COPPER_MANSION_FENCE_GATE = ITEMS.register("waxed_weathered_copper_mansion_fence_gate", () -> new BlockItem(ModBlocksMetalFence.WAXED_WEATHERED_COPPER_MANSION_FENCE_GATE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> WAXED_OXIDIZED_COPPER_MANSION_FENCE_GATE = ITEMS.register("waxed_oxidized_copper_mansion_fence_gate", () -> new BlockItem(ModBlocksMetalFence.WAXED_OXIDIZED_COPPER_MANSION_FENCE_GATE.get(), new Item.Properties()));
 
-    public static final RegistryObject<Item> COBBLESTONE_IRON_FENCE = ITEMS.register("cobblestone_iron_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_IRON_FENCE.get(), new Item.Properties()));
-    public static final RegistryObject<Item> COBBLESTONE_EXPOSED_IRON_FENCE = ITEMS.register("cobblestone_exposed_iron_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_EXPOSED_IRON_FENCE.get(), new Item.Properties()));
-    public static final RegistryObject<Item> COBBLESTONE_WEATHERED_IRON_FENCE = ITEMS.register("cobblestone_weathered_iron_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_WEATHERED_IRON_FENCE.get(), new Item.Properties()));
-    public static final RegistryObject<Item> COBBLESTONE_OXIDIZED_IRON_FENCE = ITEMS.register("cobblestone_oxidized_iron_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_OXIDIZED_IRON_FENCE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> COBBLESTONE_IRON_MANSION_FENCE = ITEMS.register("cobblestone_iron_mansion_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_IRON_MANSION_FENCE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> COBBLESTONE_EXPOSED_IRON_MANSION_FENCE = ITEMS.register("cobblestone_exposed_iron_mansion_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_EXPOSED_IRON_MANSION_FENCE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> COBBLESTONE_WEATHERED_IRON_MANSION_FENCE = ITEMS.register("cobblestone_weathered_iron_mansion_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_WEATHERED_IRON_MANSION_FENCE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> COBBLESTONE_OXIDIZED_IRON_MANSION_FENCE = ITEMS.register("cobblestone_oxidized_iron_mansion_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_OXIDIZED_IRON_MANSION_FENCE.get(), new Item.Properties()));
 
-    public static final RegistryObject<Item> IRON_FENCE_GATE = ITEMS.register("iron_fence_gate", () -> new BlockItem(ModBlocksMetalFence.IRON_FENCE_GATE.get(), new Item.Properties()));
-    public static final RegistryObject<Item> EXPOSED_IRON_FENCE_GATE = ITEMS.register("exposed_iron_fence_gate", () -> new BlockItem(ModBlocksMetalFence.EXPOSED_IRON_FENCE_GATE.get(), new Item.Properties()));
-    public static final RegistryObject<Item> WEATHERED_IRON_FENCE_GATE = ITEMS.register("weathered_iron_fence_gate", () -> new BlockItem(ModBlocksMetalFence.WEATHERED_IRON_FENCE_GATE.get(), new Item.Properties()));
-    public static final RegistryObject<Item> OXIDIZED_IRON_FENCE_GATE = ITEMS.register("oxidized_iron_fence_gate", () -> new BlockItem(ModBlocksMetalFence.OXIDIZED_IRON_FENCE_GATE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> IRON_MANSION_FENCE_GATE = ITEMS.register("iron_mansion_fence_gate", () -> new BlockItem(ModBlocksMetalFence.IRON_MANSION_FENCE_GATE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> EXPOSED_IRON_MANSION_FENCE_GATE = ITEMS.register("exposed_iron_mansion_fence_gate", () -> new BlockItem(ModBlocksMetalFence.EXPOSED_IRON_MANSION_FENCE_GATE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> WEATHERED_IRON_MANSION_FENCE_GATE = ITEMS.register("weathered_iron_mansion_fence_gate", () -> new BlockItem(ModBlocksMetalFence.WEATHERED_IRON_MANSION_FENCE_GATE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> OXIDIZED_IRON_MANSION_FENCE_GATE = ITEMS.register("oxidized_iron_mansion_fence_gate", () -> new BlockItem(ModBlocksMetalFence.OXIDIZED_IRON_MANSION_FENCE_GATE.get(), new Item.Properties()));
 
-    public static final RegistryObject<Item> COBBLESTONE_WAXED_IRON_FENCE = ITEMS.register("cobblestone_waxed_iron_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_WAXED_IRON_FENCE.get(), new Item.Properties()));
-    public static final RegistryObject<Item> COBBLESTONE_WAXED_EXPOSED_IRON_FENCE = ITEMS.register("cobblestone_waxed_exposed_iron_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_WAXED_EXPOSED_IRON_FENCE.get(), new Item.Properties()));
-    public static final RegistryObject<Item> COBBLESTONE_WAXED_WEATHERED_IRON_FENCE = ITEMS.register("cobblestone_waxed_weathered_iron_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_WAXED_WEATHERED_IRON_FENCE.get(), new Item.Properties()));
-    public static final RegistryObject<Item> COBBLESTONE_WAXED_OXIDIZED_IRON_FENCE = ITEMS.register("cobblestone_waxed_oxidized_iron_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_WAXED_OXIDIZED_IRON_FENCE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> COBBLESTONE_WAXED_IRON_MANSION_FENCE = ITEMS.register("cobblestone_waxed_iron_mansion_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_WAXED_IRON_MANSION_FENCE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> COBBLESTONE_WAXED_EXPOSED_IRON_MANSION_FENCE = ITEMS.register("cobblestone_waxed_exposed_iron_mansion_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_WAXED_EXPOSED_IRON_MANSION_FENCE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> COBBLESTONE_WAXED_WEATHERED_IRON_MANSION_FENCE = ITEMS.register("cobblestone_waxed_weathered_iron_mansion_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_WAXED_WEATHERED_IRON_MANSION_FENCE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> COBBLESTONE_WAXED_OXIDIZED_IRON_MANSION_FENCE = ITEMS.register("cobblestone_waxed_oxidized_iron_mansion_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_WAXED_OXIDIZED_IRON_MANSION_FENCE.get(), new Item.Properties()));
 
-    public static final RegistryObject<Item> WAXED_IRON_FENCE_GATE = ITEMS.register("waxed_iron_fence_gate", () -> new BlockItem(ModBlocksMetalFence.WAXED_IRON_FENCE_GATE.get(), new Item.Properties()));
-    public static final RegistryObject<Item> WAXED_EXPOSED_IRON_FENCE_GATE = ITEMS.register("waxed_exposed_iron_fence_gate", () -> new BlockItem(ModBlocksMetalFence.WAXED_EXPOSED_IRON_FENCE_GATE.get(), new Item.Properties()));
-    public static final RegistryObject<Item> WAXED_WEATHERED_IRON_FENCE_GATE = ITEMS.register("waxed_weathered_iron_fence_gate", () -> new BlockItem(ModBlocksMetalFence.WAXED_WEATHERED_IRON_FENCE_GATE.get(), new Item.Properties()));
-    public static final RegistryObject<Item> WAXED_OXIDIZED_IRON_FENCE_GATE = ITEMS.register("waxed_oxidized_iron_fence_gate", () -> new BlockItem(ModBlocksMetalFence.WAXED_OXIDIZED_IRON_FENCE_GATE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> WAXED_IRON_MANSION_FENCE_GATE = ITEMS.register("waxed_iron_mansion_fence_gate", () -> new BlockItem(ModBlocksMetalFence.WAXED_IRON_MANSION_FENCE_GATE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> WAXED_EXPOSED_IRON_MANSION_FENCE_GATE = ITEMS.register("waxed_exposed_iron_mansion_fence_gate", () -> new BlockItem(ModBlocksMetalFence.WAXED_EXPOSED_IRON_MANSION_FENCE_GATE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> WAXED_WEATHERED_IRON_MANSION_FENCE_GATE = ITEMS.register("waxed_weathered_iron_mansion_fence_gate", () -> new BlockItem(ModBlocksMetalFence.WAXED_WEATHERED_IRON_MANSION_FENCE_GATE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> WAXED_OXIDIZED_IRON_MANSION_FENCE_GATE = ITEMS.register("waxed_oxidized_iron_mansion_fence_gate", () -> new BlockItem(ModBlocksMetalFence.WAXED_OXIDIZED_IRON_MANSION_FENCE_GATE.get(), new Item.Properties()));
 
-    public static final RegistryObject<Item> COBBLESTONE_GOLD_FENCE = ITEMS.register("cobblestone_gold_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_GOLD_FENCE.get(), new Item.Properties()));
-    public static final RegistryObject<Item> GOLD_FENCE_GATE = ITEMS.register("gold_fence_gate", () -> new BlockItem(ModBlocksMetalFence.GOLD_FENCE_GATE.get(), new Item.Properties()));
-    
+    public static final RegistryObject<Item> COBBLESTONE_GOLD_MANSION_FENCE = ITEMS.register("cobblestone_gold_mansion_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_GOLD_MANSION_FENCE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> GOLD_MANSION_FENCE_GATE = ITEMS.register("gold_mansion_fence_gate", () -> new BlockItem(ModBlocksMetalFence.GOLD_MANSION_FENCE_GATE.get(), new Item.Properties()));
+
+
+    public static final RegistryObject<Item> COBBLESTONE_COPPER_MESH_FENCE = ITEMS.register("cobblestone_copper_mesh_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_COPPER_MESH_FENCE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> COBBLESTONE_EXPOSED_COPPER_MESH_FENCE = ITEMS.register("cobblestone_exposed_copper_mesh_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_EXPOSED_COPPER_MESH_FENCE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> COBBLESTONE_WEATHERED_COPPER_MESH_FENCE = ITEMS.register("cobblestone_weathered_copper_mesh_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_WEATHERED_COPPER_MESH_FENCE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> COBBLESTONE_OXIDIZED_COPPER_MESH_FENCE = ITEMS.register("cobblestone_oxidized_copper_mesh_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_OXIDIZED_COPPER_MESH_FENCE.get(), new Item.Properties()));
+
+    public static final RegistryObject<Item> COPPER_MESH_FENCE_GATE = ITEMS.register("copper_mesh_fence_gate", () -> new BlockItem(ModBlocksMetalFence.COPPER_MESH_FENCE_GATE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> EXPOSED_COPPER_MESH_FENCE_GATE = ITEMS.register("exposed_copper_mesh_fence_gate", () -> new BlockItem(ModBlocksMetalFence.EXPOSED_COPPER_MESH_FENCE_GATE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> WEATHERED_COPPER_MESH_FENCE_GATE = ITEMS.register("weathered_copper_mesh_fence_gate", () -> new BlockItem(ModBlocksMetalFence.WEATHERED_COPPER_MESH_FENCE_GATE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> OXIDIZED_COPPER_MESH_FENCE_GATE = ITEMS.register("oxidized_copper_mesh_fence_gate", () -> new BlockItem(ModBlocksMetalFence.OXIDIZED_COPPER_MESH_FENCE_GATE.get(), new Item.Properties()));
+
+    public static final RegistryObject<Item> COBBLESTONE_WAXED_COPPER_MESH_FENCE = ITEMS.register("cobblestone_waxed_copper_mesh_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_WAXED_COPPER_MESH_FENCE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> COBBLESTONE_WAXED_EXPOSED_COPPER_MESH_FENCE = ITEMS.register("cobblestone_waxed_exposed_copper_mesh_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_WAXED_EXPOSED_COPPER_MESH_FENCE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> COBBLESTONE_WAXED_WEATHERED_COPPER_MESH_FENCE = ITEMS.register("cobblestone_waxed_weathered_copper_mesh_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_WAXED_WEATHERED_COPPER_MESH_FENCE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> COBBLESTONE_WAXED_OXIDIZED_COPPER_MESH_FENCE = ITEMS.register("cobblestone_waxed_oxidized_copper_mesh_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_WAXED_OXIDIZED_COPPER_MESH_FENCE.get(), new Item.Properties()));
+
+    public static final RegistryObject<Item> WAXED_COPPER_MESH_FENCE_GATE = ITEMS.register("waxed_copper_mesh_fence_gate", () -> new BlockItem(ModBlocksMetalFence.WAXED_COPPER_MESH_FENCE_GATE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> WAXED_EXPOSED_COPPER_MESH_FENCE_GATE = ITEMS.register("waxed_exposed_copper_mesh_fence_gate", () -> new BlockItem(ModBlocksMetalFence.WAXED_EXPOSED_COPPER_MESH_FENCE_GATE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> WAXED_WEATHERED_COPPER_MESH_FENCE_GATE = ITEMS.register("waxed_weathered_copper_mesh_fence_gate", () -> new BlockItem(ModBlocksMetalFence.WAXED_WEATHERED_COPPER_MESH_FENCE_GATE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> WAXED_OXIDIZED_COPPER_MESH_FENCE_GATE = ITEMS.register("waxed_oxidized_copper_mesh_fence_gate", () -> new BlockItem(ModBlocksMetalFence.WAXED_OXIDIZED_COPPER_MESH_FENCE_GATE.get(), new Item.Properties()));
+
+
+    public static final RegistryObject<Item> COBBLESTONE_IRON_MESH_FENCE = ITEMS.register("cobblestone_iron_mesh_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_IRON_MESH_FENCE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> COBBLESTONE_EXPOSED_IRON_MESH_FENCE = ITEMS.register("cobblestone_exposed_iron_mesh_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_EXPOSED_IRON_MESH_FENCE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> COBBLESTONE_WEATHERED_IRON_MESH_FENCE = ITEMS.register("cobblestone_weathered_iron_mesh_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_WEATHERED_IRON_MESH_FENCE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> COBBLESTONE_OXIDIZED_IRON_MESH_FENCE = ITEMS.register("cobblestone_oxidized_iron_mesh_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_OXIDIZED_IRON_MESH_FENCE.get(), new Item.Properties()));
+
+    public static final RegistryObject<Item> IRON_MESH_FENCE_GATE = ITEMS.register("iron_mesh_fence_gate", () -> new BlockItem(ModBlocksMetalFence.IRON_MESH_FENCE_GATE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> EXPOSED_IRON_MESH_FENCE_GATE = ITEMS.register("exposed_iron_mesh_fence_gate", () -> new BlockItem(ModBlocksMetalFence.EXPOSED_IRON_MESH_FENCE_GATE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> WEATHERED_IRON_MESH_FENCE_GATE = ITEMS.register("weathered_iron_mesh_fence_gate", () -> new BlockItem(ModBlocksMetalFence.WEATHERED_IRON_MESH_FENCE_GATE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> OXIDIZED_IRON_MESH_FENCE_GATE = ITEMS.register("oxidized_iron_mesh_fence_gate", () -> new BlockItem(ModBlocksMetalFence.OXIDIZED_IRON_MESH_FENCE_GATE.get(), new Item.Properties()));
+
+    public static final RegistryObject<Item> COBBLESTONE_WAXED_IRON_MESH_FENCE = ITEMS.register("cobblestone_waxed_iron_mesh_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_WAXED_IRON_MESH_FENCE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> COBBLESTONE_WAXED_EXPOSED_IRON_MESH_FENCE = ITEMS.register("cobblestone_waxed_exposed_iron_mesh_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_WAXED_EXPOSED_IRON_MESH_FENCE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> COBBLESTONE_WAXED_WEATHERED_IRON_MESH_FENCE = ITEMS.register("cobblestone_waxed_weathered_iron_mesh_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_WAXED_WEATHERED_IRON_MESH_FENCE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> COBBLESTONE_WAXED_OXIDIZED_IRON_MESH_FENCE = ITEMS.register("cobblestone_waxed_oxidized_iron_mesh_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_WAXED_OXIDIZED_IRON_MESH_FENCE.get(), new Item.Properties()));
+
+    public static final RegistryObject<Item> WAXED_IRON_MESH_FENCE_GATE = ITEMS.register("waxed_iron_mesh_fence_gate", () -> new BlockItem(ModBlocksMetalFence.WAXED_IRON_MESH_FENCE_GATE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> WAXED_EXPOSED_IRON_MESH_FENCE_GATE = ITEMS.register("waxed_exposed_iron_mesh_fence_gate", () -> new BlockItem(ModBlocksMetalFence.WAXED_EXPOSED_IRON_MESH_FENCE_GATE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> WAXED_WEATHERED_IRON_MESH_FENCE_GATE = ITEMS.register("waxed_weathered_iron_mesh_fence_gate", () -> new BlockItem(ModBlocksMetalFence.WAXED_WEATHERED_IRON_MESH_FENCE_GATE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> WAXED_OXIDIZED_IRON_MESH_FENCE_GATE = ITEMS.register("waxed_oxidized_iron_mesh_fence_gate", () -> new BlockItem(ModBlocksMetalFence.WAXED_OXIDIZED_IRON_MESH_FENCE_GATE.get(), new Item.Properties()));
+
+
+    public static final RegistryObject<Item> COBBLESTONE_GOLD_MESH_FENCE = ITEMS.register("cobblestone_gold_mesh_fence", () -> new BlockItem(ModBlocksMetalFence.COBBLESTONE_GOLD_MESH_FENCE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> GOLD_MESH_FENCE_GATE = ITEMS.register("gold_mesh_fence_gate", () -> new BlockItem(ModBlocksMetalFence.GOLD_MESH_FENCE_GATE.get(), new Item.Properties()));
+
+
     //END METALLFENCES
 
 }

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " A ",
+    "AAA"
+   ],
+  "key": {
+    "A": {
+        "item": "minecraft:blackstone"
+      }
+  },
+  "result": {
+    "id": "customfence:blackstone_castle",
+    "count": 4
+  }
+}

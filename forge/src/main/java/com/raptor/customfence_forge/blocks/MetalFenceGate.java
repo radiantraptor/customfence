@@ -11,7 +11,6 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.FenceGateBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -25,12 +24,12 @@ public class MetalFenceGate extends FenceGateBlock implements WeatheringFence {
     private final WeatheringFence.WeatherState weatherState;
 
     public MetalFenceGate(WeatherState weatherstate, BlockBehaviour.Properties properties, WoodType woodtype) {
-        super(properties, woodtype);
+        super(woodtype,properties);
         this.weatherState = weatherstate;
     }
 
     public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-        this.onRandomTick(state, level, pos, random);
+        this.changeOverTime(state, level, pos, random);
     }
 
     public BlockState getToolModifiedState(BlockState state, UseOnContext context, ToolAction toolAction, boolean istrue)
@@ -73,20 +72,24 @@ public class MetalFenceGate extends FenceGateBlock implements WeatheringFence {
         return InteractionResult.sidedSuccess(level.isClientSide);
     }
 
-    public void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, BlockPos pos2, boolean istrue) {
-        if (!level.isClientSide) {
-            if (state.getValue(POWERED) != level.hasNeighborSignal(pos)) {
-                level.setBlock(pos, state.setValue(POWERED, Boolean.valueOf(level.hasNeighborSignal(pos))).setValue(OPEN, Boolean.valueOf(level.hasNeighborSignal(pos))), 2);
-                if (state.getValue(OPEN) != level.hasNeighborSignal(pos)) {
-                    level.levelEvent(null,  openCloseSound(level.hasNeighborSignal(pos)), pos, 0);
-                }
-            }
-        }
-    }
 
-    public int openCloseSound(boolean isopen) {
-        return isopen ? 1005 : 1011;
-    }
+//    public void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, BlockPos pos2, boolean istrue) {
+//        if (!level.isClientSide) {
+//            if (state.getValue(POWERED) != level.hasNeighborSignal(pos)) {
+//                level.setBlock(pos, state.setValue(POWERED, Boolean.valueOf(level.hasNeighborSignal(pos))).setValue(OPEN, Boolean.valueOf(level.hasNeighborSignal(pos))), 2);
+//                if (state.getValue(OPEN) != level.hasNeighborSignal(pos)) {
+//                    level.levelEvent(null,  openCloseSound(level.hasNeighborSignal(pos)), pos, 0);
+//                    level.playSound((Entity)null, level, pos, istrue);
+//                }
+//            }
+//        }
+//    }
+
+//    public int openCloseSound(boolean isopen) {
+//        return isopen ? 1005 : 1011;
+//    }
+
+
 
 
 

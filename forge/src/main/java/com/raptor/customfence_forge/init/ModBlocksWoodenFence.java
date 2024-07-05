@@ -61,12 +61,12 @@ public class ModBlocksWoodenFence {
     public static final RegistryObject<Block> MANGROVE_WILDLIFE_GATE = WOODEN_FENCE_BLOCKS.register("mangrove_wildlife_fence_gate", () -> new FenceGate(Block.Properties.of().strength(2.0f, 3.0f).sound(SoundType.WOOD), WoodType.MANGROVE));
     public static final RegistryObject<Block> MANGROVE_PLANK_GATE = WOODEN_FENCE_BLOCKS.register("mangrove_plank_fence_gate", () -> new FenceGate(Block.Properties.of().strength(2.0f, 3.0f).sound(SoundType.WOOD), WoodType.MANGROVE));
     public static final RegistryObject<Block> MANGROVE_CRISSCROSS_GATE = WOODEN_FENCE_BLOCKS.register("mangrove_crisscross_fence_gate", () -> new FenceGate(Block.Properties.of().strength(2.0f, 3.0f).sound(SoundType.WOOD), WoodType.MANGROVE));
-    
+
     public static final RegistryObject<Block> BAMBOO_CLASSIC_GATE = WOODEN_FENCE_BLOCKS.register("bamboo_classic_fence_gate", () -> new FenceGate(Block.Properties.of().strength(2.0f, 3.0f).sound(SoundType.WOOD), WoodType.BAMBOO));
     public static final RegistryObject<Block> BAMBOO_WILDLIFE_GATE = WOODEN_FENCE_BLOCKS.register("bamboo_wildlife_fence_gate", () -> new FenceGate(Block.Properties.of().strength(2.0f, 3.0f).sound(SoundType.WOOD), WoodType.BAMBOO));
     public static final RegistryObject<Block> BAMBOO_PLANK_GATE = WOODEN_FENCE_BLOCKS.register("bamboo_plank_fence_gate", () -> new FenceGate(Block.Properties.of().strength(2.0f, 3.0f).sound(SoundType.WOOD), WoodType.BAMBOO));
     public static final RegistryObject<Block> BAMBOO_CRISSCROSS_GATE = WOODEN_FENCE_BLOCKS.register("bamboo_crisscross_fence_gate", () -> new FenceGate(Block.Properties.of().strength(2.0f, 3.0f).sound(SoundType.WOOD), WoodType.BAMBOO));
-    
+
     public static final RegistryObject<Block> CHERRY_CLASSIC_GATE = WOODEN_FENCE_BLOCKS.register("cherry_classic_fence_gate", () -> new FenceGate(Block.Properties.of().strength(2.0f, 3.0f).sound(SoundType.WOOD), WoodType.CHERRY));
     public static final RegistryObject<Block> CHERRY_WILDLIFE_GATE = WOODEN_FENCE_BLOCKS.register("cherry_wildlife_fence_gate", () -> new FenceGate(Block.Properties.of().strength(2.0f, 3.0f).sound(SoundType.WOOD), WoodType.CHERRY));
     public static final RegistryObject<Block> CHERRY_PLANK_GATE = WOODEN_FENCE_BLOCKS.register("cherry_plank_fence_gate", () -> new FenceGate(Block.Properties.of().strength(2.0f, 3.0f).sound(SoundType.WOOD), WoodType.CHERRY));

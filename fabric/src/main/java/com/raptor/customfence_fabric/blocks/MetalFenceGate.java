@@ -5,10 +5,10 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.FenceGateBlock;
 import net.minecraft.block.WoodType;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
@@ -17,6 +17,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
+import net.minecraft.world.event.GameEvent;
 
 import java.util.function.Consumer;
 
@@ -24,7 +25,7 @@ public class MetalFenceGate extends FenceGateBlock implements WeatheringFence, C
     private final WeatheringFence.WeatherState weatherState;
 
     public MetalFenceGate(WeatherState weatherstate, Settings settings, WoodType metaltype) {
-        super(settings, metaltype);
+        super(metaltype, settings);
         this.weatherState = weatherstate;
     }
 
@@ -43,7 +44,7 @@ public class MetalFenceGate extends FenceGateBlock implements WeatheringFence, C
 
 
 
-    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult result) {
+    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult result) {
 
         if (state.get(OPEN)) {
             state = state.with(OPEN, false);
@@ -67,8 +68,8 @@ public class MetalFenceGate extends FenceGateBlock implements WeatheringFence, C
             if (state.get(POWERED) != world.isReceivingRedstonePower(pos)) {
                 world.setBlockState(pos, (state.with(POWERED, world.isReceivingRedstonePower(pos))).with(OPEN, world.isReceivingRedstonePower(pos)), 2);
                 if (state.get(OPEN) != world.isReceivingRedstonePower(pos)) {
-                    world.syncWorldEvent(null, openCloseSound(world.isReceivingRedstonePower(pos)), pos, 0);
-                    //world.emitGameEvent(world.isReceivingRedstonePower(pos) ? GameEvent.BLOCK_OPEN : GameEvent.BLOCK_CLOSE, pos);
+                    world.playSound((Entity)null, pos, world.isReceivingRedstonePower(pos) ? SoundEvents.BLOCK_IRON_DOOR_OPEN : SoundEvents.BLOCK_IRON_DOOR_CLOSE, SoundCategory.BLOCKS, 1.0f, 1.0f);
+                    world.emitGameEvent((Entity)null, world.isReceivingRedstonePower(pos) ? GameEvent.BLOCK_OPEN : GameEvent.BLOCK_CLOSE, pos);
                 }
             }
         }
