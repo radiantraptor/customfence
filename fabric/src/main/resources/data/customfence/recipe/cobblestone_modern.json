@@ -5,9 +5,7 @@
     "AAA"
    ],
   "key": {
-    "A": {
-        "item": "minecraft:cobblestone"
-      }
+    "A": "minecraft:cobblestone"
   },
   "result": {
     "id": "customfence:cobblestone_modern",

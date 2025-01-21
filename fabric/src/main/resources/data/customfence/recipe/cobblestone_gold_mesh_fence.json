@@ -6,12 +6,8 @@
     "ABA"
    ],
   "key": {
-    "A": {
-        "item": "minecraft:gold_ingot"
-      },
-    "B": {
-        "item": "minecraft:cobblestone"
-      }
+    "A": "minecraft:gold_ingot",
+    "B": "minecraft:cobblestone"
   },
   "result": {
     "id": "customfence:cobblestone_gold_mesh_fence",

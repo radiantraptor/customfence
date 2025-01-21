@@ -6,15 +6,9 @@
     "C C"
    ],
   "key": {
-    "A": {
-        "item": "minecraft:bamboo_planks"
-      },
-    "B": {
-        "item": "minecraft:jungle_planks"
-      },
-    "C": {
-        "item": "minecraft:stick"
-      }
+    "A": "minecraft:bamboo_planks",
+    "B": "minecraft:jungle_planks",
+    "C": "minecraft:stick"
   },
   "result": {
     "id": "customfence:jungle_bamboo_decoration_fence_gate",

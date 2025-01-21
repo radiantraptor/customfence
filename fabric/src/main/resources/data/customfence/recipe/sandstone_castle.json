@@ -5,9 +5,7 @@
     "AAA"
    ],
   "key": {
-    "A": {
-        "item": "minecraft:sandstone"
-      }
+    "A": "minecraft:sandstone"
   },
   "result": {
     "id": "customfence:sandstone_castle",

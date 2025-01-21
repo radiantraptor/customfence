@@ -1,8 +1,8 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:stone"
-  },
-  "result": "customfence:stone_modern",
-  "count": 1
+  "ingredient": "minecraft:stone",
+  "result": {
+    "id": "customfence:stone_modern",
+    "count": 1
+  }
 }

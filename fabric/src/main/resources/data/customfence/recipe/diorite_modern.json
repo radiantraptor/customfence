@@ -5,9 +5,7 @@
     "AAA"
    ],
   "key": {
-    "A": {
-        "item": "minecraft:diorite"
-      }
+    "A": "minecraft:diorite"
   },
   "result": {
     "id": "customfence:diorite_modern",

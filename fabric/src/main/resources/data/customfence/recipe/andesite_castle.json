@@ -5,9 +5,7 @@
     "AAA"
    ],
   "key": {
-    "A": {
-        "item": "minecraft:andesite"
-      }
+    "A": "minecraft:andesite"
   },
   "result": {
     "id": "customfence:andesite_castle",

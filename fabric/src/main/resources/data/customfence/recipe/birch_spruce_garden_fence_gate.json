@@ -6,15 +6,9 @@
     "C C"
    ],
   "key": {
-    "A": {
-        "item": "minecraft:spruce_planks"
-      },
-    "B": {
-        "item": "minecraft:birch_planks"
-      },
-    "C": {
-        "item": "minecraft:stick"
-      }
+    "A": "minecraft:spruce_planks",
+    "B": "minecraft:birch_planks",
+    "C": "minecraft:stick"
   },
   "result": {
     "id": "customfence:birch_spruce_garden_fence_gate",

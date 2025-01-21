@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "customfence:block/mangrove_wildlife/mangrove_wildlife_fence_gate_closed"
+  }
+}

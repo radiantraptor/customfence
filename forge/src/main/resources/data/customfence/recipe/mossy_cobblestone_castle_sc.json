@@ -1,8 +1,8 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:mossy_cobblestone"
-  },
-  "result": "customfence:mossy_cobblestone_castle",
-  "count": 1
+  "ingredient": "minecraft:mossy_cobblestone",
+  "result": {
+    "id": "customfence:mossy_cobblestone_castle",
+    "count": 1
+  }
 }

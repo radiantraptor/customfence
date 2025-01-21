@@ -6,9 +6,7 @@
     "A"
    ],
   "key": {
-    "A": {
-        "item": "minecraft:warped_planks"
-      }
+    "A": "minecraft:warped_planks"
   },
   "result": {
     "id": "customfence:warped_wall_building",

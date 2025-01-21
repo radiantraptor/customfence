@@ -6,15 +6,9 @@
     "cbc"
    ],
   "key": {
-    "a": {
-        "item": "minecraft:crimson_planks"
-      },
-    "b": {
-        "item": "minecraft:oak_planks"
-      },
-    "c": {
-        "item": "minecraft:stick"
-      }
+    "a": "minecraft:crimson_planks",
+    "b": "minecraft:oak_planks",
+    "c": "minecraft:stick"
   },
   "result": {
     "id": "customfence:oak_crimson_spire",

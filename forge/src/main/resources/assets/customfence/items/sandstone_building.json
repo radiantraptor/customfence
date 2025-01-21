@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "customfence:block/sandstone_building/sandstone_building_inventory"
+  }
+}

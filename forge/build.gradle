@@ -5,7 +5,7 @@ plugins {
     id 'net.minecraftforge.gradle' version '[6.0.24,6.2)'
 }
 
-version = '1-21'
+version = '1-21-4'
 group = 'com.raptor.customfence'
 
 base {

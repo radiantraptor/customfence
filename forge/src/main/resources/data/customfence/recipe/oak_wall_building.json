@@ -6,9 +6,7 @@
     "A"
    ],
   "key": {
-    "A": {
-        "item": "minecraft:oak_planks"
-      }
+    "A": "minecraft:oak_planks"
   },
   "result": {
     "id": "customfence:oak_wall_building",

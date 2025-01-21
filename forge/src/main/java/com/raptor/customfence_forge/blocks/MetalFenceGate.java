@@ -69,7 +69,7 @@ public class MetalFenceGate extends FenceGateBlock implements WeatheringFence {
             level.setBlock(pos, state, 10);
             level.playSound(player, pos, SoundEvents.IRON_DOOR_OPEN, SoundSource.BLOCKS, 1.0f, 1.0f);
         }
-        return InteractionResult.sidedSuccess(level.isClientSide);
+        return InteractionResult.SUCCESS;
     }
 
 

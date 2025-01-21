@@ -6,9 +6,7 @@
     "A"
    ],
   "key": {
-    "A": {
-        "item": "minecraft:mangrove_planks"
-      }
+    "A": "minecraft:mangrove_planks"
   },
   "result": {
     "id": "customfence:mangrove_wall_building",

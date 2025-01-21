@@ -1,15 +1,11 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {
-      "id": "customfence:weathered_iron_mesh_fence_gate"
-    },
-    {
-      "item": "minecraft:honeycomb"
-    }
+    "customfence:weathered_iron_mesh_fence_gate",
+    "minecraft:honeycomb"
   ],
   "result": {
-    "id": "customfence:waxed_weathered_iron_mesh_fence_gate"
+    "id": "customfence:waxed_weathered_iron_mesh_fence_gate",
+    "count": 1
   }
 }
- 

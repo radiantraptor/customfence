@@ -6,15 +6,9 @@
     "CBC" 
    ],
   "key": {
-    "A": {
-        "item": "minecraft:oak_planks"
-      },
-    "B": {
-        "item": "minecraft:birch_planks"
-      },
-    "C": {
-        "item": "minecraft:stick"
-      }
+    "A": "minecraft:oak_planks",
+    "B": "minecraft:birch_planks",
+    "C": "minecraft:stick"
   },
   "result": {
     "id": "customfence:birch_oak_decoration",

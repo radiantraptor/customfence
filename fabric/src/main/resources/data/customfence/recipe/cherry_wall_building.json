@@ -6,9 +6,7 @@
     "A"
    ],
   "key": {
-    "A": {
-        "item": "minecraft:cherry_planks"
-      }
+    "A": "minecraft:cherry_planks"
   },
   "result": {
     "id": "customfence:cherry_wall_building",

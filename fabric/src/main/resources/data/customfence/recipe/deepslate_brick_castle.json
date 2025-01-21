@@ -5,9 +5,7 @@
     "AAA"
    ],
   "key": {
-    "A": {
-        "item": "minecraft:deepslate_bricks"
-      }
+    "A": "minecraft:deepslate_bricks"
   },
   "result": {
     "id": "customfence:deepslate_brick_castle",

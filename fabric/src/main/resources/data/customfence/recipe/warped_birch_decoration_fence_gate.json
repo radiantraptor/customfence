@@ -6,15 +6,9 @@
     "C C"
    ],
   "key": {
-    "A": {
-        "item": "minecraft:birch_planks"
-      },
-    "B": {
-        "item": "minecraft:warped_planks"
-      },
-    "C": {
-        "item": "minecraft:stick"
-      }
+    "A": "minecraft:birch_planks",
+    "B": "minecraft:warped_planks",
+    "C": "minecraft:stick"
   },
   "result": {
     "id": "customfence:warped_birch_decoration_fence_gate",

@@ -6,15 +6,9 @@
     "cbc"
    ],
   "key": {
-    "a": {
-        "item": "minecraft:cherry_planks"
-      },
-    "b": {
-        "item": "minecraft:acacia_planks"
-      },
-    "c": {
-        "item": "minecraft:stick"
-      }
+    "a": "minecraft:cherry_planks",
+    "b": "minecraft:acacia_planks",
+    "c": "minecraft:stick"
   },
   "result": {
     "id": "customfence:acacia_cherry_spire",

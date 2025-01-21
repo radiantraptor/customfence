@@ -4,9 +4,9 @@ import net.minecraft.block.FenceBlock;
 
 public class Fence extends FenceBlock {
 
-    public Fence(Settings setting) {
+    public Fence(Settings settings) {
 
-        super(setting);
+        super(settings);
     }
 
 }

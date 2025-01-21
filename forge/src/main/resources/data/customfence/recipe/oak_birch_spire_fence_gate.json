@@ -6,15 +6,9 @@
     "c c"
    ],
   "key": {
-    "a": {
-        "item": "minecraft:birch_planks"
-      },
-    "b": {
-        "item": "minecraft:oak_planks"
-      },
-    "c": {
-        "item": "minecraft:stick"
-      }
+    "a": "minecraft:birch_planks",
+    "b": "minecraft:oak_planks",
+    "c": "minecraft:stick"
   },
   "result": {
     "id": "customfence:oak_birch_spire_fence_gate",

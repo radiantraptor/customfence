@@ -6,9 +6,7 @@
     "AA"
    ],
   "key": {
-    "A": {
-        "item": "minecraft:red_sandstone"
-      }
+    "A": "minecraft:red_sandstone"
   },
   "result": {
     "id": "customfence:red_sandstone_building",

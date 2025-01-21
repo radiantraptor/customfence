@@ -6,9 +6,7 @@
     "AA"
    ],
   "key": {
-    "A": {
-        "item": "minecraft:mossy_stone_bricks"
-      }
+    "A": "minecraft:mossy_stone_bricks"
   },
   "result": {
     "id": "customfence:mossy_stone_bricks_building",

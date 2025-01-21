@@ -5,9 +5,7 @@
     "AAA"
    ],
   "key": {
-    "A": {
-        "item": "minecraft:prismarine"
-      }
+    "A": "minecraft:prismarine"
   },
   "result": {
     "id": "customfence:prismarine_modern",

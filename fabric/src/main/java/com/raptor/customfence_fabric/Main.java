@@ -2,8 +2,10 @@ package com.raptor.customfence_fabric;
 
 import com.raptor.customfence_fabric.blocks.OxidizableFence;
 import com.raptor.customfence_fabric.blocks.WaxableFence;
+import com.raptor.customfence_fabric.blocks.WeatheringFence;
 import com.raptor.customfence_fabric.config.ModTabConfig;
 import com.raptor.customfence_fabric.init.ModItemGroup;
+import com.raptor.customfence_fabric.init.ModBlocks;
 import com.raptor.customfence_fabric.init.ModItems;
 import net.fabricmc.api.ModInitializer;
 
@@ -19,10 +21,10 @@ public class Main implements ModInitializer {
     public void onInitialize() {
         ModTabConfig.load();
 
-        //ModBlocks.registerBlocksWoodenFenceGate(string, fencegate);
-        ModItems.registerItems();
-
+        ModBlocks.registerModBlocks();
         OxidizableFence.oxidizingFences();
+
+
         WaxableFence.waxingFences();
 
         if (ModTabConfig.more_creative_tabs == true) {

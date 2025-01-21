@@ -2,12 +2,20 @@ package com.raptor.customfence_forge.init;
 
 import com.raptor.customfence_forge.Main;
 import com.raptor.customfence_forge.blocks.*;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+
+import java.util.function.Supplier;
 
 
 @SuppressWarnings({"WeakerAccess", "unused"})
@@ -18,108 +26,125 @@ public class ModBlocksWall {
     
     //BEGIN STONEWALLS
 
-    public static final RegistryObject<Block> COBBLESTONE_MODERN = WALL_BLOCKS.register("cobblestone_modern", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(2.0f, 6.0f).sound(SoundType.STONE)));
-    public static final RegistryObject<Block> COBBLESTONE_BUILDING = WALL_BLOCKS.register("cobblestone_building", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(2.0f, 6.0f).sound(SoundType.STONE)));
-    public static final RegistryObject<Block> COBBLESTONE_CASTLE = WALL_BLOCKS.register("cobblestone_castle", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(2.0f, 6.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> COBBLESTONE_MODERN = registerBlock("cobblestone_modern", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "cobblestone_modern"))).strength(2.0f, 6.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> COBBLESTONE_BUILDING = registerBlock("cobblestone_building", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "cobblestone_building"))).strength(2.0f, 6.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> COBBLESTONE_CASTLE = registerBlock("cobblestone_castle", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "cobblestone_castle"))).strength(2.0f, 6.0f).sound(SoundType.STONE)));
 
-    public static final RegistryObject<Block> MOSSY_COBBLESTONE_MODERN = WALL_BLOCKS.register("mossy_cobblestone_modern", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(2.0f, 6.0f).sound(SoundType.STONE)));
-    public static final RegistryObject<Block> MOSSY_COBBLESTONE_BUILDING = WALL_BLOCKS.register("mossy_cobblestone_building", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(2.0f, 6.0f).sound(SoundType.STONE)));
-    public static final RegistryObject<Block> MOSSY_COBBLESTONE_CASTLE = WALL_BLOCKS.register("mossy_cobblestone_castle", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(2.0f, 6.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> MOSSY_COBBLESTONE_MODERN = registerBlock("mossy_cobblestone_modern", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "mossy_cobblestone_modern"))).strength(2.0f, 6.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> MOSSY_COBBLESTONE_BUILDING = registerBlock("mossy_cobblestone_building", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "mossy_cobblestone_building"))).strength(2.0f, 6.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> MOSSY_COBBLESTONE_CASTLE = registerBlock("mossy_cobblestone_castle", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "mossy_cobblestone_castle"))).strength(2.0f, 6.0f).sound(SoundType.STONE)));
 
-    public static final RegistryObject<Block> STONE_MODERN = WALL_BLOCKS.register("stone_modern", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(1.5f, 6.0f).sound(SoundType.STONE)));
-    public static final RegistryObject<Block> STONE_BUILDING = WALL_BLOCKS.register("stone_building", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(1.5f, 6.0f).sound(SoundType.STONE)));
-    public static final RegistryObject<Block> STONE_CASTLE = WALL_BLOCKS.register("stone_castle", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(1.5f, 6.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> STONE_MODERN = registerBlock("stone_modern", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "stone_modern"))).strength(1.5f, 6.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> STONE_BUILDING = registerBlock("stone_building", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "stone_building"))).strength(1.5f, 6.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> STONE_CASTLE = registerBlock("stone_castle", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "stone_castle"))).strength(1.5f, 6.0f).sound(SoundType.STONE)));
 
-    public static final RegistryObject<Block> STONE_BRICKS_MODERN = WALL_BLOCKS.register("stone_bricks_modern", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(1.5f, 6.0f).sound(SoundType.STONE)));
-    public static final RegistryObject<Block> STONE_BRICKS_BUILDING = WALL_BLOCKS.register("stone_bricks_building", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(1.5f, 6.0f).sound(SoundType.STONE)));
-    public static final RegistryObject<Block> STONE_BRICKS_CASTLE = WALL_BLOCKS.register("stone_bricks_castle", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(1.5f, 6.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> STONE_BRICKS_MODERN = registerBlock("stone_bricks_modern", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "stone_bricks_modern"))).strength(1.5f, 6.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> STONE_BRICKS_BUILDING = registerBlock("stone_bricks_building", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "stone_bricks_building"))).strength(1.5f, 6.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> STONE_BRICKS_CASTLE = registerBlock("stone_bricks_castle", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "stone_bricks_castle"))).strength(1.5f, 6.0f).sound(SoundType.STONE)));
 
-    public static final RegistryObject<Block> MOSSY_STONE_BRICKS_MODERN = WALL_BLOCKS.register("mossy_stone_bricks_modern", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(1.5f, 6.0f).sound(SoundType.STONE)));
-    public static final RegistryObject<Block> MOSSY_STONE_BRICKS_BUILDING = WALL_BLOCKS.register("mossy_stone_bricks_building", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(1.5f, 6.0f).sound(SoundType.STONE)));
-    public static final RegistryObject<Block> MOSSY_STONE_BRICKS_CASTLE = WALL_BLOCKS.register("mossy_stone_bricks_castle", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(1.5f, 6.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> MOSSY_STONE_BRICKS_MODERN = registerBlock("mossy_stone_bricks_modern", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "mossy_stone_bricks_modern"))).strength(1.5f, 6.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> MOSSY_STONE_BRICKS_BUILDING = registerBlock("mossy_stone_bricks_building", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "mossy_stone_bricks_building"))).strength(1.5f, 6.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> MOSSY_STONE_BRICKS_CASTLE = registerBlock("mossy_stone_bricks_castle", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "mossy_stone_bricks_castle"))).strength(1.5f, 6.0f).sound(SoundType.STONE)));
 
-    public static final RegistryObject<Block> ANDESITE_MODERN = WALL_BLOCKS.register("andesite_modern", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(1.5f, 6.0f).sound(SoundType.STONE)));
-    public static final RegistryObject<Block> ANDESITE_BUILDING = WALL_BLOCKS.register("andesite_building", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(1.5f, 6.0f).sound(SoundType.STONE)));
-    public static final RegistryObject<Block> ANDESITE_CASTLE = WALL_BLOCKS.register("andesite_castle", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(1.5f, 6.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> ANDESITE_MODERN = registerBlock("andesite_modern", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "andesite_modern"))).strength(1.5f, 6.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> ANDESITE_BUILDING = registerBlock("andesite_building", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "andesite_building"))).strength(1.5f, 6.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> ANDESITE_CASTLE = registerBlock("andesite_castle", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "andesite_castle"))).strength(1.5f, 6.0f).sound(SoundType.STONE)));
 
-    public static final RegistryObject<Block> DIORITE_MODERN = WALL_BLOCKS.register("diorite_modern", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(1.5f, 6.0f).sound(SoundType.STONE)));
-    public static final RegistryObject<Block> DIORITE_BUILDING = WALL_BLOCKS.register("diorite_building", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(1.5f, 6.0f).sound(SoundType.STONE)));
-    public static final RegistryObject<Block> DIORITE_CASTLE = WALL_BLOCKS.register("diorite_castle", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(1.5f, 6.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> DIORITE_MODERN = registerBlock("diorite_modern", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "diorite_modern"))).strength(1.5f, 6.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> DIORITE_BUILDING = registerBlock("diorite_building", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "diorite_building"))).strength(1.5f, 6.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> DIORITE_CASTLE = registerBlock("diorite_castle", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "diorite_castle"))).strength(1.5f, 6.0f).sound(SoundType.STONE)));
 
-    public static final RegistryObject<Block> GRANITE_MODERN = WALL_BLOCKS.register("granite_modern", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(1.5f, 6.0f).sound(SoundType.STONE)));
-    public static final RegistryObject<Block> GRANITE_BUILDING = WALL_BLOCKS.register("granite_building", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(1.5f, 6.0f).sound(SoundType.STONE)));
-    public static final RegistryObject<Block> GRANITE_CASTLE = WALL_BLOCKS.register("granite_castle", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(1.5f, 6.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> GRANITE_MODERN = registerBlock("granite_modern", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "granite_modern"))).strength(1.5f, 6.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> GRANITE_BUILDING = registerBlock("granite_building", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "granite_building"))).strength(1.5f, 6.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> GRANITE_CASTLE = registerBlock("granite_castle", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "granite_castle"))).strength(1.5f, 6.0f).sound(SoundType.STONE)));
 
-    public static final RegistryObject<Block> SANDSTONE_MODERN = WALL_BLOCKS.register("sandstone_modern", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(0.8f, 0.8f).sound(SoundType.STONE)));
-    public static final RegistryObject<Block> SANDSTONE_BUILDING = WALL_BLOCKS.register("sandstone_building", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(0.8f, 0.8f).sound(SoundType.STONE)));
-    public static final RegistryObject<Block> SANDSTONE_CASTLE = WALL_BLOCKS.register("sandstone_castle", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(0.8f, 0.8f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> SANDSTONE_MODERN = registerBlock("sandstone_modern", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "sandstone_modern"))).strength(0.8f, 0.8f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> SANDSTONE_BUILDING = registerBlock("sandstone_building", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "sandstone_building"))).strength(0.8f, 0.8f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> SANDSTONE_CASTLE = registerBlock("sandstone_castle", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "sandstone_castle"))).strength(0.8f, 0.8f).sound(SoundType.STONE)));
 
-    public static final RegistryObject<Block> RED_SANDSTONE_MODERN = WALL_BLOCKS.register("red_sandstone_modern", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(0.8f, 0.8f).sound(SoundType.STONE)));
-    public static final RegistryObject<Block> RED_SANDSTONE_BUILDING = WALL_BLOCKS.register("red_sandstone_building", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(0.8f, 0.8f).sound(SoundType.STONE)));
-    public static final RegistryObject<Block> RED_SANDSTONE_CASTLE = WALL_BLOCKS.register("red_sandstone_castle", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(0.8f, 0.8f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> RED_SANDSTONE_MODERN = registerBlock("red_sandstone_modern", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "red_sandstone_modern"))).strength(0.8f, 0.8f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> RED_SANDSTONE_BUILDING = registerBlock("red_sandstone_building", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "red_sandstone_building"))).strength(0.8f, 0.8f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> RED_SANDSTONE_CASTLE = registerBlock("red_sandstone_castle", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "red_sandstone_castle"))).strength(0.8f, 0.8f).sound(SoundType.STONE)));
 
-    public static final RegistryObject<Block> BRICKS_MODERN = WALL_BLOCKS.register("bricks_modern", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(2.0f, 6.0f).sound(SoundType.STONE)));
-    public static final RegistryObject<Block> BRICKS_BUILDING = WALL_BLOCKS.register("bricks_building", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(2.0f, 6.0f).sound(SoundType.STONE)));
-    public static final RegistryObject<Block> BRICKS_CASTLE = WALL_BLOCKS.register("bricks_castle", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(2.0f, 6.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> BRICKS_MODERN = registerBlock("bricks_modern", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "bricks_modern"))).strength(2.0f, 6.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> BRICKS_BUILDING = registerBlock("bricks_building", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "bricks_building"))).strength(2.0f, 6.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> BRICKS_CASTLE = registerBlock("bricks_castle", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "bricks_castle"))).strength(2.0f, 6.0f).sound(SoundType.STONE)));
 
-    public static final RegistryObject<Block> PRISMARINE_MODERN = WALL_BLOCKS.register("prismarine_modern", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(1.5f, 6.0f).sound(SoundType.STONE)));
-    public static final RegistryObject<Block> PRISMARINE_BUILDING = WALL_BLOCKS.register("prismarine_building", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(1.5f, 6.0f).sound(SoundType.STONE)));
-    public static final RegistryObject<Block> PRISMARINE_CASTLE = WALL_BLOCKS.register("prismarine_castle", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(1.5f, 6.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> PRISMARINE_MODERN = registerBlock("prismarine_modern", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "prismarine_modern"))).strength(1.5f, 6.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> PRISMARINE_BUILDING = registerBlock("prismarine_building", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "prismarine_building"))).strength(1.5f, 6.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> PRISMARINE_CASTLE = registerBlock("prismarine_castle", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "prismarine_castle"))).strength(1.5f, 6.0f).sound(SoundType.STONE)));
 
-    public static final RegistryObject<Block> NETHER_BRICKS_MODERN = WALL_BLOCKS.register("nether_bricks_modern", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(2.0f, 6.0f).sound(SoundType.STONE)));
-    public static final RegistryObject<Block> NETHER_BRICKS_BUILDING = WALL_BLOCKS.register("nether_bricks_building", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(2.0f, 6.0f).sound(SoundType.STONE)));
-    public static final RegistryObject<Block> NETHER_BRICKS_CASTLE = WALL_BLOCKS.register("nether_bricks_castle", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(2.0f, 6.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> NETHER_BRICKS_MODERN = registerBlock("nether_bricks_modern", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "nether_bricks_modern"))).strength(2.0f, 6.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> NETHER_BRICKS_BUILDING = registerBlock("nether_bricks_building", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "nether_bricks_building"))).strength(2.0f, 6.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> NETHER_BRICKS_CASTLE = registerBlock("nether_bricks_castle", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "nether_bricks_castle"))).strength(2.0f, 6.0f).sound(SoundType.STONE)));
 
-    public static final RegistryObject<Block> RED_NETHER_BRICKS_MODERN = WALL_BLOCKS.register("red_nether_bricks_modern", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(2.0f, 6.0f).sound(SoundType.STONE)));
-    public static final RegistryObject<Block> RED_NETHER_BRICKS_BUILDING = WALL_BLOCKS.register("red_nether_bricks_building", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(2.0f, 6.0f).sound(SoundType.STONE)));
-    public static final RegistryObject<Block> RED_NETHER_BRICKS_CASTLE = WALL_BLOCKS.register("red_nether_bricks_castle", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(2.0f, 6.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> RED_NETHER_BRICKS_MODERN = registerBlock("red_nether_bricks_modern", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "red_nether_bricks_modern"))).strength(2.0f, 6.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> RED_NETHER_BRICKS_BUILDING = registerBlock("red_nether_bricks_building", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "red_nether_bricks_building"))).strength(2.0f, 6.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> RED_NETHER_BRICKS_CASTLE = registerBlock("red_nether_bricks_castle", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "red_nether_bricks_castle"))).strength(2.0f, 6.0f).sound(SoundType.STONE)));
 
-    public static final RegistryObject<Block> END_STONE_BRICKS_MODERN = WALL_BLOCKS.register("end_stone_bricks_modern", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(3.0f, 9.0f).sound(SoundType.STONE)));
-    public static final RegistryObject<Block> END_STONE_BRICKS_BUILDING = WALL_BLOCKS.register("end_stone_bricks_building", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(3.0f, 9.0f).sound(SoundType.STONE)));
-    public static final RegistryObject<Block> END_STONE_BRICKS_CASTLE = WALL_BLOCKS.register("end_stone_bricks_castle", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(3.0f, 9.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> END_STONE_BRICKS_MODERN = registerBlock("end_stone_bricks_modern", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "end_stone_bricks_modern"))).strength(3.0f, 9.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> END_STONE_BRICKS_BUILDING = registerBlock("end_stone_bricks_building", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "end_stone_bricks_building"))).strength(3.0f, 9.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> END_STONE_BRICKS_CASTLE = registerBlock("end_stone_bricks_castle", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "end_stone_bricks_castle"))).strength(3.0f, 9.0f).sound(SoundType.STONE)));
 
-    public static final RegistryObject<Block> BLACKSTONE_MODERN = WALL_BLOCKS.register("blackstone_modern", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(1.5f, 6.0f).sound(SoundType.STONE)));
-    public static final RegistryObject<Block> BLACKSTONE_BUILDING = WALL_BLOCKS.register("blackstone_building", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(1.5f, 6.0f).sound(SoundType.STONE)));
-    public static final RegistryObject<Block> BLACKSTONE_CASTLE = WALL_BLOCKS.register("blackstone_castle", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(1.5f, 6.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> BLACKSTONE_MODERN = registerBlock("blackstone_modern", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "blackstone_modern"))).strength(1.5f, 6.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> BLACKSTONE_BUILDING = registerBlock("blackstone_building", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "blackstone_building"))).strength(1.5f, 6.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> BLACKSTONE_CASTLE = registerBlock("blackstone_castle", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "blackstone_castle"))).strength(1.5f, 6.0f).sound(SoundType.STONE)));
 
-    public static final RegistryObject<Block> POLISHED_BLACKSTONE_MODERN = WALL_BLOCKS.register("polished_blackstone_modern", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(2.0f, 6.0f).sound(SoundType.STONE)));
-    public static final RegistryObject<Block> POLISHED_BLACKSTONE_BUILDING = WALL_BLOCKS.register("polished_blackstone_building", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(2.0f, 6.0f).sound(SoundType.STONE)));
-    public static final RegistryObject<Block> POLISHED_BLACKSTONE_CASTLE = WALL_BLOCKS.register("polished_blackstone_castle", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(2.0f, 6.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> POLISHED_BLACKSTONE_MODERN = registerBlock("polished_blackstone_modern", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "polished_blackstone_modern"))).strength(2.0f, 6.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> POLISHED_BLACKSTONE_BUILDING = registerBlock("polished_blackstone_building", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "polished_blackstone_building"))).strength(2.0f, 6.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> POLISHED_BLACKSTONE_CASTLE = registerBlock("polished_blackstone_castle", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "polished_blackstone_castle"))).strength(2.0f, 6.0f).sound(SoundType.STONE)));
 
-    public static final RegistryObject<Block> POLISHED_BLACKSTONE_BRICKS_MODERN = WALL_BLOCKS.register("polished_blackstone_bricks_modern", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(1.5f, 6.0f).sound(SoundType.STONE)));
-    public static final RegistryObject<Block> POLISHED_BLACKSTONE_BRICKS_BUILDING = WALL_BLOCKS.register("polished_blackstone_bricks_building", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(1.5f, 6.0f).sound(SoundType.STONE)));
-    public static final RegistryObject<Block> POLISHED_BLACKSTONE_BRICKS_CASTLE = WALL_BLOCKS.register("polished_blackstone_bricks_castle", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(1.5f, 6.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> POLISHED_BLACKSTONE_BRICKS_MODERN = registerBlock("polished_blackstone_bricks_modern", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "polished_blackstone_bricks_modern"))).strength(1.5f, 6.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> POLISHED_BLACKSTONE_BRICKS_BUILDING = registerBlock("polished_blackstone_bricks_building", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "polished_blackstone_bricks_building"))).strength(1.5f, 6.0f).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> POLISHED_BLACKSTONE_BRICKS_CASTLE = registerBlock("polished_blackstone_bricks_castle", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "polished_blackstone_bricks_castle"))).strength(1.5f, 6.0f).sound(SoundType.STONE)));
 
-    public static final RegistryObject<Block> COBBLED_DEEPSLATE_MODERN = WALL_BLOCKS.register("cobbled_deepslate_modern", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(3.5f, 6.0f).sound(SoundType.DEEPSLATE)));
-    public static final RegistryObject<Block> COBBLED_DEEPSLATE_BUILDING = WALL_BLOCKS.register("cobbled_deepslate_building", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(3.5f, 6.0f).sound(SoundType.DEEPSLATE)));
-    public static final RegistryObject<Block> COBBLED_DEEPSLATE_CASTLE = WALL_BLOCKS.register("cobbled_deepslate_castle", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(3.5f, 6.0f).sound(SoundType.DEEPSLATE)));
+    public static final RegistryObject<Block> COBBLED_DEEPSLATE_MODERN = registerBlock("cobbled_deepslate_modern", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "cobbled_deepslate_modern"))).strength(3.5f, 6.0f).sound(SoundType.DEEPSLATE)));
+    public static final RegistryObject<Block> COBBLED_DEEPSLATE_BUILDING = registerBlock("cobbled_deepslate_building", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "cobbled_deepslate_building"))).strength(3.5f, 6.0f).sound(SoundType.DEEPSLATE)));
+    public static final RegistryObject<Block> COBBLED_DEEPSLATE_CASTLE = registerBlock("cobbled_deepslate_castle", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "cobbled_deepslate_castle"))).strength(3.5f, 6.0f).sound(SoundType.DEEPSLATE)));
 
-    public static final RegistryObject<Block> POLISHED_DEEPSLATE_MODERN = WALL_BLOCKS.register("polished_deepslate_modern", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(3.5f, 6.0f).sound(SoundType.DEEPSLATE)));
-    public static final RegistryObject<Block> POLISHED_DEEPSLATE_BUILDING = WALL_BLOCKS.register("polished_deepslate_building", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(3.5f, 6.0f).sound(SoundType.DEEPSLATE)));
-    public static final RegistryObject<Block> POLISHED_DEEPSLATE_CASTLE = WALL_BLOCKS.register("polished_deepslate_castle", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(3.5f, 6.0f).sound(SoundType.DEEPSLATE)));
+    public static final RegistryObject<Block> POLISHED_DEEPSLATE_MODERN = registerBlock("polished_deepslate_modern", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "polished_deepslate_modern"))).strength(3.5f, 6.0f).sound(SoundType.DEEPSLATE)));
+    public static final RegistryObject<Block> POLISHED_DEEPSLATE_BUILDING = registerBlock("polished_deepslate_building", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "polished_deepslate_building"))).strength(3.5f, 6.0f).sound(SoundType.DEEPSLATE)));
+    public static final RegistryObject<Block> POLISHED_DEEPSLATE_CASTLE = registerBlock("polished_deepslate_castle", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "polished_deepslate_castle"))).strength(3.5f, 6.0f).sound(SoundType.DEEPSLATE)));
 
-    public static final RegistryObject<Block> DEEPSLATE_BRICK_MODERN = WALL_BLOCKS.register("deepslate_brick_modern", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(3.5f, 6.0f).sound(SoundType.DEEPSLATE_BRICKS)));
-    public static final RegistryObject<Block> DEEPSLATE_BRICK_BUILDING = WALL_BLOCKS.register("deepslate_brick_building", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(3.5f, 6.0f).sound(SoundType.DEEPSLATE_BRICKS)));
-    public static final RegistryObject<Block> DEEPSLATE_BRICK_CASTLE = WALL_BLOCKS.register("deepslate_brick_castle", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(3.5f, 6.0f).sound(SoundType.DEEPSLATE_BRICKS)));
+    public static final RegistryObject<Block> DEEPSLATE_BRICK_MODERN = registerBlock("deepslate_brick_modern", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "deepslate_brick_modern"))).strength(3.5f, 6.0f).sound(SoundType.DEEPSLATE_BRICKS)));
+    public static final RegistryObject<Block> DEEPSLATE_BRICK_BUILDING = registerBlock("deepslate_brick_building", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "deepslate_brick_building"))).strength(3.5f, 6.0f).sound(SoundType.DEEPSLATE_BRICKS)));
+    public static final RegistryObject<Block> DEEPSLATE_BRICK_CASTLE = registerBlock("deepslate_brick_castle", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "deepslate_brick_castle"))).strength(3.5f, 6.0f).sound(SoundType.DEEPSLATE_BRICKS)));
 
-    public static final RegistryObject<Block> DEEPSLATE_TILE_MODERN = WALL_BLOCKS.register("deepslate_tile_modern", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(3.5f, 6.0f).sound(SoundType.DEEPSLATE_TILES)));
-    public static final RegistryObject<Block> DEEPSLATE_TILE_BUILDING = WALL_BLOCKS.register("deepslate_tile_building", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(3.5f, 6.0f).sound(SoundType.DEEPSLATE_TILES)));
-    public static final RegistryObject<Block> DEEPSLATE_TILE_CASTLE = WALL_BLOCKS.register("deepslate_tile_castle", () -> new Wall(Block.Properties.of().requiresCorrectToolForDrops().strength(3.5f, 6.0f).sound(SoundType.DEEPSLATE_TILES)));
+    public static final RegistryObject<Block> DEEPSLATE_TILE_MODERN = registerBlock("deepslate_tile_modern", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "deepslate_tile_modern"))).strength(3.5f, 6.0f).sound(SoundType.DEEPSLATE_TILES)));
+    public static final RegistryObject<Block> DEEPSLATE_TILE_BUILDING = registerBlock("deepslate_tile_building", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "deepslate_tile_building"))).strength(3.5f, 6.0f).sound(SoundType.DEEPSLATE_TILES)));
+    public static final RegistryObject<Block> DEEPSLATE_TILE_CASTLE = registerBlock("deepslate_tile_castle", () -> new Wall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "deepslate_tile_castle"))).strength(3.5f, 6.0f).sound(SoundType.DEEPSLATE_TILES)));
+
     
     //END STONEWALLS AND BEGIN WOODENWALLS
 
-    public static final RegistryObject<Block> OAK_WALL_BUILDING = WALL_BLOCKS.register("oak_wall_building", () -> new WoodWall(Block.Properties.of().strength(2.0f, 3.0f).sound(SoundType.WOOD)));
-    public static final RegistryObject<Block> BIRCH_WALL_BUILDING = WALL_BLOCKS.register("birch_wall_building", () -> new WoodWall(Block.Properties.of().strength(2.0f, 3.0f).sound(SoundType.WOOD)));
-    public static final RegistryObject<Block> SPRUCE_WALL_BUILDING = WALL_BLOCKS.register("spruce_wall_building", () -> new WoodWall(Block.Properties.of().strength(2.0f, 3.0f).sound(SoundType.WOOD)));
-    public static final RegistryObject<Block> ACACIA_WALL_BUILDING = WALL_BLOCKS.register("acacia_wall_building", () -> new WoodWall(Block.Properties.of().strength(2.0f, 3.0f).sound(SoundType.WOOD)));
-    public static final RegistryObject<Block> JUNGLE_WALL_BUILDING = WALL_BLOCKS.register("jungle_wall_building", () -> new WoodWall(Block.Properties.of().strength(2.0f, 3.0f).sound(SoundType.WOOD)));
-    public static final RegistryObject<Block> DARKOAK_WALL_BUILDING = WALL_BLOCKS.register("darkoak_wall_building", () -> new WoodWall(Block.Properties.of().strength(2.0f, 3.0f).sound(SoundType.WOOD)));
-    public static final RegistryObject<Block> CRIMSON_WALL_BUILDING = WALL_BLOCKS.register("crimson_wall_building", () -> new WoodWall(Block.Properties.of().strength(2.0f, 3.0f).sound(SoundType.WOOD)));
-    public static final RegistryObject<Block> WARPED_WALL_BUILDING = WALL_BLOCKS.register("warped_wall_building", () -> new WoodWall(Block.Properties.of().strength(2.0f, 3.0f).sound(SoundType.WOOD)));
-    public static final RegistryObject<Block> MANGROVE_WALL_BUILDING = WALL_BLOCKS.register("mangrove_wall_building", () -> new WoodWall(Block.Properties.of().strength(2.0f, 3.0f).sound(SoundType.WOOD)));
-    public static final RegistryObject<Block> BAMBOO_WALL_BUILDING = WALL_BLOCKS.register("bamboo_wall_building", () -> new WoodWall(Block.Properties.of().strength(2.0f, 3.0f).sound(SoundType.WOOD)));
-    public static final RegistryObject<Block> CHERRY_WALL_BUILDING = WALL_BLOCKS.register("cherry_wall_building", () -> new WoodWall(Block.Properties.of().strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> OAK_WALL_BUILDING = registerBlock("oak_wall_building", () -> new WoodWall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "oak_wall_building"))).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> BIRCH_WALL_BUILDING = registerBlock("birch_wall_building", () -> new WoodWall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "birch_wall_building"))).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> SPRUCE_WALL_BUILDING = registerBlock("spruce_wall_building", () -> new WoodWall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "spruce_wall_building"))).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> ACACIA_WALL_BUILDING = registerBlock("acacia_wall_building", () -> new WoodWall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "acacia_wall_building"))).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> JUNGLE_WALL_BUILDING = registerBlock("jungle_wall_building", () -> new WoodWall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "jungle_wall_building"))).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> DARKOAK_WALL_BUILDING = registerBlock("darkoak_wall_building", () -> new WoodWall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "darkoak_wall_building"))).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> CRIMSON_WALL_BUILDING = registerBlock("crimson_wall_building", () -> new WoodWall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "crimson_wall_building"))).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> WARPED_WALL_BUILDING = registerBlock("warped_wall_building", () -> new WoodWall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "warped_wall_building"))).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> MANGROVE_WALL_BUILDING = registerBlock("mangrove_wall_building", () -> new WoodWall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "mangrove_wall_building"))).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> BAMBOO_WALL_BUILDING = registerBlock("bamboo_wall_building", () -> new WoodWall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "bamboo_wall_building"))).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> CHERRY_WALL_BUILDING = registerBlock("cherry_wall_building", () -> new WoodWall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "cherry_wall_building"))).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     
     //END WOODENWALLS
+
+
+    private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
+        RegistryObject<T> toReturn = WALL_BLOCKS.register(name, block);
+        registerBlockItem(name, toReturn);
+        return toReturn;
+    }
+
+    private static <T extends Block> void registerBlockItem(String name, RegistryObject<T> block) {
+        ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()
+                .setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, name)))));
+    }
+
+    public static void register(IEventBus eventBus) {
+        WALL_BLOCKS.register(eventBus);
+    }
 
 }

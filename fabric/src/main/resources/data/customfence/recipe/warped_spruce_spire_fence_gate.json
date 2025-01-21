@@ -6,15 +6,9 @@
     "c c"
    ],
   "key": {
-    "a": {
-        "item": "minecraft:spruce_planks"
-      },
-    "b": {
-        "item": "minecraft:warped_planks"
-      },
-    "c": {
-        "item": "minecraft:stick"
-      }
+    "a": "minecraft:spruce_planks",
+    "b": "minecraft:warped_planks",
+    "c": "minecraft:stick"
   },
   "result": {
     "id": "customfence:warped_spruce_spire_fence_gate",

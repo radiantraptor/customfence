@@ -993,7 +993,7 @@ public class ModItemGroup {
     public static ArrayList<Block> listOfWallBlocks() {
 
         ArrayList<Block> WALL_BLOCK_LIST = new ArrayList<Block>();
-        
+
         //BEGIN STONEWALLS
 
         WALL_BLOCK_LIST.add(ModBlocks.COBBLESTONE_MODERN);
@@ -1083,7 +1083,7 @@ public class ModItemGroup {
         WALL_BLOCK_LIST.add(ModBlocks.DEEPSLATE_TILE_MODERN);
         WALL_BLOCK_LIST.add(ModBlocks.DEEPSLATE_TILE_BUILDING);
         WALL_BLOCK_LIST.add(ModBlocks.DEEPSLATE_TILE_CASTLE);
-        
+
         //END STONEWALLS AND BEGIN WOODENWALLS
 
         WALL_BLOCK_LIST.add(ModBlocks.OAK_WALL_BUILDING);
@@ -1098,16 +1098,16 @@ public class ModItemGroup {
         WALL_BLOCK_LIST.add(ModBlocks.BAMBOO_WALL_BUILDING);
         WALL_BLOCK_LIST.add(ModBlocks.CHERRY_WALL_BUILDING);
 
-        
+
         //END WOODENWALLS
-        
+
         return WALL_BLOCK_LIST;
     }
 
     public static ArrayList<Block> listOfMetalFenceBlocks() {
 
         ArrayList<Block> METAL_FENCE_BLOCK_LIST = new ArrayList<Block>();
-        
+
         //BEGIN METALLFENCES
 
         METAL_FENCE_BLOCK_LIST.add(ModBlocks.COBBLESTONE_COPPER_MANSION_FENCE);
@@ -1196,7 +1196,7 @@ public class ModItemGroup {
 
         METAL_FENCE_BLOCK_LIST.add(ModBlocks.COBBLESTONE_GOLD_MESH_FENCE);
         METAL_FENCE_BLOCK_LIST.add(ModBlocks.GOLD_MESH_FENCE_GATE);
-        
+
         //END METALLFENCES
 
         return METAL_FENCE_BLOCK_LIST;

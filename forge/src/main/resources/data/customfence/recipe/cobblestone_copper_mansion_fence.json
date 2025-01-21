@@ -5,12 +5,8 @@
     "BAB"
    ],
   "key": {
-    "A": {
-        "item": "minecraft:copper_ingot"
-      },
-    "B": {
-        "item": "minecraft:cobblestone"
-      }
+    "A": "minecraft:copper_ingot",
+    "B": "minecraft:cobblestone"
   },
   "result": {
     "id": "customfence:cobblestone_copper_mansion_fence",

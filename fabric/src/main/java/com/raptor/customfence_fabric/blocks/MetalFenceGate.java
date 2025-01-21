@@ -17,7 +17,9 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
+import net.minecraft.world.block.WireOrientation;
 import net.minecraft.world.event.GameEvent;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Consumer;
 
@@ -60,15 +62,15 @@ public class MetalFenceGate extends FenceGateBlock implements WeatheringFence, C
             world.setBlockState(pos, state, 10);
             world.playSound(player, pos, SoundEvents.BLOCK_IRON_DOOR_OPEN, SoundCategory.BLOCKS, 1.0f, 1.0f);
         }
-        return ActionResult.success(world.isClient);
+        return ActionResult.SUCCESS;
     }
 
-    public void neighborUpdate(BlockState state, World world, BlockPos pos, Block block, BlockPos pos2, boolean istrue) {
+    public void neighborUpdate(BlockState state, World world, BlockPos pos, Block block, @Nullable WireOrientation wireOrientation, boolean notify) {
         if (!world.isClient) {
             if (state.get(POWERED) != world.isReceivingRedstonePower(pos)) {
                 world.setBlockState(pos, (state.with(POWERED, world.isReceivingRedstonePower(pos))).with(OPEN, world.isReceivingRedstonePower(pos)), 2);
                 if (state.get(OPEN) != world.isReceivingRedstonePower(pos)) {
-                    world.playSound((Entity)null, pos, world.isReceivingRedstonePower(pos) ? SoundEvents.BLOCK_IRON_DOOR_OPEN : SoundEvents.BLOCK_IRON_DOOR_CLOSE, SoundCategory.BLOCKS, 1.0f, 1.0f);
+                    world.playSound((PlayerEntity)null, pos, world.isReceivingRedstonePower(pos) ? SoundEvents.BLOCK_IRON_DOOR_OPEN : SoundEvents.BLOCK_IRON_DOOR_CLOSE, SoundCategory.BLOCKS, 1.0f, 1.0f);
                     world.emitGameEvent((Entity)null, world.isReceivingRedstonePower(pos) ? GameEvent.BLOCK_OPEN : GameEvent.BLOCK_CLOSE, pos);
                 }
             }

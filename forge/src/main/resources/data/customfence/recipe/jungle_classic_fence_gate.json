@@ -6,12 +6,8 @@
     "C C" 
    ],
   "key": {
-    "A": {
-        "item": "minecraft:jungle_planks"
-      },
-    "C": {
-        "item": "minecraft:stick"
-      }
+    "A": "minecraft:jungle_planks",
+    "C": "minecraft:stick"
   },
   "result": {
     "id": "customfence:jungle_classic_fence_gate",

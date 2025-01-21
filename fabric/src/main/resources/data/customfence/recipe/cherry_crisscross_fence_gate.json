@@ -6,12 +6,8 @@
     "C C" 
    ],
   "key": {
-    "A": {
-        "item": "minecraft:cherry_planks"
-      },
-    "C": {
-        "item": "minecraft:stick"
-      }
+    "A": "minecraft:cherry_planks",
+    "C": "minecraft:stick"
   },
   "result": {
     "id": "customfence:cherry_crisscross_fence_gate",

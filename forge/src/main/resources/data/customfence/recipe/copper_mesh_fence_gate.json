@@ -6,9 +6,7 @@
     "A A"
    ],
   "key": {
-    "A": {
-        "item": "minecraft:copper_ingot"
-      }
+    "A": "minecraft:copper_ingot"
   },
   "result": {
     "id": "customfence:copper_mesh_fence_gate",

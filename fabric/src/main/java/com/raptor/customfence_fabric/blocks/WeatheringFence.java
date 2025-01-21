@@ -18,7 +18,7 @@ public interface WeatheringFence extends Degradable<WeatheringFence.WeatherState
 
         if (ModTabConfig.metal_oxidation == true) {
             return ImmutableBiMap.<Block, Block>builder()
-
+/*
                     .put(ModBlocks.COBBLESTONE_COPPER_MANSION_FENCE, ModBlocks.COBBLESTONE_EXPOSED_COPPER_MANSION_FENCE)
                     .put(ModBlocks.COBBLESTONE_EXPOSED_COPPER_MANSION_FENCE, ModBlocks.COBBLESTONE_WEATHERED_COPPER_MANSION_FENCE)
                     .put(ModBlocks.COBBLESTONE_WEATHERED_COPPER_MANSION_FENCE, ModBlocks.COBBLESTONE_OXIDIZED_COPPER_MANSION_FENCE)
@@ -46,7 +46,7 @@ public interface WeatheringFence extends Degradable<WeatheringFence.WeatherState
                     .put(ModBlocks.IRON_MESH_FENCE_GATE, ModBlocks.EXPOSED_IRON_MESH_FENCE_GATE)
                     .put(ModBlocks.EXPOSED_IRON_MESH_FENCE_GATE, ModBlocks.WEATHERED_IRON_MESH_FENCE_GATE)
                     .put(ModBlocks.WEATHERED_IRON_MESH_FENCE_GATE, ModBlocks.OXIDIZED_IRON_MESH_FENCE_GATE)
-
+*/
                     .build();
         }
         else {

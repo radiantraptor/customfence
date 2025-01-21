@@ -5,9 +5,7 @@
     "AAA"
    ],
   "key": {
-    "A": {
-        "item": "minecraft:polished_blackstone"
-      }
+    "A": "minecraft:polished_blackstone"
   },
   "result": {
     "id": "customfence:polished_blackstone_modern",

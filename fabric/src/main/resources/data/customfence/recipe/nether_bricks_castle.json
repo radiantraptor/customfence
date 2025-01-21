@@ -5,9 +5,7 @@
     "AAA"
    ],
   "key": {
-    "A": {
-        "item": "minecraft:nether_bricks"
-      }
+    "A": "minecraft:nether_bricks"
   },
   "result": {
     "id": "customfence:nether_bricks_castle",

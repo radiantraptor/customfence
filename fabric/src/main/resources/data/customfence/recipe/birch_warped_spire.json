@@ -6,15 +6,9 @@
     "cbc"
    ],
   "key": {
-    "a": {
-        "item": "minecraft:warped_planks"
-      },
-    "b": {
-        "item": "minecraft:birch_planks"
-      },
-    "c": {
-        "item": "minecraft:stick"
-      }
+    "a": "minecraft:warped_planks",
+    "b": "minecraft:birch_planks",
+    "c": "minecraft:stick"
   },
   "result": {
     "id": "customfence:birch_warped_spire",

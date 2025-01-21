@@ -6,15 +6,9 @@
     "CBC"
    ],
   "key": {
-    "A": {
-        "item": "minecraft:oak_planks"
-      },
-    "B": {
-        "item": "minecraft:warped_planks"
-      },
-    "C": {
-        "item": "minecraft:stick"
-      }
+    "A": "minecraft:oak_planks",
+    "B": "minecraft:warped_planks",
+    "C": "minecraft:stick"
   },
   "result": {
     "id": "customfence:warped_oak_garden",

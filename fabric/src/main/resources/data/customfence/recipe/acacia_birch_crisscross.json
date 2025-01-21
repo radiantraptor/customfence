@@ -6,15 +6,9 @@
     "CBC" 
    ],
   "key": {
-    "A": {
-        "item": "minecraft:birch_planks"
-      },
-    "B": {
-        "item": "minecraft:acacia_planks"
-      },
-    "C": {
-        "item": "minecraft:stick"
-      }
+    "A": "minecraft:birch_planks",
+    "B": "minecraft:acacia_planks",
+    "C": "minecraft:stick"
   },
   "result": {
     "id": "customfence:acacia_birch_crisscross",

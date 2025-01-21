@@ -6,15 +6,9 @@
     "c c"
    ],
   "key": {
-    "a": {
-        "item": "minecraft:dark_oak_planks"
-      },
-    "b": {
-        "item": "minecraft:crimson_planks"
-      },
-    "c": {
-        "item": "minecraft:stick"
-      }
+    "a": "minecraft:dark_oak_planks",
+    "b": "minecraft:crimson_planks",
+    "c": "minecraft:stick"
   },
   "result": {
     "id": "customfence:crimson_darkoak_spire_fence_gate",

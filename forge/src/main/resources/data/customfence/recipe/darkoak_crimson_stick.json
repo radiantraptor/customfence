@@ -6,15 +6,9 @@
     "CBC"
    ],
   "key": {
-    "A": {
-        "item": "minecraft:crimson_planks"
-      },
-    "B": {
-        "item": "minecraft:dark_oak_planks"
-      },
-    "C": {
-        "item": "minecraft:stick"
-      }
+    "A": "minecraft:crimson_planks",
+    "B": "minecraft:dark_oak_planks",
+    "C": "minecraft:stick"
   },
   "result": {
     "id": "customfence:darkoak_crimson_stick",

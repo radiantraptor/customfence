@@ -6,15 +6,9 @@
     "c c"
    ],
   "key": {
-    "a": {
-        "item": "minecraft:cherry_planks"
-      },
-    "b": {
-        "item": "minecraft:bamboo_planks"
-      },
-    "c": {
-        "item": "minecraft:stick"
-      }
+    "a": "minecraft:cherry_planks",
+    "b": "minecraft:bamboo_planks",
+    "c": "minecraft:stick"
   },
   "result": {
     "id": "customfence:bamboo_cherry_bollard_fence_gate",

@@ -5,9 +5,7 @@
     "AAA"
    ],
   "key": {
-    "A": {
-        "item": "minecraft:cobbled_deepslate"
-      }
+    "A": "minecraft:cobbled_deepslate"
   },
   "result": {
     "id": "customfence:cobbled_deepslate_modern",

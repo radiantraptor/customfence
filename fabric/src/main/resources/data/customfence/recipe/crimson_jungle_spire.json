@@ -6,15 +6,9 @@
     "cbc"
    ],
   "key": {
-    "a": {
-        "item": "minecraft:jungle_planks"
-      },
-    "b": {
-        "item": "minecraft:crimson_planks"
-      },
-    "c": {
-        "item": "minecraft:stick"
-      }
+    "a": "minecraft:jungle_planks",
+    "b": "minecraft:crimson_planks",
+    "c": "minecraft:stick"
   },
   "result": {
     "id": "customfence:crimson_jungle_spire",

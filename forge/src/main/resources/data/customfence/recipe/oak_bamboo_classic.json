@@ -6,15 +6,9 @@
     "CBC" 
    ],
   "key": {
-    "A": {
-        "item": "minecraft:bamboo_planks"
-      },
-    "B": {
-        "item": "minecraft:oak_planks"
-      },
-    "C": {
-        "item": "minecraft:stick"
-      }
+    "A": "minecraft:bamboo_planks",
+    "B": "minecraft:oak_planks",
+    "C": "minecraft:stick"
   },
   "result": {
     "id": "customfence:oak_bamboo_classic",

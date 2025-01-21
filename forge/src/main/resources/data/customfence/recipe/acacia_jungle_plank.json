@@ -6,15 +6,9 @@
     "CBC"
    ],
   "key": {
-    "A": {
-        "item": "minecraft:jungle_planks"
-      },
-    "B": {
-        "item": "minecraft:acacia_planks"
-      },
-    "C": {
-        "item": "minecraft:stick"
-      }
+    "A": "minecraft:jungle_planks",
+    "B": "minecraft:acacia_planks",
+    "C": "minecraft:stick"
   },
   "result": {
     "id": "customfence:acacia_jungle_plank",

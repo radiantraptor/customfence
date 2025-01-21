@@ -1,8 +1,8 @@
 {
   "type": "minecraft:stonecutting",
- "ingredient": {
-    "item": "minecraft:deepslate_tiles"
-  },
-  "result": "customfence:deepslate_tile_modern",
-  "count": 1
+  "ingredient": "minecraft:deepslate_tiles",
+  "result": {
+    "id": "customfence:deepslate_tile_modern",
+    "count": 1
+  }
 }

@@ -6,15 +6,9 @@
     "cbc"
    ],
   "key": {
-    "a": {
-        "item": "minecraft:mangrove_planks"
-      },
-    "b": {
-        "item": "minecraft:cherry_planks"
-      },
-    "c": {
-        "item": "minecraft:stick"
-      }
+    "a": "minecraft:mangrove_planks",
+    "b": "minecraft:cherry_planks",
+    "c": "minecraft:stick"
   },
   "result": {
     "id": "customfence:cherry_mangrove_garden",

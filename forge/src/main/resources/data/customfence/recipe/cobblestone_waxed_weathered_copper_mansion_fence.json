@@ -1,15 +1,11 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {
-      "id": "customfence:cobblestone_weathered_copper_mansion_fence"
-    },
-    {
-      "item": "minecraft:honeycomb"
-    }
+    "customfence:cobblestone_weathered_copper_mansion_fence",
+    "minecraft:honeycomb"
   ],
   "result": {
-    "id": "customfence:cobblestone_waxed_weathered_copper_mansion_fence"
+    "id": "customfence:cobblestone_waxed_weathered_copper_mansion_fence",
+    "count": 1
   }
 }
- 

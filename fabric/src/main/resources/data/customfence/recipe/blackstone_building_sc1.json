@@ -1,8 +1,8 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:blackstone"
-  },
-  "result": "customfence:blackstone_building",
-  "count": 1
+  "ingredient": "minecraft:blackstone",
+  "result": {
+    "id": "customfence:blackstone_building",
+    "count": 1
+  }
 }

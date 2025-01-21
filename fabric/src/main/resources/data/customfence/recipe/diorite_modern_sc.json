@@ -1,8 +1,8 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:diorite"
-  },
-  "result": "customfence:diorite_modern",
-  "count": 1
+  "ingredient": "minecraft:diorite",
+  "result": {
+    "id": "customfence:diorite_modern",
+    "count": 1
+  }
 }

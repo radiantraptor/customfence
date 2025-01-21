@@ -6,15 +6,9 @@
     "cbc"
    ],
   "key": {
-    "a": {
-        "item": "minecraft:dark_oak_planks"
-      },
-    "b": {
-        "item": "minecraft:jungle_planks"
-      },
-    "c": {
-        "item": "minecraft:stick"
-      }
+    "a": "minecraft:dark_oak_planks",
+    "b": "minecraft:jungle_planks",
+    "c": "minecraft:stick"
   },
   "result": {
     "id": "customfence:jungle_darkoak_spire",
