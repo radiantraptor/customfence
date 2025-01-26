@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " A ",
+    "AAA"
+   ],
+  "key": {
+    "A": "minecraft:polished_blackstone_bricks"
+  },
+  "result": {
+    "id": "customfence:polished_blackstone_bricks_castle",
+    "count": 4
+  }
+}

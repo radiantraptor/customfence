@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "A A",
+    "A A",
+    "CBC" 
+   ],
+  "key": {
+    "A": "minecraft:warped_planks",
+    "B": "minecraft:oak_planks",
+    "C": "minecraft:stick"
+  },
+  "result": {
+    "id": "customfence:oak_warped_wildlife",
+    "count": 4
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "A A",
+    "AAA"
+   ],
+  "key": {
+    "A": "minecraft:bricks"
+  },
+  "result": {
+    "id": "customfence:bricks_modern",
+    "count": 5
+  }
+}

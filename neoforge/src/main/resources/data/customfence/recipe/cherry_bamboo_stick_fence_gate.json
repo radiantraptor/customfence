@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aaa",
+    "b b",
+    "c c"
+   ],
+  "key": {
+    "a": "minecraft:bamboo_planks",
+    "b": "minecraft:cherry_planks",
+    "c": "minecraft:stick"
+  },
+  "result": {
+    "id": "customfence:cherry_bamboo_stick_fence_gate",
+    "count": 2
+  }
+}

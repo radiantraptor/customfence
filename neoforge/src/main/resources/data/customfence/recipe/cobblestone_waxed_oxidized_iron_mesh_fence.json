@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "customfence:cobblestone_oxidized_iron_mesh_fence",
+    "minecraft:honeycomb"
+  ],
+  "result": {
+    "id": "customfence:cobblestone_waxed_oxidized_iron_mesh_fence",
+    "count": 1
+  }
+}

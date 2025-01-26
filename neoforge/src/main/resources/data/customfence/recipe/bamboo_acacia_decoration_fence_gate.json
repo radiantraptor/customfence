@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "ABA",
+    "C C"
+   ],
+  "key": {
+    "A": "minecraft:acacia_planks",
+    "B": "minecraft:bamboo_planks",
+    "C": "minecraft:stick"
+  },
+  "result": {
+    "id": "customfence:bamboo_acacia_decoration_fence_gate",
+    "count": 2
+  }
+}

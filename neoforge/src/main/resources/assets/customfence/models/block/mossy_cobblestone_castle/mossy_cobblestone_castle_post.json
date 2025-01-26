@@ -1,0 +1,22 @@
+{
+  "parent": "block/template_wall_post",
+  "textures": {
+    "particle": "block/mossy_cobblestone",
+    "wall": "block/mossy_cobblestone"
+  },
+  "elements": [
+    {
+      "name": "Pfeiler",
+      "from": [3, 0, 3],
+      "to": [13, 16, 13],
+      "faces": {
+        "north": {"texture": "#wall"},
+        "east": {"texture": "#wall"},
+        "south": {"texture": "#wall"},
+        "west": {"texture": "#wall"},
+        "up": {"texture": "#wall"},
+        "down": {"texture": "#wall"}
+      }
+    }
+  ]
+}

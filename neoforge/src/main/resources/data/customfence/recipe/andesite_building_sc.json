@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:andesite",
+  "result": {
+    "id": "customfence:andesite_building",
+    "count": 1
+  }
+}

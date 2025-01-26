@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "A A",
+    "AAA"
+   ],
+  "key": {
+    "A": "minecraft:deepslate_tiles"
+  },
+  "result": {
+    "id": "customfence:deepslate_tile_modern",
+    "count": 5
+  }
+}

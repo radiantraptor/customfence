@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "B B",
+    "AAA",
+    "C C"
+   ],
+  "key": {
+    "A": "minecraft:mangrove_planks",
+    "B": "minecraft:oak_planks",
+    "C": "minecraft:stick"
+  },
+  "result": {
+    "id": "customfence:oak_mangrove_garden_fence_gate",
+    "count": 2
+  }
+}

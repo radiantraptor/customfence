@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " A ",
+    "AAA"
+   ],
+  "key": {
+    "A": "minecraft:cobblestone"
+  },
+  "result": {
+    "id": "customfence:cobblestone_castle",
+    "count": 4
+  }
+}

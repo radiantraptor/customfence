@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "A A",
+    "AAA",
+    "C C" 
+   ],
+  "key": {
+    "A": "minecraft:crimson_planks",
+    "C": "minecraft:stick"
+  },
+  "result": {
+    "id": "customfence:crimson_crisscross_fence_gate",
+    "count": 2
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "customfence:exposed_copper_mansion_fence_gate",
+    "minecraft:honeycomb"
+  ],
+  "result": {
+    "id": "customfence:waxed_exposed_copper_mansion_fence_gate",
+    "count": 1
+  }
+}

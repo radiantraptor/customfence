@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "b b",
+    "a a",
+    "c c"
+   ],
+  "key": {
+    "a": "minecraft:cherry_planks",
+    "b": "minecraft:mangrove_planks",
+    "c": "minecraft:stick"
+  },
+  "result": {
+    "id": "customfence:mangrove_cherry_bollard_fence_gate",
+    "count": 2
+  }
+}

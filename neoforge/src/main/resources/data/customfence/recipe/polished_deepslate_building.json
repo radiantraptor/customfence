@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AA",
+    "AA",
+    "AA"
+   ],
+  "key": {
+    "A": "minecraft:polished_deepslate"
+  },
+  "result": {
+    "id": "customfence:polished_deepslate_building",
+    "count": 6
+  }
+}

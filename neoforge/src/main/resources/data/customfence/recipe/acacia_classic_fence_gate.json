@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "AAA",
+    "C C" 
+   ],
+  "key": {
+    "A": "minecraft:acacia_planks",
+    "C": "minecraft:stick"
+  },
+  "result": {
+    "id": "customfence:acacia_classic_fence_gate",
+    "count": 2
+  }
+}

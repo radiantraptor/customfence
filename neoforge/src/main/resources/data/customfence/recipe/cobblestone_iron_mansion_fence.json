@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "BAB"
+   ],
+  "key": {
+    "A": "minecraft:iron_ingot",
+    "B": "minecraft:cobblestone"
+  },
+  "result": {
+    "id": "customfence:cobblestone_iron_mansion_fence",
+    "count": 4
+  }
+}
+ 

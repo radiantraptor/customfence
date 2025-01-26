@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aaa",
+    "aba",
+    "cbc" 
+   ],
+  "key": {
+    "a": "minecraft:acacia_planks",
+    "b": "minecraft:cherry_planks",
+    "c": "minecraft:stick"
+  },
+  "result": {
+    "id": "customfence:cherry_acacia_decoration",
+    "count": 4
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "B B",
+    "AAA",
+    "CBC"
+   ],
+  "key": {
+    "A": "minecraft:spruce_planks",
+    "B": "minecraft:bamboo_planks",
+    "C": "minecraft:stick"
+  },
+  "result": {
+    "id": "customfence:bamboo_spruce_garden",
+    "count": 4
+  }
+}

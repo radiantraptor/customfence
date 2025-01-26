@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AA",
+    "AA",
+    "AA"
+   ],
+  "key": {
+    "A": "minecraft:prismarine"
+  },
+  "result": {
+    "id": "customfence:prismarine_building",
+    "count": 6
+  }
+}

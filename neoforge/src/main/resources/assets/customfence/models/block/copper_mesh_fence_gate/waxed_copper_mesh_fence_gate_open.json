@@ -1,0 +1,509 @@
+{
+  "parent": "block/template_fence_gate_open",
+  "textures": {
+    "particle": "block/copper_block",
+    "1": "block/copper_block"
+  },
+  "elements": [
+    {
+      "name": "Torpfosten links",
+      "from": [0, 2, 7.25],
+      "to": [1.5, 15, 8.75],
+      "faces": {
+        "north": {"texture": "#1"},
+        "east": {"texture": "#1"},
+        "south": {"texture": "#1"},
+        "west": {"texture": "#1"},
+        "up": {"texture": "#1"},
+        "down": {"texture": "#1"}
+      }
+    },
+    {
+      "name": "Torpfosten rechts ",
+      "from": [14.5, 2, 7.25],
+      "to": [16, 15, 8.75],
+      "faces": {
+        "north": {"texture": "#1"},
+        "east": {"texture": "#1"},
+        "south": {"texture": "#1"},
+        "west": {"texture": "#1"},
+        "up": {"texture": "#1"},
+        "down": {"texture": "#1"}
+      }
+    },
+    {
+      "name": "Strebe Unten links",
+      "from": [0.25, 2, 8.75],
+      "to": [1.25, 3, 15.25],
+      "faces": {
+        "north": {"texture": "#1"},
+        "east": {"texture": "#1"},
+        "south": {"texture": "#1"},
+        "west": {"texture": "#1"},
+        "up": {"texture": "#1"},
+        "down": {"texture": "#1"}
+      }
+    },
+    {
+      "name": "Strebe Oben links",
+      "from": [0.25, 14, 8.75],
+      "to": [1.25, 15, 15.25],
+      "faces": {
+        "north": {"texture": "#1"},
+        "east": {"texture": "#1"},
+        "south": {"texture": "#1"},
+        "west": {"texture": "#1"},
+        "up": {"texture": "#1"},
+        "down": {"texture": "#1"}
+      }
+    },
+    {
+      "name": "Strebe Unten rechts",
+      "from": [14.75, 2, 8.75],
+      "to": [15.75, 3, 15.25],
+      "faces": {
+        "north": {"texture": "#1"},
+        "east": {"texture": "#1"},
+        "south": {"texture": "#1"},
+        "west": {"texture": "#1"},
+        "up": {"texture": "#1"},
+        "down": {"texture": "#1"}
+      }
+    },
+    {
+      "name": "Strebe Oben rechts",
+      "from": [14.75, 14, 8.75],
+      "to": [15.75, 15, 15.25],
+      "faces": {
+        "north": {"texture": "#1"},
+        "east": {"texture": "#1"},
+        "south": {"texture": "#1"},
+        "west": {"texture": "#1"},
+        "up": {"texture": "#1"},
+        "down": {"texture": "#1"}
+      }
+    },
+    {
+      "name": "Strebe 1 links",
+      "from": [0.5, 3, 10.1786],
+      "to": [1, 14, 10.6786],
+      "faces": {
+        "north": {"texture": "#1"},
+        "east": {"texture": "#1"},
+        "south": {"texture": "#1"},
+        "west": {"texture": "#1"},
+        "up": {"texture": "#1"},
+        "down": {"texture": "#1"}
+      }
+    },
+    {
+      "name": "Strebe 2 links",
+      "from": [0.5, 3, 12.1071],
+      "to": [1, 14, 12.6071],
+      "faces": {
+        "north": {"texture": "#1"},
+        "east": {"texture": "#1"},
+        "south": {"texture": "#1"},
+        "west": {"texture": "#1"},
+        "up": {"texture": "#1"},
+        "down": {"texture": "#1"}
+      }
+    },
+    {
+      "name": "Strebe 3 links",
+      "from": [0.5, 3, 14.0357],
+      "to": [1, 14, 14.5357],
+      "faces": {
+        "north": {"texture": "#1"},
+        "east": {"texture": "#1"},
+        "south": {"texture": "#1"},
+        "west": {"texture": "#1"},
+        "up": {"texture": "#1"},
+        "down": {"texture": "#1"}
+      }
+    },
+    {
+      "name": "Strebe 1 rechts",
+      "from": [15, 3, 10.1786],
+      "to": [15.5, 14, 10.6786],
+      "faces": {
+        "north": {"texture": "#1"},
+        "east": {"texture": "#1"},
+        "south": {"texture": "#1"},
+        "west": {"texture": "#1"},
+        "up": {"texture": "#1"},
+        "down": {"texture": "#1"}
+      }
+    },
+    {
+      "name": "Strebe 2 rechts",
+      "from": [15, 3, 12.1071],
+      "to": [15.5, 14, 12.6071],
+      "faces": {
+        "north": {"texture": "#1"},
+        "east": {"texture": "#1"},
+        "south": {"texture": "#1"},
+        "west": {"texture": "#1"},
+        "up": {"texture": "#1"},
+        "down": {"texture": "#1"}
+      }
+    },
+    {
+      "name": "Strebe 3 rechts",
+      "from": [15, 3, 14.0357],
+      "to": [15.5, 14, 14.5357],
+      "faces": {
+        "north": {"texture": "#1"},
+        "east": {"texture": "#1"},
+        "south": {"texture": "#1"},
+        "west": {"texture": "#1"},
+        "up": {"texture": "#1"},
+        "down": {"texture": "#1"}
+      }
+    },
+    {
+      "name": "Verbindungen 0-1 links",
+      "from": [0.5, 5.375, 8.75],
+      "to": [1, 5.875, 10.1786],
+      "faces": {
+        "north": {"texture": "#1"},
+        "east": {"texture": "#1"},
+        "south": {"texture": "#1"},
+        "west": {"texture": "#1"},
+        "up": {"texture": "#1"},
+        "down": {"texture": "#1"}
+      }
+    },
+    {
+      "from": [0.5, 8.25, 8.75],
+      "to": [1, 8.75, 10.1786],
+      "faces": {
+        "north": {"texture": "#1"},
+        "east": {"texture": "#1"},
+        "south": {"texture": "#1"},
+        "west": {"texture": "#1"},
+        "up": {"texture": "#1"},
+        "down": {"texture": "#1"}
+      }
+    },
+    {
+      "from": [0.5, 11.125, 8.75],
+      "to": [1, 11.625, 10.1786],
+      "faces": {
+        "north": {"texture": "#1"},
+        "east": {"texture": "#1"},
+        "south": {"texture": "#1"},
+        "west": {"texture": "#1"},
+        "up": {"texture": "#1"},
+        "down": {"texture": "#1"}
+      }
+    },
+    {
+      "name": "Verbindungen 1-2 links",
+      "from": [0.5, 3.9375, 10.6786],
+      "to": [1, 4.4375, 12.1071],
+      "faces": {
+        "north": {"texture": "#1"},
+        "east": {"texture": "#1"},
+        "south": {"texture": "#1"},
+        "west": {"texture": "#1"},
+        "up": {"texture": "#1"},
+        "down": {"texture": "#1"}
+      }
+    },
+    {
+      "from": [0.5, 6.8125, 10.6786],
+      "to": [1, 7.3125, 12.1071],
+      "faces": {
+        "north": {"texture": "#1"},
+        "east": {"texture": "#1"},
+        "south": {"texture": "#1"},
+        "west": {"texture": "#1"},
+        "up": {"texture": "#1"},
+        "down": {"texture": "#1"}
+      }
+    },
+    {
+      "from": [0.5, 9.6875, 10.6786],
+      "to": [1, 10.1875, 12.1071],
+      "faces": {
+        "north": {"texture": "#1"},
+        "east": {"texture": "#1"},
+        "south": {"texture": "#1"},
+        "west": {"texture": "#1"},
+        "up": {"texture": "#1"},
+        "down": {"texture": "#1"}
+      }
+    },
+    {
+      "from": [0.5, 12.5625, 10.6786],
+      "to": [1, 13.0625, 12.1071],
+      "faces": {
+        "north": {"texture": "#1"},
+        "east": {"texture": "#1"},
+        "south": {"texture": "#1"},
+        "west": {"texture": "#1"},
+        "up": {"texture": "#1"},
+        "down": {"texture": "#1"}
+      }
+    },
+    {
+      "name": "Verbindungen 2-3 links",
+      "from": [0.5, 5.375, 12.6071],
+      "to": [1, 5.875, 14.0357],
+      "faces": {
+        "north": {"texture": "#1"},
+        "east": {"texture": "#1"},
+        "south": {"texture": "#1"},
+        "west": {"texture": "#1"},
+        "up": {"texture": "#1"},
+        "down": {"texture": "#1"}
+      }
+    },
+    {
+      "from": [0.5, 8.25, 12.6071],
+      "to": [1, 8.75, 14.0357],
+      "faces": {
+        "north": {"texture": "#1"},
+        "east": {"texture": "#1"},
+        "south": {"texture": "#1"},
+        "west": {"texture": "#1"},
+        "up": {"texture": "#1"},
+        "down": {"texture": "#1"}
+      }
+    },
+    {
+      "from": [0.5, 11.125, 12.6071],
+      "to": [1, 11.625, 14.0357],
+      "faces": {
+        "north": {"texture": "#1"},
+        "east": {"texture": "#1"},
+        "south": {"texture": "#1"},
+        "west": {"texture": "#1"},
+        "up": {"texture": "#1"},
+        "down": {"texture": "#1"}
+      }
+    },
+    {
+      "name": "Verbindungen 3-35 links",
+      "from": [0.5, 3.9375, 14.5357],
+      "to": [1, 4.4375, 15.25],
+      "faces": {
+        "north": {"texture": "#1"},
+        "east": {"texture": "#1"},
+        "south": {"texture": "#1"},
+        "west": {"texture": "#1"},
+        "up": {"texture": "#1"},
+        "down": {"texture": "#1"}
+      }
+    },
+    {
+      "from": [0.5, 6.8125, 14.5357],
+      "to": [1, 7.3125, 15.25],
+      "faces": {
+        "north": {"texture": "#1"},
+        "east": {"texture": "#1"},
+        "south": {"texture": "#1"},
+        "west": {"texture": "#1"},
+        "up": {"texture": "#1"},
+        "down": {"texture": "#1"}
+      }
+    },
+    {
+      "from": [0.5, 9.6875, 14.5357],
+      "to": [1, 10.1875, 15.25],
+      "faces": {
+        "north": {"texture": "#1"},
+        "east": {"texture": "#1"},
+        "south": {"texture": "#1"},
+        "west": {"texture": "#1"},
+        "up": {"texture": "#1"},
+        "down": {"texture": "#1"}
+      }
+    },
+    {
+      "from": [0.5, 12.5625, 14.5357],
+      "to": [1, 13.0625, 15.25],
+      "faces": {
+        "north": {"texture": "#1"},
+        "east": {"texture": "#1"},
+        "south": {"texture": "#1"},
+        "west": {"texture": "#1"},
+        "up": {"texture": "#1"},
+        "down": {"texture": "#1"}
+      }
+    },
+    {
+      "name": "Verbindungen 0-1 rechts",
+      "from": [15, 5.375, 8.75],
+      "to": [15.5, 5.875, 10.1786],
+      "faces": {
+        "north": {"texture": "#1"},
+        "east": {"texture": "#1"},
+        "south": {"texture": "#1"},
+        "west": {"texture": "#1"},
+        "up": {"texture": "#1"},
+        "down": {"texture": "#1"}
+      }
+    },
+    {
+      "from": [15, 8.25, 8.75],
+      "to": [15.5, 8.75, 10.1786],
+      "faces": {
+        "north": {"texture": "#1"},
+        "east": {"texture": "#1"},
+        "south": {"texture": "#1"},
+        "west": {"texture": "#1"},
+        "up": {"texture": "#1"},
+        "down": {"texture": "#1"}
+      }
+    },
+    {
+      "from": [15, 11.125, 8.75],
+      "to": [15.5, 11.625, 10.1786],
+      "faces": {
+        "north": {"texture": "#1"},
+        "east": {"texture": "#1"},
+        "south": {"texture": "#1"},
+        "west": {"texture": "#1"},
+        "up": {"texture": "#1"},
+        "down": {"texture": "#1"}
+      }
+    },
+    {
+      "name": "Verbindungen 1-2 rechts",
+      "from": [15, 3.9375, 10.6786],
+      "to": [15.5, 4.4375, 12.1071],
+      "faces": {
+        "north": {"texture": "#1"},
+        "east": {"texture": "#1"},
+        "south": {"texture": "#1"},
+        "west": {"texture": "#1"},
+        "up": {"texture": "#1"},
+        "down": {"texture": "#1"}
+      }
+    },
+    {
+      "from": [15, 6.8125, 10.6786],
+      "to": [15.5, 7.3125, 12.1071],
+      "faces": {
+        "north": {"texture": "#1"},
+        "east": {"texture": "#1"},
+        "south": {"texture": "#1"},
+        "west": {"texture": "#1"},
+        "up": {"texture": "#1"},
+        "down": {"texture": "#1"}
+      }
+    },
+    {
+      "from": [15, 9.6875, 10.6786],
+      "to": [15.5, 10.1875, 12.1071],
+      "faces": {
+        "north": {"texture": "#1"},
+        "east": {"texture": "#1"},
+        "south": {"texture": "#1"},
+        "west": {"texture": "#1"},
+        "up": {"texture": "#1"},
+        "down": {"texture": "#1"}
+      }
+    },
+    {
+      "from": [15, 12.5625, 10.6786],
+      "to": [15.5, 13.0625, 12.1071],
+      "faces": {
+        "north": {"texture": "#1"},
+        "east": {"texture": "#1"},
+        "south": {"texture": "#1"},
+        "west": {"texture": "#1"},
+        "up": {"texture": "#1"},
+        "down": {"texture": "#1"}
+      }
+    },
+    {
+      "name": "Verbindungen 2-3 rechts",
+      "from": [15, 5.375, 12.6071],
+      "to": [15.5, 5.875, 14.0357],
+      "faces": {
+        "north": {"texture": "#1"},
+        "east": {"texture": "#1"},
+        "south": {"texture": "#1"},
+        "west": {"texture": "#1"},
+        "up": {"texture": "#1"},
+        "down": {"texture": "#1"}
+      }
+    },
+    {
+      "from": [15, 8.25, 12.6071],
+      "to": [15.5, 8.75, 14.0357],
+      "faces": {
+        "north": {"texture": "#1"},
+        "east": {"texture": "#1"},
+        "south": {"texture": "#1"},
+        "west": {"texture": "#1"},
+        "up": {"texture": "#1"},
+        "down": {"texture": "#1"}
+      }
+    },
+    {
+      "from": [15, 11.125, 12.6071],
+      "to": [15.5, 11.625, 14.0357],
+      "faces": {
+        "north": {"texture": "#1"},
+        "east": {"texture": "#1"},
+        "south": {"texture": "#1"},
+        "west": {"texture": "#1"},
+        "up": {"texture": "#1"},
+        "down": {"texture": "#1"}
+      }
+    },
+    {
+      "name": "Verbindungen 3-35 rechts",
+      "from": [15, 3.9375, 14.5357],
+      "to": [15.5, 4.4375, 15.25],
+      "faces": {
+        "north": {"texture": "#1"},
+        "east": {"texture": "#1"},
+        "south": {"texture": "#1"},
+        "west": {"texture": "#1"},
+        "up": {"texture": "#1"},
+        "down": {"texture": "#1"}
+      }
+    },
+    {
+      "from": [15, 6.8125, 14.5357],
+      "to": [15.5, 7.3125, 15.25],
+      "faces": {
+        "north": {"texture": "#1"},
+        "east": {"texture": "#1"},
+        "south": {"texture": "#1"},
+        "west": {"texture": "#1"},
+        "up": {"texture": "#1"},
+        "down": {"texture": "#1"}
+      }
+    },
+    {
+      "from": [15, 9.6875, 14.5357],
+      "to": [15.5, 10.1875, 15.25],
+      "faces": {
+        "north": {"texture": "#1"},
+        "east": {"texture": "#1"},
+        "south": {"texture": "#1"},
+        "west": {"texture": "#1"},
+        "up": {"texture": "#1"},
+        "down": {"texture": "#1"}
+      }
+    },
+    {
+      "from": [15, 12.5625, 14.5357],
+      "to": [15.5, 13.0625, 15.25],
+      "faces": {
+        "north": {"texture": "#1"},
+        "east": {"texture": "#1"},
+        "south": {"texture": "#1"},
+        "west": {"texture": "#1"},
+        "up": {"texture": "#1"},
+        "down": {"texture": "#1"}
+      }
+    }
+  ]
+}

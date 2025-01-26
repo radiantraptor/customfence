@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "bab",
+    "aaa",
+    "cbc"
+   ],
+  "key": {
+    "a": "minecraft:acacia_planks",
+    "b": "minecraft:jungle_planks",
+    "c": "minecraft:stick"
+  },
+  "result": {
+    "id": "customfence:jungle_acacia_spire",
+    "count": 4
+  }
+}

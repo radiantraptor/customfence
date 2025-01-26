@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "customfence:block/oak_mangrove_garden/oak_mangrove_garden_fence_gate_closed"
+  }
+}

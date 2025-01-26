@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "B B",
+    "C C"
+   ],
+  "key": {
+    "A": "minecraft:jungle_planks",
+    "B": "minecraft:dark_oak_planks",
+    "C": "minecraft:stick"
+  },
+  "result": {
+    "id": "customfence:darkoak_jungle_stick_fence_gate",
+    "count": 2
+  }
+}

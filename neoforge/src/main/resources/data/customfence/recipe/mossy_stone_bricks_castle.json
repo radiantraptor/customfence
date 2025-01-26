@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " A ",
+    "AAA"
+   ],
+  "key": {
+    "A": "minecraft:mossy_stone_bricks"
+  },
+  "result": {
+    "id": "customfence:mossy_stone_bricks_castle",
+    "count": 4
+  }
+}

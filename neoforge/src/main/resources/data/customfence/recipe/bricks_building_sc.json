@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:bricks",
+  "result": {
+    "id": "customfence:bricks_building",
+    "count": 1
+  }
+}
