@@ -135,7 +135,7 @@ public class ModBlocksMetalFence {
     }
 
     private static <T extends Block> void registerBlockItem(String name, RegistryObject<T> block) {
-        ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()
+        ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().useBlockDescriptionPrefix()
                 .setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, name)))));
     }
 
@@ -174,7 +174,7 @@ public class ModBlocksMetalFence {
                     event.getItemStack().setDamageValue(event.getItemStack().getDamageValue()+1);
                     if (event.getItemStack().getDamageValue() == event.getItemStack().getMaxDamage()) {
                         event.getItemStack().setCount(0);
-                        event.getLevel().playSound(event.getEntity(), event.getPos(), SoundEvents.ITEM_BREAK, SoundSource.BLOCKS, 1.0f, 1.0f);
+                        event.getLevel().playSound(event.getEntity(), event.getPos(), SoundEvents.ITEM_BREAK.get(), SoundSource.BLOCKS, 1.0f, 1.0f);
                     }
                 }
                 event.setCanceled(true);
@@ -188,7 +188,7 @@ public class ModBlocksMetalFence {
                     event.getItemStack().setDamageValue(event.getItemStack().getDamageValue()+1);
                     if (event.getItemStack().getDamageValue() == event.getItemStack().getMaxDamage()) {
                         event.getItemStack().setCount(0);
-                        event.getLevel().playSound(event.getEntity(), event.getPos(), SoundEvents.ITEM_BREAK, SoundSource.BLOCKS, 1.0f, 1.0f);
+                        event.getLevel().playSound(event.getEntity(), event.getPos(), SoundEvents.ITEM_BREAK.get(), SoundSource.BLOCKS, 1.0f, 1.0f);
                     }
                 }
                 event.setCanceled(true);

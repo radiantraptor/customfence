@@ -1,34 +1,7 @@
 {
-  "parent": "block/template_wall_side",
+  "parent": "customfence:block/template_modern_wall_side_low",
   "textures": {
-    "wall": "block/deepslate_bricks"
-  },
-  "elements": [
-    {
-      "name": "Pfeiler",
-      "from": [4, 0, 4],
-      "to": [12, 16, 12],
-      "faces": {
-        "north": {"texture": "#wall"},
-        "east": {"texture": "#wall"},
-        "south": {"texture": "#wall"},
-        "west": {"texture": "#wall"},
-        "up": {"texture": "#wall"},
-        "down": {"texture": "#wall"}
-      }
-    },
-    {
-      "name": "Verbindung",
-      "from": [5, 0, 0],
-      "to": [11, 15, 4],
-      "faces": {
-        "north": {"texture": "#wall"},
-        "east": {"texture": "#wall"},
-        "south": {"texture": "#wall"},
-        "west": {"texture": "#wall"},
-        "up": {"texture": "#wall"},
-        "down": {"texture": "#wall"}
-      }
-    }
-  ]
+    "particle": "minecraft:block/deepslate_bricks",
+    "1": "minecraft:block/deepslate_bricks"
+  }
 }

@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "customfence:block/spruce_oak_wildlife/spruce_oak_wildlife"
+    "model": "customfence:block/spruce_oak_wildlife/spruce_oak_wildlife_inventory"
   }
 }

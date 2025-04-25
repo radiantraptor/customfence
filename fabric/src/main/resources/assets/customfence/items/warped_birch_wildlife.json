@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "customfence:block/warped_birch_wildlife/warped_birch_wildlife"
+    "model": "customfence:block/warped_birch_wildlife/warped_birch_wildlife_inventory"
   }
 }

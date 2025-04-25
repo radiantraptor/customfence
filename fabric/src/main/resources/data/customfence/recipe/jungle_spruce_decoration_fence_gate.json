@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "ABA",
+    "C C"
+   ],
+  "key": {
+    "A": "minecraft:spruce_planks",
+    "B": "minecraft:jungle_planks",
+    "C": "minecraft:stick"
+  },
+  "result": {
+    "id": "customfence:jungle_spruce_decoration_fence_gate",
+    "count": 2
+  }
+}

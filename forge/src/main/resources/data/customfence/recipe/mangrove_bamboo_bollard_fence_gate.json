@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "B B",
+    "A A",
+    "C C"
+   ],
+  "key": {
+    "A": "minecraft:bamboo_planks",
+    "B": "minecraft:mangrove_planks",
+    "C": "minecraft:stick"
+  },
+  "result": {
+    "id": "customfence:mangrove_bamboo_bollard_fence_gate",
+    "count": 2
+  }
+}

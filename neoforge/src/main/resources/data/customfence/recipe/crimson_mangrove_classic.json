@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "AAA",
+    "CBC" 
+   ],
+  "key": {
+    "A": "minecraft:mangrove_planks",
+    "B": "minecraft:crimson_planks",
+    "C": "minecraft:stick"
+  },
+  "result": {
+    "id": "customfence:crimson_mangrove_classic",
+    "count": 4
+  }
+}

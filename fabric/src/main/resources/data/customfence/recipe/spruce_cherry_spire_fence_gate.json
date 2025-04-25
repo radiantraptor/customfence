@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BAB",
+    "AAA",
+    "C C"
+   ],
+  "key": {
+    "A": "minecraft:cherry_planks",
+    "B": "minecraft:spruce_planks",
+    "C": "minecraft:stick"
+  },
+  "result": {
+    "id": "customfence:spruce_cherry_spire_fence_gate",
+    "count": 2
+  }
+}

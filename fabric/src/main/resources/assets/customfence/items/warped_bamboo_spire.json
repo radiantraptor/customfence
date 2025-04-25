@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "customfence:block/warped_bamboo_spire/warped_bamboo_spire"
+    "model": "customfence:block/warped_bamboo_spire/warped_bamboo_spire_inventory"
   }
 }

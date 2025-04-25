@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "customfence:block/oak_warped_garden/oak_warped_garden"
+    "model": "customfence:block/oak_warped_garden/oak_warped_garden_inventory"
   }
 }

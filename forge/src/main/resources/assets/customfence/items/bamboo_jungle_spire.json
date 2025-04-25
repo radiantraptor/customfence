@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "customfence:block/bamboo_jungle_spire/bamboo_jungle_spire"
+    "model": "customfence:block/bamboo_jungle_spire/bamboo_jungle_spire_inventory"
   }
 }

@@ -1,0 +1,7 @@
+{
+  "parent": "customfence:block/template_crisscross_fence_inventory",
+  "textures": {
+    "1": "minecraft:block/warped_planks",
+    "2": "minecraft:block/oak_planks"
+  }
+}

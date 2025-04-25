@@ -1,0 +1,1488 @@
+package com.raptor.customfence_fabric.init;
+
+import com.raptor.customfence_fabric.Main;
+import com.raptor.customfence_fabric.blocks.*;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.block.*;
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroups;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.util.Identifier;
+
+public class ModBlocksWoodFenceGateAdvanced {
+
+    public static final Block OAK_SPRUCE_DECORATION = registerBlock("oak_spruce_decoration", new Fence("oak_spruce_decoration"));
+    public static final Block OAK_SPRUCE_DECORATION_GATE = registerBlock("oak_spruce_decoration_fence_gate", new FenceGate("oak_spruce_decoration_fence_gate", WoodType.SPRUCE));
+    public static final Block OAK_SPRUCE_GARDEN = registerBlock("oak_spruce_garden", new Fence("oak_spruce_garden"));
+    public static final Block OAK_SPRUCE_GARDEN_GATE = registerBlock("oak_spruce_garden_fence_gate", new FenceGate("oak_spruce_garden_fence_gate", WoodType.SPRUCE));
+    public static final Block OAK_SPRUCE_BOLLARD = registerBlock("oak_spruce_bollard", new Fence("oak_spruce_bollard"));
+    public static final Block OAK_SPRUCE_BOLLARD_GATE = registerBlock("oak_spruce_bollard_fence_gate", new FenceGate("oak_spruce_bollard_fence_gate", WoodType.SPRUCE));
+    public static final Block OAK_SPRUCE_STICK = registerBlock("oak_spruce_stick", new Fence("oak_spruce_stick"));
+    public static final Block OAK_SPRUCE_STICK_GATE = registerBlock("oak_spruce_stick_fence_gate", new FenceGate("oak_spruce_stick_fence_gate", WoodType.SPRUCE));
+    public static final Block OAK_SPRUCE_SPIRE = registerBlock("oak_spruce_spire", new Fence("oak_spruce_spire"));
+    public static final Block OAK_SPRUCE_SPIRE_GATE = registerBlock("oak_spruce_spire_fence_gate", new FenceGate("oak_spruce_spire_fence_gate", WoodType.SPRUCE));
+
+    public static final Block OAK_BIRCH_DECORATION = registerBlock("oak_birch_decoration", new Fence("oak_birch_decoration"));
+    public static final Block OAK_BIRCH_DECORATION_GATE = registerBlock("oak_birch_decoration_fence_gate", new FenceGate("oak_birch_decoration_fence_gate", WoodType.BIRCH));
+    public static final Block OAK_BIRCH_GARDEN = registerBlock("oak_birch_garden", new Fence("oak_birch_garden"));
+    public static final Block OAK_BIRCH_GARDEN_GATE = registerBlock("oak_birch_garden_fence_gate", new FenceGate("oak_birch_garden_fence_gate", WoodType.BIRCH));
+    public static final Block OAK_BIRCH_BOLLARD = registerBlock("oak_birch_bollard", new Fence("oak_birch_bollard"));
+    public static final Block OAK_BIRCH_BOLLARD_GATE = registerBlock("oak_birch_bollard_fence_gate", new FenceGate("oak_birch_bollard_fence_gate", WoodType.BIRCH));
+    public static final Block OAK_BIRCH_STICK = registerBlock("oak_birch_stick", new Fence("oak_birch_stick"));
+    public static final Block OAK_BIRCH_STICK_GATE = registerBlock("oak_birch_stick_fence_gate", new FenceGate("oak_birch_stick_fence_gate", WoodType.BIRCH));
+    public static final Block OAK_BIRCH_SPIRE = registerBlock("oak_birch_spire", new Fence("oak_birch_spire"));
+    public static final Block OAK_BIRCH_SPIRE_GATE = registerBlock("oak_birch_spire_fence_gate", new FenceGate("oak_birch_spire_fence_gate", WoodType.BIRCH));
+
+    public static final Block OAK_ACACIA_DECORATION = registerBlock("oak_acacia_decoration", new Fence("oak_acacia_decoration"));
+    public static final Block OAK_ACACIA_DECORATION_GATE = registerBlock("oak_acacia_decoration_fence_gate", new FenceGate("oak_acacia_decoration_fence_gate", WoodType.ACACIA));
+    public static final Block OAK_ACACIA_GARDEN = registerBlock("oak_acacia_garden", new Fence("oak_acacia_garden"));
+    public static final Block OAK_ACACIA_GARDEN_GATE = registerBlock("oak_acacia_garden_fence_gate", new FenceGate("oak_acacia_garden_fence_gate", WoodType.ACACIA));
+    public static final Block OAK_ACACIA_BOLLARD = registerBlock("oak_acacia_bollard", new Fence("oak_acacia_bollard"));
+    public static final Block OAK_ACACIA_BOLLARD_GATE = registerBlock("oak_acacia_bollard_fence_gate", new FenceGate("oak_acacia_bollard_fence_gate", WoodType.ACACIA));
+    public static final Block OAK_ACACIA_STICK = registerBlock("oak_acacia_stick", new Fence("oak_acacia_stick"));
+    public static final Block OAK_ACACIA_STICK_GATE = registerBlock("oak_acacia_stick_fence_gate", new FenceGate("oak_acacia_stick_fence_gate", WoodType.ACACIA));
+    public static final Block OAK_ACACIA_SPIRE = registerBlock("oak_acacia_spire", new Fence("oak_acacia_spire"));
+    public static final Block OAK_ACACIA_SPIRE_GATE = registerBlock("oak_acacia_spire_fence_gate", new FenceGate("oak_acacia_spire_fence_gate", WoodType.ACACIA));
+
+    public static final Block OAK_JUNGLE_DECORATION = registerBlock("oak_jungle_decoration", new Fence("oak_jungle_decoration"));
+    public static final Block OAK_JUNGLE_DECORATION_GATE = registerBlock("oak_jungle_decoration_fence_gate", new FenceGate("oak_jungle_decoration_fence_gate", WoodType.JUNGLE));
+    public static final Block OAK_JUNGLE_GARDEN = registerBlock("oak_jungle_garden", new Fence("oak_jungle_garden"));
+    public static final Block OAK_JUNGLE_GARDEN_GATE = registerBlock("oak_jungle_garden_fence_gate", new FenceGate("oak_jungle_garden_fence_gate", WoodType.JUNGLE));
+    public static final Block OAK_JUNGLE_BOLLARD = registerBlock("oak_jungle_bollard", new Fence("oak_jungle_bollard"));
+    public static final Block OAK_JUNGLE_BOLLARD_GATE = registerBlock("oak_jungle_bollard_fence_gate", new FenceGate("oak_jungle_bollard_fence_gate", WoodType.JUNGLE));
+    public static final Block OAK_JUNGLE_STICK = registerBlock("oak_jungle_stick", new Fence("oak_jungle_stick"));
+    public static final Block OAK_JUNGLE_STICK_GATE = registerBlock("oak_jungle_stick_fence_gate", new FenceGate("oak_jungle_stick_fence_gate", WoodType.JUNGLE));
+    public static final Block OAK_JUNGLE_SPIRE = registerBlock("oak_jungle_spire", new Fence("oak_jungle_spire"));
+    public static final Block OAK_JUNGLE_SPIRE_GATE = registerBlock("oak_jungle_spire_fence_gate", new FenceGate("oak_jungle_spire_fence_gate", WoodType.JUNGLE));
+
+    public static final Block OAK_DARKOAK_DECORATION = registerBlock("oak_darkoak_decoration", new Fence("oak_darkoak_decoration"));
+    public static final Block OAK_DARKOAK_DECORATION_GATE = registerBlock("oak_darkoak_decoration_fence_gate", new FenceGate("oak_darkoak_decoration_fence_gate", WoodType.DARK_OAK));
+    public static final Block OAK_DARKOAK_GARDEN = registerBlock("oak_darkoak_garden", new Fence("oak_darkoak_garden"));
+    public static final Block OAK_DARKOAK_GARDEN_GATE = registerBlock("oak_darkoak_garden_fence_gate", new FenceGate("oak_darkoak_garden_fence_gate", WoodType.DARK_OAK));
+    public static final Block OAK_DARKOAK_BOLLARD = registerBlock("oak_darkoak_bollard", new Fence("oak_darkoak_bollard"));
+    public static final Block OAK_DARKOAK_BOLLARD_GATE = registerBlock("oak_darkoak_bollard_fence_gate", new FenceGate("oak_darkoak_bollard_fence_gate", WoodType.DARK_OAK));
+    public static final Block OAK_DARKOAK_STICK = registerBlock("oak_darkoak_stick", new Fence("oak_darkoak_stick"));
+    public static final Block OAK_DARKOAK_STICK_GATE = registerBlock("oak_darkoak_stick_fence_gate", new FenceGate("oak_darkoak_stick_fence_gate", WoodType.DARK_OAK));
+    public static final Block OAK_DARKOAK_SPIRE = registerBlock("oak_darkoak_spire", new Fence("oak_darkoak_spire"));
+    public static final Block OAK_DARKOAK_SPIRE_GATE = registerBlock("oak_darkoak_spire_fence_gate", new FenceGate("oak_darkoak_spire_fence_gate", WoodType.DARK_OAK));
+
+    public static final Block OAK_CRIMSON_DECORATION = registerBlock("oak_crimson_decoration", new Fence("oak_crimson_decoration"));
+    public static final Block OAK_CRIMSON_DECORATION_GATE = registerBlock("oak_crimson_decoration_fence_gate", new FenceGate("oak_crimson_decoration_fence_gate", WoodType.CRIMSON));
+    public static final Block OAK_CRIMSON_GARDEN = registerBlock("oak_crimson_garden", new Fence("oak_crimson_garden"));
+    public static final Block OAK_CRIMSON_GARDEN_GATE = registerBlock("oak_crimson_garden_fence_gate", new FenceGate("oak_crimson_garden_fence_gate", WoodType.CRIMSON));
+    public static final Block OAK_CRIMSON_BOLLARD = registerBlock("oak_crimson_bollard", new Fence("oak_crimson_bollard"));
+    public static final Block OAK_CRIMSON_BOLLARD_GATE = registerBlock("oak_crimson_bollard_fence_gate", new FenceGate("oak_crimson_bollard_fence_gate", WoodType.CRIMSON));
+    public static final Block OAK_CRIMSON_STICK = registerBlock("oak_crimson_stick", new Fence("oak_crimson_stick"));
+    public static final Block OAK_CRIMSON_STICK_GATE = registerBlock("oak_crimson_stick_fence_gate", new FenceGate("oak_crimson_stick_fence_gate", WoodType.CRIMSON));
+    public static final Block OAK_CRIMSON_SPIRE = registerBlock("oak_crimson_spire", new Fence("oak_crimson_spire"));
+    public static final Block OAK_CRIMSON_SPIRE_GATE = registerBlock("oak_crimson_spire_fence_gate", new FenceGate("oak_crimson_spire_fence_gate", WoodType.CRIMSON));
+
+    public static final Block OAK_WARPED_DECORATION = registerBlock("oak_warped_decoration", new Fence("oak_warped_decoration"));
+    public static final Block OAK_WARPED_DECORATION_GATE = registerBlock("oak_warped_decoration_fence_gate", new FenceGate("oak_warped_decoration_fence_gate", WoodType.WARPED));
+    public static final Block OAK_WARPED_GARDEN = registerBlock("oak_warped_garden", new Fence("oak_warped_garden"));
+    public static final Block OAK_WARPED_GARDEN_GATE = registerBlock("oak_warped_garden_fence_gate", new FenceGate("oak_warped_garden_fence_gate", WoodType.WARPED));
+    public static final Block OAK_WARPED_BOLLARD = registerBlock("oak_warped_bollard", new Fence("oak_warped_bollard"));
+    public static final Block OAK_WARPED_BOLLARD_GATE = registerBlock("oak_warped_bollard_fence_gate", new FenceGate("oak_warped_bollard_fence_gate", WoodType.WARPED));
+    public static final Block OAK_WARPED_STICK = registerBlock("oak_warped_stick", new Fence("oak_warped_stick"));
+    public static final Block OAK_WARPED_STICK_GATE = registerBlock("oak_warped_stick_fence_gate", new FenceGate("oak_warped_stick_fence_gate", WoodType.WARPED));
+    public static final Block OAK_WARPED_SPIRE = registerBlock("oak_warped_spire", new Fence("oak_warped_spire"));
+    public static final Block OAK_WARPED_SPIRE_GATE = registerBlock("oak_warped_spire_fence_gate", new FenceGate("oak_warped_spire_fence_gate", WoodType.WARPED));
+
+    public static final Block OAK_MANGROVE_DECORATION = registerBlock("oak_mangrove_decoration", new Fence("oak_mangrove_decoration"));
+    public static final Block OAK_MANGROVE_DECORATION_GATE = registerBlock("oak_mangrove_decoration_fence_gate", new FenceGate("oak_mangrove_decoration_fence_gate", WoodType.MANGROVE));
+    public static final Block OAK_MANGROVE_GARDEN = registerBlock("oak_mangrove_garden", new Fence("oak_mangrove_garden"));
+    public static final Block OAK_MANGROVE_GARDEN_GATE = registerBlock("oak_mangrove_garden_fence_gate", new FenceGate("oak_mangrove_garden_fence_gate", WoodType.MANGROVE));
+    public static final Block OAK_MANGROVE_BOLLARD = registerBlock("oak_mangrove_bollard", new Fence("oak_mangrove_bollard"));
+    public static final Block OAK_MANGROVE_BOLLARD_GATE = registerBlock("oak_mangrove_bollard_fence_gate", new FenceGate("oak_mangrove_bollard_fence_gate", WoodType.MANGROVE));
+    public static final Block OAK_MANGROVE_STICK = registerBlock("oak_mangrove_stick", new Fence("oak_mangrove_stick"));
+    public static final Block OAK_MANGROVE_STICK_GATE = registerBlock("oak_mangrove_stick_fence_gate", new FenceGate("oak_mangrove_stick_fence_gate", WoodType.MANGROVE));
+    public static final Block OAK_MANGROVE_SPIRE = registerBlock("oak_mangrove_spire", new Fence("oak_mangrove_spire"));
+    public static final Block OAK_MANGROVE_SPIRE_GATE = registerBlock("oak_mangrove_spire_fence_gate", new FenceGate("oak_mangrove_spire_fence_gate", WoodType.MANGROVE));
+
+    public static final Block OAK_BAMBOO_DECORATION = registerBlock("oak_bamboo_decoration", new Fence("oak_bamboo_decoration"));
+    public static final Block OAK_BAMBOO_DECORATION_GATE = registerBlock("oak_bamboo_decoration_fence_gate", new FenceGate("oak_bamboo_decoration_fence_gate", WoodType.BAMBOO));
+    public static final Block OAK_BAMBOO_GARDEN = registerBlock("oak_bamboo_garden", new Fence("oak_bamboo_garden"));
+    public static final Block OAK_BAMBOO_GARDEN_GATE = registerBlock("oak_bamboo_garden_fence_gate", new FenceGate("oak_bamboo_garden_fence_gate", WoodType.BAMBOO));
+    public static final Block OAK_BAMBOO_BOLLARD = registerBlock("oak_bamboo_bollard", new Fence("oak_bamboo_bollard"));
+    public static final Block OAK_BAMBOO_BOLLARD_GATE = registerBlock("oak_bamboo_bollard_fence_gate", new FenceGate("oak_bamboo_bollard_fence_gate", WoodType.BAMBOO));
+    public static final Block OAK_BAMBOO_STICK = registerBlock("oak_bamboo_stick", new Fence("oak_bamboo_stick"));
+    public static final Block OAK_BAMBOO_STICK_GATE = registerBlock("oak_bamboo_stick_fence_gate", new FenceGate("oak_bamboo_stick_fence_gate", WoodType.BAMBOO));
+    public static final Block OAK_BAMBOO_SPIRE = registerBlock("oak_bamboo_spire", new Fence("oak_bamboo_spire"));
+    public static final Block OAK_BAMBOO_SPIRE_GATE = registerBlock("oak_bamboo_spire_fence_gate", new FenceGate("oak_bamboo_spire_fence_gate", WoodType.BAMBOO));
+
+    public static final Block OAK_CHERRY_DECORATION = registerBlock("oak_cherry_decoration", new Fence("oak_cherry_decoration"));
+    public static final Block OAK_CHERRY_DECORATION_GATE = registerBlock("oak_cherry_decoration_fence_gate", new FenceGate("oak_cherry_decoration_fence_gate", WoodType.CHERRY));
+    public static final Block OAK_CHERRY_GARDEN = registerBlock("oak_cherry_garden", new Fence("oak_cherry_garden"));
+    public static final Block OAK_CHERRY_GARDEN_GATE = registerBlock("oak_cherry_garden_fence_gate", new FenceGate("oak_cherry_garden_fence_gate", WoodType.CHERRY));
+    public static final Block OAK_CHERRY_BOLLARD = registerBlock("oak_cherry_bollard", new Fence("oak_cherry_bollard"));
+    public static final Block OAK_CHERRY_BOLLARD_GATE = registerBlock("oak_cherry_bollard_fence_gate", new FenceGate("oak_cherry_bollard_fence_gate", WoodType.CHERRY));
+    public static final Block OAK_CHERRY_STICK = registerBlock("oak_cherry_stick", new Fence("oak_cherry_stick"));
+    public static final Block OAK_CHERRY_STICK_GATE = registerBlock("oak_cherry_stick_fence_gate", new FenceGate("oak_cherry_stick_fence_gate", WoodType.CHERRY));
+    public static final Block OAK_CHERRY_SPIRE = registerBlock("oak_cherry_spire", new Fence("oak_cherry_spire"));
+    public static final Block OAK_CHERRY_SPIRE_GATE = registerBlock("oak_cherry_spire_fence_gate", new FenceGate("oak_cherry_spire_fence_gate", WoodType.CHERRY));
+
+    public static final Block OAK_PALE_OAK_DECORATION = registerBlock("oak_pale_oak_decoration", new Fence("oak_pale_oak_decoration"));
+    public static final Block OAK_PALE_OAK_DECORATION_GATE = registerBlock("oak_pale_oak_decoration_fence_gate", new FenceGate("oak_pale_oak_decoration_fence_gate", WoodType.PALE_OAK));
+    public static final Block OAK_PALE_OAK_GARDEN = registerBlock("oak_pale_oak_garden", new Fence("oak_pale_oak_garden"));
+    public static final Block OAK_PALE_OAK_GARDEN_GATE = registerBlock("oak_pale_oak_garden_fence_gate", new FenceGate("oak_pale_oak_garden_fence_gate", WoodType.PALE_OAK));
+    public static final Block OAK_PALE_OAK_BOLLARD = registerBlock("oak_pale_oak_bollard", new Fence("oak_pale_oak_bollard"));
+    public static final Block OAK_PALE_OAK_BOLLARD_GATE = registerBlock("oak_pale_oak_bollard_fence_gate", new FenceGate("oak_pale_oak_bollard_fence_gate", WoodType.PALE_OAK));
+    public static final Block OAK_PALE_OAK_STICK = registerBlock("oak_pale_oak_stick", new Fence("oak_pale_oak_stick"));
+    public static final Block OAK_PALE_OAK_STICK_GATE = registerBlock("oak_pale_oak_stick_fence_gate", new FenceGate("oak_pale_oak_stick_fence_gate", WoodType.PALE_OAK));
+    public static final Block OAK_PALE_OAK_SPIRE = registerBlock("oak_pale_oak_spire", new Fence("oak_pale_oak_spire"));
+    public static final Block OAK_PALE_OAK_SPIRE_GATE = registerBlock("oak_pale_oak_spire_fence_gate", new FenceGate("oak_pale_oak_spire_fence_gate", WoodType.PALE_OAK));
+
+    public static final Block SPRUCE_OAK_DECORATION = registerBlock("spruce_oak_decoration", new Fence("spruce_oak_decoration"));
+    public static final Block SPRUCE_OAK_DECORATION_GATE = registerBlock("spruce_oak_decoration_fence_gate", new FenceGate("spruce_oak_decoration_fence_gate", WoodType.OAK));
+    public static final Block SPRUCE_OAK_GARDEN = registerBlock("spruce_oak_garden", new Fence("spruce_oak_garden"));
+    public static final Block SPRUCE_OAK_GARDEN_GATE = registerBlock("spruce_oak_garden_fence_gate", new FenceGate("spruce_oak_garden_fence_gate", WoodType.OAK));
+    public static final Block SPRUCE_OAK_BOLLARD = registerBlock("spruce_oak_bollard", new Fence("spruce_oak_bollard"));
+    public static final Block SPRUCE_OAK_BOLLARD_GATE = registerBlock("spruce_oak_bollard_fence_gate", new FenceGate("spruce_oak_bollard_fence_gate", WoodType.OAK));
+    public static final Block SPRUCE_OAK_STICK = registerBlock("spruce_oak_stick", new Fence("spruce_oak_stick"));
+    public static final Block SPRUCE_OAK_STICK_GATE = registerBlock("spruce_oak_stick_fence_gate", new FenceGate("spruce_oak_stick_fence_gate", WoodType.OAK));
+    public static final Block SPRUCE_OAK_SPIRE = registerBlock("spruce_oak_spire", new Fence("spruce_oak_spire"));
+    public static final Block SPRUCE_OAK_SPIRE_GATE = registerBlock("spruce_oak_spire_fence_gate", new FenceGate("spruce_oak_spire_fence_gate", WoodType.OAK));
+
+    public static final Block SPRUCE_BIRCH_DECORATION = registerBlock("spruce_birch_decoration", new Fence("spruce_birch_decoration"));
+    public static final Block SPRUCE_BIRCH_DECORATION_GATE = registerBlock("spruce_birch_decoration_fence_gate", new FenceGate("spruce_birch_decoration_fence_gate", WoodType.BIRCH));
+    public static final Block SPRUCE_BIRCH_GARDEN = registerBlock("spruce_birch_garden", new Fence("spruce_birch_garden"));
+    public static final Block SPRUCE_BIRCH_GARDEN_GATE = registerBlock("spruce_birch_garden_fence_gate", new FenceGate("spruce_birch_garden_fence_gate", WoodType.BIRCH));
+    public static final Block SPRUCE_BIRCH_BOLLARD = registerBlock("spruce_birch_bollard", new Fence("spruce_birch_bollard"));
+    public static final Block SPRUCE_BIRCH_BOLLARD_GATE = registerBlock("spruce_birch_bollard_fence_gate", new FenceGate("spruce_birch_bollard_fence_gate", WoodType.BIRCH));
+    public static final Block SPRUCE_BIRCH_STICK = registerBlock("spruce_birch_stick", new Fence("spruce_birch_stick"));
+    public static final Block SPRUCE_BIRCH_STICK_GATE = registerBlock("spruce_birch_stick_fence_gate", new FenceGate("spruce_birch_stick_fence_gate", WoodType.BIRCH));
+    public static final Block SPRUCE_BIRCH_SPIRE = registerBlock("spruce_birch_spire", new Fence("spruce_birch_spire"));
+    public static final Block SPRUCE_BIRCH_SPIRE_GATE = registerBlock("spruce_birch_spire_fence_gate", new FenceGate("spruce_birch_spire_fence_gate", WoodType.BIRCH));
+
+    public static final Block SPRUCE_ACACIA_DECORATION = registerBlock("spruce_acacia_decoration", new Fence("spruce_acacia_decoration"));
+    public static final Block SPRUCE_ACACIA_DECORATION_GATE = registerBlock("spruce_acacia_decoration_fence_gate", new FenceGate("spruce_acacia_decoration_fence_gate", WoodType.ACACIA));
+    public static final Block SPRUCE_ACACIA_GARDEN = registerBlock("spruce_acacia_garden", new Fence("spruce_acacia_garden"));
+    public static final Block SPRUCE_ACACIA_GARDEN_GATE = registerBlock("spruce_acacia_garden_fence_gate", new FenceGate("spruce_acacia_garden_fence_gate", WoodType.ACACIA));
+    public static final Block SPRUCE_ACACIA_BOLLARD = registerBlock("spruce_acacia_bollard", new Fence("spruce_acacia_bollard"));
+    public static final Block SPRUCE_ACACIA_BOLLARD_GATE = registerBlock("spruce_acacia_bollard_fence_gate", new FenceGate("spruce_acacia_bollard_fence_gate", WoodType.ACACIA));
+    public static final Block SPRUCE_ACACIA_STICK = registerBlock("spruce_acacia_stick", new Fence("spruce_acacia_stick"));
+    public static final Block SPRUCE_ACACIA_STICK_GATE = registerBlock("spruce_acacia_stick_fence_gate", new FenceGate("spruce_acacia_stick_fence_gate", WoodType.ACACIA));
+    public static final Block SPRUCE_ACACIA_SPIRE = registerBlock("spruce_acacia_spire", new Fence("spruce_acacia_spire"));
+    public static final Block SPRUCE_ACACIA_SPIRE_GATE = registerBlock("spruce_acacia_spire_fence_gate", new FenceGate("spruce_acacia_spire_fence_gate", WoodType.ACACIA));
+
+    public static final Block SPRUCE_JUNGLE_DECORATION = registerBlock("spruce_jungle_decoration", new Fence("spruce_jungle_decoration"));
+    public static final Block SPRUCE_JUNGLE_DECORATION_GATE = registerBlock("spruce_jungle_decoration_fence_gate", new FenceGate("spruce_jungle_decoration_fence_gate", WoodType.JUNGLE));
+    public static final Block SPRUCE_JUNGLE_GARDEN = registerBlock("spruce_jungle_garden", new Fence("spruce_jungle_garden"));
+    public static final Block SPRUCE_JUNGLE_GARDEN_GATE = registerBlock("spruce_jungle_garden_fence_gate", new FenceGate("spruce_jungle_garden_fence_gate", WoodType.JUNGLE));
+    public static final Block SPRUCE_JUNGLE_BOLLARD = registerBlock("spruce_jungle_bollard", new Fence("spruce_jungle_bollard"));
+    public static final Block SPRUCE_JUNGLE_BOLLARD_GATE = registerBlock("spruce_jungle_bollard_fence_gate", new FenceGate("spruce_jungle_bollard_fence_gate", WoodType.JUNGLE));
+    public static final Block SPRUCE_JUNGLE_STICK = registerBlock("spruce_jungle_stick", new Fence("spruce_jungle_stick"));
+    public static final Block SPRUCE_JUNGLE_STICK_GATE = registerBlock("spruce_jungle_stick_fence_gate", new FenceGate("spruce_jungle_stick_fence_gate", WoodType.JUNGLE));
+    public static final Block SPRUCE_JUNGLE_SPIRE = registerBlock("spruce_jungle_spire", new Fence("spruce_jungle_spire"));
+    public static final Block SPRUCE_JUNGLE_SPIRE_GATE = registerBlock("spruce_jungle_spire_fence_gate", new FenceGate("spruce_jungle_spire_fence_gate", WoodType.JUNGLE));
+
+    public static final Block SPRUCE_DARKOAK_DECORATION = registerBlock("spruce_darkoak_decoration", new Fence("spruce_darkoak_decoration"));
+    public static final Block SPRUCE_DARKOAK_DECORATION_GATE = registerBlock("spruce_darkoak_decoration_fence_gate", new FenceGate("spruce_darkoak_decoration_fence_gate", WoodType.DARK_OAK));
+    public static final Block SPRUCE_DARKOAK_GARDEN = registerBlock("spruce_darkoak_garden", new Fence("spruce_darkoak_garden"));
+    public static final Block SPRUCE_DARKOAK_GARDEN_GATE = registerBlock("spruce_darkoak_garden_fence_gate", new FenceGate("spruce_darkoak_garden_fence_gate", WoodType.DARK_OAK));
+    public static final Block SPRUCE_DARKOAK_BOLLARD = registerBlock("spruce_darkoak_bollard", new Fence("spruce_darkoak_bollard"));
+    public static final Block SPRUCE_DARKOAK_BOLLARD_GATE = registerBlock("spruce_darkoak_bollard_fence_gate", new FenceGate("spruce_darkoak_bollard_fence_gate", WoodType.DARK_OAK));
+    public static final Block SPRUCE_DARKOAK_STICK = registerBlock("spruce_darkoak_stick", new Fence("spruce_darkoak_stick"));
+    public static final Block SPRUCE_DARKOAK_STICK_GATE = registerBlock("spruce_darkoak_stick_fence_gate", new FenceGate("spruce_darkoak_stick_fence_gate", WoodType.DARK_OAK));
+    public static final Block SPRUCE_DARKOAK_SPIRE = registerBlock("spruce_darkoak_spire", new Fence("spruce_darkoak_spire"));
+    public static final Block SPRUCE_DARKOAK_SPIRE_GATE = registerBlock("spruce_darkoak_spire_fence_gate", new FenceGate("spruce_darkoak_spire_fence_gate", WoodType.DARK_OAK));
+
+    public static final Block SPRUCE_CRIMSON_DECORATION = registerBlock("spruce_crimson_decoration", new Fence("spruce_crimson_decoration"));
+    public static final Block SPRUCE_CRIMSON_DECORATION_GATE = registerBlock("spruce_crimson_decoration_fence_gate", new FenceGate("spruce_crimson_decoration_fence_gate", WoodType.CRIMSON));
+    public static final Block SPRUCE_CRIMSON_GARDEN = registerBlock("spruce_crimson_garden", new Fence("spruce_crimson_garden"));
+    public static final Block SPRUCE_CRIMSON_GARDEN_GATE = registerBlock("spruce_crimson_garden_fence_gate", new FenceGate("spruce_crimson_garden_fence_gate", WoodType.CRIMSON));
+    public static final Block SPRUCE_CRIMSON_BOLLARD = registerBlock("spruce_crimson_bollard", new Fence("spruce_crimson_bollard"));
+    public static final Block SPRUCE_CRIMSON_BOLLARD_GATE = registerBlock("spruce_crimson_bollard_fence_gate", new FenceGate("spruce_crimson_bollard_fence_gate", WoodType.CRIMSON));
+    public static final Block SPRUCE_CRIMSON_STICK = registerBlock("spruce_crimson_stick", new Fence("spruce_crimson_stick"));
+    public static final Block SPRUCE_CRIMSON_STICK_GATE = registerBlock("spruce_crimson_stick_fence_gate", new FenceGate("spruce_crimson_stick_fence_gate", WoodType.CRIMSON));
+    public static final Block SPRUCE_CRIMSON_SPIRE = registerBlock("spruce_crimson_spire", new Fence("spruce_crimson_spire"));
+    public static final Block SPRUCE_CRIMSON_SPIRE_GATE = registerBlock("spruce_crimson_spire_fence_gate", new FenceGate("spruce_crimson_spire_fence_gate", WoodType.CRIMSON));
+
+    public static final Block SPRUCE_WARPED_DECORATION = registerBlock("spruce_warped_decoration", new Fence("spruce_warped_decoration"));
+    public static final Block SPRUCE_WARPED_DECORATION_GATE = registerBlock("spruce_warped_decoration_fence_gate", new FenceGate("spruce_warped_decoration_fence_gate", WoodType.WARPED));
+    public static final Block SPRUCE_WARPED_GARDEN = registerBlock("spruce_warped_garden", new Fence("spruce_warped_garden"));
+    public static final Block SPRUCE_WARPED_GARDEN_GATE = registerBlock("spruce_warped_garden_fence_gate", new FenceGate("spruce_warped_garden_fence_gate", WoodType.WARPED));
+    public static final Block SPRUCE_WARPED_BOLLARD = registerBlock("spruce_warped_bollard", new Fence("spruce_warped_bollard"));
+    public static final Block SPRUCE_WARPED_BOLLARD_GATE = registerBlock("spruce_warped_bollard_fence_gate", new FenceGate("spruce_warped_bollard_fence_gate", WoodType.WARPED));
+    public static final Block SPRUCE_WARPED_STICK = registerBlock("spruce_warped_stick", new Fence("spruce_warped_stick"));
+    public static final Block SPRUCE_WARPED_STICK_GATE = registerBlock("spruce_warped_stick_fence_gate", new FenceGate("spruce_warped_stick_fence_gate", WoodType.WARPED));
+    public static final Block SPRUCE_WARPED_SPIRE = registerBlock("spruce_warped_spire", new Fence("spruce_warped_spire"));
+    public static final Block SPRUCE_WARPED_SPIRE_GATE = registerBlock("spruce_warped_spire_fence_gate", new FenceGate("spruce_warped_spire_fence_gate", WoodType.WARPED));
+
+    public static final Block SPRUCE_MANGROVE_DECORATION = registerBlock("spruce_mangrove_decoration", new Fence("spruce_mangrove_decoration"));
+    public static final Block SPRUCE_MANGROVE_DECORATION_GATE = registerBlock("spruce_mangrove_decoration_fence_gate", new FenceGate("spruce_mangrove_decoration_fence_gate", WoodType.MANGROVE));
+    public static final Block SPRUCE_MANGROVE_GARDEN = registerBlock("spruce_mangrove_garden", new Fence("spruce_mangrove_garden"));
+    public static final Block SPRUCE_MANGROVE_GARDEN_GATE = registerBlock("spruce_mangrove_garden_fence_gate", new FenceGate("spruce_mangrove_garden_fence_gate", WoodType.MANGROVE));
+    public static final Block SPRUCE_MANGROVE_BOLLARD = registerBlock("spruce_mangrove_bollard", new Fence("spruce_mangrove_bollard"));
+    public static final Block SPRUCE_MANGROVE_BOLLARD_GATE = registerBlock("spruce_mangrove_bollard_fence_gate", new FenceGate("spruce_mangrove_bollard_fence_gate", WoodType.MANGROVE));
+    public static final Block SPRUCE_MANGROVE_STICK = registerBlock("spruce_mangrove_stick", new Fence("spruce_mangrove_stick"));
+    public static final Block SPRUCE_MANGROVE_STICK_GATE = registerBlock("spruce_mangrove_stick_fence_gate", new FenceGate("spruce_mangrove_stick_fence_gate", WoodType.MANGROVE));
+    public static final Block SPRUCE_MANGROVE_SPIRE = registerBlock("spruce_mangrove_spire", new Fence("spruce_mangrove_spire"));
+    public static final Block SPRUCE_MANGROVE_SPIRE_GATE = registerBlock("spruce_mangrove_spire_fence_gate", new FenceGate("spruce_mangrove_spire_fence_gate", WoodType.MANGROVE));
+
+    public static final Block SPRUCE_BAMBOO_DECORATION = registerBlock("spruce_bamboo_decoration", new Fence("spruce_bamboo_decoration"));
+    public static final Block SPRUCE_BAMBOO_DECORATION_GATE = registerBlock("spruce_bamboo_decoration_fence_gate", new FenceGate("spruce_bamboo_decoration_fence_gate", WoodType.BAMBOO));
+    public static final Block SPRUCE_BAMBOO_GARDEN = registerBlock("spruce_bamboo_garden", new Fence("spruce_bamboo_garden"));
+    public static final Block SPRUCE_BAMBOO_GARDEN_GATE = registerBlock("spruce_bamboo_garden_fence_gate", new FenceGate("spruce_bamboo_garden_fence_gate", WoodType.BAMBOO));
+    public static final Block SPRUCE_BAMBOO_BOLLARD = registerBlock("spruce_bamboo_bollard", new Fence("spruce_bamboo_bollard"));
+    public static final Block SPRUCE_BAMBOO_BOLLARD_GATE = registerBlock("spruce_bamboo_bollard_fence_gate", new FenceGate("spruce_bamboo_bollard_fence_gate", WoodType.BAMBOO));
+    public static final Block SPRUCE_BAMBOO_STICK = registerBlock("spruce_bamboo_stick", new Fence("spruce_bamboo_stick"));
+    public static final Block SPRUCE_BAMBOO_STICK_GATE = registerBlock("spruce_bamboo_stick_fence_gate", new FenceGate("spruce_bamboo_stick_fence_gate", WoodType.BAMBOO));
+    public static final Block SPRUCE_BAMBOO_SPIRE = registerBlock("spruce_bamboo_spire", new Fence("spruce_bamboo_spire"));
+    public static final Block SPRUCE_BAMBOO_SPIRE_GATE = registerBlock("spruce_bamboo_spire_fence_gate", new FenceGate("spruce_bamboo_spire_fence_gate", WoodType.BAMBOO));
+
+    public static final Block SPRUCE_CHERRY_DECORATION = registerBlock("spruce_cherry_decoration", new Fence("spruce_cherry_decoration"));
+    public static final Block SPRUCE_CHERRY_DECORATION_GATE = registerBlock("spruce_cherry_decoration_fence_gate", new FenceGate("spruce_cherry_decoration_fence_gate", WoodType.CHERRY));
+    public static final Block SPRUCE_CHERRY_GARDEN = registerBlock("spruce_cherry_garden", new Fence("spruce_cherry_garden"));
+    public static final Block SPRUCE_CHERRY_GARDEN_GATE = registerBlock("spruce_cherry_garden_fence_gate", new FenceGate("spruce_cherry_garden_fence_gate", WoodType.CHERRY));
+    public static final Block SPRUCE_CHERRY_BOLLARD = registerBlock("spruce_cherry_bollard", new Fence("spruce_cherry_bollard"));
+    public static final Block SPRUCE_CHERRY_BOLLARD_GATE = registerBlock("spruce_cherry_bollard_fence_gate", new FenceGate("spruce_cherry_bollard_fence_gate", WoodType.CHERRY));
+    public static final Block SPRUCE_CHERRY_STICK = registerBlock("spruce_cherry_stick", new Fence("spruce_cherry_stick"));
+    public static final Block SPRUCE_CHERRY_STICK_GATE = registerBlock("spruce_cherry_stick_fence_gate", new FenceGate("spruce_cherry_stick_fence_gate", WoodType.CHERRY));
+    public static final Block SPRUCE_CHERRY_SPIRE = registerBlock("spruce_cherry_spire", new Fence("spruce_cherry_spire"));
+    public static final Block SPRUCE_CHERRY_SPIRE_GATE = registerBlock("spruce_cherry_spire_fence_gate", new FenceGate("spruce_cherry_spire_fence_gate", WoodType.CHERRY));
+
+    public static final Block SPRUCE_PALE_OAK_DECORATION = registerBlock("spruce_pale_oak_decoration", new Fence("spruce_pale_oak_decoration"));
+    public static final Block SPRUCE_PALE_OAK_DECORATION_GATE = registerBlock("spruce_pale_oak_decoration_fence_gate", new FenceGate("spruce_pale_oak_decoration_fence_gate", WoodType.PALE_OAK));
+    public static final Block SPRUCE_PALE_OAK_GARDEN = registerBlock("spruce_pale_oak_garden", new Fence("spruce_pale_oak_garden"));
+    public static final Block SPRUCE_PALE_OAK_GARDEN_GATE = registerBlock("spruce_pale_oak_garden_fence_gate", new FenceGate("spruce_pale_oak_garden_fence_gate", WoodType.PALE_OAK));
+    public static final Block SPRUCE_PALE_OAK_BOLLARD = registerBlock("spruce_pale_oak_bollard", new Fence("spruce_pale_oak_bollard"));
+    public static final Block SPRUCE_PALE_OAK_BOLLARD_GATE = registerBlock("spruce_pale_oak_bollard_fence_gate", new FenceGate("spruce_pale_oak_bollard_fence_gate", WoodType.PALE_OAK));
+    public static final Block SPRUCE_PALE_OAK_STICK = registerBlock("spruce_pale_oak_stick", new Fence("spruce_pale_oak_stick"));
+    public static final Block SPRUCE_PALE_OAK_STICK_GATE = registerBlock("spruce_pale_oak_stick_fence_gate", new FenceGate("spruce_pale_oak_stick_fence_gate", WoodType.PALE_OAK));
+    public static final Block SPRUCE_PALE_OAK_SPIRE = registerBlock("spruce_pale_oak_spire", new Fence("spruce_pale_oak_spire"));
+    public static final Block SPRUCE_PALE_OAK_SPIRE_GATE = registerBlock("spruce_pale_oak_spire_fence_gate", new FenceGate("spruce_pale_oak_spire_fence_gate", WoodType.PALE_OAK));
+
+    public static final Block BIRCH_OAK_DECORATION = registerBlock("birch_oak_decoration", new Fence("birch_oak_decoration"));
+    public static final Block BIRCH_OAK_DECORATION_GATE = registerBlock("birch_oak_decoration_fence_gate", new FenceGate("birch_oak_decoration_fence_gate", WoodType.OAK));
+    public static final Block BIRCH_OAK_GARDEN = registerBlock("birch_oak_garden", new Fence("birch_oak_garden"));
+    public static final Block BIRCH_OAK_GARDEN_GATE = registerBlock("birch_oak_garden_fence_gate", new FenceGate("birch_oak_garden_fence_gate", WoodType.OAK));
+    public static final Block BIRCH_OAK_BOLLARD = registerBlock("birch_oak_bollard", new Fence("birch_oak_bollard"));
+    public static final Block BIRCH_OAK_BOLLARD_GATE = registerBlock("birch_oak_bollard_fence_gate", new FenceGate("birch_oak_bollard_fence_gate", WoodType.OAK));
+    public static final Block BIRCH_OAK_STICK = registerBlock("birch_oak_stick", new Fence("birch_oak_stick"));
+    public static final Block BIRCH_OAK_STICK_GATE = registerBlock("birch_oak_stick_fence_gate", new FenceGate("birch_oak_stick_fence_gate", WoodType.OAK));
+    public static final Block BIRCH_OAK_SPIRE = registerBlock("birch_oak_spire", new Fence("birch_oak_spire"));
+    public static final Block BIRCH_OAK_SPIRE_GATE = registerBlock("birch_oak_spire_fence_gate", new FenceGate("birch_oak_spire_fence_gate", WoodType.OAK));
+
+    public static final Block BIRCH_SPRUCE_DECORATION = registerBlock("birch_spruce_decoration", new Fence("birch_spruce_decoration"));
+    public static final Block BIRCH_SPRUCE_DECORATION_GATE = registerBlock("birch_spruce_decoration_fence_gate", new FenceGate("birch_spruce_decoration_fence_gate", WoodType.SPRUCE));
+    public static final Block BIRCH_SPRUCE_GARDEN = registerBlock("birch_spruce_garden", new Fence("birch_spruce_garden"));
+    public static final Block BIRCH_SPRUCE_GARDEN_GATE = registerBlock("birch_spruce_garden_fence_gate", new FenceGate("birch_spruce_garden_fence_gate", WoodType.SPRUCE));
+    public static final Block BIRCH_SPRUCE_BOLLARD = registerBlock("birch_spruce_bollard", new Fence("birch_spruce_bollard"));
+    public static final Block BIRCH_SPRUCE_BOLLARD_GATE = registerBlock("birch_spruce_bollard_fence_gate", new FenceGate("birch_spruce_bollard_fence_gate", WoodType.SPRUCE));
+    public static final Block BIRCH_SPRUCE_STICK = registerBlock("birch_spruce_stick", new Fence("birch_spruce_stick"));
+    public static final Block BIRCH_SPRUCE_STICK_GATE = registerBlock("birch_spruce_stick_fence_gate", new FenceGate("birch_spruce_stick_fence_gate", WoodType.SPRUCE));
+    public static final Block BIRCH_SPRUCE_SPIRE = registerBlock("birch_spruce_spire", new Fence("birch_spruce_spire"));
+    public static final Block BIRCH_SPRUCE_SPIRE_GATE = registerBlock("birch_spruce_spire_fence_gate", new FenceGate("birch_spruce_spire_fence_gate", WoodType.SPRUCE));
+
+    public static final Block BIRCH_ACACIA_DECORATION = registerBlock("birch_acacia_decoration", new Fence("birch_acacia_decoration"));
+    public static final Block BIRCH_ACACIA_DECORATION_GATE = registerBlock("birch_acacia_decoration_fence_gate", new FenceGate("birch_acacia_decoration_fence_gate", WoodType.ACACIA));
+    public static final Block BIRCH_ACACIA_GARDEN = registerBlock("birch_acacia_garden", new Fence("birch_acacia_garden"));
+    public static final Block BIRCH_ACACIA_GARDEN_GATE = registerBlock("birch_acacia_garden_fence_gate", new FenceGate("birch_acacia_garden_fence_gate", WoodType.ACACIA));
+    public static final Block BIRCH_ACACIA_BOLLARD = registerBlock("birch_acacia_bollard", new Fence("birch_acacia_bollard"));
+    public static final Block BIRCH_ACACIA_BOLLARD_GATE = registerBlock("birch_acacia_bollard_fence_gate", new FenceGate("birch_acacia_bollard_fence_gate", WoodType.ACACIA));
+    public static final Block BIRCH_ACACIA_STICK = registerBlock("birch_acacia_stick", new Fence("birch_acacia_stick"));
+    public static final Block BIRCH_ACACIA_STICK_GATE = registerBlock("birch_acacia_stick_fence_gate", new FenceGate("birch_acacia_stick_fence_gate", WoodType.ACACIA));
+    public static final Block BIRCH_ACACIA_SPIRE = registerBlock("birch_acacia_spire", new Fence("birch_acacia_spire"));
+    public static final Block BIRCH_ACACIA_SPIRE_GATE = registerBlock("birch_acacia_spire_fence_gate", new FenceGate("birch_acacia_spire_fence_gate", WoodType.ACACIA));
+
+    public static final Block BIRCH_JUNGLE_DECORATION = registerBlock("birch_jungle_decoration", new Fence("birch_jungle_decoration"));
+    public static final Block BIRCH_JUNGLE_DECORATION_GATE = registerBlock("birch_jungle_decoration_fence_gate", new FenceGate("birch_jungle_decoration_fence_gate", WoodType.JUNGLE));
+    public static final Block BIRCH_JUNGLE_GARDEN = registerBlock("birch_jungle_garden", new Fence("birch_jungle_garden"));
+    public static final Block BIRCH_JUNGLE_GARDEN_GATE = registerBlock("birch_jungle_garden_fence_gate", new FenceGate("birch_jungle_garden_fence_gate", WoodType.JUNGLE));
+    public static final Block BIRCH_JUNGLE_BOLLARD = registerBlock("birch_jungle_bollard", new Fence("birch_jungle_bollard"));
+    public static final Block BIRCH_JUNGLE_BOLLARD_GATE = registerBlock("birch_jungle_bollard_fence_gate", new FenceGate("birch_jungle_bollard_fence_gate", WoodType.JUNGLE));
+    public static final Block BIRCH_JUNGLE_STICK = registerBlock("birch_jungle_stick", new Fence("birch_jungle_stick"));
+    public static final Block BIRCH_JUNGLE_STICK_GATE = registerBlock("birch_jungle_stick_fence_gate", new FenceGate("birch_jungle_stick_fence_gate", WoodType.JUNGLE));
+    public static final Block BIRCH_JUNGLE_SPIRE = registerBlock("birch_jungle_spire", new Fence("birch_jungle_spire"));
+    public static final Block BIRCH_JUNGLE_SPIRE_GATE = registerBlock("birch_jungle_spire_fence_gate", new FenceGate("birch_jungle_spire_fence_gate", WoodType.JUNGLE));
+
+    public static final Block BIRCH_DARKOAK_DECORATION = registerBlock("birch_darkoak_decoration", new Fence("birch_darkoak_decoration"));
+    public static final Block BIRCH_DARKOAK_DECORATION_GATE = registerBlock("birch_darkoak_decoration_fence_gate", new FenceGate("birch_darkoak_decoration_fence_gate", WoodType.DARK_OAK));
+    public static final Block BIRCH_DARKOAK_GARDEN = registerBlock("birch_darkoak_garden", new Fence("birch_darkoak_garden"));
+    public static final Block BIRCH_DARKOAK_GARDEN_GATE = registerBlock("birch_darkoak_garden_fence_gate", new FenceGate("birch_darkoak_garden_fence_gate", WoodType.DARK_OAK));
+    public static final Block BIRCH_DARKOAK_BOLLARD = registerBlock("birch_darkoak_bollard", new Fence("birch_darkoak_bollard"));
+    public static final Block BIRCH_DARKOAK_BOLLARD_GATE = registerBlock("birch_darkoak_bollard_fence_gate", new FenceGate("birch_darkoak_bollard_fence_gate", WoodType.DARK_OAK));
+    public static final Block BIRCH_DARKOAK_STICK = registerBlock("birch_darkoak_stick", new Fence("birch_darkoak_stick"));
+    public static final Block BIRCH_DARKOAK_STICK_GATE = registerBlock("birch_darkoak_stick_fence_gate", new FenceGate("birch_darkoak_stick_fence_gate", WoodType.DARK_OAK));
+    public static final Block BIRCH_DARKOAK_SPIRE = registerBlock("birch_darkoak_spire", new Fence("birch_darkoak_spire"));
+    public static final Block BIRCH_DARKOAK_SPIRE_GATE = registerBlock("birch_darkoak_spire_fence_gate", new FenceGate("birch_darkoak_spire_fence_gate", WoodType.DARK_OAK));
+
+    public static final Block BIRCH_CRIMSON_DECORATION = registerBlock("birch_crimson_decoration", new Fence("birch_crimson_decoration"));
+    public static final Block BIRCH_CRIMSON_DECORATION_GATE = registerBlock("birch_crimson_decoration_fence_gate", new FenceGate("birch_crimson_decoration_fence_gate", WoodType.CRIMSON));
+    public static final Block BIRCH_CRIMSON_GARDEN = registerBlock("birch_crimson_garden", new Fence("birch_crimson_garden"));
+    public static final Block BIRCH_CRIMSON_GARDEN_GATE = registerBlock("birch_crimson_garden_fence_gate", new FenceGate("birch_crimson_garden_fence_gate", WoodType.CRIMSON));
+    public static final Block BIRCH_CRIMSON_BOLLARD = registerBlock("birch_crimson_bollard", new Fence("birch_crimson_bollard"));
+    public static final Block BIRCH_CRIMSON_BOLLARD_GATE = registerBlock("birch_crimson_bollard_fence_gate", new FenceGate("birch_crimson_bollard_fence_gate", WoodType.CRIMSON));
+    public static final Block BIRCH_CRIMSON_STICK = registerBlock("birch_crimson_stick", new Fence("birch_crimson_stick"));
+    public static final Block BIRCH_CRIMSON_STICK_GATE = registerBlock("birch_crimson_stick_fence_gate", new FenceGate("birch_crimson_stick_fence_gate", WoodType.CRIMSON));
+    public static final Block BIRCH_CRIMSON_SPIRE = registerBlock("birch_crimson_spire", new Fence("birch_crimson_spire"));
+    public static final Block BIRCH_CRIMSON_SPIRE_GATE = registerBlock("birch_crimson_spire_fence_gate", new FenceGate("birch_crimson_spire_fence_gate", WoodType.CRIMSON));
+
+    public static final Block BIRCH_WARPED_DECORATION = registerBlock("birch_warped_decoration", new Fence("birch_warped_decoration"));
+    public static final Block BIRCH_WARPED_DECORATION_GATE = registerBlock("birch_warped_decoration_fence_gate", new FenceGate("birch_warped_decoration_fence_gate", WoodType.WARPED));
+    public static final Block BIRCH_WARPED_GARDEN = registerBlock("birch_warped_garden", new Fence("birch_warped_garden"));
+    public static final Block BIRCH_WARPED_GARDEN_GATE = registerBlock("birch_warped_garden_fence_gate", new FenceGate("birch_warped_garden_fence_gate", WoodType.WARPED));
+    public static final Block BIRCH_WARPED_BOLLARD = registerBlock("birch_warped_bollard", new Fence("birch_warped_bollard"));
+    public static final Block BIRCH_WARPED_BOLLARD_GATE = registerBlock("birch_warped_bollard_fence_gate", new FenceGate("birch_warped_bollard_fence_gate", WoodType.WARPED));
+    public static final Block BIRCH_WARPED_STICK = registerBlock("birch_warped_stick", new Fence("birch_warped_stick"));
+    public static final Block BIRCH_WARPED_STICK_GATE = registerBlock("birch_warped_stick_fence_gate", new FenceGate("birch_warped_stick_fence_gate", WoodType.WARPED));
+    public static final Block BIRCH_WARPED_SPIRE = registerBlock("birch_warped_spire", new Fence("birch_warped_spire"));
+    public static final Block BIRCH_WARPED_SPIRE_GATE = registerBlock("birch_warped_spire_fence_gate", new FenceGate("birch_warped_spire_fence_gate", WoodType.WARPED));
+
+    public static final Block BIRCH_MANGROVE_DECORATION = registerBlock("birch_mangrove_decoration", new Fence("birch_mangrove_decoration"));
+    public static final Block BIRCH_MANGROVE_DECORATION_GATE = registerBlock("birch_mangrove_decoration_fence_gate", new FenceGate("birch_mangrove_decoration_fence_gate", WoodType.MANGROVE));
+    public static final Block BIRCH_MANGROVE_GARDEN = registerBlock("birch_mangrove_garden", new Fence("birch_mangrove_garden"));
+    public static final Block BIRCH_MANGROVE_GARDEN_GATE = registerBlock("birch_mangrove_garden_fence_gate", new FenceGate("birch_mangrove_garden_fence_gate", WoodType.MANGROVE));
+    public static final Block BIRCH_MANGROVE_BOLLARD = registerBlock("birch_mangrove_bollard", new Fence("birch_mangrove_bollard"));
+    public static final Block BIRCH_MANGROVE_BOLLARD_GATE = registerBlock("birch_mangrove_bollard_fence_gate", new FenceGate("birch_mangrove_bollard_fence_gate", WoodType.MANGROVE));
+    public static final Block BIRCH_MANGROVE_STICK = registerBlock("birch_mangrove_stick", new Fence("birch_mangrove_stick"));
+    public static final Block BIRCH_MANGROVE_STICK_GATE = registerBlock("birch_mangrove_stick_fence_gate", new FenceGate("birch_mangrove_stick_fence_gate", WoodType.MANGROVE));
+    public static final Block BIRCH_MANGROVE_SPIRE = registerBlock("birch_mangrove_spire", new Fence("birch_mangrove_spire"));
+    public static final Block BIRCH_MANGROVE_SPIRE_GATE = registerBlock("birch_mangrove_spire_fence_gate", new FenceGate("birch_mangrove_spire_fence_gate", WoodType.MANGROVE));
+
+    public static final Block BIRCH_BAMBOO_DECORATION = registerBlock("birch_bamboo_decoration", new Fence("birch_bamboo_decoration"));
+    public static final Block BIRCH_BAMBOO_DECORATION_GATE = registerBlock("birch_bamboo_decoration_fence_gate", new FenceGate("birch_bamboo_decoration_fence_gate", WoodType.BAMBOO));
+    public static final Block BIRCH_BAMBOO_GARDEN = registerBlock("birch_bamboo_garden", new Fence("birch_bamboo_garden"));
+    public static final Block BIRCH_BAMBOO_GARDEN_GATE = registerBlock("birch_bamboo_garden_fence_gate", new FenceGate("birch_bamboo_garden_fence_gate", WoodType.BAMBOO));
+    public static final Block BIRCH_BAMBOO_BOLLARD = registerBlock("birch_bamboo_bollard", new Fence("birch_bamboo_bollard"));
+    public static final Block BIRCH_BAMBOO_BOLLARD_GATE = registerBlock("birch_bamboo_bollard_fence_gate", new FenceGate("birch_bamboo_bollard_fence_gate", WoodType.BAMBOO));
+    public static final Block BIRCH_BAMBOO_STICK = registerBlock("birch_bamboo_stick", new Fence("birch_bamboo_stick"));
+    public static final Block BIRCH_BAMBOO_STICK_GATE = registerBlock("birch_bamboo_stick_fence_gate", new FenceGate("birch_bamboo_stick_fence_gate", WoodType.BAMBOO));
+    public static final Block BIRCH_BAMBOO_SPIRE = registerBlock("birch_bamboo_spire", new Fence("birch_bamboo_spire"));
+    public static final Block BIRCH_BAMBOO_SPIRE_GATE = registerBlock("birch_bamboo_spire_fence_gate", new FenceGate("birch_bamboo_spire_fence_gate", WoodType.BAMBOO));
+
+    public static final Block BIRCH_CHERRY_DECORATION = registerBlock("birch_cherry_decoration", new Fence("birch_cherry_decoration"));
+    public static final Block BIRCH_CHERRY_DECORATION_GATE = registerBlock("birch_cherry_decoration_fence_gate", new FenceGate("birch_cherry_decoration_fence_gate", WoodType.CHERRY));
+    public static final Block BIRCH_CHERRY_GARDEN = registerBlock("birch_cherry_garden", new Fence("birch_cherry_garden"));
+    public static final Block BIRCH_CHERRY_GARDEN_GATE = registerBlock("birch_cherry_garden_fence_gate", new FenceGate("birch_cherry_garden_fence_gate", WoodType.CHERRY));
+    public static final Block BIRCH_CHERRY_BOLLARD = registerBlock("birch_cherry_bollard", new Fence("birch_cherry_bollard"));
+    public static final Block BIRCH_CHERRY_BOLLARD_GATE = registerBlock("birch_cherry_bollard_fence_gate", new FenceGate("birch_cherry_bollard_fence_gate", WoodType.CHERRY));
+    public static final Block BIRCH_CHERRY_STICK = registerBlock("birch_cherry_stick", new Fence("birch_cherry_stick"));
+    public static final Block BIRCH_CHERRY_STICK_GATE = registerBlock("birch_cherry_stick_fence_gate", new FenceGate("birch_cherry_stick_fence_gate", WoodType.CHERRY));
+    public static final Block BIRCH_CHERRY_SPIRE = registerBlock("birch_cherry_spire", new Fence("birch_cherry_spire"));
+    public static final Block BIRCH_CHERRY_SPIRE_GATE = registerBlock("birch_cherry_spire_fence_gate", new FenceGate("birch_cherry_spire_fence_gate", WoodType.CHERRY));
+
+    public static final Block BIRCH_PALE_OAK_DECORATION = registerBlock("birch_pale_oak_decoration", new Fence("birch_pale_oak_decoration"));
+    public static final Block BIRCH_PALE_OAK_DECORATION_GATE = registerBlock("birch_pale_oak_decoration_fence_gate", new FenceGate("birch_pale_oak_decoration_fence_gate", WoodType.PALE_OAK));
+    public static final Block BIRCH_PALE_OAK_GARDEN = registerBlock("birch_pale_oak_garden", new Fence("birch_pale_oak_garden"));
+    public static final Block BIRCH_PALE_OAK_GARDEN_GATE = registerBlock("birch_pale_oak_garden_fence_gate", new FenceGate("birch_pale_oak_garden_fence_gate", WoodType.PALE_OAK));
+    public static final Block BIRCH_PALE_OAK_BOLLARD = registerBlock("birch_pale_oak_bollard", new Fence("birch_pale_oak_bollard"));
+    public static final Block BIRCH_PALE_OAK_BOLLARD_GATE = registerBlock("birch_pale_oak_bollard_fence_gate", new FenceGate("birch_pale_oak_bollard_fence_gate", WoodType.PALE_OAK));
+    public static final Block BIRCH_PALE_OAK_STICK = registerBlock("birch_pale_oak_stick", new Fence("birch_pale_oak_stick"));
+    public static final Block BIRCH_PALE_OAK_STICK_GATE = registerBlock("birch_pale_oak_stick_fence_gate", new FenceGate("birch_pale_oak_stick_fence_gate", WoodType.PALE_OAK));
+    public static final Block BIRCH_PALE_OAK_SPIRE = registerBlock("birch_pale_oak_spire", new Fence("birch_pale_oak_spire"));
+    public static final Block BIRCH_PALE_OAK_SPIRE_GATE = registerBlock("birch_pale_oak_spire_fence_gate", new FenceGate("birch_pale_oak_spire_fence_gate", WoodType.PALE_OAK));
+
+    public static final Block ACACIA_OAK_DECORATION = registerBlock("acacia_oak_decoration", new Fence("acacia_oak_decoration"));
+    public static final Block ACACIA_OAK_DECORATION_GATE = registerBlock("acacia_oak_decoration_fence_gate", new FenceGate("acacia_oak_decoration_fence_gate", WoodType.OAK));
+    public static final Block ACACIA_OAK_GARDEN = registerBlock("acacia_oak_garden", new Fence("acacia_oak_garden"));
+    public static final Block ACACIA_OAK_GARDEN_GATE = registerBlock("acacia_oak_garden_fence_gate", new FenceGate("acacia_oak_garden_fence_gate", WoodType.OAK));
+    public static final Block ACACIA_OAK_BOLLARD = registerBlock("acacia_oak_bollard", new Fence("acacia_oak_bollard"));
+    public static final Block ACACIA_OAK_BOLLARD_GATE = registerBlock("acacia_oak_bollard_fence_gate", new FenceGate("acacia_oak_bollard_fence_gate", WoodType.OAK));
+    public static final Block ACACIA_OAK_STICK = registerBlock("acacia_oak_stick", new Fence("acacia_oak_stick"));
+    public static final Block ACACIA_OAK_STICK_GATE = registerBlock("acacia_oak_stick_fence_gate", new FenceGate("acacia_oak_stick_fence_gate", WoodType.OAK));
+    public static final Block ACACIA_OAK_SPIRE = registerBlock("acacia_oak_spire", new Fence("acacia_oak_spire"));
+    public static final Block ACACIA_OAK_SPIRE_GATE = registerBlock("acacia_oak_spire_fence_gate", new FenceGate("acacia_oak_spire_fence_gate", WoodType.OAK));
+
+    public static final Block ACACIA_SPRUCE_DECORATION = registerBlock("acacia_spruce_decoration", new Fence("acacia_spruce_decoration"));
+    public static final Block ACACIA_SPRUCE_DECORATION_GATE = registerBlock("acacia_spruce_decoration_fence_gate", new FenceGate("acacia_spruce_decoration_fence_gate", WoodType.SPRUCE));
+    public static final Block ACACIA_SPRUCE_GARDEN = registerBlock("acacia_spruce_garden", new Fence("acacia_spruce_garden"));
+    public static final Block ACACIA_SPRUCE_GARDEN_GATE = registerBlock("acacia_spruce_garden_fence_gate", new FenceGate("acacia_spruce_garden_fence_gate", WoodType.SPRUCE));
+    public static final Block ACACIA_SPRUCE_BOLLARD = registerBlock("acacia_spruce_bollard", new Fence("acacia_spruce_bollard"));
+    public static final Block ACACIA_SPRUCE_BOLLARD_GATE = registerBlock("acacia_spruce_bollard_fence_gate", new FenceGate("acacia_spruce_bollard_fence_gate", WoodType.SPRUCE));
+    public static final Block ACACIA_SPRUCE_STICK = registerBlock("acacia_spruce_stick", new Fence("acacia_spruce_stick"));
+    public static final Block ACACIA_SPRUCE_STICK_GATE = registerBlock("acacia_spruce_stick_fence_gate", new FenceGate("acacia_spruce_stick_fence_gate", WoodType.SPRUCE));
+    public static final Block ACACIA_SPRUCE_SPIRE = registerBlock("acacia_spruce_spire", new Fence("acacia_spruce_spire"));
+    public static final Block ACACIA_SPRUCE_SPIRE_GATE = registerBlock("acacia_spruce_spire_fence_gate", new FenceGate("acacia_spruce_spire_fence_gate", WoodType.SPRUCE));
+
+    public static final Block ACACIA_BIRCH_DECORATION = registerBlock("acacia_birch_decoration", new Fence("acacia_birch_decoration"));
+    public static final Block ACACIA_BIRCH_DECORATION_GATE = registerBlock("acacia_birch_decoration_fence_gate", new FenceGate("acacia_birch_decoration_fence_gate", WoodType.BIRCH));
+    public static final Block ACACIA_BIRCH_GARDEN = registerBlock("acacia_birch_garden", new Fence("acacia_birch_garden"));
+    public static final Block ACACIA_BIRCH_GARDEN_GATE = registerBlock("acacia_birch_garden_fence_gate", new FenceGate("acacia_birch_garden_fence_gate", WoodType.BIRCH));
+    public static final Block ACACIA_BIRCH_BOLLARD = registerBlock("acacia_birch_bollard", new Fence("acacia_birch_bollard"));
+    public static final Block ACACIA_BIRCH_BOLLARD_GATE = registerBlock("acacia_birch_bollard_fence_gate", new FenceGate("acacia_birch_bollard_fence_gate", WoodType.BIRCH));
+    public static final Block ACACIA_BIRCH_STICK = registerBlock("acacia_birch_stick", new Fence("acacia_birch_stick"));
+    public static final Block ACACIA_BIRCH_STICK_GATE = registerBlock("acacia_birch_stick_fence_gate", new FenceGate("acacia_birch_stick_fence_gate", WoodType.BIRCH));
+    public static final Block ACACIA_BIRCH_SPIRE = registerBlock("acacia_birch_spire", new Fence("acacia_birch_spire"));
+    public static final Block ACACIA_BIRCH_SPIRE_GATE = registerBlock("acacia_birch_spire_fence_gate", new FenceGate("acacia_birch_spire_fence_gate", WoodType.BIRCH));
+
+    public static final Block ACACIA_JUNGLE_DECORATION = registerBlock("acacia_jungle_decoration", new Fence("acacia_jungle_decoration"));
+    public static final Block ACACIA_JUNGLE_DECORATION_GATE = registerBlock("acacia_jungle_decoration_fence_gate", new FenceGate("acacia_jungle_decoration_fence_gate", WoodType.JUNGLE));
+    public static final Block ACACIA_JUNGLE_GARDEN = registerBlock("acacia_jungle_garden", new Fence("acacia_jungle_garden"));
+    public static final Block ACACIA_JUNGLE_GARDEN_GATE = registerBlock("acacia_jungle_garden_fence_gate", new FenceGate("acacia_jungle_garden_fence_gate", WoodType.JUNGLE));
+    public static final Block ACACIA_JUNGLE_BOLLARD = registerBlock("acacia_jungle_bollard", new Fence("acacia_jungle_bollard"));
+    public static final Block ACACIA_JUNGLE_BOLLARD_GATE = registerBlock("acacia_jungle_bollard_fence_gate", new FenceGate("acacia_jungle_bollard_fence_gate", WoodType.JUNGLE));
+    public static final Block ACACIA_JUNGLE_STICK = registerBlock("acacia_jungle_stick", new Fence("acacia_jungle_stick"));
+    public static final Block ACACIA_JUNGLE_STICK_GATE = registerBlock("acacia_jungle_stick_fence_gate", new FenceGate("acacia_jungle_stick_fence_gate", WoodType.JUNGLE));
+    public static final Block ACACIA_JUNGLE_SPIRE = registerBlock("acacia_jungle_spire", new Fence("acacia_jungle_spire"));
+    public static final Block ACACIA_JUNGLE_SPIRE_GATE = registerBlock("acacia_jungle_spire_fence_gate", new FenceGate("acacia_jungle_spire_fence_gate", WoodType.JUNGLE));
+
+    public static final Block ACACIA_DARKOAK_DECORATION = registerBlock("acacia_darkoak_decoration", new Fence("acacia_darkoak_decoration"));
+    public static final Block ACACIA_DARKOAK_DECORATION_GATE = registerBlock("acacia_darkoak_decoration_fence_gate", new FenceGate("acacia_darkoak_decoration_fence_gate", WoodType.DARK_OAK));
+    public static final Block ACACIA_DARKOAK_GARDEN = registerBlock("acacia_darkoak_garden", new Fence("acacia_darkoak_garden"));
+    public static final Block ACACIA_DARKOAK_GARDEN_GATE = registerBlock("acacia_darkoak_garden_fence_gate", new FenceGate("acacia_darkoak_garden_fence_gate", WoodType.DARK_OAK));
+    public static final Block ACACIA_DARKOAK_BOLLARD = registerBlock("acacia_darkoak_bollard", new Fence("acacia_darkoak_bollard"));
+    public static final Block ACACIA_DARKOAK_BOLLARD_GATE = registerBlock("acacia_darkoak_bollard_fence_gate", new FenceGate("acacia_darkoak_bollard_fence_gate", WoodType.DARK_OAK));
+    public static final Block ACACIA_DARKOAK_STICK = registerBlock("acacia_darkoak_stick", new Fence("acacia_darkoak_stick"));
+    public static final Block ACACIA_DARKOAK_STICK_GATE = registerBlock("acacia_darkoak_stick_fence_gate", new FenceGate("acacia_darkoak_stick_fence_gate", WoodType.DARK_OAK));
+    public static final Block ACACIA_DARKOAK_SPIRE = registerBlock("acacia_darkoak_spire", new Fence("acacia_darkoak_spire"));
+    public static final Block ACACIA_DARKOAK_SPIRE_GATE = registerBlock("acacia_darkoak_spire_fence_gate", new FenceGate("acacia_darkoak_spire_fence_gate", WoodType.DARK_OAK));
+
+    public static final Block ACACIA_CRIMSON_DECORATION = registerBlock("acacia_crimson_decoration", new Fence("acacia_crimson_decoration"));
+    public static final Block ACACIA_CRIMSON_DECORATION_GATE = registerBlock("acacia_crimson_decoration_fence_gate", new FenceGate("acacia_crimson_decoration_fence_gate", WoodType.CRIMSON));
+    public static final Block ACACIA_CRIMSON_GARDEN = registerBlock("acacia_crimson_garden", new Fence("acacia_crimson_garden"));
+    public static final Block ACACIA_CRIMSON_GARDEN_GATE = registerBlock("acacia_crimson_garden_fence_gate", new FenceGate("acacia_crimson_garden_fence_gate", WoodType.CRIMSON));
+    public static final Block ACACIA_CRIMSON_BOLLARD = registerBlock("acacia_crimson_bollard", new Fence("acacia_crimson_bollard"));
+    public static final Block ACACIA_CRIMSON_BOLLARD_GATE = registerBlock("acacia_crimson_bollard_fence_gate", new FenceGate("acacia_crimson_bollard_fence_gate", WoodType.CRIMSON));
+    public static final Block ACACIA_CRIMSON_STICK = registerBlock("acacia_crimson_stick", new Fence("acacia_crimson_stick"));
+    public static final Block ACACIA_CRIMSON_STICK_GATE = registerBlock("acacia_crimson_stick_fence_gate", new FenceGate("acacia_crimson_stick_fence_gate", WoodType.CRIMSON));
+    public static final Block ACACIA_CRIMSON_SPIRE = registerBlock("acacia_crimson_spire", new Fence("acacia_crimson_spire"));
+    public static final Block ACACIA_CRIMSON_SPIRE_GATE = registerBlock("acacia_crimson_spire_fence_gate", new FenceGate("acacia_crimson_spire_fence_gate", WoodType.CRIMSON));
+
+    public static final Block ACACIA_WARPED_DECORATION = registerBlock("acacia_warped_decoration", new Fence("acacia_warped_decoration"));
+    public static final Block ACACIA_WARPED_DECORATION_GATE = registerBlock("acacia_warped_decoration_fence_gate", new FenceGate("acacia_warped_decoration_fence_gate", WoodType.WARPED));
+    public static final Block ACACIA_WARPED_GARDEN = registerBlock("acacia_warped_garden", new Fence("acacia_warped_garden"));
+    public static final Block ACACIA_WARPED_GARDEN_GATE = registerBlock("acacia_warped_garden_fence_gate", new FenceGate("acacia_warped_garden_fence_gate", WoodType.WARPED));
+    public static final Block ACACIA_WARPED_BOLLARD = registerBlock("acacia_warped_bollard", new Fence("acacia_warped_bollard"));
+    public static final Block ACACIA_WARPED_BOLLARD_GATE = registerBlock("acacia_warped_bollard_fence_gate", new FenceGate("acacia_warped_bollard_fence_gate", WoodType.WARPED));
+    public static final Block ACACIA_WARPED_STICK = registerBlock("acacia_warped_stick", new Fence("acacia_warped_stick"));
+    public static final Block ACACIA_WARPED_STICK_GATE = registerBlock("acacia_warped_stick_fence_gate", new FenceGate("acacia_warped_stick_fence_gate", WoodType.WARPED));
+    public static final Block ACACIA_WARPED_SPIRE = registerBlock("acacia_warped_spire", new Fence("acacia_warped_spire"));
+    public static final Block ACACIA_WARPED_SPIRE_GATE = registerBlock("acacia_warped_spire_fence_gate", new FenceGate("acacia_warped_spire_fence_gate", WoodType.WARPED));
+
+    public static final Block ACACIA_MANGROVE_DECORATION = registerBlock("acacia_mangrove_decoration", new Fence("acacia_mangrove_decoration"));
+    public static final Block ACACIA_MANGROVE_DECORATION_GATE = registerBlock("acacia_mangrove_decoration_fence_gate", new FenceGate("acacia_mangrove_decoration_fence_gate", WoodType.MANGROVE));
+    public static final Block ACACIA_MANGROVE_GARDEN = registerBlock("acacia_mangrove_garden", new Fence("acacia_mangrove_garden"));
+    public static final Block ACACIA_MANGROVE_GARDEN_GATE = registerBlock("acacia_mangrove_garden_fence_gate", new FenceGate("acacia_mangrove_garden_fence_gate", WoodType.MANGROVE));
+    public static final Block ACACIA_MANGROVE_BOLLARD = registerBlock("acacia_mangrove_bollard", new Fence("acacia_mangrove_bollard"));
+    public static final Block ACACIA_MANGROVE_BOLLARD_GATE = registerBlock("acacia_mangrove_bollard_fence_gate", new FenceGate("acacia_mangrove_bollard_fence_gate", WoodType.MANGROVE));
+    public static final Block ACACIA_MANGROVE_STICK = registerBlock("acacia_mangrove_stick", new Fence("acacia_mangrove_stick"));
+    public static final Block ACACIA_MANGROVE_STICK_GATE = registerBlock("acacia_mangrove_stick_fence_gate", new FenceGate("acacia_mangrove_stick_fence_gate", WoodType.MANGROVE));
+    public static final Block ACACIA_MANGROVE_SPIRE = registerBlock("acacia_mangrove_spire", new Fence("acacia_mangrove_spire"));
+    public static final Block ACACIA_MANGROVE_SPIRE_GATE = registerBlock("acacia_mangrove_spire_fence_gate", new FenceGate("acacia_mangrove_spire_fence_gate", WoodType.MANGROVE));
+
+    public static final Block ACACIA_BAMBOO_DECORATION = registerBlock("acacia_bamboo_decoration", new Fence("acacia_bamboo_decoration"));
+    public static final Block ACACIA_BAMBOO_DECORATION_GATE = registerBlock("acacia_bamboo_decoration_fence_gate", new FenceGate("acacia_bamboo_decoration_fence_gate", WoodType.BAMBOO));
+    public static final Block ACACIA_BAMBOO_GARDEN = registerBlock("acacia_bamboo_garden", new Fence("acacia_bamboo_garden"));
+    public static final Block ACACIA_BAMBOO_GARDEN_GATE = registerBlock("acacia_bamboo_garden_fence_gate", new FenceGate("acacia_bamboo_garden_fence_gate", WoodType.BAMBOO));
+    public static final Block ACACIA_BAMBOO_BOLLARD = registerBlock("acacia_bamboo_bollard", new Fence("acacia_bamboo_bollard"));
+    public static final Block ACACIA_BAMBOO_BOLLARD_GATE = registerBlock("acacia_bamboo_bollard_fence_gate", new FenceGate("acacia_bamboo_bollard_fence_gate", WoodType.BAMBOO));
+    public static final Block ACACIA_BAMBOO_STICK = registerBlock("acacia_bamboo_stick", new Fence("acacia_bamboo_stick"));
+    public static final Block ACACIA_BAMBOO_STICK_GATE = registerBlock("acacia_bamboo_stick_fence_gate", new FenceGate("acacia_bamboo_stick_fence_gate", WoodType.BAMBOO));
+    public static final Block ACACIA_BAMBOO_SPIRE = registerBlock("acacia_bamboo_spire", new Fence("acacia_bamboo_spire"));
+    public static final Block ACACIA_BAMBOO_SPIRE_GATE = registerBlock("acacia_bamboo_spire_fence_gate", new FenceGate("acacia_bamboo_spire_fence_gate", WoodType.BAMBOO));
+
+    public static final Block ACACIA_CHERRY_DECORATION = registerBlock("acacia_cherry_decoration", new Fence("acacia_cherry_decoration"));
+    public static final Block ACACIA_CHERRY_DECORATION_GATE = registerBlock("acacia_cherry_decoration_fence_gate", new FenceGate("acacia_cherry_decoration_fence_gate", WoodType.CHERRY));
+    public static final Block ACACIA_CHERRY_GARDEN = registerBlock("acacia_cherry_garden", new Fence("acacia_cherry_garden"));
+    public static final Block ACACIA_CHERRY_GARDEN_GATE = registerBlock("acacia_cherry_garden_fence_gate", new FenceGate("acacia_cherry_garden_fence_gate", WoodType.CHERRY));
+    public static final Block ACACIA_CHERRY_BOLLARD = registerBlock("acacia_cherry_bollard", new Fence("acacia_cherry_bollard"));
+    public static final Block ACACIA_CHERRY_BOLLARD_GATE = registerBlock("acacia_cherry_bollard_fence_gate", new FenceGate("acacia_cherry_bollard_fence_gate", WoodType.CHERRY));
+    public static final Block ACACIA_CHERRY_STICK = registerBlock("acacia_cherry_stick", new Fence("acacia_cherry_stick"));
+    public static final Block ACACIA_CHERRY_STICK_GATE = registerBlock("acacia_cherry_stick_fence_gate", new FenceGate("acacia_cherry_stick_fence_gate", WoodType.CHERRY));
+    public static final Block ACACIA_CHERRY_SPIRE = registerBlock("acacia_cherry_spire", new Fence("acacia_cherry_spire"));
+    public static final Block ACACIA_CHERRY_SPIRE_GATE = registerBlock("acacia_cherry_spire_fence_gate", new FenceGate("acacia_cherry_spire_fence_gate", WoodType.CHERRY));
+
+    public static final Block ACACIA_PALE_OAK_DECORATION = registerBlock("acacia_pale_oak_decoration", new Fence("acacia_pale_oak_decoration"));
+    public static final Block ACACIA_PALE_OAK_DECORATION_GATE = registerBlock("acacia_pale_oak_decoration_fence_gate", new FenceGate("acacia_pale_oak_decoration_fence_gate", WoodType.PALE_OAK));
+    public static final Block ACACIA_PALE_OAK_GARDEN = registerBlock("acacia_pale_oak_garden", new Fence("acacia_pale_oak_garden"));
+    public static final Block ACACIA_PALE_OAK_GARDEN_GATE = registerBlock("acacia_pale_oak_garden_fence_gate", new FenceGate("acacia_pale_oak_garden_fence_gate", WoodType.PALE_OAK));
+    public static final Block ACACIA_PALE_OAK_BOLLARD = registerBlock("acacia_pale_oak_bollard", new Fence("acacia_pale_oak_bollard"));
+    public static final Block ACACIA_PALE_OAK_BOLLARD_GATE = registerBlock("acacia_pale_oak_bollard_fence_gate", new FenceGate("acacia_pale_oak_bollard_fence_gate", WoodType.PALE_OAK));
+    public static final Block ACACIA_PALE_OAK_STICK = registerBlock("acacia_pale_oak_stick", new Fence("acacia_pale_oak_stick"));
+    public static final Block ACACIA_PALE_OAK_STICK_GATE = registerBlock("acacia_pale_oak_stick_fence_gate", new FenceGate("acacia_pale_oak_stick_fence_gate", WoodType.PALE_OAK));
+    public static final Block ACACIA_PALE_OAK_SPIRE = registerBlock("acacia_pale_oak_spire", new Fence("acacia_pale_oak_spire"));
+    public static final Block ACACIA_PALE_OAK_SPIRE_GATE = registerBlock("acacia_pale_oak_spire_fence_gate", new FenceGate("acacia_pale_oak_spire_fence_gate", WoodType.PALE_OAK));
+
+    public static final Block JUNGLE_OAK_DECORATION = registerBlock("jungle_oak_decoration", new Fence("jungle_oak_decoration"));
+    public static final Block JUNGLE_OAK_DECORATION_GATE = registerBlock("jungle_oak_decoration_fence_gate", new FenceGate("jungle_oak_decoration_fence_gate", WoodType.OAK));
+    public static final Block JUNGLE_OAK_GARDEN = registerBlock("jungle_oak_garden", new Fence("jungle_oak_garden"));
+    public static final Block JUNGLE_OAK_GARDEN_GATE = registerBlock("jungle_oak_garden_fence_gate", new FenceGate("jungle_oak_garden_fence_gate", WoodType.OAK));
+    public static final Block JUNGLE_OAK_BOLLARD = registerBlock("jungle_oak_bollard", new Fence("jungle_oak_bollard"));
+    public static final Block JUNGLE_OAK_BOLLARD_GATE = registerBlock("jungle_oak_bollard_fence_gate", new FenceGate("jungle_oak_bollard_fence_gate", WoodType.OAK));
+    public static final Block JUNGLE_OAK_STICK = registerBlock("jungle_oak_stick", new Fence("jungle_oak_stick"));
+    public static final Block JUNGLE_OAK_STICK_GATE = registerBlock("jungle_oak_stick_fence_gate", new FenceGate("jungle_oak_stick_fence_gate", WoodType.OAK));
+    public static final Block JUNGLE_OAK_SPIRE = registerBlock("jungle_oak_spire", new Fence("jungle_oak_spire"));
+    public static final Block JUNGLE_OAK_SPIRE_GATE = registerBlock("jungle_oak_spire_fence_gate", new FenceGate("jungle_oak_spire_fence_gate", WoodType.OAK));
+
+    public static final Block JUNGLE_SPRUCE_DECORATION = registerBlock("jungle_spruce_decoration", new Fence("jungle_spruce_decoration"));
+    public static final Block JUNGLE_SPRUCE_DECORATION_GATE = registerBlock("jungle_spruce_decoration_fence_gate", new FenceGate("jungle_spruce_decoration_fence_gate", WoodType.SPRUCE));
+    public static final Block JUNGLE_SPRUCE_GARDEN = registerBlock("jungle_spruce_garden", new Fence("jungle_spruce_garden"));
+    public static final Block JUNGLE_SPRUCE_GARDEN_GATE = registerBlock("jungle_spruce_garden_fence_gate", new FenceGate("jungle_spruce_garden_fence_gate", WoodType.SPRUCE));
+    public static final Block JUNGLE_SPRUCE_BOLLARD = registerBlock("jungle_spruce_bollard", new Fence("jungle_spruce_bollard"));
+    public static final Block JUNGLE_SPRUCE_BOLLARD_GATE = registerBlock("jungle_spruce_bollard_fence_gate", new FenceGate("jungle_spruce_bollard_fence_gate", WoodType.SPRUCE));
+    public static final Block JUNGLE_SPRUCE_STICK = registerBlock("jungle_spruce_stick", new Fence("jungle_spruce_stick"));
+    public static final Block JUNGLE_SPRUCE_STICK_GATE = registerBlock("jungle_spruce_stick_fence_gate", new FenceGate("jungle_spruce_stick_fence_gate", WoodType.SPRUCE));
+    public static final Block JUNGLE_SPRUCE_SPIRE = registerBlock("jungle_spruce_spire", new Fence("jungle_spruce_spire"));
+    public static final Block JUNGLE_SPRUCE_SPIRE_GATE = registerBlock("jungle_spruce_spire_fence_gate", new FenceGate("jungle_spruce_spire_fence_gate", WoodType.SPRUCE));
+
+    public static final Block JUNGLE_BIRCH_DECORATION = registerBlock("jungle_birch_decoration", new Fence("jungle_birch_decoration"));
+    public static final Block JUNGLE_BIRCH_DECORATION_GATE = registerBlock("jungle_birch_decoration_fence_gate", new FenceGate("jungle_birch_decoration_fence_gate", WoodType.BIRCH));
+    public static final Block JUNGLE_BIRCH_GARDEN = registerBlock("jungle_birch_garden", new Fence("jungle_birch_garden"));
+    public static final Block JUNGLE_BIRCH_GARDEN_GATE = registerBlock("jungle_birch_garden_fence_gate", new FenceGate("jungle_birch_garden_fence_gate", WoodType.BIRCH));
+    public static final Block JUNGLE_BIRCH_BOLLARD = registerBlock("jungle_birch_bollard", new Fence("jungle_birch_bollard"));
+    public static final Block JUNGLE_BIRCH_BOLLARD_GATE = registerBlock("jungle_birch_bollard_fence_gate", new FenceGate("jungle_birch_bollard_fence_gate", WoodType.BIRCH));
+    public static final Block JUNGLE_BIRCH_STICK = registerBlock("jungle_birch_stick", new Fence("jungle_birch_stick"));
+    public static final Block JUNGLE_BIRCH_STICK_GATE = registerBlock("jungle_birch_stick_fence_gate", new FenceGate("jungle_birch_stick_fence_gate", WoodType.BIRCH));
+    public static final Block JUNGLE_BIRCH_SPIRE = registerBlock("jungle_birch_spire", new Fence("jungle_birch_spire"));
+    public static final Block JUNGLE_BIRCH_SPIRE_GATE = registerBlock("jungle_birch_spire_fence_gate", new FenceGate("jungle_birch_spire_fence_gate", WoodType.BIRCH));
+
+    public static final Block JUNGLE_ACACIA_DECORATION = registerBlock("jungle_acacia_decoration", new Fence("jungle_acacia_decoration"));
+    public static final Block JUNGLE_ACACIA_DECORATION_GATE = registerBlock("jungle_acacia_decoration_fence_gate", new FenceGate("jungle_acacia_decoration_fence_gate", WoodType.ACACIA));
+    public static final Block JUNGLE_ACACIA_GARDEN = registerBlock("jungle_acacia_garden", new Fence("jungle_acacia_garden"));
+    public static final Block JUNGLE_ACACIA_GARDEN_GATE = registerBlock("jungle_acacia_garden_fence_gate", new FenceGate("jungle_acacia_garden_fence_gate", WoodType.ACACIA));
+    public static final Block JUNGLE_ACACIA_BOLLARD = registerBlock("jungle_acacia_bollard", new Fence("jungle_acacia_bollard"));
+    public static final Block JUNGLE_ACACIA_BOLLARD_GATE = registerBlock("jungle_acacia_bollard_fence_gate", new FenceGate("jungle_acacia_bollard_fence_gate", WoodType.ACACIA));
+    public static final Block JUNGLE_ACACIA_STICK = registerBlock("jungle_acacia_stick", new Fence("jungle_acacia_stick"));
+    public static final Block JUNGLE_ACACIA_STICK_GATE = registerBlock("jungle_acacia_stick_fence_gate", new FenceGate("jungle_acacia_stick_fence_gate", WoodType.ACACIA));
+    public static final Block JUNGLE_ACACIA_SPIRE = registerBlock("jungle_acacia_spire", new Fence("jungle_acacia_spire"));
+    public static final Block JUNGLE_ACACIA_SPIRE_GATE = registerBlock("jungle_acacia_spire_fence_gate", new FenceGate("jungle_acacia_spire_fence_gate", WoodType.ACACIA));
+
+    public static final Block JUNGLE_DARKOAK_DECORATION = registerBlock("jungle_darkoak_decoration", new Fence("jungle_darkoak_decoration"));
+    public static final Block JUNGLE_DARKOAK_DECORATION_GATE = registerBlock("jungle_darkoak_decoration_fence_gate", new FenceGate("jungle_darkoak_decoration_fence_gate", WoodType.DARK_OAK));
+    public static final Block JUNGLE_DARKOAK_GARDEN = registerBlock("jungle_darkoak_garden", new Fence("jungle_darkoak_garden"));
+    public static final Block JUNGLE_DARKOAK_GARDEN_GATE = registerBlock("jungle_darkoak_garden_fence_gate", new FenceGate("jungle_darkoak_garden_fence_gate", WoodType.DARK_OAK));
+    public static final Block JUNGLE_DARKOAK_BOLLARD = registerBlock("jungle_darkoak_bollard", new Fence("jungle_darkoak_bollard"));
+    public static final Block JUNGLE_DARKOAK_BOLLARD_GATE = registerBlock("jungle_darkoak_bollard_fence_gate", new FenceGate("jungle_darkoak_bollard_fence_gate", WoodType.DARK_OAK));
+    public static final Block JUNGLE_DARKOAK_STICK = registerBlock("jungle_darkoak_stick", new Fence("jungle_darkoak_stick"));
+    public static final Block JUNGLE_DARKOAK_STICK_GATE = registerBlock("jungle_darkoak_stick_fence_gate", new FenceGate("jungle_darkoak_stick_fence_gate", WoodType.DARK_OAK));
+    public static final Block JUNGLE_DARKOAK_SPIRE = registerBlock("jungle_darkoak_spire", new Fence("jungle_darkoak_spire"));
+    public static final Block JUNGLE_DARKOAK_SPIRE_GATE = registerBlock("jungle_darkoak_spire_fence_gate", new FenceGate("jungle_darkoak_spire_fence_gate", WoodType.DARK_OAK));
+
+    public static final Block JUNGLE_CRIMSON_DECORATION = registerBlock("jungle_crimson_decoration", new Fence("jungle_crimson_decoration"));
+    public static final Block JUNGLE_CRIMSON_DECORATION_GATE = registerBlock("jungle_crimson_decoration_fence_gate", new FenceGate("jungle_crimson_decoration_fence_gate", WoodType.CRIMSON));
+    public static final Block JUNGLE_CRIMSON_GARDEN = registerBlock("jungle_crimson_garden", new Fence("jungle_crimson_garden"));
+    public static final Block JUNGLE_CRIMSON_GARDEN_GATE = registerBlock("jungle_crimson_garden_fence_gate", new FenceGate("jungle_crimson_garden_fence_gate", WoodType.CRIMSON));
+    public static final Block JUNGLE_CRIMSON_BOLLARD = registerBlock("jungle_crimson_bollard", new Fence("jungle_crimson_bollard"));
+    public static final Block JUNGLE_CRIMSON_BOLLARD_GATE = registerBlock("jungle_crimson_bollard_fence_gate", new FenceGate("jungle_crimson_bollard_fence_gate", WoodType.CRIMSON));
+    public static final Block JUNGLE_CRIMSON_STICK = registerBlock("jungle_crimson_stick", new Fence("jungle_crimson_stick"));
+    public static final Block JUNGLE_CRIMSON_STICK_GATE = registerBlock("jungle_crimson_stick_fence_gate", new FenceGate("jungle_crimson_stick_fence_gate", WoodType.CRIMSON));
+    public static final Block JUNGLE_CRIMSON_SPIRE = registerBlock("jungle_crimson_spire", new Fence("jungle_crimson_spire"));
+    public static final Block JUNGLE_CRIMSON_SPIRE_GATE = registerBlock("jungle_crimson_spire_fence_gate", new FenceGate("jungle_crimson_spire_fence_gate", WoodType.CRIMSON));
+
+    public static final Block JUNGLE_WARPED_DECORATION = registerBlock("jungle_warped_decoration", new Fence("jungle_warped_decoration"));
+    public static final Block JUNGLE_WARPED_DECORATION_GATE = registerBlock("jungle_warped_decoration_fence_gate", new FenceGate("jungle_warped_decoration_fence_gate", WoodType.WARPED));
+    public static final Block JUNGLE_WARPED_GARDEN = registerBlock("jungle_warped_garden", new Fence("jungle_warped_garden"));
+    public static final Block JUNGLE_WARPED_GARDEN_GATE = registerBlock("jungle_warped_garden_fence_gate", new FenceGate("jungle_warped_garden_fence_gate", WoodType.WARPED));
+    public static final Block JUNGLE_WARPED_BOLLARD = registerBlock("jungle_warped_bollard", new Fence("jungle_warped_bollard"));
+    public static final Block JUNGLE_WARPED_BOLLARD_GATE = registerBlock("jungle_warped_bollard_fence_gate", new FenceGate("jungle_warped_bollard_fence_gate", WoodType.WARPED));
+    public static final Block JUNGLE_WARPED_STICK = registerBlock("jungle_warped_stick", new Fence("jungle_warped_stick"));
+    public static final Block JUNGLE_WARPED_STICK_GATE = registerBlock("jungle_warped_stick_fence_gate", new FenceGate("jungle_warped_stick_fence_gate", WoodType.WARPED));
+    public static final Block JUNGLE_WARPED_SPIRE = registerBlock("jungle_warped_spire", new Fence("jungle_warped_spire"));
+    public static final Block JUNGLE_WARPED_SPIRE_GATE = registerBlock("jungle_warped_spire_fence_gate", new FenceGate("jungle_warped_spire_fence_gate", WoodType.WARPED));
+
+    public static final Block JUNGLE_MANGROVE_DECORATION = registerBlock("jungle_mangrove_decoration", new Fence("jungle_mangrove_decoration"));
+    public static final Block JUNGLE_MANGROVE_DECORATION_GATE = registerBlock("jungle_mangrove_decoration_fence_gate", new FenceGate("jungle_mangrove_decoration_fence_gate", WoodType.MANGROVE));
+    public static final Block JUNGLE_MANGROVE_GARDEN = registerBlock("jungle_mangrove_garden", new Fence("jungle_mangrove_garden"));
+    public static final Block JUNGLE_MANGROVE_GARDEN_GATE = registerBlock("jungle_mangrove_garden_fence_gate", new FenceGate("jungle_mangrove_garden_fence_gate", WoodType.MANGROVE));
+    public static final Block JUNGLE_MANGROVE_BOLLARD = registerBlock("jungle_mangrove_bollard", new Fence("jungle_mangrove_bollard"));
+    public static final Block JUNGLE_MANGROVE_BOLLARD_GATE = registerBlock("jungle_mangrove_bollard_fence_gate", new FenceGate("jungle_mangrove_bollard_fence_gate", WoodType.MANGROVE));
+    public static final Block JUNGLE_MANGROVE_STICK = registerBlock("jungle_mangrove_stick", new Fence("jungle_mangrove_stick"));
+    public static final Block JUNGLE_MANGROVE_STICK_GATE = registerBlock("jungle_mangrove_stick_fence_gate", new FenceGate("jungle_mangrove_stick_fence_gate", WoodType.MANGROVE));
+    public static final Block JUNGLE_MANGROVE_SPIRE = registerBlock("jungle_mangrove_spire", new Fence("jungle_mangrove_spire"));
+    public static final Block JUNGLE_MANGROVE_SPIRE_GATE = registerBlock("jungle_mangrove_spire_fence_gate", new FenceGate("jungle_mangrove_spire_fence_gate", WoodType.MANGROVE));
+
+    public static final Block JUNGLE_BAMBOO_DECORATION = registerBlock("jungle_bamboo_decoration", new Fence("jungle_bamboo_decoration"));
+    public static final Block JUNGLE_BAMBOO_DECORATION_GATE = registerBlock("jungle_bamboo_decoration_fence_gate", new FenceGate("jungle_bamboo_decoration_fence_gate", WoodType.BAMBOO));
+    public static final Block JUNGLE_BAMBOO_GARDEN = registerBlock("jungle_bamboo_garden", new Fence("jungle_bamboo_garden"));
+    public static final Block JUNGLE_BAMBOO_GARDEN_GATE = registerBlock("jungle_bamboo_garden_fence_gate", new FenceGate("jungle_bamboo_garden_fence_gate", WoodType.BAMBOO));
+    public static final Block JUNGLE_BAMBOO_BOLLARD = registerBlock("jungle_bamboo_bollard", new Fence("jungle_bamboo_bollard"));
+    public static final Block JUNGLE_BAMBOO_BOLLARD_GATE = registerBlock("jungle_bamboo_bollard_fence_gate", new FenceGate("jungle_bamboo_bollard_fence_gate", WoodType.BAMBOO));
+    public static final Block JUNGLE_BAMBOO_STICK = registerBlock("jungle_bamboo_stick", new Fence("jungle_bamboo_stick"));
+    public static final Block JUNGLE_BAMBOO_STICK_GATE = registerBlock("jungle_bamboo_stick_fence_gate", new FenceGate("jungle_bamboo_stick_fence_gate", WoodType.BAMBOO));
+    public static final Block JUNGLE_BAMBOO_SPIRE = registerBlock("jungle_bamboo_spire", new Fence("jungle_bamboo_spire"));
+    public static final Block JUNGLE_BAMBOO_SPIRE_GATE = registerBlock("jungle_bamboo_spire_fence_gate", new FenceGate("jungle_bamboo_spire_fence_gate", WoodType.BAMBOO));
+
+    public static final Block JUNGLE_CHERRY_DECORATION = registerBlock("jungle_cherry_decoration", new Fence("jungle_cherry_decoration"));
+    public static final Block JUNGLE_CHERRY_DECORATION_GATE = registerBlock("jungle_cherry_decoration_fence_gate", new FenceGate("jungle_cherry_decoration_fence_gate", WoodType.CHERRY));
+    public static final Block JUNGLE_CHERRY_GARDEN = registerBlock("jungle_cherry_garden", new Fence("jungle_cherry_garden"));
+    public static final Block JUNGLE_CHERRY_GARDEN_GATE = registerBlock("jungle_cherry_garden_fence_gate", new FenceGate("jungle_cherry_garden_fence_gate", WoodType.CHERRY));
+    public static final Block JUNGLE_CHERRY_BOLLARD = registerBlock("jungle_cherry_bollard", new Fence("jungle_cherry_bollard"));
+    public static final Block JUNGLE_CHERRY_BOLLARD_GATE = registerBlock("jungle_cherry_bollard_fence_gate", new FenceGate("jungle_cherry_bollard_fence_gate", WoodType.CHERRY));
+    public static final Block JUNGLE_CHERRY_STICK = registerBlock("jungle_cherry_stick", new Fence("jungle_cherry_stick"));
+    public static final Block JUNGLE_CHERRY_STICK_GATE = registerBlock("jungle_cherry_stick_fence_gate", new FenceGate("jungle_cherry_stick_fence_gate", WoodType.CHERRY));
+    public static final Block JUNGLE_CHERRY_SPIRE = registerBlock("jungle_cherry_spire", new Fence("jungle_cherry_spire"));
+    public static final Block JUNGLE_CHERRY_SPIRE_GATE = registerBlock("jungle_cherry_spire_fence_gate", new FenceGate("jungle_cherry_spire_fence_gate", WoodType.CHERRY));
+
+    public static final Block JUNGLE_PALE_OAK_DECORATION = registerBlock("jungle_pale_oak_decoration", new Fence("jungle_pale_oak_decoration"));
+    public static final Block JUNGLE_PALE_OAK_DECORATION_GATE = registerBlock("jungle_pale_oak_decoration_fence_gate", new FenceGate("jungle_pale_oak_decoration_fence_gate", WoodType.PALE_OAK));
+    public static final Block JUNGLE_PALE_OAK_GARDEN = registerBlock("jungle_pale_oak_garden", new Fence("jungle_pale_oak_garden"));
+    public static final Block JUNGLE_PALE_OAK_GARDEN_GATE = registerBlock("jungle_pale_oak_garden_fence_gate", new FenceGate("jungle_pale_oak_garden_fence_gate", WoodType.PALE_OAK));
+    public static final Block JUNGLE_PALE_OAK_BOLLARD = registerBlock("jungle_pale_oak_bollard", new Fence("jungle_pale_oak_bollard"));
+    public static final Block JUNGLE_PALE_OAK_BOLLARD_GATE = registerBlock("jungle_pale_oak_bollard_fence_gate", new FenceGate("jungle_pale_oak_bollard_fence_gate", WoodType.PALE_OAK));
+    public static final Block JUNGLE_PALE_OAK_STICK = registerBlock("jungle_pale_oak_stick", new Fence("jungle_pale_oak_stick"));
+    public static final Block JUNGLE_PALE_OAK_STICK_GATE = registerBlock("jungle_pale_oak_stick_fence_gate", new FenceGate("jungle_pale_oak_stick_fence_gate", WoodType.PALE_OAK));
+    public static final Block JUNGLE_PALE_OAK_SPIRE = registerBlock("jungle_pale_oak_spire", new Fence("jungle_pale_oak_spire"));
+    public static final Block JUNGLE_PALE_OAK_SPIRE_GATE = registerBlock("jungle_pale_oak_spire_fence_gate", new FenceGate("jungle_pale_oak_spire_fence_gate", WoodType.PALE_OAK));
+
+    public static final Block DARKOAK_OAK_DECORATION = registerBlock("darkoak_oak_decoration", new Fence("darkoak_oak_decoration"));
+    public static final Block DARKOAK_OAK_DECORATION_GATE = registerBlock("darkoak_oak_decoration_fence_gate", new FenceGate("darkoak_oak_decoration_fence_gate", WoodType.OAK));
+    public static final Block DARKOAK_OAK_GARDEN = registerBlock("darkoak_oak_garden", new Fence("darkoak_oak_garden"));
+    public static final Block DARKOAK_OAK_GARDEN_GATE = registerBlock("darkoak_oak_garden_fence_gate", new FenceGate("darkoak_oak_garden_fence_gate", WoodType.OAK));
+    public static final Block DARKOAK_OAK_BOLLARD = registerBlock("darkoak_oak_bollard", new Fence("darkoak_oak_bollard"));
+    public static final Block DARKOAK_OAK_BOLLARD_GATE = registerBlock("darkoak_oak_bollard_fence_gate", new FenceGate("darkoak_oak_bollard_fence_gate", WoodType.OAK));
+    public static final Block DARKOAK_OAK_STICK = registerBlock("darkoak_oak_stick", new Fence("darkoak_oak_stick"));
+    public static final Block DARKOAK_OAK_STICK_GATE = registerBlock("darkoak_oak_stick_fence_gate", new FenceGate("darkoak_oak_stick_fence_gate", WoodType.OAK));
+    public static final Block DARKOAK_OAK_SPIRE = registerBlock("darkoak_oak_spire", new Fence("darkoak_oak_spire"));
+    public static final Block DARKOAK_OAK_SPIRE_GATE = registerBlock("darkoak_oak_spire_fence_gate", new FenceGate("darkoak_oak_spire_fence_gate", WoodType.OAK));
+
+    public static final Block DARKOAK_SPRUCE_DECORATION = registerBlock("darkoak_spruce_decoration", new Fence("darkoak_spruce_decoration"));
+    public static final Block DARKOAK_SPRUCE_DECORATION_GATE = registerBlock("darkoak_spruce_decoration_fence_gate", new FenceGate("darkoak_spruce_decoration_fence_gate", WoodType.SPRUCE));
+    public static final Block DARKOAK_SPRUCE_GARDEN = registerBlock("darkoak_spruce_garden", new Fence("darkoak_spruce_garden"));
+    public static final Block DARKOAK_SPRUCE_GARDEN_GATE = registerBlock("darkoak_spruce_garden_fence_gate", new FenceGate("darkoak_spruce_garden_fence_gate", WoodType.SPRUCE));
+    public static final Block DARKOAK_SPRUCE_BOLLARD = registerBlock("darkoak_spruce_bollard", new Fence("darkoak_spruce_bollard"));
+    public static final Block DARKOAK_SPRUCE_BOLLARD_GATE = registerBlock("darkoak_spruce_bollard_fence_gate", new FenceGate("darkoak_spruce_bollard_fence_gate", WoodType.SPRUCE));
+    public static final Block DARKOAK_SPRUCE_STICK = registerBlock("darkoak_spruce_stick", new Fence("darkoak_spruce_stick"));
+    public static final Block DARKOAK_SPRUCE_STICK_GATE = registerBlock("darkoak_spruce_stick_fence_gate", new FenceGate("darkoak_spruce_stick_fence_gate", WoodType.SPRUCE));
+    public static final Block DARKOAK_SPRUCE_SPIRE = registerBlock("darkoak_spruce_spire", new Fence("darkoak_spruce_spire"));
+    public static final Block DARKOAK_SPRUCE_SPIRE_GATE = registerBlock("darkoak_spruce_spire_fence_gate", new FenceGate("darkoak_spruce_spire_fence_gate", WoodType.SPRUCE));
+
+    public static final Block DARKOAK_BIRCH_DECORATION = registerBlock("darkoak_birch_decoration", new Fence("darkoak_birch_decoration"));
+    public static final Block DARKOAK_BIRCH_DECORATION_GATE = registerBlock("darkoak_birch_decoration_fence_gate", new FenceGate("darkoak_birch_decoration_fence_gate", WoodType.BIRCH));
+    public static final Block DARKOAK_BIRCH_GARDEN = registerBlock("darkoak_birch_garden", new Fence("darkoak_birch_garden"));
+    public static final Block DARKOAK_BIRCH_GARDEN_GATE = registerBlock("darkoak_birch_garden_fence_gate", new FenceGate("darkoak_birch_garden_fence_gate", WoodType.BIRCH));
+    public static final Block DARKOAK_BIRCH_BOLLARD = registerBlock("darkoak_birch_bollard", new Fence("darkoak_birch_bollard"));
+    public static final Block DARKOAK_BIRCH_BOLLARD_GATE = registerBlock("darkoak_birch_bollard_fence_gate", new FenceGate("darkoak_birch_bollard_fence_gate", WoodType.BIRCH));
+    public static final Block DARKOAK_BIRCH_STICK = registerBlock("darkoak_birch_stick", new Fence("darkoak_birch_stick"));
+    public static final Block DARKOAK_BIRCH_STICK_GATE = registerBlock("darkoak_birch_stick_fence_gate", new FenceGate("darkoak_birch_stick_fence_gate", WoodType.BIRCH));
+    public static final Block DARKOAK_BIRCH_SPIRE = registerBlock("darkoak_birch_spire", new Fence("darkoak_birch_spire"));
+    public static final Block DARKOAK_BIRCH_SPIRE_GATE = registerBlock("darkoak_birch_spire_fence_gate", new FenceGate("darkoak_birch_spire_fence_gate", WoodType.BIRCH));
+
+    public static final Block DARKOAK_ACACIA_DECORATION = registerBlock("darkoak_acacia_decoration", new Fence("darkoak_acacia_decoration"));
+    public static final Block DARKOAK_ACACIA_DECORATION_GATE = registerBlock("darkoak_acacia_decoration_fence_gate", new FenceGate("darkoak_acacia_decoration_fence_gate", WoodType.ACACIA));
+    public static final Block DARKOAK_ACACIA_GARDEN = registerBlock("darkoak_acacia_garden", new Fence("darkoak_acacia_garden"));
+    public static final Block DARKOAK_ACACIA_GARDEN_GATE = registerBlock("darkoak_acacia_garden_fence_gate", new FenceGate("darkoak_acacia_garden_fence_gate", WoodType.ACACIA));
+    public static final Block DARKOAK_ACACIA_BOLLARD = registerBlock("darkoak_acacia_bollard", new Fence("darkoak_acacia_bollard"));
+    public static final Block DARKOAK_ACACIA_BOLLARD_GATE = registerBlock("darkoak_acacia_bollard_fence_gate", new FenceGate("darkoak_acacia_bollard_fence_gate", WoodType.ACACIA));
+    public static final Block DARKOAK_ACACIA_STICK = registerBlock("darkoak_acacia_stick", new Fence("darkoak_acacia_stick"));
+    public static final Block DARKOAK_ACACIA_STICK_GATE = registerBlock("darkoak_acacia_stick_fence_gate", new FenceGate("darkoak_acacia_stick_fence_gate", WoodType.ACACIA));
+    public static final Block DARKOAK_ACACIA_SPIRE = registerBlock("darkoak_acacia_spire", new Fence("darkoak_acacia_spire"));
+    public static final Block DARKOAK_ACACIA_SPIRE_GATE = registerBlock("darkoak_acacia_spire_fence_gate", new FenceGate("darkoak_acacia_spire_fence_gate", WoodType.ACACIA));
+
+    public static final Block DARKOAK_JUNGLE_DECORATION = registerBlock("darkoak_jungle_decoration", new Fence("darkoak_jungle_decoration"));
+    public static final Block DARKOAK_JUNGLE_DECORATION_GATE = registerBlock("darkoak_jungle_decoration_fence_gate", new FenceGate("darkoak_jungle_decoration_fence_gate", WoodType.JUNGLE));
+    public static final Block DARKOAK_JUNGLE_GARDEN = registerBlock("darkoak_jungle_garden", new Fence("darkoak_jungle_garden"));
+    public static final Block DARKOAK_JUNGLE_GARDEN_GATE = registerBlock("darkoak_jungle_garden_fence_gate", new FenceGate("darkoak_jungle_garden_fence_gate", WoodType.JUNGLE));
+    public static final Block DARKOAK_JUNGLE_BOLLARD = registerBlock("darkoak_jungle_bollard", new Fence("darkoak_jungle_bollard"));
+    public static final Block DARKOAK_JUNGLE_BOLLARD_GATE = registerBlock("darkoak_jungle_bollard_fence_gate", new FenceGate("darkoak_jungle_bollard_fence_gate", WoodType.JUNGLE));
+    public static final Block DARKOAK_JUNGLE_STICK = registerBlock("darkoak_jungle_stick", new Fence("darkoak_jungle_stick"));
+    public static final Block DARKOAK_JUNGLE_STICK_GATE = registerBlock("darkoak_jungle_stick_fence_gate", new FenceGate("darkoak_jungle_stick_fence_gate", WoodType.JUNGLE));
+    public static final Block DARKOAK_JUNGLE_SPIRE = registerBlock("darkoak_jungle_spire", new Fence("darkoak_jungle_spire"));
+    public static final Block DARKOAK_JUNGLE_SPIRE_GATE = registerBlock("darkoak_jungle_spire_fence_gate", new FenceGate("darkoak_jungle_spire_fence_gate", WoodType.JUNGLE));
+
+    public static final Block DARKOAK_CRIMSON_DECORATION = registerBlock("darkoak_crimson_decoration", new Fence("darkoak_crimson_decoration"));
+    public static final Block DARKOAK_CRIMSON_DECORATION_GATE = registerBlock("darkoak_crimson_decoration_fence_gate", new FenceGate("darkoak_crimson_decoration_fence_gate", WoodType.CRIMSON));
+    public static final Block DARKOAK_CRIMSON_GARDEN = registerBlock("darkoak_crimson_garden", new Fence("darkoak_crimson_garden"));
+    public static final Block DARKOAK_CRIMSON_GARDEN_GATE = registerBlock("darkoak_crimson_garden_fence_gate", new FenceGate("darkoak_crimson_garden_fence_gate", WoodType.CRIMSON));
+    public static final Block DARKOAK_CRIMSON_BOLLARD = registerBlock("darkoak_crimson_bollard", new Fence("darkoak_crimson_bollard"));
+    public static final Block DARKOAK_CRIMSON_BOLLARD_GATE = registerBlock("darkoak_crimson_bollard_fence_gate", new FenceGate("darkoak_crimson_bollard_fence_gate", WoodType.CRIMSON));
+    public static final Block DARKOAK_CRIMSON_STICK = registerBlock("darkoak_crimson_stick", new Fence("darkoak_crimson_stick"));
+    public static final Block DARKOAK_CRIMSON_STICK_GATE = registerBlock("darkoak_crimson_stick_fence_gate", new FenceGate("darkoak_crimson_stick_fence_gate", WoodType.CRIMSON));
+    public static final Block DARKOAK_CRIMSON_SPIRE = registerBlock("darkoak_crimson_spire", new Fence("darkoak_crimson_spire"));
+    public static final Block DARKOAK_CRIMSON_SPIRE_GATE = registerBlock("darkoak_crimson_spire_fence_gate", new FenceGate("darkoak_crimson_spire_fence_gate", WoodType.CRIMSON));
+
+    public static final Block DARKOAK_WARPED_DECORATION = registerBlock("darkoak_warped_decoration", new Fence("darkoak_warped_decoration"));
+    public static final Block DARKOAK_WARPED_DECORATION_GATE = registerBlock("darkoak_warped_decoration_fence_gate", new FenceGate("darkoak_warped_decoration_fence_gate", WoodType.WARPED));
+    public static final Block DARKOAK_WARPED_GARDEN = registerBlock("darkoak_warped_garden", new Fence("darkoak_warped_garden"));
+    public static final Block DARKOAK_WARPED_GARDEN_GATE = registerBlock("darkoak_warped_garden_fence_gate", new FenceGate("darkoak_warped_garden_fence_gate", WoodType.WARPED));
+    public static final Block DARKOAK_WARPED_BOLLARD = registerBlock("darkoak_warped_bollard", new Fence("darkoak_warped_bollard"));
+    public static final Block DARKOAK_WARPED_BOLLARD_GATE = registerBlock("darkoak_warped_bollard_fence_gate", new FenceGate("darkoak_warped_bollard_fence_gate", WoodType.WARPED));
+    public static final Block DARKOAK_WARPED_STICK = registerBlock("darkoak_warped_stick", new Fence("darkoak_warped_stick"));
+    public static final Block DARKOAK_WARPED_STICK_GATE = registerBlock("darkoak_warped_stick_fence_gate", new FenceGate("darkoak_warped_stick_fence_gate", WoodType.WARPED));
+    public static final Block DARKOAK_WARPED_SPIRE = registerBlock("darkoak_warped_spire", new Fence("darkoak_warped_spire"));
+    public static final Block DARKOAK_WARPED_SPIRE_GATE = registerBlock("darkoak_warped_spire_fence_gate", new FenceGate("darkoak_warped_spire_fence_gate", WoodType.WARPED));
+
+    public static final Block DARKOAK_MANGROVE_DECORATION = registerBlock("darkoak_mangrove_decoration", new Fence("darkoak_mangrove_decoration"));
+    public static final Block DARKOAK_MANGROVE_DECORATION_GATE = registerBlock("darkoak_mangrove_decoration_fence_gate", new FenceGate("darkoak_mangrove_decoration_fence_gate", WoodType.MANGROVE));
+    public static final Block DARKOAK_MANGROVE_GARDEN = registerBlock("darkoak_mangrove_garden", new Fence("darkoak_mangrove_garden"));
+    public static final Block DARKOAK_MANGROVE_GARDEN_GATE = registerBlock("darkoak_mangrove_garden_fence_gate", new FenceGate("darkoak_mangrove_garden_fence_gate", WoodType.MANGROVE));
+    public static final Block DARKOAK_MANGROVE_BOLLARD = registerBlock("darkoak_mangrove_bollard", new Fence("darkoak_mangrove_bollard"));
+    public static final Block DARKOAK_MANGROVE_BOLLARD_GATE = registerBlock("darkoak_mangrove_bollard_fence_gate", new FenceGate("darkoak_mangrove_bollard_fence_gate", WoodType.MANGROVE));
+    public static final Block DARKOAK_MANGROVE_STICK = registerBlock("darkoak_mangrove_stick", new Fence("darkoak_mangrove_stick"));
+    public static final Block DARKOAK_MANGROVE_STICK_GATE = registerBlock("darkoak_mangrove_stick_fence_gate", new FenceGate("darkoak_mangrove_stick_fence_gate", WoodType.MANGROVE));
+    public static final Block DARKOAK_MANGROVE_SPIRE = registerBlock("darkoak_mangrove_spire", new Fence("darkoak_mangrove_spire"));
+    public static final Block DARKOAK_MANGROVE_SPIRE_GATE = registerBlock("darkoak_mangrove_spire_fence_gate", new FenceGate("darkoak_mangrove_spire_fence_gate", WoodType.MANGROVE));
+
+    public static final Block DARKOAK_BAMBOO_DECORATION = registerBlock("darkoak_bamboo_decoration", new Fence("darkoak_bamboo_decoration"));
+    public static final Block DARKOAK_BAMBOO_DECORATION_GATE = registerBlock("darkoak_bamboo_decoration_fence_gate", new FenceGate("darkoak_bamboo_decoration_fence_gate", WoodType.BAMBOO));
+    public static final Block DARKOAK_BAMBOO_GARDEN = registerBlock("darkoak_bamboo_garden", new Fence("darkoak_bamboo_garden"));
+    public static final Block DARKOAK_BAMBOO_GARDEN_GATE = registerBlock("darkoak_bamboo_garden_fence_gate", new FenceGate("darkoak_bamboo_garden_fence_gate", WoodType.BAMBOO));
+    public static final Block DARKOAK_BAMBOO_BOLLARD = registerBlock("darkoak_bamboo_bollard", new Fence("darkoak_bamboo_bollard"));
+    public static final Block DARKOAK_BAMBOO_BOLLARD_GATE = registerBlock("darkoak_bamboo_bollard_fence_gate", new FenceGate("darkoak_bamboo_bollard_fence_gate", WoodType.BAMBOO));
+    public static final Block DARKOAK_BAMBOO_STICK = registerBlock("darkoak_bamboo_stick", new Fence("darkoak_bamboo_stick"));
+    public static final Block DARKOAK_BAMBOO_STICK_GATE = registerBlock("darkoak_bamboo_stick_fence_gate", new FenceGate("darkoak_bamboo_stick_fence_gate", WoodType.BAMBOO));
+    public static final Block DARKOAK_BAMBOO_SPIRE = registerBlock("darkoak_bamboo_spire", new Fence("darkoak_bamboo_spire"));
+    public static final Block DARKOAK_BAMBOO_SPIRE_GATE = registerBlock("darkoak_bamboo_spire_fence_gate", new FenceGate("darkoak_bamboo_spire_fence_gate", WoodType.BAMBOO));
+
+    public static final Block DARKOAK_CHERRY_DECORATION = registerBlock("darkoak_cherry_decoration", new Fence("darkoak_cherry_decoration"));
+    public static final Block DARKOAK_CHERRY_DECORATION_GATE = registerBlock("darkoak_cherry_decoration_fence_gate", new FenceGate("darkoak_cherry_decoration_fence_gate", WoodType.CHERRY));
+    public static final Block DARKOAK_CHERRY_GARDEN = registerBlock("darkoak_cherry_garden", new Fence("darkoak_cherry_garden"));
+    public static final Block DARKOAK_CHERRY_GARDEN_GATE = registerBlock("darkoak_cherry_garden_fence_gate", new FenceGate("darkoak_cherry_garden_fence_gate", WoodType.CHERRY));
+    public static final Block DARKOAK_CHERRY_BOLLARD = registerBlock("darkoak_cherry_bollard", new Fence("darkoak_cherry_bollard"));
+    public static final Block DARKOAK_CHERRY_BOLLARD_GATE = registerBlock("darkoak_cherry_bollard_fence_gate", new FenceGate("darkoak_cherry_bollard_fence_gate", WoodType.CHERRY));
+    public static final Block DARKOAK_CHERRY_STICK = registerBlock("darkoak_cherry_stick", new Fence("darkoak_cherry_stick"));
+    public static final Block DARKOAK_CHERRY_STICK_GATE = registerBlock("darkoak_cherry_stick_fence_gate", new FenceGate("darkoak_cherry_stick_fence_gate", WoodType.CHERRY));
+    public static final Block DARKOAK_CHERRY_SPIRE = registerBlock("darkoak_cherry_spire", new Fence("darkoak_cherry_spire"));
+    public static final Block DARKOAK_CHERRY_SPIRE_GATE = registerBlock("darkoak_cherry_spire_fence_gate", new FenceGate("darkoak_cherry_spire_fence_gate", WoodType.CHERRY));
+
+    public static final Block DARKOAK_PALE_OAK_DECORATION = registerBlock("darkoak_pale_oak_decoration", new Fence("darkoak_pale_oak_decoration"));
+    public static final Block DARKOAK_PALE_OAK_DECORATION_GATE = registerBlock("darkoak_pale_oak_decoration_fence_gate", new FenceGate("darkoak_pale_oak_decoration_fence_gate", WoodType.PALE_OAK));
+    public static final Block DARKOAK_PALE_OAK_GARDEN = registerBlock("darkoak_pale_oak_garden", new Fence("darkoak_pale_oak_garden"));
+    public static final Block DARKOAK_PALE_OAK_GARDEN_GATE = registerBlock("darkoak_pale_oak_garden_fence_gate", new FenceGate("darkoak_pale_oak_garden_fence_gate", WoodType.PALE_OAK));
+    public static final Block DARKOAK_PALE_OAK_BOLLARD = registerBlock("darkoak_pale_oak_bollard", new Fence("darkoak_pale_oak_bollard"));
+    public static final Block DARKOAK_PALE_OAK_BOLLARD_GATE = registerBlock("darkoak_pale_oak_bollard_fence_gate", new FenceGate("darkoak_pale_oak_bollard_fence_gate", WoodType.PALE_OAK));
+    public static final Block DARKOAK_PALE_OAK_STICK = registerBlock("darkoak_pale_oak_stick", new Fence("darkoak_pale_oak_stick"));
+    public static final Block DARKOAK_PALE_OAK_STICK_GATE = registerBlock("darkoak_pale_oak_stick_fence_gate", new FenceGate("darkoak_pale_oak_stick_fence_gate", WoodType.PALE_OAK));
+    public static final Block DARKOAK_PALE_OAK_SPIRE = registerBlock("darkoak_pale_oak_spire", new Fence("darkoak_pale_oak_spire"));
+    public static final Block DARKOAK_PALE_OAK_SPIRE_GATE = registerBlock("darkoak_pale_oak_spire_fence_gate", new FenceGate("darkoak_pale_oak_spire_fence_gate", WoodType.PALE_OAK));
+
+    public static final Block CRIMSON_OAK_DECORATION = registerBlock("crimson_oak_decoration", new Fence("crimson_oak_decoration"));
+    public static final Block CRIMSON_OAK_DECORATION_GATE = registerBlock("crimson_oak_decoration_fence_gate", new FenceGate("crimson_oak_decoration_fence_gate", WoodType.OAK));
+    public static final Block CRIMSON_OAK_GARDEN = registerBlock("crimson_oak_garden", new Fence("crimson_oak_garden"));
+    public static final Block CRIMSON_OAK_GARDEN_GATE = registerBlock("crimson_oak_garden_fence_gate", new FenceGate("crimson_oak_garden_fence_gate", WoodType.OAK));
+    public static final Block CRIMSON_OAK_BOLLARD = registerBlock("crimson_oak_bollard", new Fence("crimson_oak_bollard"));
+    public static final Block CRIMSON_OAK_BOLLARD_GATE = registerBlock("crimson_oak_bollard_fence_gate", new FenceGate("crimson_oak_bollard_fence_gate", WoodType.OAK));
+    public static final Block CRIMSON_OAK_STICK = registerBlock("crimson_oak_stick", new Fence("crimson_oak_stick"));
+    public static final Block CRIMSON_OAK_STICK_GATE = registerBlock("crimson_oak_stick_fence_gate", new FenceGate("crimson_oak_stick_fence_gate", WoodType.OAK));
+    public static final Block CRIMSON_OAK_SPIRE = registerBlock("crimson_oak_spire", new Fence("crimson_oak_spire"));
+    public static final Block CRIMSON_OAK_SPIRE_GATE = registerBlock("crimson_oak_spire_fence_gate", new FenceGate("crimson_oak_spire_fence_gate", WoodType.OAK));
+
+    public static final Block CRIMSON_SPRUCE_DECORATION = registerBlock("crimson_spruce_decoration", new Fence("crimson_spruce_decoration"));
+    public static final Block CRIMSON_SPRUCE_DECORATION_GATE = registerBlock("crimson_spruce_decoration_fence_gate", new FenceGate("crimson_spruce_decoration_fence_gate", WoodType.SPRUCE));
+    public static final Block CRIMSON_SPRUCE_GARDEN = registerBlock("crimson_spruce_garden", new Fence("crimson_spruce_garden"));
+    public static final Block CRIMSON_SPRUCE_GARDEN_GATE = registerBlock("crimson_spruce_garden_fence_gate", new FenceGate("crimson_spruce_garden_fence_gate", WoodType.SPRUCE));
+    public static final Block CRIMSON_SPRUCE_BOLLARD = registerBlock("crimson_spruce_bollard", new Fence("crimson_spruce_bollard"));
+    public static final Block CRIMSON_SPRUCE_BOLLARD_GATE = registerBlock("crimson_spruce_bollard_fence_gate", new FenceGate("crimson_spruce_bollard_fence_gate", WoodType.SPRUCE));
+    public static final Block CRIMSON_SPRUCE_STICK = registerBlock("crimson_spruce_stick", new Fence("crimson_spruce_stick"));
+    public static final Block CRIMSON_SPRUCE_STICK_GATE = registerBlock("crimson_spruce_stick_fence_gate", new FenceGate("crimson_spruce_stick_fence_gate", WoodType.SPRUCE));
+    public static final Block CRIMSON_SPRUCE_SPIRE = registerBlock("crimson_spruce_spire", new Fence("crimson_spruce_spire"));
+    public static final Block CRIMSON_SPRUCE_SPIRE_GATE = registerBlock("crimson_spruce_spire_fence_gate", new FenceGate("crimson_spruce_spire_fence_gate", WoodType.SPRUCE));
+
+    public static final Block CRIMSON_BIRCH_DECORATION = registerBlock("crimson_birch_decoration", new Fence("crimson_birch_decoration"));
+    public static final Block CRIMSON_BIRCH_DECORATION_GATE = registerBlock("crimson_birch_decoration_fence_gate", new FenceGate("crimson_birch_decoration_fence_gate", WoodType.BIRCH));
+    public static final Block CRIMSON_BIRCH_GARDEN = registerBlock("crimson_birch_garden", new Fence("crimson_birch_garden"));
+    public static final Block CRIMSON_BIRCH_GARDEN_GATE = registerBlock("crimson_birch_garden_fence_gate", new FenceGate("crimson_birch_garden_fence_gate", WoodType.BIRCH));
+    public static final Block CRIMSON_BIRCH_BOLLARD = registerBlock("crimson_birch_bollard", new Fence("crimson_birch_bollard"));
+    public static final Block CRIMSON_BIRCH_BOLLARD_GATE = registerBlock("crimson_birch_bollard_fence_gate", new FenceGate("crimson_birch_bollard_fence_gate", WoodType.BIRCH));
+    public static final Block CRIMSON_BIRCH_STICK = registerBlock("crimson_birch_stick", new Fence("crimson_birch_stick"));
+    public static final Block CRIMSON_BIRCH_STICK_GATE = registerBlock("crimson_birch_stick_fence_gate", new FenceGate("crimson_birch_stick_fence_gate", WoodType.BIRCH));
+    public static final Block CRIMSON_BIRCH_SPIRE = registerBlock("crimson_birch_spire", new Fence("crimson_birch_spire"));
+    public static final Block CRIMSON_BIRCH_SPIRE_GATE = registerBlock("crimson_birch_spire_fence_gate", new FenceGate("crimson_birch_spire_fence_gate", WoodType.BIRCH));
+
+    public static final Block CRIMSON_ACACIA_DECORATION = registerBlock("crimson_acacia_decoration", new Fence("crimson_acacia_decoration"));
+    public static final Block CRIMSON_ACACIA_DECORATION_GATE = registerBlock("crimson_acacia_decoration_fence_gate", new FenceGate("crimson_acacia_decoration_fence_gate", WoodType.ACACIA));
+    public static final Block CRIMSON_ACACIA_GARDEN = registerBlock("crimson_acacia_garden", new Fence("crimson_acacia_garden"));
+    public static final Block CRIMSON_ACACIA_GARDEN_GATE = registerBlock("crimson_acacia_garden_fence_gate", new FenceGate("crimson_acacia_garden_fence_gate", WoodType.ACACIA));
+    public static final Block CRIMSON_ACACIA_BOLLARD = registerBlock("crimson_acacia_bollard", new Fence("crimson_acacia_bollard"));
+    public static final Block CRIMSON_ACACIA_BOLLARD_GATE = registerBlock("crimson_acacia_bollard_fence_gate", new FenceGate("crimson_acacia_bollard_fence_gate", WoodType.ACACIA));
+    public static final Block CRIMSON_ACACIA_STICK = registerBlock("crimson_acacia_stick", new Fence("crimson_acacia_stick"));
+    public static final Block CRIMSON_ACACIA_STICK_GATE = registerBlock("crimson_acacia_stick_fence_gate", new FenceGate("crimson_acacia_stick_fence_gate", WoodType.ACACIA));
+    public static final Block CRIMSON_ACACIA_SPIRE = registerBlock("crimson_acacia_spire", new Fence("crimson_acacia_spire"));
+    public static final Block CRIMSON_ACACIA_SPIRE_GATE = registerBlock("crimson_acacia_spire_fence_gate", new FenceGate("crimson_acacia_spire_fence_gate", WoodType.ACACIA));
+
+    public static final Block CRIMSON_JUNGLE_DECORATION = registerBlock("crimson_jungle_decoration", new Fence("crimson_jungle_decoration"));
+    public static final Block CRIMSON_JUNGLE_DECORATION_GATE = registerBlock("crimson_jungle_decoration_fence_gate", new FenceGate("crimson_jungle_decoration_fence_gate", WoodType.JUNGLE));
+    public static final Block CRIMSON_JUNGLE_GARDEN = registerBlock("crimson_jungle_garden", new Fence("crimson_jungle_garden"));
+    public static final Block CRIMSON_JUNGLE_GARDEN_GATE = registerBlock("crimson_jungle_garden_fence_gate", new FenceGate("crimson_jungle_garden_fence_gate", WoodType.JUNGLE));
+    public static final Block CRIMSON_JUNGLE_BOLLARD = registerBlock("crimson_jungle_bollard", new Fence("crimson_jungle_bollard"));
+    public static final Block CRIMSON_JUNGLE_BOLLARD_GATE = registerBlock("crimson_jungle_bollard_fence_gate", new FenceGate("crimson_jungle_bollard_fence_gate", WoodType.JUNGLE));
+    public static final Block CRIMSON_JUNGLE_STICK = registerBlock("crimson_jungle_stick", new Fence("crimson_jungle_stick"));
+    public static final Block CRIMSON_JUNGLE_STICK_GATE = registerBlock("crimson_jungle_stick_fence_gate", new FenceGate("crimson_jungle_stick_fence_gate", WoodType.JUNGLE));
+    public static final Block CRIMSON_JUNGLE_SPIRE = registerBlock("crimson_jungle_spire", new Fence("crimson_jungle_spire"));
+    public static final Block CRIMSON_JUNGLE_SPIRE_GATE = registerBlock("crimson_jungle_spire_fence_gate", new FenceGate("crimson_jungle_spire_fence_gate", WoodType.JUNGLE));
+
+    public static final Block CRIMSON_DARKOAK_DECORATION = registerBlock("crimson_darkoak_decoration", new Fence("crimson_darkoak_decoration"));
+    public static final Block CRIMSON_DARKOAK_DECORATION_GATE = registerBlock("crimson_darkoak_decoration_fence_gate", new FenceGate("crimson_darkoak_decoration_fence_gate", WoodType.DARK_OAK));
+    public static final Block CRIMSON_DARKOAK_GARDEN = registerBlock("crimson_darkoak_garden", new Fence("crimson_darkoak_garden"));
+    public static final Block CRIMSON_DARKOAK_GARDEN_GATE = registerBlock("crimson_darkoak_garden_fence_gate", new FenceGate("crimson_darkoak_garden_fence_gate", WoodType.DARK_OAK));
+    public static final Block CRIMSON_DARKOAK_BOLLARD = registerBlock("crimson_darkoak_bollard", new Fence("crimson_darkoak_bollard"));
+    public static final Block CRIMSON_DARKOAK_BOLLARD_GATE = registerBlock("crimson_darkoak_bollard_fence_gate", new FenceGate("crimson_darkoak_bollard_fence_gate", WoodType.DARK_OAK));
+    public static final Block CRIMSON_DARKOAK_STICK = registerBlock("crimson_darkoak_stick", new Fence("crimson_darkoak_stick"));
+    public static final Block CRIMSON_DARKOAK_STICK_GATE = registerBlock("crimson_darkoak_stick_fence_gate", new FenceGate("crimson_darkoak_stick_fence_gate", WoodType.DARK_OAK));
+    public static final Block CRIMSON_DARKOAK_SPIRE = registerBlock("crimson_darkoak_spire", new Fence("crimson_darkoak_spire"));
+    public static final Block CRIMSON_DARKOAK_SPIRE_GATE = registerBlock("crimson_darkoak_spire_fence_gate", new FenceGate("crimson_darkoak_spire_fence_gate", WoodType.DARK_OAK));
+
+    public static final Block CRIMSON_WARPED_DECORATION = registerBlock("crimson_warped_decoration", new Fence("crimson_warped_decoration"));
+    public static final Block CRIMSON_WARPED_DECORATION_GATE = registerBlock("crimson_warped_decoration_fence_gate", new FenceGate("crimson_warped_decoration_fence_gate", WoodType.WARPED));
+    public static final Block CRIMSON_WARPED_GARDEN = registerBlock("crimson_warped_garden", new Fence("crimson_warped_garden"));
+    public static final Block CRIMSON_WARPED_GARDEN_GATE = registerBlock("crimson_warped_garden_fence_gate", new FenceGate("crimson_warped_garden_fence_gate", WoodType.WARPED));
+    public static final Block CRIMSON_WARPED_BOLLARD = registerBlock("crimson_warped_bollard", new Fence("crimson_warped_bollard"));
+    public static final Block CRIMSON_WARPED_BOLLARD_GATE = registerBlock("crimson_warped_bollard_fence_gate", new FenceGate("crimson_warped_bollard_fence_gate", WoodType.WARPED));
+    public static final Block CRIMSON_WARPED_STICK = registerBlock("crimson_warped_stick", new Fence("crimson_warped_stick"));
+    public static final Block CRIMSON_WARPED_STICK_GATE = registerBlock("crimson_warped_stick_fence_gate", new FenceGate("crimson_warped_stick_fence_gate", WoodType.WARPED));
+    public static final Block CRIMSON_WARPED_SPIRE = registerBlock("crimson_warped_spire", new Fence("crimson_warped_spire"));
+    public static final Block CRIMSON_WARPED_SPIRE_GATE = registerBlock("crimson_warped_spire_fence_gate", new FenceGate("crimson_warped_spire_fence_gate", WoodType.WARPED));
+
+    public static final Block CRIMSON_MANGROVE_DECORATION = registerBlock("crimson_mangrove_decoration", new Fence("crimson_mangrove_decoration"));
+    public static final Block CRIMSON_MANGROVE_DECORATION_GATE = registerBlock("crimson_mangrove_decoration_fence_gate", new FenceGate("crimson_mangrove_decoration_fence_gate", WoodType.MANGROVE));
+    public static final Block CRIMSON_MANGROVE_GARDEN = registerBlock("crimson_mangrove_garden", new Fence("crimson_mangrove_garden"));
+    public static final Block CRIMSON_MANGROVE_GARDEN_GATE = registerBlock("crimson_mangrove_garden_fence_gate", new FenceGate("crimson_mangrove_garden_fence_gate", WoodType.MANGROVE));
+    public static final Block CRIMSON_MANGROVE_BOLLARD = registerBlock("crimson_mangrove_bollard", new Fence("crimson_mangrove_bollard"));
+    public static final Block CRIMSON_MANGROVE_BOLLARD_GATE = registerBlock("crimson_mangrove_bollard_fence_gate", new FenceGate("crimson_mangrove_bollard_fence_gate", WoodType.MANGROVE));
+    public static final Block CRIMSON_MANGROVE_STICK = registerBlock("crimson_mangrove_stick", new Fence("crimson_mangrove_stick"));
+    public static final Block CRIMSON_MANGROVE_STICK_GATE = registerBlock("crimson_mangrove_stick_fence_gate", new FenceGate("crimson_mangrove_stick_fence_gate", WoodType.MANGROVE));
+    public static final Block CRIMSON_MANGROVE_SPIRE = registerBlock("crimson_mangrove_spire", new Fence("crimson_mangrove_spire"));
+    public static final Block CRIMSON_MANGROVE_SPIRE_GATE = registerBlock("crimson_mangrove_spire_fence_gate", new FenceGate("crimson_mangrove_spire_fence_gate", WoodType.MANGROVE));
+
+    public static final Block CRIMSON_BAMBOO_DECORATION = registerBlock("crimson_bamboo_decoration", new Fence("crimson_bamboo_decoration"));
+    public static final Block CRIMSON_BAMBOO_DECORATION_GATE = registerBlock("crimson_bamboo_decoration_fence_gate", new FenceGate("crimson_bamboo_decoration_fence_gate", WoodType.BAMBOO));
+    public static final Block CRIMSON_BAMBOO_GARDEN = registerBlock("crimson_bamboo_garden", new Fence("crimson_bamboo_garden"));
+    public static final Block CRIMSON_BAMBOO_GARDEN_GATE = registerBlock("crimson_bamboo_garden_fence_gate", new FenceGate("crimson_bamboo_garden_fence_gate", WoodType.BAMBOO));
+    public static final Block CRIMSON_BAMBOO_BOLLARD = registerBlock("crimson_bamboo_bollard", new Fence("crimson_bamboo_bollard"));
+    public static final Block CRIMSON_BAMBOO_BOLLARD_GATE = registerBlock("crimson_bamboo_bollard_fence_gate", new FenceGate("crimson_bamboo_bollard_fence_gate", WoodType.BAMBOO));
+    public static final Block CRIMSON_BAMBOO_STICK = registerBlock("crimson_bamboo_stick", new Fence("crimson_bamboo_stick"));
+    public static final Block CRIMSON_BAMBOO_STICK_GATE = registerBlock("crimson_bamboo_stick_fence_gate", new FenceGate("crimson_bamboo_stick_fence_gate", WoodType.BAMBOO));
+    public static final Block CRIMSON_BAMBOO_SPIRE = registerBlock("crimson_bamboo_spire", new Fence("crimson_bamboo_spire"));
+    public static final Block CRIMSON_BAMBOO_SPIRE_GATE = registerBlock("crimson_bamboo_spire_fence_gate", new FenceGate("crimson_bamboo_spire_fence_gate", WoodType.BAMBOO));
+
+    public static final Block CRIMSON_CHERRY_DECORATION = registerBlock("crimson_cherry_decoration", new Fence("crimson_cherry_decoration"));
+    public static final Block CRIMSON_CHERRY_DECORATION_GATE = registerBlock("crimson_cherry_decoration_fence_gate", new FenceGate("crimson_cherry_decoration_fence_gate", WoodType.CHERRY));
+    public static final Block CRIMSON_CHERRY_GARDEN = registerBlock("crimson_cherry_garden", new Fence("crimson_cherry_garden"));
+    public static final Block CRIMSON_CHERRY_GARDEN_GATE = registerBlock("crimson_cherry_garden_fence_gate", new FenceGate("crimson_cherry_garden_fence_gate", WoodType.CHERRY));
+    public static final Block CRIMSON_CHERRY_BOLLARD = registerBlock("crimson_cherry_bollard", new Fence("crimson_cherry_bollard"));
+    public static final Block CRIMSON_CHERRY_BOLLARD_GATE = registerBlock("crimson_cherry_bollard_fence_gate", new FenceGate("crimson_cherry_bollard_fence_gate", WoodType.CHERRY));
+    public static final Block CRIMSON_CHERRY_STICK = registerBlock("crimson_cherry_stick", new Fence("crimson_cherry_stick"));
+    public static final Block CRIMSON_CHERRY_STICK_GATE = registerBlock("crimson_cherry_stick_fence_gate", new FenceGate("crimson_cherry_stick_fence_gate", WoodType.CHERRY));
+    public static final Block CRIMSON_CHERRY_SPIRE = registerBlock("crimson_cherry_spire", new Fence("crimson_cherry_spire"));
+    public static final Block CRIMSON_CHERRY_SPIRE_GATE = registerBlock("crimson_cherry_spire_fence_gate", new FenceGate("crimson_cherry_spire_fence_gate", WoodType.CHERRY));
+
+    public static final Block CRIMSON_PALE_OAK_DECORATION = registerBlock("crimson_pale_oak_decoration", new Fence("crimson_pale_oak_decoration"));
+    public static final Block CRIMSON_PALE_OAK_DECORATION_GATE = registerBlock("crimson_pale_oak_decoration_fence_gate", new FenceGate("crimson_pale_oak_decoration_fence_gate", WoodType.PALE_OAK));
+    public static final Block CRIMSON_PALE_OAK_GARDEN = registerBlock("crimson_pale_oak_garden", new Fence("crimson_pale_oak_garden"));
+    public static final Block CRIMSON_PALE_OAK_GARDEN_GATE = registerBlock("crimson_pale_oak_garden_fence_gate", new FenceGate("crimson_pale_oak_garden_fence_gate", WoodType.PALE_OAK));
+    public static final Block CRIMSON_PALE_OAK_BOLLARD = registerBlock("crimson_pale_oak_bollard", new Fence("crimson_pale_oak_bollard"));
+    public static final Block CRIMSON_PALE_OAK_BOLLARD_GATE = registerBlock("crimson_pale_oak_bollard_fence_gate", new FenceGate("crimson_pale_oak_bollard_fence_gate", WoodType.PALE_OAK));
+    public static final Block CRIMSON_PALE_OAK_STICK = registerBlock("crimson_pale_oak_stick", new Fence("crimson_pale_oak_stick"));
+    public static final Block CRIMSON_PALE_OAK_STICK_GATE = registerBlock("crimson_pale_oak_stick_fence_gate", new FenceGate("crimson_pale_oak_stick_fence_gate", WoodType.PALE_OAK));
+    public static final Block CRIMSON_PALE_OAK_SPIRE = registerBlock("crimson_pale_oak_spire", new Fence("crimson_pale_oak_spire"));
+    public static final Block CRIMSON_PALE_OAK_SPIRE_GATE = registerBlock("crimson_pale_oak_spire_fence_gate", new FenceGate("crimson_pale_oak_spire_fence_gate", WoodType.PALE_OAK));
+
+    public static final Block WARPED_OAK_DECORATION = registerBlock("warped_oak_decoration", new Fence("warped_oak_decoration"));
+    public static final Block WARPED_OAK_DECORATION_GATE = registerBlock("warped_oak_decoration_fence_gate", new FenceGate("warped_oak_decoration_fence_gate", WoodType.OAK));
+    public static final Block WARPED_OAK_GARDEN = registerBlock("warped_oak_garden", new Fence("warped_oak_garden"));
+    public static final Block WARPED_OAK_GARDEN_GATE = registerBlock("warped_oak_garden_fence_gate", new FenceGate("warped_oak_garden_fence_gate", WoodType.OAK));
+    public static final Block WARPED_OAK_BOLLARD = registerBlock("warped_oak_bollard", new Fence("warped_oak_bollard"));
+    public static final Block WARPED_OAK_BOLLARD_GATE = registerBlock("warped_oak_bollard_fence_gate", new FenceGate("warped_oak_bollard_fence_gate", WoodType.OAK));
+    public static final Block WARPED_OAK_STICK = registerBlock("warped_oak_stick", new Fence("warped_oak_stick"));
+    public static final Block WARPED_OAK_STICK_GATE = registerBlock("warped_oak_stick_fence_gate", new FenceGate("warped_oak_stick_fence_gate", WoodType.OAK));
+    public static final Block WARPED_OAK_SPIRE = registerBlock("warped_oak_spire", new Fence("warped_oak_spire"));
+    public static final Block WARPED_OAK_SPIRE_GATE = registerBlock("warped_oak_spire_fence_gate", new FenceGate("warped_oak_spire_fence_gate", WoodType.OAK));
+
+    public static final Block WARPED_SPRUCE_DECORATION = registerBlock("warped_spruce_decoration", new Fence("warped_spruce_decoration"));
+    public static final Block WARPED_SPRUCE_DECORATION_GATE = registerBlock("warped_spruce_decoration_fence_gate", new FenceGate("warped_spruce_decoration_fence_gate", WoodType.SPRUCE));
+    public static final Block WARPED_SPRUCE_GARDEN = registerBlock("warped_spruce_garden", new Fence("warped_spruce_garden"));
+    public static final Block WARPED_SPRUCE_GARDEN_GATE = registerBlock("warped_spruce_garden_fence_gate", new FenceGate("warped_spruce_garden_fence_gate", WoodType.SPRUCE));
+    public static final Block WARPED_SPRUCE_BOLLARD = registerBlock("warped_spruce_bollard", new Fence("warped_spruce_bollard"));
+    public static final Block WARPED_SPRUCE_BOLLARD_GATE = registerBlock("warped_spruce_bollard_fence_gate", new FenceGate("warped_spruce_bollard_fence_gate", WoodType.SPRUCE));
+    public static final Block WARPED_SPRUCE_STICK = registerBlock("warped_spruce_stick", new Fence("warped_spruce_stick"));
+    public static final Block WARPED_SPRUCE_STICK_GATE = registerBlock("warped_spruce_stick_fence_gate", new FenceGate("warped_spruce_stick_fence_gate", WoodType.SPRUCE));
+    public static final Block WARPED_SPRUCE_SPIRE = registerBlock("warped_spruce_spire", new Fence("warped_spruce_spire"));
+    public static final Block WARPED_SPRUCE_SPIRE_GATE = registerBlock("warped_spruce_spire_fence_gate", new FenceGate("warped_spruce_spire_fence_gate", WoodType.SPRUCE));
+
+    public static final Block WARPED_BIRCH_DECORATION = registerBlock("warped_birch_decoration", new Fence("warped_birch_decoration"));
+    public static final Block WARPED_BIRCH_DECORATION_GATE = registerBlock("warped_birch_decoration_fence_gate", new FenceGate("warped_birch_decoration_fence_gate", WoodType.BIRCH));
+    public static final Block WARPED_BIRCH_GARDEN = registerBlock("warped_birch_garden", new Fence("warped_birch_garden"));
+    public static final Block WARPED_BIRCH_GARDEN_GATE = registerBlock("warped_birch_garden_fence_gate", new FenceGate("warped_birch_garden_fence_gate", WoodType.BIRCH));
+    public static final Block WARPED_BIRCH_BOLLARD = registerBlock("warped_birch_bollard", new Fence("warped_birch_bollard"));
+    public static final Block WARPED_BIRCH_BOLLARD_GATE = registerBlock("warped_birch_bollard_fence_gate", new FenceGate("warped_birch_bollard_fence_gate", WoodType.BIRCH));
+    public static final Block WARPED_BIRCH_STICK = registerBlock("warped_birch_stick", new Fence("warped_birch_stick"));
+    public static final Block WARPED_BIRCH_STICK_GATE = registerBlock("warped_birch_stick_fence_gate", new FenceGate("warped_birch_stick_fence_gate", WoodType.BIRCH));
+    public static final Block WARPED_BIRCH_SPIRE = registerBlock("warped_birch_spire", new Fence("warped_birch_spire"));
+    public static final Block WARPED_BIRCH_SPIRE_GATE = registerBlock("warped_birch_spire_fence_gate", new FenceGate("warped_birch_spire_fence_gate", WoodType.BIRCH));
+
+    public static final Block WARPED_ACACIA_DECORATION = registerBlock("warped_acacia_decoration", new Fence("warped_acacia_decoration"));
+    public static final Block WARPED_ACACIA_DECORATION_GATE = registerBlock("warped_acacia_decoration_fence_gate", new FenceGate("warped_acacia_decoration_fence_gate", WoodType.ACACIA));
+    public static final Block WARPED_ACACIA_GARDEN = registerBlock("warped_acacia_garden", new Fence("warped_acacia_garden"));
+    public static final Block WARPED_ACACIA_GARDEN_GATE = registerBlock("warped_acacia_garden_fence_gate", new FenceGate("warped_acacia_garden_fence_gate", WoodType.ACACIA));
+    public static final Block WARPED_ACACIA_BOLLARD = registerBlock("warped_acacia_bollard", new Fence("warped_acacia_bollard"));
+    public static final Block WARPED_ACACIA_BOLLARD_GATE = registerBlock("warped_acacia_bollard_fence_gate", new FenceGate("warped_acacia_bollard_fence_gate", WoodType.ACACIA));
+    public static final Block WARPED_ACACIA_STICK = registerBlock("warped_acacia_stick", new Fence("warped_acacia_stick"));
+    public static final Block WARPED_ACACIA_STICK_GATE = registerBlock("warped_acacia_stick_fence_gate", new FenceGate("warped_acacia_stick_fence_gate", WoodType.ACACIA));
+    public static final Block WARPED_ACACIA_SPIRE = registerBlock("warped_acacia_spire", new Fence("warped_acacia_spire"));
+    public static final Block WARPED_ACACIA_SPIRE_GATE = registerBlock("warped_acacia_spire_fence_gate", new FenceGate("warped_acacia_spire_fence_gate", WoodType.ACACIA));
+
+    public static final Block WARPED_JUNGLE_DECORATION = registerBlock("warped_jungle_decoration", new Fence("warped_jungle_decoration"));
+    public static final Block WARPED_JUNGLE_DECORATION_GATE = registerBlock("warped_jungle_decoration_fence_gate", new FenceGate("warped_jungle_decoration_fence_gate", WoodType.JUNGLE));
+    public static final Block WARPED_JUNGLE_GARDEN = registerBlock("warped_jungle_garden", new Fence("warped_jungle_garden"));
+    public static final Block WARPED_JUNGLE_GARDEN_GATE = registerBlock("warped_jungle_garden_fence_gate", new FenceGate("warped_jungle_garden_fence_gate", WoodType.JUNGLE));
+    public static final Block WARPED_JUNGLE_BOLLARD = registerBlock("warped_jungle_bollard", new Fence("warped_jungle_bollard"));
+    public static final Block WARPED_JUNGLE_BOLLARD_GATE = registerBlock("warped_jungle_bollard_fence_gate", new FenceGate("warped_jungle_bollard_fence_gate", WoodType.JUNGLE));
+    public static final Block WARPED_JUNGLE_STICK = registerBlock("warped_jungle_stick", new Fence("warped_jungle_stick"));
+    public static final Block WARPED_JUNGLE_STICK_GATE = registerBlock("warped_jungle_stick_fence_gate", new FenceGate("warped_jungle_stick_fence_gate", WoodType.JUNGLE));
+    public static final Block WARPED_JUNGLE_SPIRE = registerBlock("warped_jungle_spire", new Fence("warped_jungle_spire"));
+    public static final Block WARPED_JUNGLE_SPIRE_GATE = registerBlock("warped_jungle_spire_fence_gate", new FenceGate("warped_jungle_spire_fence_gate", WoodType.JUNGLE));
+
+    public static final Block WARPED_DARKOAK_DECORATION = registerBlock("warped_darkoak_decoration", new Fence("warped_darkoak_decoration"));
+    public static final Block WARPED_DARKOAK_DECORATION_GATE = registerBlock("warped_darkoak_decoration_fence_gate", new FenceGate("warped_darkoak_decoration_fence_gate", WoodType.DARK_OAK));
+    public static final Block WARPED_DARKOAK_GARDEN = registerBlock("warped_darkoak_garden", new Fence("warped_darkoak_garden"));
+    public static final Block WARPED_DARKOAK_GARDEN_GATE = registerBlock("warped_darkoak_garden_fence_gate", new FenceGate("warped_darkoak_garden_fence_gate", WoodType.DARK_OAK));
+    public static final Block WARPED_DARKOAK_BOLLARD = registerBlock("warped_darkoak_bollard", new Fence("warped_darkoak_bollard"));
+    public static final Block WARPED_DARKOAK_BOLLARD_GATE = registerBlock("warped_darkoak_bollard_fence_gate", new FenceGate("warped_darkoak_bollard_fence_gate", WoodType.DARK_OAK));
+    public static final Block WARPED_DARKOAK_STICK = registerBlock("warped_darkoak_stick", new Fence("warped_darkoak_stick"));
+    public static final Block WARPED_DARKOAK_STICK_GATE = registerBlock("warped_darkoak_stick_fence_gate", new FenceGate("warped_darkoak_stick_fence_gate", WoodType.DARK_OAK));
+    public static final Block WARPED_DARKOAK_SPIRE = registerBlock("warped_darkoak_spire", new Fence("warped_darkoak_spire"));
+    public static final Block WARPED_DARKOAK_SPIRE_GATE = registerBlock("warped_darkoak_spire_fence_gate", new FenceGate("warped_darkoak_spire_fence_gate", WoodType.DARK_OAK));
+
+    public static final Block WARPED_CRIMSON_DECORATION = registerBlock("warped_crimson_decoration", new Fence("warped_crimson_decoration"));
+    public static final Block WARPED_CRIMSON_DECORATION_GATE = registerBlock("warped_crimson_decoration_fence_gate", new FenceGate("warped_crimson_decoration_fence_gate", WoodType.CRIMSON));
+    public static final Block WARPED_CRIMSON_GARDEN = registerBlock("warped_crimson_garden", new Fence("warped_crimson_garden"));
+    public static final Block WARPED_CRIMSON_GARDEN_GATE = registerBlock("warped_crimson_garden_fence_gate", new FenceGate("warped_crimson_garden_fence_gate", WoodType.CRIMSON));
+    public static final Block WARPED_CRIMSON_BOLLARD = registerBlock("warped_crimson_bollard", new Fence("warped_crimson_bollard"));
+    public static final Block WARPED_CRIMSON_BOLLARD_GATE = registerBlock("warped_crimson_bollard_fence_gate", new FenceGate("warped_crimson_bollard_fence_gate", WoodType.CRIMSON));
+    public static final Block WARPED_CRIMSON_STICK = registerBlock("warped_crimson_stick", new Fence("warped_crimson_stick"));
+    public static final Block WARPED_CRIMSON_STICK_GATE = registerBlock("warped_crimson_stick_fence_gate", new FenceGate("warped_crimson_stick_fence_gate", WoodType.CRIMSON));
+    public static final Block WARPED_CRIMSON_SPIRE = registerBlock("warped_crimson_spire", new Fence("warped_crimson_spire"));
+    public static final Block WARPED_CRIMSON_SPIRE_GATE = registerBlock("warped_crimson_spire_fence_gate", new FenceGate("warped_crimson_spire_fence_gate", WoodType.CRIMSON));
+
+    public static final Block WARPED_MANGROVE_DECORATION = registerBlock("warped_mangrove_decoration", new Fence("warped_mangrove_decoration"));
+    public static final Block WARPED_MANGROVE_DECORATION_GATE = registerBlock("warped_mangrove_decoration_fence_gate", new FenceGate("warped_mangrove_decoration_fence_gate", WoodType.MANGROVE));
+    public static final Block WARPED_MANGROVE_GARDEN = registerBlock("warped_mangrove_garden", new Fence("warped_mangrove_garden"));
+    public static final Block WARPED_MANGROVE_GARDEN_GATE = registerBlock("warped_mangrove_garden_fence_gate", new FenceGate("warped_mangrove_garden_fence_gate", WoodType.MANGROVE));
+    public static final Block WARPED_MANGROVE_BOLLARD = registerBlock("warped_mangrove_bollard", new Fence("warped_mangrove_bollard"));
+    public static final Block WARPED_MANGROVE_BOLLARD_GATE = registerBlock("warped_mangrove_bollard_fence_gate", new FenceGate("warped_mangrove_bollard_fence_gate", WoodType.MANGROVE));
+    public static final Block WARPED_MANGROVE_STICK = registerBlock("warped_mangrove_stick", new Fence("warped_mangrove_stick"));
+    public static final Block WARPED_MANGROVE_STICK_GATE = registerBlock("warped_mangrove_stick_fence_gate", new FenceGate("warped_mangrove_stick_fence_gate", WoodType.MANGROVE));
+    public static final Block WARPED_MANGROVE_SPIRE = registerBlock("warped_mangrove_spire", new Fence("warped_mangrove_spire"));
+    public static final Block WARPED_MANGROVE_SPIRE_GATE = registerBlock("warped_mangrove_spire_fence_gate", new FenceGate("warped_mangrove_spire_fence_gate", WoodType.MANGROVE));
+
+    public static final Block WARPED_BAMBOO_DECORATION = registerBlock("warped_bamboo_decoration", new Fence("warped_bamboo_decoration"));
+    public static final Block WARPED_BAMBOO_DECORATION_GATE = registerBlock("warped_bamboo_decoration_fence_gate", new FenceGate("warped_bamboo_decoration_fence_gate", WoodType.BAMBOO));
+    public static final Block WARPED_BAMBOO_GARDEN = registerBlock("warped_bamboo_garden", new Fence("warped_bamboo_garden"));
+    public static final Block WARPED_BAMBOO_GARDEN_GATE = registerBlock("warped_bamboo_garden_fence_gate", new FenceGate("warped_bamboo_garden_fence_gate", WoodType.BAMBOO));
+    public static final Block WARPED_BAMBOO_BOLLARD = registerBlock("warped_bamboo_bollard", new Fence("warped_bamboo_bollard"));
+    public static final Block WARPED_BAMBOO_BOLLARD_GATE = registerBlock("warped_bamboo_bollard_fence_gate", new FenceGate("warped_bamboo_bollard_fence_gate", WoodType.BAMBOO));
+    public static final Block WARPED_BAMBOO_STICK = registerBlock("warped_bamboo_stick", new Fence("warped_bamboo_stick"));
+    public static final Block WARPED_BAMBOO_STICK_GATE = registerBlock("warped_bamboo_stick_fence_gate", new FenceGate("warped_bamboo_stick_fence_gate", WoodType.BAMBOO));
+    public static final Block WARPED_BAMBOO_SPIRE = registerBlock("warped_bamboo_spire", new Fence("warped_bamboo_spire"));
+    public static final Block WARPED_BAMBOO_SPIRE_GATE = registerBlock("warped_bamboo_spire_fence_gate", new FenceGate("warped_bamboo_spire_fence_gate", WoodType.BAMBOO));
+
+    public static final Block WARPED_CHERRY_DECORATION = registerBlock("warped_cherry_decoration", new Fence("warped_cherry_decoration"));
+    public static final Block WARPED_CHERRY_DECORATION_GATE = registerBlock("warped_cherry_decoration_fence_gate", new FenceGate("warped_cherry_decoration_fence_gate", WoodType.CHERRY));
+    public static final Block WARPED_CHERRY_GARDEN = registerBlock("warped_cherry_garden", new Fence("warped_cherry_garden"));
+    public static final Block WARPED_CHERRY_GARDEN_GATE = registerBlock("warped_cherry_garden_fence_gate", new FenceGate("warped_cherry_garden_fence_gate", WoodType.CHERRY));
+    public static final Block WARPED_CHERRY_BOLLARD = registerBlock("warped_cherry_bollard", new Fence("warped_cherry_bollard"));
+    public static final Block WARPED_CHERRY_BOLLARD_GATE = registerBlock("warped_cherry_bollard_fence_gate", new FenceGate("warped_cherry_bollard_fence_gate", WoodType.CHERRY));
+    public static final Block WARPED_CHERRY_STICK = registerBlock("warped_cherry_stick", new Fence("warped_cherry_stick"));
+    public static final Block WARPED_CHERRY_STICK_GATE = registerBlock("warped_cherry_stick_fence_gate", new FenceGate("warped_cherry_stick_fence_gate", WoodType.CHERRY));
+    public static final Block WARPED_CHERRY_SPIRE = registerBlock("warped_cherry_spire", new Fence("warped_cherry_spire"));
+    public static final Block WARPED_CHERRY_SPIRE_GATE = registerBlock("warped_cherry_spire_fence_gate", new FenceGate("warped_cherry_spire_fence_gate", WoodType.CHERRY));
+
+    public static final Block WARPED_PALE_OAK_DECORATION = registerBlock("warped_pale_oak_decoration", new Fence("warped_pale_oak_decoration"));
+    public static final Block WARPED_PALE_OAK_DECORATION_GATE = registerBlock("warped_pale_oak_decoration_fence_gate", new FenceGate("warped_pale_oak_decoration_fence_gate", WoodType.PALE_OAK));
+    public static final Block WARPED_PALE_OAK_GARDEN = registerBlock("warped_pale_oak_garden", new Fence("warped_pale_oak_garden"));
+    public static final Block WARPED_PALE_OAK_GARDEN_GATE = registerBlock("warped_pale_oak_garden_fence_gate", new FenceGate("warped_pale_oak_garden_fence_gate", WoodType.PALE_OAK));
+    public static final Block WARPED_PALE_OAK_BOLLARD = registerBlock("warped_pale_oak_bollard", new Fence("warped_pale_oak_bollard"));
+    public static final Block WARPED_PALE_OAK_BOLLARD_GATE = registerBlock("warped_pale_oak_bollard_fence_gate", new FenceGate("warped_pale_oak_bollard_fence_gate", WoodType.PALE_OAK));
+    public static final Block WARPED_PALE_OAK_STICK = registerBlock("warped_pale_oak_stick", new Fence("warped_pale_oak_stick"));
+    public static final Block WARPED_PALE_OAK_STICK_GATE = registerBlock("warped_pale_oak_stick_fence_gate", new FenceGate("warped_pale_oak_stick_fence_gate", WoodType.PALE_OAK));
+    public static final Block WARPED_PALE_OAK_SPIRE = registerBlock("warped_pale_oak_spire", new Fence("warped_pale_oak_spire"));
+    public static final Block WARPED_PALE_OAK_SPIRE_GATE = registerBlock("warped_pale_oak_spire_fence_gate", new FenceGate("warped_pale_oak_spire_fence_gate", WoodType.PALE_OAK));
+
+    public static final Block MANGROVE_OAK_DECORATION = registerBlock("mangrove_oak_decoration", new Fence("mangrove_oak_decoration"));
+    public static final Block MANGROVE_OAK_DECORATION_GATE = registerBlock("mangrove_oak_decoration_fence_gate", new FenceGate("mangrove_oak_decoration_fence_gate", WoodType.OAK));
+    public static final Block MANGROVE_OAK_GARDEN = registerBlock("mangrove_oak_garden", new Fence("mangrove_oak_garden"));
+    public static final Block MANGROVE_OAK_GARDEN_GATE = registerBlock("mangrove_oak_garden_fence_gate", new FenceGate("mangrove_oak_garden_fence_gate", WoodType.OAK));
+    public static final Block MANGROVE_OAK_BOLLARD = registerBlock("mangrove_oak_bollard", new Fence("mangrove_oak_bollard"));
+    public static final Block MANGROVE_OAK_BOLLARD_GATE = registerBlock("mangrove_oak_bollard_fence_gate", new FenceGate("mangrove_oak_bollard_fence_gate", WoodType.OAK));
+    public static final Block MANGROVE_OAK_STICK = registerBlock("mangrove_oak_stick", new Fence("mangrove_oak_stick"));
+    public static final Block MANGROVE_OAK_STICK_GATE = registerBlock("mangrove_oak_stick_fence_gate", new FenceGate("mangrove_oak_stick_fence_gate", WoodType.OAK));
+    public static final Block MANGROVE_OAK_SPIRE = registerBlock("mangrove_oak_spire", new Fence("mangrove_oak_spire"));
+    public static final Block MANGROVE_OAK_SPIRE_GATE = registerBlock("mangrove_oak_spire_fence_gate", new FenceGate("mangrove_oak_spire_fence_gate", WoodType.OAK));
+
+    public static final Block MANGROVE_SPRUCE_DECORATION = registerBlock("mangrove_spruce_decoration", new Fence("mangrove_spruce_decoration"));
+    public static final Block MANGROVE_SPRUCE_DECORATION_GATE = registerBlock("mangrove_spruce_decoration_fence_gate", new FenceGate("mangrove_spruce_decoration_fence_gate", WoodType.SPRUCE));
+    public static final Block MANGROVE_SPRUCE_GARDEN = registerBlock("mangrove_spruce_garden", new Fence("mangrove_spruce_garden"));
+    public static final Block MANGROVE_SPRUCE_GARDEN_GATE = registerBlock("mangrove_spruce_garden_fence_gate", new FenceGate("mangrove_spruce_garden_fence_gate", WoodType.SPRUCE));
+    public static final Block MANGROVE_SPRUCE_BOLLARD = registerBlock("mangrove_spruce_bollard", new Fence("mangrove_spruce_bollard"));
+    public static final Block MANGROVE_SPRUCE_BOLLARD_GATE = registerBlock("mangrove_spruce_bollard_fence_gate", new FenceGate("mangrove_spruce_bollard_fence_gate", WoodType.SPRUCE));
+    public static final Block MANGROVE_SPRUCE_STICK = registerBlock("mangrove_spruce_stick", new Fence("mangrove_spruce_stick"));
+    public static final Block MANGROVE_SPRUCE_STICK_GATE = registerBlock("mangrove_spruce_stick_fence_gate", new FenceGate("mangrove_spruce_stick_fence_gate", WoodType.SPRUCE));
+    public static final Block MANGROVE_SPRUCE_SPIRE = registerBlock("mangrove_spruce_spire", new Fence("mangrove_spruce_spire"));
+    public static final Block MANGROVE_SPRUCE_SPIRE_GATE = registerBlock("mangrove_spruce_spire_fence_gate", new FenceGate("mangrove_spruce_spire_fence_gate", WoodType.SPRUCE));
+
+    public static final Block MANGROVE_BIRCH_DECORATION = registerBlock("mangrove_birch_decoration", new Fence("mangrove_birch_decoration"));
+    public static final Block MANGROVE_BIRCH_DECORATION_GATE = registerBlock("mangrove_birch_decoration_fence_gate", new FenceGate("mangrove_birch_decoration_fence_gate", WoodType.BIRCH));
+    public static final Block MANGROVE_BIRCH_GARDEN = registerBlock("mangrove_birch_garden", new Fence("mangrove_birch_garden"));
+    public static final Block MANGROVE_BIRCH_GARDEN_GATE = registerBlock("mangrove_birch_garden_fence_gate", new FenceGate("mangrove_birch_garden_fence_gate", WoodType.BIRCH));
+    public static final Block MANGROVE_BIRCH_BOLLARD = registerBlock("mangrove_birch_bollard", new Fence("mangrove_birch_bollard"));
+    public static final Block MANGROVE_BIRCH_BOLLARD_GATE = registerBlock("mangrove_birch_bollard_fence_gate", new FenceGate("mangrove_birch_bollard_fence_gate", WoodType.BIRCH));
+    public static final Block MANGROVE_BIRCH_STICK = registerBlock("mangrove_birch_stick", new Fence("mangrove_birch_stick"));
+    public static final Block MANGROVE_BIRCH_STICK_GATE = registerBlock("mangrove_birch_stick_fence_gate", new FenceGate("mangrove_birch_stick_fence_gate", WoodType.BIRCH));
+    public static final Block MANGROVE_BIRCH_SPIRE = registerBlock("mangrove_birch_spire", new Fence("mangrove_birch_spire"));
+    public static final Block MANGROVE_BIRCH_SPIRE_GATE = registerBlock("mangrove_birch_spire_fence_gate", new FenceGate("mangrove_birch_spire_fence_gate", WoodType.BIRCH));
+
+    public static final Block MANGROVE_ACACIA_DECORATION = registerBlock("mangrove_acacia_decoration", new Fence("mangrove_acacia_decoration"));
+    public static final Block MANGROVE_ACACIA_DECORATION_GATE = registerBlock("mangrove_acacia_decoration_fence_gate", new FenceGate("mangrove_acacia_decoration_fence_gate", WoodType.ACACIA));
+    public static final Block MANGROVE_ACACIA_GARDEN = registerBlock("mangrove_acacia_garden", new Fence("mangrove_acacia_garden"));
+    public static final Block MANGROVE_ACACIA_GARDEN_GATE = registerBlock("mangrove_acacia_garden_fence_gate", new FenceGate("mangrove_acacia_garden_fence_gate", WoodType.ACACIA));
+    public static final Block MANGROVE_ACACIA_BOLLARD = registerBlock("mangrove_acacia_bollard", new Fence("mangrove_acacia_bollard"));
+    public static final Block MANGROVE_ACACIA_BOLLARD_GATE = registerBlock("mangrove_acacia_bollard_fence_gate", new FenceGate("mangrove_acacia_bollard_fence_gate", WoodType.ACACIA));
+    public static final Block MANGROVE_ACACIA_STICK = registerBlock("mangrove_acacia_stick", new Fence("mangrove_acacia_stick"));
+    public static final Block MANGROVE_ACACIA_STICK_GATE = registerBlock("mangrove_acacia_stick_fence_gate", new FenceGate("mangrove_acacia_stick_fence_gate", WoodType.ACACIA));
+    public static final Block MANGROVE_ACACIA_SPIRE = registerBlock("mangrove_acacia_spire", new Fence("mangrove_acacia_spire"));
+    public static final Block MANGROVE_ACACIA_SPIRE_GATE = registerBlock("mangrove_acacia_spire_fence_gate", new FenceGate("mangrove_acacia_spire_fence_gate", WoodType.ACACIA));
+
+    public static final Block MANGROVE_JUNGLE_DECORATION = registerBlock("mangrove_jungle_decoration", new Fence("mangrove_jungle_decoration"));
+    public static final Block MANGROVE_JUNGLE_DECORATION_GATE = registerBlock("mangrove_jungle_decoration_fence_gate", new FenceGate("mangrove_jungle_decoration_fence_gate", WoodType.JUNGLE));
+    public static final Block MANGROVE_JUNGLE_GARDEN = registerBlock("mangrove_jungle_garden", new Fence("mangrove_jungle_garden"));
+    public static final Block MANGROVE_JUNGLE_GARDEN_GATE = registerBlock("mangrove_jungle_garden_fence_gate", new FenceGate("mangrove_jungle_garden_fence_gate", WoodType.JUNGLE));
+    public static final Block MANGROVE_JUNGLE_BOLLARD = registerBlock("mangrove_jungle_bollard", new Fence("mangrove_jungle_bollard"));
+    public static final Block MANGROVE_JUNGLE_BOLLARD_GATE = registerBlock("mangrove_jungle_bollard_fence_gate", new FenceGate("mangrove_jungle_bollard_fence_gate", WoodType.JUNGLE));
+    public static final Block MANGROVE_JUNGLE_STICK = registerBlock("mangrove_jungle_stick", new Fence("mangrove_jungle_stick"));
+    public static final Block MANGROVE_JUNGLE_STICK_GATE = registerBlock("mangrove_jungle_stick_fence_gate", new FenceGate("mangrove_jungle_stick_fence_gate", WoodType.JUNGLE));
+    public static final Block MANGROVE_JUNGLE_SPIRE = registerBlock("mangrove_jungle_spire", new Fence("mangrove_jungle_spire"));
+    public static final Block MANGROVE_JUNGLE_SPIRE_GATE = registerBlock("mangrove_jungle_spire_fence_gate", new FenceGate("mangrove_jungle_spire_fence_gate", WoodType.JUNGLE));
+
+    public static final Block MANGROVE_DARKOAK_DECORATION = registerBlock("mangrove_darkoak_decoration", new Fence("mangrove_darkoak_decoration"));
+    public static final Block MANGROVE_DARKOAK_DECORATION_GATE = registerBlock("mangrove_darkoak_decoration_fence_gate", new FenceGate("mangrove_darkoak_decoration_fence_gate", WoodType.DARK_OAK));
+    public static final Block MANGROVE_DARKOAK_GARDEN = registerBlock("mangrove_darkoak_garden", new Fence("mangrove_darkoak_garden"));
+    public static final Block MANGROVE_DARKOAK_GARDEN_GATE = registerBlock("mangrove_darkoak_garden_fence_gate", new FenceGate("mangrove_darkoak_garden_fence_gate", WoodType.DARK_OAK));
+    public static final Block MANGROVE_DARKOAK_BOLLARD = registerBlock("mangrove_darkoak_bollard", new Fence("mangrove_darkoak_bollard"));
+    public static final Block MANGROVE_DARKOAK_BOLLARD_GATE = registerBlock("mangrove_darkoak_bollard_fence_gate", new FenceGate("mangrove_darkoak_bollard_fence_gate", WoodType.DARK_OAK));
+    public static final Block MANGROVE_DARKOAK_STICK = registerBlock("mangrove_darkoak_stick", new Fence("mangrove_darkoak_stick"));
+    public static final Block MANGROVE_DARKOAK_STICK_GATE = registerBlock("mangrove_darkoak_stick_fence_gate", new FenceGate("mangrove_darkoak_stick_fence_gate", WoodType.DARK_OAK));
+    public static final Block MANGROVE_DARKOAK_SPIRE = registerBlock("mangrove_darkoak_spire", new Fence("mangrove_darkoak_spire"));
+    public static final Block MANGROVE_DARKOAK_SPIRE_GATE = registerBlock("mangrove_darkoak_spire_fence_gate", new FenceGate("mangrove_darkoak_spire_fence_gate", WoodType.DARK_OAK));
+
+    public static final Block MANGROVE_CRIMSON_DECORATION = registerBlock("mangrove_crimson_decoration", new Fence("mangrove_crimson_decoration"));
+    public static final Block MANGROVE_CRIMSON_DECORATION_GATE = registerBlock("mangrove_crimson_decoration_fence_gate", new FenceGate("mangrove_crimson_decoration_fence_gate", WoodType.CRIMSON));
+    public static final Block MANGROVE_CRIMSON_GARDEN = registerBlock("mangrove_crimson_garden", new Fence("mangrove_crimson_garden"));
+    public static final Block MANGROVE_CRIMSON_GARDEN_GATE = registerBlock("mangrove_crimson_garden_fence_gate", new FenceGate("mangrove_crimson_garden_fence_gate", WoodType.CRIMSON));
+    public static final Block MANGROVE_CRIMSON_BOLLARD = registerBlock("mangrove_crimson_bollard", new Fence("mangrove_crimson_bollard"));
+    public static final Block MANGROVE_CRIMSON_BOLLARD_GATE = registerBlock("mangrove_crimson_bollard_fence_gate", new FenceGate("mangrove_crimson_bollard_fence_gate", WoodType.CRIMSON));
+    public static final Block MANGROVE_CRIMSON_STICK = registerBlock("mangrove_crimson_stick", new Fence("mangrove_crimson_stick"));
+    public static final Block MANGROVE_CRIMSON_STICK_GATE = registerBlock("mangrove_crimson_stick_fence_gate", new FenceGate("mangrove_crimson_stick_fence_gate", WoodType.CRIMSON));
+    public static final Block MANGROVE_CRIMSON_SPIRE = registerBlock("mangrove_crimson_spire", new Fence("mangrove_crimson_spire"));
+    public static final Block MANGROVE_CRIMSON_SPIRE_GATE = registerBlock("mangrove_crimson_spire_fence_gate", new FenceGate("mangrove_crimson_spire_fence_gate", WoodType.CRIMSON));
+
+    public static final Block MANGROVE_WARPED_DECORATION = registerBlock("mangrove_warped_decoration", new Fence("mangrove_warped_decoration"));
+    public static final Block MANGROVE_WARPED_DECORATION_GATE = registerBlock("mangrove_warped_decoration_fence_gate", new FenceGate("mangrove_warped_decoration_fence_gate", WoodType.WARPED));
+    public static final Block MANGROVE_WARPED_GARDEN = registerBlock("mangrove_warped_garden", new Fence("mangrove_warped_garden"));
+    public static final Block MANGROVE_WARPED_GARDEN_GATE = registerBlock("mangrove_warped_garden_fence_gate", new FenceGate("mangrove_warped_garden_fence_gate", WoodType.WARPED));
+    public static final Block MANGROVE_WARPED_BOLLARD = registerBlock("mangrove_warped_bollard", new Fence("mangrove_warped_bollard"));
+    public static final Block MANGROVE_WARPED_BOLLARD_GATE = registerBlock("mangrove_warped_bollard_fence_gate", new FenceGate("mangrove_warped_bollard_fence_gate", WoodType.WARPED));
+    public static final Block MANGROVE_WARPED_STICK = registerBlock("mangrove_warped_stick", new Fence("mangrove_warped_stick"));
+    public static final Block MANGROVE_WARPED_STICK_GATE = registerBlock("mangrove_warped_stick_fence_gate", new FenceGate("mangrove_warped_stick_fence_gate", WoodType.WARPED));
+    public static final Block MANGROVE_WARPED_SPIRE = registerBlock("mangrove_warped_spire", new Fence("mangrove_warped_spire"));
+    public static final Block MANGROVE_WARPED_SPIRE_GATE = registerBlock("mangrove_warped_spire_fence_gate", new FenceGate("mangrove_warped_spire_fence_gate", WoodType.WARPED));
+
+    public static final Block MANGROVE_BAMBOO_DECORATION = registerBlock("mangrove_bamboo_decoration", new Fence("mangrove_bamboo_decoration"));
+    public static final Block MANGROVE_BAMBOO_DECORATION_GATE = registerBlock("mangrove_bamboo_decoration_fence_gate", new FenceGate("mangrove_bamboo_decoration_fence_gate", WoodType.BAMBOO));
+    public static final Block MANGROVE_BAMBOO_GARDEN = registerBlock("mangrove_bamboo_garden", new Fence("mangrove_bamboo_garden"));
+    public static final Block MANGROVE_BAMBOO_GARDEN_GATE = registerBlock("mangrove_bamboo_garden_fence_gate", new FenceGate("mangrove_bamboo_garden_fence_gate", WoodType.BAMBOO));
+    public static final Block MANGROVE_BAMBOO_BOLLARD = registerBlock("mangrove_bamboo_bollard", new Fence("mangrove_bamboo_bollard"));
+    public static final Block MANGROVE_BAMBOO_BOLLARD_GATE = registerBlock("mangrove_bamboo_bollard_fence_gate", new FenceGate("mangrove_bamboo_bollard_fence_gate", WoodType.BAMBOO));
+    public static final Block MANGROVE_BAMBOO_STICK = registerBlock("mangrove_bamboo_stick", new Fence("mangrove_bamboo_stick"));
+    public static final Block MANGROVE_BAMBOO_STICK_GATE = registerBlock("mangrove_bamboo_stick_fence_gate", new FenceGate("mangrove_bamboo_stick_fence_gate", WoodType.BAMBOO));
+    public static final Block MANGROVE_BAMBOO_SPIRE = registerBlock("mangrove_bamboo_spire", new Fence("mangrove_bamboo_spire"));
+    public static final Block MANGROVE_BAMBOO_SPIRE_GATE = registerBlock("mangrove_bamboo_spire_fence_gate", new FenceGate("mangrove_bamboo_spire_fence_gate", WoodType.BAMBOO));
+
+    public static final Block MANGROVE_CHERRY_DECORATION = registerBlock("mangrove_cherry_decoration", new Fence("mangrove_cherry_decoration"));
+    public static final Block MANGROVE_CHERRY_DECORATION_GATE = registerBlock("mangrove_cherry_decoration_fence_gate", new FenceGate("mangrove_cherry_decoration_fence_gate", WoodType.CHERRY));
+    public static final Block MANGROVE_CHERRY_GARDEN = registerBlock("mangrove_cherry_garden", new Fence("mangrove_cherry_garden"));
+    public static final Block MANGROVE_CHERRY_GARDEN_GATE = registerBlock("mangrove_cherry_garden_fence_gate", new FenceGate("mangrove_cherry_garden_fence_gate", WoodType.CHERRY));
+    public static final Block MANGROVE_CHERRY_BOLLARD = registerBlock("mangrove_cherry_bollard", new Fence("mangrove_cherry_bollard"));
+    public static final Block MANGROVE_CHERRY_BOLLARD_GATE = registerBlock("mangrove_cherry_bollard_fence_gate", new FenceGate("mangrove_cherry_bollard_fence_gate", WoodType.CHERRY));
+    public static final Block MANGROVE_CHERRY_STICK = registerBlock("mangrove_cherry_stick", new Fence("mangrove_cherry_stick"));
+    public static final Block MANGROVE_CHERRY_STICK_GATE = registerBlock("mangrove_cherry_stick_fence_gate", new FenceGate("mangrove_cherry_stick_fence_gate", WoodType.CHERRY));
+    public static final Block MANGROVE_CHERRY_SPIRE = registerBlock("mangrove_cherry_spire", new Fence("mangrove_cherry_spire"));
+    public static final Block MANGROVE_CHERRY_SPIRE_GATE = registerBlock("mangrove_cherry_spire_fence_gate", new FenceGate("mangrove_cherry_spire_fence_gate", WoodType.CHERRY));
+
+    public static final Block MANGROVE_PALE_OAK_DECORATION = registerBlock("mangrove_pale_oak_decoration", new Fence("mangrove_pale_oak_decoration"));
+    public static final Block MANGROVE_PALE_OAK_DECORATION_GATE = registerBlock("mangrove_pale_oak_decoration_fence_gate", new FenceGate("mangrove_pale_oak_decoration_fence_gate", WoodType.PALE_OAK));
+    public static final Block MANGROVE_PALE_OAK_GARDEN = registerBlock("mangrove_pale_oak_garden", new Fence("mangrove_pale_oak_garden"));
+    public static final Block MANGROVE_PALE_OAK_GARDEN_GATE = registerBlock("mangrove_pale_oak_garden_fence_gate", new FenceGate("mangrove_pale_oak_garden_fence_gate", WoodType.PALE_OAK));
+    public static final Block MANGROVE_PALE_OAK_BOLLARD = registerBlock("mangrove_pale_oak_bollard", new Fence("mangrove_pale_oak_bollard"));
+    public static final Block MANGROVE_PALE_OAK_BOLLARD_GATE = registerBlock("mangrove_pale_oak_bollard_fence_gate", new FenceGate("mangrove_pale_oak_bollard_fence_gate", WoodType.PALE_OAK));
+    public static final Block MANGROVE_PALE_OAK_STICK = registerBlock("mangrove_pale_oak_stick", new Fence("mangrove_pale_oak_stick"));
+    public static final Block MANGROVE_PALE_OAK_STICK_GATE = registerBlock("mangrove_pale_oak_stick_fence_gate", new FenceGate("mangrove_pale_oak_stick_fence_gate", WoodType.PALE_OAK));
+    public static final Block MANGROVE_PALE_OAK_SPIRE = registerBlock("mangrove_pale_oak_spire", new Fence("mangrove_pale_oak_spire"));
+    public static final Block MANGROVE_PALE_OAK_SPIRE_GATE = registerBlock("mangrove_pale_oak_spire_fence_gate", new FenceGate("mangrove_pale_oak_spire_fence_gate", WoodType.PALE_OAK));
+
+    public static final Block BAMBOO_OAK_DECORATION = registerBlock("bamboo_oak_decoration", new Fence("bamboo_oak_decoration"));
+    public static final Block BAMBOO_OAK_DECORATION_GATE = registerBlock("bamboo_oak_decoration_fence_gate", new FenceGate("bamboo_oak_decoration_fence_gate", WoodType.OAK));
+    public static final Block BAMBOO_OAK_GARDEN = registerBlock("bamboo_oak_garden", new Fence("bamboo_oak_garden"));
+    public static final Block BAMBOO_OAK_GARDEN_GATE = registerBlock("bamboo_oak_garden_fence_gate", new FenceGate("bamboo_oak_garden_fence_gate", WoodType.OAK));
+    public static final Block BAMBOO_OAK_BOLLARD = registerBlock("bamboo_oak_bollard", new Fence("bamboo_oak_bollard"));
+    public static final Block BAMBOO_OAK_BOLLARD_GATE = registerBlock("bamboo_oak_bollard_fence_gate", new FenceGate("bamboo_oak_bollard_fence_gate", WoodType.OAK));
+    public static final Block BAMBOO_OAK_STICK = registerBlock("bamboo_oak_stick", new Fence("bamboo_oak_stick"));
+    public static final Block BAMBOO_OAK_STICK_GATE = registerBlock("bamboo_oak_stick_fence_gate", new FenceGate("bamboo_oak_stick_fence_gate", WoodType.OAK));
+    public static final Block BAMBOO_OAK_SPIRE = registerBlock("bamboo_oak_spire", new Fence("bamboo_oak_spire"));
+    public static final Block BAMBOO_OAK_SPIRE_GATE = registerBlock("bamboo_oak_spire_fence_gate", new FenceGate("bamboo_oak_spire_fence_gate", WoodType.OAK));
+
+    public static final Block BAMBOO_SPRUCE_DECORATION = registerBlock("bamboo_spruce_decoration", new Fence("bamboo_spruce_decoration"));
+    public static final Block BAMBOO_SPRUCE_DECORATION_GATE = registerBlock("bamboo_spruce_decoration_fence_gate", new FenceGate("bamboo_spruce_decoration_fence_gate", WoodType.SPRUCE));
+    public static final Block BAMBOO_SPRUCE_GARDEN = registerBlock("bamboo_spruce_garden", new Fence("bamboo_spruce_garden"));
+    public static final Block BAMBOO_SPRUCE_GARDEN_GATE = registerBlock("bamboo_spruce_garden_fence_gate", new FenceGate("bamboo_spruce_garden_fence_gate", WoodType.SPRUCE));
+    public static final Block BAMBOO_SPRUCE_BOLLARD = registerBlock("bamboo_spruce_bollard", new Fence("bamboo_spruce_bollard"));
+    public static final Block BAMBOO_SPRUCE_BOLLARD_GATE = registerBlock("bamboo_spruce_bollard_fence_gate", new FenceGate("bamboo_spruce_bollard_fence_gate", WoodType.SPRUCE));
+    public static final Block BAMBOO_SPRUCE_STICK = registerBlock("bamboo_spruce_stick", new Fence("bamboo_spruce_stick"));
+    public static final Block BAMBOO_SPRUCE_STICK_GATE = registerBlock("bamboo_spruce_stick_fence_gate", new FenceGate("bamboo_spruce_stick_fence_gate", WoodType.SPRUCE));
+    public static final Block BAMBOO_SPRUCE_SPIRE = registerBlock("bamboo_spruce_spire", new Fence("bamboo_spruce_spire"));
+    public static final Block BAMBOO_SPRUCE_SPIRE_GATE = registerBlock("bamboo_spruce_spire_fence_gate", new FenceGate("bamboo_spruce_spire_fence_gate", WoodType.SPRUCE));
+
+    public static final Block BAMBOO_BIRCH_DECORATION = registerBlock("bamboo_birch_decoration", new Fence("bamboo_birch_decoration"));
+    public static final Block BAMBOO_BIRCH_DECORATION_GATE = registerBlock("bamboo_birch_decoration_fence_gate", new FenceGate("bamboo_birch_decoration_fence_gate", WoodType.BIRCH));
+    public static final Block BAMBOO_BIRCH_GARDEN = registerBlock("bamboo_birch_garden", new Fence("bamboo_birch_garden"));
+    public static final Block BAMBOO_BIRCH_GARDEN_GATE = registerBlock("bamboo_birch_garden_fence_gate", new FenceGate("bamboo_birch_garden_fence_gate", WoodType.BIRCH));
+    public static final Block BAMBOO_BIRCH_BOLLARD = registerBlock("bamboo_birch_bollard", new Fence("bamboo_birch_bollard"));
+    public static final Block BAMBOO_BIRCH_BOLLARD_GATE = registerBlock("bamboo_birch_bollard_fence_gate", new FenceGate("bamboo_birch_bollard_fence_gate", WoodType.BIRCH));
+    public static final Block BAMBOO_BIRCH_STICK = registerBlock("bamboo_birch_stick", new Fence("bamboo_birch_stick"));
+    public static final Block BAMBOO_BIRCH_STICK_GATE = registerBlock("bamboo_birch_stick_fence_gate", new FenceGate("bamboo_birch_stick_fence_gate", WoodType.BIRCH));
+    public static final Block BAMBOO_BIRCH_SPIRE = registerBlock("bamboo_birch_spire", new Fence("bamboo_birch_spire"));
+    public static final Block BAMBOO_BIRCH_SPIRE_GATE = registerBlock("bamboo_birch_spire_fence_gate", new FenceGate("bamboo_birch_spire_fence_gate", WoodType.BIRCH));
+
+    public static final Block BAMBOO_ACACIA_DECORATION = registerBlock("bamboo_acacia_decoration", new Fence("bamboo_acacia_decoration"));
+    public static final Block BAMBOO_ACACIA_DECORATION_GATE = registerBlock("bamboo_acacia_decoration_fence_gate", new FenceGate("bamboo_acacia_decoration_fence_gate", WoodType.ACACIA));
+    public static final Block BAMBOO_ACACIA_GARDEN = registerBlock("bamboo_acacia_garden", new Fence("bamboo_acacia_garden"));
+    public static final Block BAMBOO_ACACIA_GARDEN_GATE = registerBlock("bamboo_acacia_garden_fence_gate", new FenceGate("bamboo_acacia_garden_fence_gate", WoodType.ACACIA));
+    public static final Block BAMBOO_ACACIA_BOLLARD = registerBlock("bamboo_acacia_bollard", new Fence("bamboo_acacia_bollard"));
+    public static final Block BAMBOO_ACACIA_BOLLARD_GATE = registerBlock("bamboo_acacia_bollard_fence_gate", new FenceGate("bamboo_acacia_bollard_fence_gate", WoodType.ACACIA));
+    public static final Block BAMBOO_ACACIA_STICK = registerBlock("bamboo_acacia_stick", new Fence("bamboo_acacia_stick"));
+    public static final Block BAMBOO_ACACIA_STICK_GATE = registerBlock("bamboo_acacia_stick_fence_gate", new FenceGate("bamboo_acacia_stick_fence_gate", WoodType.ACACIA));
+    public static final Block BAMBOO_ACACIA_SPIRE = registerBlock("bamboo_acacia_spire", new Fence("bamboo_acacia_spire"));
+    public static final Block BAMBOO_ACACIA_SPIRE_GATE = registerBlock("bamboo_acacia_spire_fence_gate", new FenceGate("bamboo_acacia_spire_fence_gate", WoodType.ACACIA));
+
+    public static final Block BAMBOO_JUNGLE_DECORATION = registerBlock("bamboo_jungle_decoration", new Fence("bamboo_jungle_decoration"));
+    public static final Block BAMBOO_JUNGLE_DECORATION_GATE = registerBlock("bamboo_jungle_decoration_fence_gate", new FenceGate("bamboo_jungle_decoration_fence_gate", WoodType.JUNGLE));
+    public static final Block BAMBOO_JUNGLE_GARDEN = registerBlock("bamboo_jungle_garden", new Fence("bamboo_jungle_garden"));
+    public static final Block BAMBOO_JUNGLE_GARDEN_GATE = registerBlock("bamboo_jungle_garden_fence_gate", new FenceGate("bamboo_jungle_garden_fence_gate", WoodType.JUNGLE));
+    public static final Block BAMBOO_JUNGLE_BOLLARD = registerBlock("bamboo_jungle_bollard", new Fence("bamboo_jungle_bollard"));
+    public static final Block BAMBOO_JUNGLE_BOLLARD_GATE = registerBlock("bamboo_jungle_bollard_fence_gate", new FenceGate("bamboo_jungle_bollard_fence_gate", WoodType.JUNGLE));
+    public static final Block BAMBOO_JUNGLE_STICK = registerBlock("bamboo_jungle_stick", new Fence("bamboo_jungle_stick"));
+    public static final Block BAMBOO_JUNGLE_STICK_GATE = registerBlock("bamboo_jungle_stick_fence_gate", new FenceGate("bamboo_jungle_stick_fence_gate", WoodType.JUNGLE));
+    public static final Block BAMBOO_JUNGLE_SPIRE = registerBlock("bamboo_jungle_spire", new Fence("bamboo_jungle_spire"));
+    public static final Block BAMBOO_JUNGLE_SPIRE_GATE = registerBlock("bamboo_jungle_spire_fence_gate", new FenceGate("bamboo_jungle_spire_fence_gate", WoodType.JUNGLE));
+
+    public static final Block BAMBOO_DARKOAK_DECORATION = registerBlock("bamboo_darkoak_decoration", new Fence("bamboo_darkoak_decoration"));
+    public static final Block BAMBOO_DARKOAK_DECORATION_GATE = registerBlock("bamboo_darkoak_decoration_fence_gate", new FenceGate("bamboo_darkoak_decoration_fence_gate", WoodType.DARK_OAK));
+    public static final Block BAMBOO_DARKOAK_GARDEN = registerBlock("bamboo_darkoak_garden", new Fence("bamboo_darkoak_garden"));
+    public static final Block BAMBOO_DARKOAK_GARDEN_GATE = registerBlock("bamboo_darkoak_garden_fence_gate", new FenceGate("bamboo_darkoak_garden_fence_gate", WoodType.DARK_OAK));
+    public static final Block BAMBOO_DARKOAK_BOLLARD = registerBlock("bamboo_darkoak_bollard", new Fence("bamboo_darkoak_bollard"));
+    public static final Block BAMBOO_DARKOAK_BOLLARD_GATE = registerBlock("bamboo_darkoak_bollard_fence_gate", new FenceGate("bamboo_darkoak_bollard_fence_gate", WoodType.DARK_OAK));
+    public static final Block BAMBOO_DARKOAK_STICK = registerBlock("bamboo_darkoak_stick", new Fence("bamboo_darkoak_stick"));
+    public static final Block BAMBOO_DARKOAK_STICK_GATE = registerBlock("bamboo_darkoak_stick_fence_gate", new FenceGate("bamboo_darkoak_stick_fence_gate", WoodType.DARK_OAK));
+    public static final Block BAMBOO_DARKOAK_SPIRE = registerBlock("bamboo_darkoak_spire", new Fence("bamboo_darkoak_spire"));
+    public static final Block BAMBOO_DARKOAK_SPIRE_GATE = registerBlock("bamboo_darkoak_spire_fence_gate", new FenceGate("bamboo_darkoak_spire_fence_gate", WoodType.DARK_OAK));
+
+    public static final Block BAMBOO_CRIMSON_DECORATION = registerBlock("bamboo_crimson_decoration", new Fence("bamboo_crimson_decoration"));
+    public static final Block BAMBOO_CRIMSON_DECORATION_GATE = registerBlock("bamboo_crimson_decoration_fence_gate", new FenceGate("bamboo_crimson_decoration_fence_gate", WoodType.CRIMSON));
+    public static final Block BAMBOO_CRIMSON_GARDEN = registerBlock("bamboo_crimson_garden", new Fence("bamboo_crimson_garden"));
+    public static final Block BAMBOO_CRIMSON_GARDEN_GATE = registerBlock("bamboo_crimson_garden_fence_gate", new FenceGate("bamboo_crimson_garden_fence_gate", WoodType.CRIMSON));
+    public static final Block BAMBOO_CRIMSON_BOLLARD = registerBlock("bamboo_crimson_bollard", new Fence("bamboo_crimson_bollard"));
+    public static final Block BAMBOO_CRIMSON_BOLLARD_GATE = registerBlock("bamboo_crimson_bollard_fence_gate", new FenceGate("bamboo_crimson_bollard_fence_gate", WoodType.CRIMSON));
+    public static final Block BAMBOO_CRIMSON_STICK = registerBlock("bamboo_crimson_stick", new Fence("bamboo_crimson_stick"));
+    public static final Block BAMBOO_CRIMSON_STICK_GATE = registerBlock("bamboo_crimson_stick_fence_gate", new FenceGate("bamboo_crimson_stick_fence_gate", WoodType.CRIMSON));
+    public static final Block BAMBOO_CRIMSON_SPIRE = registerBlock("bamboo_crimson_spire", new Fence("bamboo_crimson_spire"));
+    public static final Block BAMBOO_CRIMSON_SPIRE_GATE = registerBlock("bamboo_crimson_spire_fence_gate", new FenceGate("bamboo_crimson_spire_fence_gate", WoodType.CRIMSON));
+
+    public static final Block BAMBOO_WARPED_DECORATION = registerBlock("bamboo_warped_decoration", new Fence("bamboo_warped_decoration"));
+    public static final Block BAMBOO_WARPED_DECORATION_GATE = registerBlock("bamboo_warped_decoration_fence_gate", new FenceGate("bamboo_warped_decoration_fence_gate", WoodType.WARPED));
+    public static final Block BAMBOO_WARPED_GARDEN = registerBlock("bamboo_warped_garden", new Fence("bamboo_warped_garden"));
+    public static final Block BAMBOO_WARPED_GARDEN_GATE = registerBlock("bamboo_warped_garden_fence_gate", new FenceGate("bamboo_warped_garden_fence_gate", WoodType.WARPED));
+    public static final Block BAMBOO_WARPED_BOLLARD = registerBlock("bamboo_warped_bollard", new Fence("bamboo_warped_bollard"));
+    public static final Block BAMBOO_WARPED_BOLLARD_GATE = registerBlock("bamboo_warped_bollard_fence_gate", new FenceGate("bamboo_warped_bollard_fence_gate", WoodType.WARPED));
+    public static final Block BAMBOO_WARPED_STICK = registerBlock("bamboo_warped_stick", new Fence("bamboo_warped_stick"));
+    public static final Block BAMBOO_WARPED_STICK_GATE = registerBlock("bamboo_warped_stick_fence_gate", new FenceGate("bamboo_warped_stick_fence_gate", WoodType.WARPED));
+    public static final Block BAMBOO_WARPED_SPIRE = registerBlock("bamboo_warped_spire", new Fence("bamboo_warped_spire"));
+    public static final Block BAMBOO_WARPED_SPIRE_GATE = registerBlock("bamboo_warped_spire_fence_gate", new FenceGate("bamboo_warped_spire_fence_gate", WoodType.WARPED));
+
+    public static final Block BAMBOO_MANGROVE_DECORATION = registerBlock("bamboo_mangrove_decoration", new Fence("bamboo_mangrove_decoration"));
+    public static final Block BAMBOO_MANGROVE_DECORATION_GATE = registerBlock("bamboo_mangrove_decoration_fence_gate", new FenceGate("bamboo_mangrove_decoration_fence_gate", WoodType.MANGROVE));
+    public static final Block BAMBOO_MANGROVE_GARDEN = registerBlock("bamboo_mangrove_garden", new Fence("bamboo_mangrove_garden"));
+    public static final Block BAMBOO_MANGROVE_GARDEN_GATE = registerBlock("bamboo_mangrove_garden_fence_gate", new FenceGate("bamboo_mangrove_garden_fence_gate", WoodType.MANGROVE));
+    public static final Block BAMBOO_MANGROVE_BOLLARD = registerBlock("bamboo_mangrove_bollard", new Fence("bamboo_mangrove_bollard"));
+    public static final Block BAMBOO_MANGROVE_BOLLARD_GATE = registerBlock("bamboo_mangrove_bollard_fence_gate", new FenceGate("bamboo_mangrove_bollard_fence_gate", WoodType.MANGROVE));
+    public static final Block BAMBOO_MANGROVE_STICK = registerBlock("bamboo_mangrove_stick", new Fence("bamboo_mangrove_stick"));
+    public static final Block BAMBOO_MANGROVE_STICK_GATE = registerBlock("bamboo_mangrove_stick_fence_gate", new FenceGate("bamboo_mangrove_stick_fence_gate", WoodType.MANGROVE));
+    public static final Block BAMBOO_MANGROVE_SPIRE = registerBlock("bamboo_mangrove_spire", new Fence("bamboo_mangrove_spire"));
+    public static final Block BAMBOO_MANGROVE_SPIRE_GATE = registerBlock("bamboo_mangrove_spire_fence_gate", new FenceGate("bamboo_mangrove_spire_fence_gate", WoodType.MANGROVE));
+
+    public static final Block BAMBOO_CHERRY_DECORATION = registerBlock("bamboo_cherry_decoration", new Fence("bamboo_cherry_decoration"));
+    public static final Block BAMBOO_CHERRY_DECORATION_GATE = registerBlock("bamboo_cherry_decoration_fence_gate", new FenceGate("bamboo_cherry_decoration_fence_gate", WoodType.CHERRY));
+    public static final Block BAMBOO_CHERRY_GARDEN = registerBlock("bamboo_cherry_garden", new Fence("bamboo_cherry_garden"));
+    public static final Block BAMBOO_CHERRY_GARDEN_GATE = registerBlock("bamboo_cherry_garden_fence_gate", new FenceGate("bamboo_cherry_garden_fence_gate", WoodType.CHERRY));
+    public static final Block BAMBOO_CHERRY_BOLLARD = registerBlock("bamboo_cherry_bollard", new Fence("bamboo_cherry_bollard"));
+    public static final Block BAMBOO_CHERRY_BOLLARD_GATE = registerBlock("bamboo_cherry_bollard_fence_gate", new FenceGate("bamboo_cherry_bollard_fence_gate", WoodType.CHERRY));
+    public static final Block BAMBOO_CHERRY_STICK = registerBlock("bamboo_cherry_stick", new Fence("bamboo_cherry_stick"));
+    public static final Block BAMBOO_CHERRY_STICK_GATE = registerBlock("bamboo_cherry_stick_fence_gate", new FenceGate("bamboo_cherry_stick_fence_gate", WoodType.CHERRY));
+    public static final Block BAMBOO_CHERRY_SPIRE = registerBlock("bamboo_cherry_spire", new Fence("bamboo_cherry_spire"));
+    public static final Block BAMBOO_CHERRY_SPIRE_GATE = registerBlock("bamboo_cherry_spire_fence_gate", new FenceGate("bamboo_cherry_spire_fence_gate", WoodType.CHERRY));
+
+    public static final Block BAMBOO_PALE_OAK_DECORATION = registerBlock("bamboo_pale_oak_decoration", new Fence("bamboo_pale_oak_decoration"));
+    public static final Block BAMBOO_PALE_OAK_DECORATION_GATE = registerBlock("bamboo_pale_oak_decoration_fence_gate", new FenceGate("bamboo_pale_oak_decoration_fence_gate", WoodType.PALE_OAK));
+    public static final Block BAMBOO_PALE_OAK_GARDEN = registerBlock("bamboo_pale_oak_garden", new Fence("bamboo_pale_oak_garden"));
+    public static final Block BAMBOO_PALE_OAK_GARDEN_GATE = registerBlock("bamboo_pale_oak_garden_fence_gate", new FenceGate("bamboo_pale_oak_garden_fence_gate", WoodType.PALE_OAK));
+    public static final Block BAMBOO_PALE_OAK_BOLLARD = registerBlock("bamboo_pale_oak_bollard", new Fence("bamboo_pale_oak_bollard"));
+    public static final Block BAMBOO_PALE_OAK_BOLLARD_GATE = registerBlock("bamboo_pale_oak_bollard_fence_gate", new FenceGate("bamboo_pale_oak_bollard_fence_gate", WoodType.PALE_OAK));
+    public static final Block BAMBOO_PALE_OAK_STICK = registerBlock("bamboo_pale_oak_stick", new Fence("bamboo_pale_oak_stick"));
+    public static final Block BAMBOO_PALE_OAK_STICK_GATE = registerBlock("bamboo_pale_oak_stick_fence_gate", new FenceGate("bamboo_pale_oak_stick_fence_gate", WoodType.PALE_OAK));
+    public static final Block BAMBOO_PALE_OAK_SPIRE = registerBlock("bamboo_pale_oak_spire", new Fence("bamboo_pale_oak_spire"));
+    public static final Block BAMBOO_PALE_OAK_SPIRE_GATE = registerBlock("bamboo_pale_oak_spire_fence_gate", new FenceGate("bamboo_pale_oak_spire_fence_gate", WoodType.PALE_OAK));
+
+    public static final Block CHERRY_OAK_DECORATION = registerBlock("cherry_oak_decoration", new Fence("cherry_oak_decoration"));
+    public static final Block CHERRY_OAK_DECORATION_GATE = registerBlock("cherry_oak_decoration_fence_gate", new FenceGate("cherry_oak_decoration_fence_gate", WoodType.OAK));
+    public static final Block CHERRY_OAK_GARDEN = registerBlock("cherry_oak_garden", new Fence("cherry_oak_garden"));
+    public static final Block CHERRY_OAK_GARDEN_GATE = registerBlock("cherry_oak_garden_fence_gate", new FenceGate("cherry_oak_garden_fence_gate", WoodType.OAK));
+    public static final Block CHERRY_OAK_BOLLARD = registerBlock("cherry_oak_bollard", new Fence("cherry_oak_bollard"));
+    public static final Block CHERRY_OAK_BOLLARD_GATE = registerBlock("cherry_oak_bollard_fence_gate", new FenceGate("cherry_oak_bollard_fence_gate", WoodType.OAK));
+    public static final Block CHERRY_OAK_STICK = registerBlock("cherry_oak_stick", new Fence("cherry_oak_stick"));
+    public static final Block CHERRY_OAK_STICK_GATE = registerBlock("cherry_oak_stick_fence_gate", new FenceGate("cherry_oak_stick_fence_gate", WoodType.OAK));
+    public static final Block CHERRY_OAK_SPIRE = registerBlock("cherry_oak_spire", new Fence("cherry_oak_spire"));
+    public static final Block CHERRY_OAK_SPIRE_GATE = registerBlock("cherry_oak_spire_fence_gate", new FenceGate("cherry_oak_spire_fence_gate", WoodType.OAK));
+
+    public static final Block CHERRY_SPRUCE_DECORATION = registerBlock("cherry_spruce_decoration", new Fence("cherry_spruce_decoration"));
+    public static final Block CHERRY_SPRUCE_DECORATION_GATE = registerBlock("cherry_spruce_decoration_fence_gate", new FenceGate("cherry_spruce_decoration_fence_gate", WoodType.SPRUCE));
+    public static final Block CHERRY_SPRUCE_GARDEN = registerBlock("cherry_spruce_garden", new Fence("cherry_spruce_garden"));
+    public static final Block CHERRY_SPRUCE_GARDEN_GATE = registerBlock("cherry_spruce_garden_fence_gate", new FenceGate("cherry_spruce_garden_fence_gate", WoodType.SPRUCE));
+    public static final Block CHERRY_SPRUCE_BOLLARD = registerBlock("cherry_spruce_bollard", new Fence("cherry_spruce_bollard"));
+    public static final Block CHERRY_SPRUCE_BOLLARD_GATE = registerBlock("cherry_spruce_bollard_fence_gate", new FenceGate("cherry_spruce_bollard_fence_gate", WoodType.SPRUCE));
+    public static final Block CHERRY_SPRUCE_STICK = registerBlock("cherry_spruce_stick", new Fence("cherry_spruce_stick"));
+    public static final Block CHERRY_SPRUCE_STICK_GATE = registerBlock("cherry_spruce_stick_fence_gate", new FenceGate("cherry_spruce_stick_fence_gate", WoodType.SPRUCE));
+    public static final Block CHERRY_SPRUCE_SPIRE = registerBlock("cherry_spruce_spire", new Fence("cherry_spruce_spire"));
+    public static final Block CHERRY_SPRUCE_SPIRE_GATE = registerBlock("cherry_spruce_spire_fence_gate", new FenceGate("cherry_spruce_spire_fence_gate", WoodType.SPRUCE));
+
+    public static final Block CHERRY_BIRCH_DECORATION = registerBlock("cherry_birch_decoration", new Fence("cherry_birch_decoration"));
+    public static final Block CHERRY_BIRCH_DECORATION_GATE = registerBlock("cherry_birch_decoration_fence_gate", new FenceGate("cherry_birch_decoration_fence_gate", WoodType.BIRCH));
+    public static final Block CHERRY_BIRCH_GARDEN = registerBlock("cherry_birch_garden", new Fence("cherry_birch_garden"));
+    public static final Block CHERRY_BIRCH_GARDEN_GATE = registerBlock("cherry_birch_garden_fence_gate", new FenceGate("cherry_birch_garden_fence_gate", WoodType.BIRCH));
+    public static final Block CHERRY_BIRCH_BOLLARD = registerBlock("cherry_birch_bollard", new Fence("cherry_birch_bollard"));
+    public static final Block CHERRY_BIRCH_BOLLARD_GATE = registerBlock("cherry_birch_bollard_fence_gate", new FenceGate("cherry_birch_bollard_fence_gate", WoodType.BIRCH));
+    public static final Block CHERRY_BIRCH_STICK = registerBlock("cherry_birch_stick", new Fence("cherry_birch_stick"));
+    public static final Block CHERRY_BIRCH_STICK_GATE = registerBlock("cherry_birch_stick_fence_gate", new FenceGate("cherry_birch_stick_fence_gate", WoodType.BIRCH));
+    public static final Block CHERRY_BIRCH_SPIRE = registerBlock("cherry_birch_spire", new Fence("cherry_birch_spire"));
+    public static final Block CHERRY_BIRCH_SPIRE_GATE = registerBlock("cherry_birch_spire_fence_gate", new FenceGate("cherry_birch_spire_fence_gate", WoodType.BIRCH));
+
+    public static final Block CHERRY_ACACIA_DECORATION = registerBlock("cherry_acacia_decoration", new Fence("cherry_acacia_decoration"));
+    public static final Block CHERRY_ACACIA_DECORATION_GATE = registerBlock("cherry_acacia_decoration_fence_gate", new FenceGate("cherry_acacia_decoration_fence_gate", WoodType.ACACIA));
+    public static final Block CHERRY_ACACIA_GARDEN = registerBlock("cherry_acacia_garden", new Fence("cherry_acacia_garden"));
+    public static final Block CHERRY_ACACIA_GARDEN_GATE = registerBlock("cherry_acacia_garden_fence_gate", new FenceGate("cherry_acacia_garden_fence_gate", WoodType.ACACIA));
+    public static final Block CHERRY_ACACIA_BOLLARD = registerBlock("cherry_acacia_bollard", new Fence("cherry_acacia_bollard"));
+    public static final Block CHERRY_ACACIA_BOLLARD_GATE = registerBlock("cherry_acacia_bollard_fence_gate", new FenceGate("cherry_acacia_bollard_fence_gate", WoodType.ACACIA));
+    public static final Block CHERRY_ACACIA_STICK = registerBlock("cherry_acacia_stick", new Fence("cherry_acacia_stick"));
+    public static final Block CHERRY_ACACIA_STICK_GATE = registerBlock("cherry_acacia_stick_fence_gate", new FenceGate("cherry_acacia_stick_fence_gate", WoodType.ACACIA));
+    public static final Block CHERRY_ACACIA_SPIRE = registerBlock("cherry_acacia_spire", new Fence("cherry_acacia_spire"));
+    public static final Block CHERRY_ACACIA_SPIRE_GATE = registerBlock("cherry_acacia_spire_fence_gate", new FenceGate("cherry_acacia_spire_fence_gate", WoodType.ACACIA));
+
+    public static final Block CHERRY_JUNGLE_DECORATION = registerBlock("cherry_jungle_decoration", new Fence("cherry_jungle_decoration"));
+    public static final Block CHERRY_JUNGLE_DECORATION_GATE = registerBlock("cherry_jungle_decoration_fence_gate", new FenceGate("cherry_jungle_decoration_fence_gate", WoodType.JUNGLE));
+    public static final Block CHERRY_JUNGLE_GARDEN = registerBlock("cherry_jungle_garden", new Fence("cherry_jungle_garden"));
+    public static final Block CHERRY_JUNGLE_GARDEN_GATE = registerBlock("cherry_jungle_garden_fence_gate", new FenceGate("cherry_jungle_garden_fence_gate", WoodType.JUNGLE));
+    public static final Block CHERRY_JUNGLE_BOLLARD = registerBlock("cherry_jungle_bollard", new Fence("cherry_jungle_bollard"));
+    public static final Block CHERRY_JUNGLE_BOLLARD_GATE = registerBlock("cherry_jungle_bollard_fence_gate", new FenceGate("cherry_jungle_bollard_fence_gate", WoodType.JUNGLE));
+    public static final Block CHERRY_JUNGLE_STICK = registerBlock("cherry_jungle_stick", new Fence("cherry_jungle_stick"));
+    public static final Block CHERRY_JUNGLE_STICK_GATE = registerBlock("cherry_jungle_stick_fence_gate", new FenceGate("cherry_jungle_stick_fence_gate", WoodType.JUNGLE));
+    public static final Block CHERRY_JUNGLE_SPIRE = registerBlock("cherry_jungle_spire", new Fence("cherry_jungle_spire"));
+    public static final Block CHERRY_JUNGLE_SPIRE_GATE = registerBlock("cherry_jungle_spire_fence_gate", new FenceGate("cherry_jungle_spire_fence_gate", WoodType.JUNGLE));
+
+    public static final Block CHERRY_DARKOAK_DECORATION = registerBlock("cherry_darkoak_decoration", new Fence("cherry_darkoak_decoration"));
+    public static final Block CHERRY_DARKOAK_DECORATION_GATE = registerBlock("cherry_darkoak_decoration_fence_gate", new FenceGate("cherry_darkoak_decoration_fence_gate", WoodType.DARK_OAK));
+    public static final Block CHERRY_DARKOAK_GARDEN = registerBlock("cherry_darkoak_garden", new Fence("cherry_darkoak_garden"));
+    public static final Block CHERRY_DARKOAK_GARDEN_GATE = registerBlock("cherry_darkoak_garden_fence_gate", new FenceGate("cherry_darkoak_garden_fence_gate", WoodType.DARK_OAK));
+    public static final Block CHERRY_DARKOAK_BOLLARD = registerBlock("cherry_darkoak_bollard", new Fence("cherry_darkoak_bollard"));
+    public static final Block CHERRY_DARKOAK_BOLLARD_GATE = registerBlock("cherry_darkoak_bollard_fence_gate", new FenceGate("cherry_darkoak_bollard_fence_gate", WoodType.DARK_OAK));
+    public static final Block CHERRY_DARKOAK_STICK = registerBlock("cherry_darkoak_stick", new Fence("cherry_darkoak_stick"));
+    public static final Block CHERRY_DARKOAK_STICK_GATE = registerBlock("cherry_darkoak_stick_fence_gate", new FenceGate("cherry_darkoak_stick_fence_gate", WoodType.DARK_OAK));
+    public static final Block CHERRY_DARKOAK_SPIRE = registerBlock("cherry_darkoak_spire", new Fence("cherry_darkoak_spire"));
+    public static final Block CHERRY_DARKOAK_SPIRE_GATE = registerBlock("cherry_darkoak_spire_fence_gate", new FenceGate("cherry_darkoak_spire_fence_gate", WoodType.DARK_OAK));
+
+    public static final Block CHERRY_CRIMSON_DECORATION = registerBlock("cherry_crimson_decoration", new Fence("cherry_crimson_decoration"));
+    public static final Block CHERRY_CRIMSON_DECORATION_GATE = registerBlock("cherry_crimson_decoration_fence_gate", new FenceGate("cherry_crimson_decoration_fence_gate", WoodType.CRIMSON));
+    public static final Block CHERRY_CRIMSON_GARDEN = registerBlock("cherry_crimson_garden", new Fence("cherry_crimson_garden"));
+    public static final Block CHERRY_CRIMSON_GARDEN_GATE = registerBlock("cherry_crimson_garden_fence_gate", new FenceGate("cherry_crimson_garden_fence_gate", WoodType.CRIMSON));
+    public static final Block CHERRY_CRIMSON_BOLLARD = registerBlock("cherry_crimson_bollard", new Fence("cherry_crimson_bollard"));
+    public static final Block CHERRY_CRIMSON_BOLLARD_GATE = registerBlock("cherry_crimson_bollard_fence_gate", new FenceGate("cherry_crimson_bollard_fence_gate", WoodType.CRIMSON));
+    public static final Block CHERRY_CRIMSON_STICK = registerBlock("cherry_crimson_stick", new Fence("cherry_crimson_stick"));
+    public static final Block CHERRY_CRIMSON_STICK_GATE = registerBlock("cherry_crimson_stick_fence_gate", new FenceGate("cherry_crimson_stick_fence_gate", WoodType.CRIMSON));
+    public static final Block CHERRY_CRIMSON_SPIRE = registerBlock("cherry_crimson_spire", new Fence("cherry_crimson_spire"));
+    public static final Block CHERRY_CRIMSON_SPIRE_GATE = registerBlock("cherry_crimson_spire_fence_gate", new FenceGate("cherry_crimson_spire_fence_gate", WoodType.CRIMSON));
+
+    public static final Block CHERRY_WARPED_DECORATION = registerBlock("cherry_warped_decoration", new Fence("cherry_warped_decoration"));
+    public static final Block CHERRY_WARPED_DECORATION_GATE = registerBlock("cherry_warped_decoration_fence_gate", new FenceGate("cherry_warped_decoration_fence_gate", WoodType.WARPED));
+    public static final Block CHERRY_WARPED_GARDEN = registerBlock("cherry_warped_garden", new Fence("cherry_warped_garden"));
+    public static final Block CHERRY_WARPED_GARDEN_GATE = registerBlock("cherry_warped_garden_fence_gate", new FenceGate("cherry_warped_garden_fence_gate", WoodType.WARPED));
+    public static final Block CHERRY_WARPED_BOLLARD = registerBlock("cherry_warped_bollard", new Fence("cherry_warped_bollard"));
+    public static final Block CHERRY_WARPED_BOLLARD_GATE = registerBlock("cherry_warped_bollard_fence_gate", new FenceGate("cherry_warped_bollard_fence_gate", WoodType.WARPED));
+    public static final Block CHERRY_WARPED_STICK = registerBlock("cherry_warped_stick", new Fence("cherry_warped_stick"));
+    public static final Block CHERRY_WARPED_STICK_GATE = registerBlock("cherry_warped_stick_fence_gate", new FenceGate("cherry_warped_stick_fence_gate", WoodType.WARPED));
+    public static final Block CHERRY_WARPED_SPIRE = registerBlock("cherry_warped_spire", new Fence("cherry_warped_spire"));
+    public static final Block CHERRY_WARPED_SPIRE_GATE = registerBlock("cherry_warped_spire_fence_gate", new FenceGate("cherry_warped_spire_fence_gate", WoodType.WARPED));
+
+    public static final Block CHERRY_MANGROVE_DECORATION = registerBlock("cherry_mangrove_decoration", new Fence("cherry_mangrove_decoration"));
+    public static final Block CHERRY_MANGROVE_DECORATION_GATE = registerBlock("cherry_mangrove_decoration_fence_gate", new FenceGate("cherry_mangrove_decoration_fence_gate", WoodType.MANGROVE));
+    public static final Block CHERRY_MANGROVE_GARDEN = registerBlock("cherry_mangrove_garden", new Fence("cherry_mangrove_garden"));
+    public static final Block CHERRY_MANGROVE_GARDEN_GATE = registerBlock("cherry_mangrove_garden_fence_gate", new FenceGate("cherry_mangrove_garden_fence_gate", WoodType.MANGROVE));
+    public static final Block CHERRY_MANGROVE_BOLLARD = registerBlock("cherry_mangrove_bollard", new Fence("cherry_mangrove_bollard"));
+    public static final Block CHERRY_MANGROVE_BOLLARD_GATE = registerBlock("cherry_mangrove_bollard_fence_gate", new FenceGate("cherry_mangrove_bollard_fence_gate", WoodType.MANGROVE));
+    public static final Block CHERRY_MANGROVE_STICK = registerBlock("cherry_mangrove_stick", new Fence("cherry_mangrove_stick"));
+    public static final Block CHERRY_MANGROVE_STICK_GATE = registerBlock("cherry_mangrove_stick_fence_gate", new FenceGate("cherry_mangrove_stick_fence_gate", WoodType.MANGROVE));
+    public static final Block CHERRY_MANGROVE_SPIRE = registerBlock("cherry_mangrove_spire", new Fence("cherry_mangrove_spire"));
+    public static final Block CHERRY_MANGROVE_SPIRE_GATE = registerBlock("cherry_mangrove_spire_fence_gate", new FenceGate("cherry_mangrove_spire_fence_gate", WoodType.MANGROVE));
+
+    public static final Block CHERRY_BAMBOO_DECORATION = registerBlock("cherry_bamboo_decoration", new Fence("cherry_bamboo_decoration"));
+    public static final Block CHERRY_BAMBOO_DECORATION_GATE = registerBlock("cherry_bamboo_decoration_fence_gate", new FenceGate("cherry_bamboo_decoration_fence_gate", WoodType.BAMBOO));
+    public static final Block CHERRY_BAMBOO_GARDEN = registerBlock("cherry_bamboo_garden", new Fence("cherry_bamboo_garden"));
+    public static final Block CHERRY_BAMBOO_GARDEN_GATE = registerBlock("cherry_bamboo_garden_fence_gate", new FenceGate("cherry_bamboo_garden_fence_gate", WoodType.BAMBOO));
+    public static final Block CHERRY_BAMBOO_BOLLARD = registerBlock("cherry_bamboo_bollard", new Fence("cherry_bamboo_bollard"));
+    public static final Block CHERRY_BAMBOO_BOLLARD_GATE = registerBlock("cherry_bamboo_bollard_fence_gate", new FenceGate("cherry_bamboo_bollard_fence_gate", WoodType.BAMBOO));
+    public static final Block CHERRY_BAMBOO_STICK = registerBlock("cherry_bamboo_stick", new Fence("cherry_bamboo_stick"));
+    public static final Block CHERRY_BAMBOO_STICK_GATE = registerBlock("cherry_bamboo_stick_fence_gate", new FenceGate("cherry_bamboo_stick_fence_gate", WoodType.BAMBOO));
+    public static final Block CHERRY_BAMBOO_SPIRE = registerBlock("cherry_bamboo_spire", new Fence("cherry_bamboo_spire"));
+    public static final Block CHERRY_BAMBOO_SPIRE_GATE = registerBlock("cherry_bamboo_spire_fence_gate", new FenceGate("cherry_bamboo_spire_fence_gate", WoodType.BAMBOO));
+
+    public static final Block CHERRY_PALE_OAK_DECORATION = registerBlock("cherry_pale_oak_decoration", new Fence("cherry_pale_oak_decoration"));
+    public static final Block CHERRY_PALE_OAK_DECORATION_GATE = registerBlock("cherry_pale_oak_decoration_fence_gate", new FenceGate("cherry_pale_oak_decoration_fence_gate", WoodType.PALE_OAK));
+    public static final Block CHERRY_PALE_OAK_GARDEN = registerBlock("cherry_pale_oak_garden", new Fence("cherry_pale_oak_garden"));
+    public static final Block CHERRY_PALE_OAK_GARDEN_GATE = registerBlock("cherry_pale_oak_garden_fence_gate", new FenceGate("cherry_pale_oak_garden_fence_gate", WoodType.PALE_OAK));
+    public static final Block CHERRY_PALE_OAK_BOLLARD = registerBlock("cherry_pale_oak_bollard", new Fence("cherry_pale_oak_bollard"));
+    public static final Block CHERRY_PALE_OAK_BOLLARD_GATE = registerBlock("cherry_pale_oak_bollard_fence_gate", new FenceGate("cherry_pale_oak_bollard_fence_gate", WoodType.PALE_OAK));
+    public static final Block CHERRY_PALE_OAK_STICK = registerBlock("cherry_pale_oak_stick", new Fence("cherry_pale_oak_stick"));
+    public static final Block CHERRY_PALE_OAK_STICK_GATE = registerBlock("cherry_pale_oak_stick_fence_gate", new FenceGate("cherry_pale_oak_stick_fence_gate", WoodType.PALE_OAK));
+    public static final Block CHERRY_PALE_OAK_SPIRE = registerBlock("cherry_pale_oak_spire", new Fence("cherry_pale_oak_spire"));
+    public static final Block CHERRY_PALE_OAK_SPIRE_GATE = registerBlock("cherry_pale_oak_spire_fence_gate", new FenceGate("cherry_pale_oak_spire_fence_gate", WoodType.PALE_OAK));
+
+    public static final Block PALE_OAK_OAK_DECORATION = registerBlock("pale_oak_oak_decoration", new Fence("pale_oak_oak_decoration"));
+    public static final Block PALE_OAK_OAK_DECORATION_GATE = registerBlock("pale_oak_oak_decoration_fence_gate", new FenceGate("pale_oak_oak_decoration_fence_gate", WoodType.OAK));
+    public static final Block PALE_OAK_OAK_GARDEN = registerBlock("pale_oak_oak_garden", new Fence("pale_oak_oak_garden"));
+    public static final Block PALE_OAK_OAK_GARDEN_GATE = registerBlock("pale_oak_oak_garden_fence_gate", new FenceGate("pale_oak_oak_garden_fence_gate", WoodType.OAK));
+    public static final Block PALE_OAK_OAK_BOLLARD = registerBlock("pale_oak_oak_bollard", new Fence("pale_oak_oak_bollard"));
+    public static final Block PALE_OAK_OAK_BOLLARD_GATE = registerBlock("pale_oak_oak_bollard_fence_gate", new FenceGate("pale_oak_oak_bollard_fence_gate", WoodType.OAK));
+    public static final Block PALE_OAK_OAK_STICK = registerBlock("pale_oak_oak_stick", new Fence("pale_oak_oak_stick"));
+    public static final Block PALE_OAK_OAK_STICK_GATE = registerBlock("pale_oak_oak_stick_fence_gate", new FenceGate("pale_oak_oak_stick_fence_gate", WoodType.OAK));
+    public static final Block PALE_OAK_OAK_SPIRE = registerBlock("pale_oak_oak_spire", new Fence("pale_oak_oak_spire"));
+    public static final Block PALE_OAK_OAK_SPIRE_GATE = registerBlock("pale_oak_oak_spire_fence_gate", new FenceGate("pale_oak_oak_spire_fence_gate", WoodType.OAK));
+
+    public static final Block PALE_OAK_SPRUCE_DECORATION = registerBlock("pale_oak_spruce_decoration", new Fence("pale_oak_spruce_decoration"));
+    public static final Block PALE_OAK_SPRUCE_DECORATION_GATE = registerBlock("pale_oak_spruce_decoration_fence_gate", new FenceGate("pale_oak_spruce_decoration_fence_gate", WoodType.SPRUCE));
+    public static final Block PALE_OAK_SPRUCE_GARDEN = registerBlock("pale_oak_spruce_garden", new Fence("pale_oak_spruce_garden"));
+    public static final Block PALE_OAK_SPRUCE_GARDEN_GATE = registerBlock("pale_oak_spruce_garden_fence_gate", new FenceGate("pale_oak_spruce_garden_fence_gate", WoodType.SPRUCE));
+    public static final Block PALE_OAK_SPRUCE_BOLLARD = registerBlock("pale_oak_spruce_bollard", new Fence("pale_oak_spruce_bollard"));
+    public static final Block PALE_OAK_SPRUCE_BOLLARD_GATE = registerBlock("pale_oak_spruce_bollard_fence_gate", new FenceGate("pale_oak_spruce_bollard_fence_gate", WoodType.SPRUCE));
+    public static final Block PALE_OAK_SPRUCE_STICK = registerBlock("pale_oak_spruce_stick", new Fence("pale_oak_spruce_stick"));
+    public static final Block PALE_OAK_SPRUCE_STICK_GATE = registerBlock("pale_oak_spruce_stick_fence_gate", new FenceGate("pale_oak_spruce_stick_fence_gate", WoodType.SPRUCE));
+    public static final Block PALE_OAK_SPRUCE_SPIRE = registerBlock("pale_oak_spruce_spire", new Fence("pale_oak_spruce_spire"));
+    public static final Block PALE_OAK_SPRUCE_SPIRE_GATE = registerBlock("pale_oak_spruce_spire_fence_gate", new FenceGate("pale_oak_spruce_spire_fence_gate", WoodType.SPRUCE));
+
+    public static final Block PALE_OAK_BIRCH_DECORATION = registerBlock("pale_oak_birch_decoration", new Fence("pale_oak_birch_decoration"));
+    public static final Block PALE_OAK_BIRCH_DECORATION_GATE = registerBlock("pale_oak_birch_decoration_fence_gate", new FenceGate("pale_oak_birch_decoration_fence_gate", WoodType.BIRCH));
+    public static final Block PALE_OAK_BIRCH_GARDEN = registerBlock("pale_oak_birch_garden", new Fence("pale_oak_birch_garden"));
+    public static final Block PALE_OAK_BIRCH_GARDEN_GATE = registerBlock("pale_oak_birch_garden_fence_gate", new FenceGate("pale_oak_birch_garden_fence_gate", WoodType.BIRCH));
+    public static final Block PALE_OAK_BIRCH_BOLLARD = registerBlock("pale_oak_birch_bollard", new Fence("pale_oak_birch_bollard"));
+    public static final Block PALE_OAK_BIRCH_BOLLARD_GATE = registerBlock("pale_oak_birch_bollard_fence_gate", new FenceGate("pale_oak_birch_bollard_fence_gate", WoodType.BIRCH));
+    public static final Block PALE_OAK_BIRCH_STICK = registerBlock("pale_oak_birch_stick", new Fence("pale_oak_birch_stick"));
+    public static final Block PALE_OAK_BIRCH_STICK_GATE = registerBlock("pale_oak_birch_stick_fence_gate", new FenceGate("pale_oak_birch_stick_fence_gate", WoodType.BIRCH));
+    public static final Block PALE_OAK_BIRCH_SPIRE = registerBlock("pale_oak_birch_spire", new Fence("pale_oak_birch_spire"));
+    public static final Block PALE_OAK_BIRCH_SPIRE_GATE = registerBlock("pale_oak_birch_spire_fence_gate", new FenceGate("pale_oak_birch_spire_fence_gate", WoodType.BIRCH));
+
+    public static final Block PALE_OAK_ACACIA_DECORATION = registerBlock("pale_oak_acacia_decoration", new Fence("pale_oak_acacia_decoration"));
+    public static final Block PALE_OAK_ACACIA_DECORATION_GATE = registerBlock("pale_oak_acacia_decoration_fence_gate", new FenceGate("pale_oak_acacia_decoration_fence_gate", WoodType.ACACIA));
+    public static final Block PALE_OAK_ACACIA_GARDEN = registerBlock("pale_oak_acacia_garden", new Fence("pale_oak_acacia_garden"));
+    public static final Block PALE_OAK_ACACIA_GARDEN_GATE = registerBlock("pale_oak_acacia_garden_fence_gate", new FenceGate("pale_oak_acacia_garden_fence_gate", WoodType.ACACIA));
+    public static final Block PALE_OAK_ACACIA_BOLLARD = registerBlock("pale_oak_acacia_bollard", new Fence("pale_oak_acacia_bollard"));
+    public static final Block PALE_OAK_ACACIA_BOLLARD_GATE = registerBlock("pale_oak_acacia_bollard_fence_gate", new FenceGate("pale_oak_acacia_bollard_fence_gate", WoodType.ACACIA));
+    public static final Block PALE_OAK_ACACIA_STICK = registerBlock("pale_oak_acacia_stick", new Fence("pale_oak_acacia_stick"));
+    public static final Block PALE_OAK_ACACIA_STICK_GATE = registerBlock("pale_oak_acacia_stick_fence_gate", new FenceGate("pale_oak_acacia_stick_fence_gate", WoodType.ACACIA));
+    public static final Block PALE_OAK_ACACIA_SPIRE = registerBlock("pale_oak_acacia_spire", new Fence("pale_oak_acacia_spire"));
+    public static final Block PALE_OAK_ACACIA_SPIRE_GATE = registerBlock("pale_oak_acacia_spire_fence_gate", new FenceGate("pale_oak_acacia_spire_fence_gate", WoodType.ACACIA));
+
+    public static final Block PALE_OAK_JUNGLE_DECORATION = registerBlock("pale_oak_jungle_decoration", new Fence("pale_oak_jungle_decoration"));
+    public static final Block PALE_OAK_JUNGLE_DECORATION_GATE = registerBlock("pale_oak_jungle_decoration_fence_gate", new FenceGate("pale_oak_jungle_decoration_fence_gate", WoodType.JUNGLE));
+    public static final Block PALE_OAK_JUNGLE_GARDEN = registerBlock("pale_oak_jungle_garden", new Fence("pale_oak_jungle_garden"));
+    public static final Block PALE_OAK_JUNGLE_GARDEN_GATE = registerBlock("pale_oak_jungle_garden_fence_gate", new FenceGate("pale_oak_jungle_garden_fence_gate", WoodType.JUNGLE));
+    public static final Block PALE_OAK_JUNGLE_BOLLARD = registerBlock("pale_oak_jungle_bollard", new Fence("pale_oak_jungle_bollard"));
+    public static final Block PALE_OAK_JUNGLE_BOLLARD_GATE = registerBlock("pale_oak_jungle_bollard_fence_gate", new FenceGate("pale_oak_jungle_bollard_fence_gate", WoodType.JUNGLE));
+    public static final Block PALE_OAK_JUNGLE_STICK = registerBlock("pale_oak_jungle_stick", new Fence("pale_oak_jungle_stick"));
+    public static final Block PALE_OAK_JUNGLE_STICK_GATE = registerBlock("pale_oak_jungle_stick_fence_gate", new FenceGate("pale_oak_jungle_stick_fence_gate", WoodType.JUNGLE));
+    public static final Block PALE_OAK_JUNGLE_SPIRE = registerBlock("pale_oak_jungle_spire", new Fence("pale_oak_jungle_spire"));
+    public static final Block PALE_OAK_JUNGLE_SPIRE_GATE = registerBlock("pale_oak_jungle_spire_fence_gate", new FenceGate("pale_oak_jungle_spire_fence_gate", WoodType.JUNGLE));
+
+    public static final Block PALE_OAK_DARKOAK_DECORATION = registerBlock("pale_oak_darkoak_decoration", new Fence("pale_oak_darkoak_decoration"));
+    public static final Block PALE_OAK_DARKOAK_DECORATION_GATE = registerBlock("pale_oak_darkoak_decoration_fence_gate", new FenceGate("pale_oak_darkoak_decoration_fence_gate", WoodType.DARK_OAK));
+    public static final Block PALE_OAK_DARKOAK_GARDEN = registerBlock("pale_oak_darkoak_garden", new Fence("pale_oak_darkoak_garden"));
+    public static final Block PALE_OAK_DARKOAK_GARDEN_GATE = registerBlock("pale_oak_darkoak_garden_fence_gate", new FenceGate("pale_oak_darkoak_garden_fence_gate", WoodType.DARK_OAK));
+    public static final Block PALE_OAK_DARKOAK_BOLLARD = registerBlock("pale_oak_darkoak_bollard", new Fence("pale_oak_darkoak_bollard"));
+    public static final Block PALE_OAK_DARKOAK_BOLLARD_GATE = registerBlock("pale_oak_darkoak_bollard_fence_gate", new FenceGate("pale_oak_darkoak_bollard_fence_gate", WoodType.DARK_OAK));
+    public static final Block PALE_OAK_DARKOAK_STICK = registerBlock("pale_oak_darkoak_stick", new Fence("pale_oak_darkoak_stick"));
+    public static final Block PALE_OAK_DARKOAK_STICK_GATE = registerBlock("pale_oak_darkoak_stick_fence_gate", new FenceGate("pale_oak_darkoak_stick_fence_gate", WoodType.DARK_OAK));
+    public static final Block PALE_OAK_DARKOAK_SPIRE = registerBlock("pale_oak_darkoak_spire", new Fence("pale_oak_darkoak_spire"));
+    public static final Block PALE_OAK_DARKOAK_SPIRE_GATE = registerBlock("pale_oak_darkoak_spire_fence_gate", new FenceGate("pale_oak_darkoak_spire_fence_gate", WoodType.DARK_OAK));
+
+    public static final Block PALE_OAK_CRIMSON_DECORATION = registerBlock("pale_oak_crimson_decoration", new Fence("pale_oak_crimson_decoration"));
+    public static final Block PALE_OAK_CRIMSON_DECORATION_GATE = registerBlock("pale_oak_crimson_decoration_fence_gate", new FenceGate("pale_oak_crimson_decoration_fence_gate", WoodType.CRIMSON));
+    public static final Block PALE_OAK_CRIMSON_GARDEN = registerBlock("pale_oak_crimson_garden", new Fence("pale_oak_crimson_garden"));
+    public static final Block PALE_OAK_CRIMSON_GARDEN_GATE = registerBlock("pale_oak_crimson_garden_fence_gate", new FenceGate("pale_oak_crimson_garden_fence_gate", WoodType.CRIMSON));
+    public static final Block PALE_OAK_CRIMSON_BOLLARD = registerBlock("pale_oak_crimson_bollard", new Fence("pale_oak_crimson_bollard"));
+    public static final Block PALE_OAK_CRIMSON_BOLLARD_GATE = registerBlock("pale_oak_crimson_bollard_fence_gate", new FenceGate("pale_oak_crimson_bollard_fence_gate", WoodType.CRIMSON));
+    public static final Block PALE_OAK_CRIMSON_STICK = registerBlock("pale_oak_crimson_stick", new Fence("pale_oak_crimson_stick"));
+    public static final Block PALE_OAK_CRIMSON_STICK_GATE = registerBlock("pale_oak_crimson_stick_fence_gate", new FenceGate("pale_oak_crimson_stick_fence_gate", WoodType.CRIMSON));
+    public static final Block PALE_OAK_CRIMSON_SPIRE = registerBlock("pale_oak_crimson_spire", new Fence("pale_oak_crimson_spire"));
+    public static final Block PALE_OAK_CRIMSON_SPIRE_GATE = registerBlock("pale_oak_crimson_spire_fence_gate", new FenceGate("pale_oak_crimson_spire_fence_gate", WoodType.CRIMSON));
+
+    public static final Block PALE_OAK_WARPED_DECORATION = registerBlock("pale_oak_warped_decoration", new Fence("pale_oak_warped_decoration"));
+    public static final Block PALE_OAK_WARPED_DECORATION_GATE = registerBlock("pale_oak_warped_decoration_fence_gate", new FenceGate("pale_oak_warped_decoration_fence_gate", WoodType.WARPED));
+    public static final Block PALE_OAK_WARPED_GARDEN = registerBlock("pale_oak_warped_garden", new Fence("pale_oak_warped_garden"));
+    public static final Block PALE_OAK_WARPED_GARDEN_GATE = registerBlock("pale_oak_warped_garden_fence_gate", new FenceGate("pale_oak_warped_garden_fence_gate", WoodType.WARPED));
+    public static final Block PALE_OAK_WARPED_BOLLARD = registerBlock("pale_oak_warped_bollard", new Fence("pale_oak_warped_bollard"));
+    public static final Block PALE_OAK_WARPED_BOLLARD_GATE = registerBlock("pale_oak_warped_bollard_fence_gate", new FenceGate("pale_oak_warped_bollard_fence_gate", WoodType.WARPED));
+    public static final Block PALE_OAK_WARPED_STICK = registerBlock("pale_oak_warped_stick", new Fence("pale_oak_warped_stick"));
+    public static final Block PALE_OAK_WARPED_STICK_GATE = registerBlock("pale_oak_warped_stick_fence_gate", new FenceGate("pale_oak_warped_stick_fence_gate", WoodType.WARPED));
+    public static final Block PALE_OAK_WARPED_SPIRE = registerBlock("pale_oak_warped_spire", new Fence("pale_oak_warped_spire"));
+    public static final Block PALE_OAK_WARPED_SPIRE_GATE = registerBlock("pale_oak_warped_spire_fence_gate", new FenceGate("pale_oak_warped_spire_fence_gate", WoodType.WARPED));
+
+    public static final Block PALE_OAK_MANGROVE_DECORATION = registerBlock("pale_oak_mangrove_decoration", new Fence("pale_oak_mangrove_decoration"));
+    public static final Block PALE_OAK_MANGROVE_DECORATION_GATE = registerBlock("pale_oak_mangrove_decoration_fence_gate", new FenceGate("pale_oak_mangrove_decoration_fence_gate", WoodType.MANGROVE));
+    public static final Block PALE_OAK_MANGROVE_GARDEN = registerBlock("pale_oak_mangrove_garden", new Fence("pale_oak_mangrove_garden"));
+    public static final Block PALE_OAK_MANGROVE_GARDEN_GATE = registerBlock("pale_oak_mangrove_garden_fence_gate", new FenceGate("pale_oak_mangrove_garden_fence_gate", WoodType.MANGROVE));
+    public static final Block PALE_OAK_MANGROVE_BOLLARD = registerBlock("pale_oak_mangrove_bollard", new Fence("pale_oak_mangrove_bollard"));
+    public static final Block PALE_OAK_MANGROVE_BOLLARD_GATE = registerBlock("pale_oak_mangrove_bollard_fence_gate", new FenceGate("pale_oak_mangrove_bollard_fence_gate", WoodType.MANGROVE));
+    public static final Block PALE_OAK_MANGROVE_STICK = registerBlock("pale_oak_mangrove_stick", new Fence("pale_oak_mangrove_stick"));
+    public static final Block PALE_OAK_MANGROVE_STICK_GATE = registerBlock("pale_oak_mangrove_stick_fence_gate", new FenceGate("pale_oak_mangrove_stick_fence_gate", WoodType.MANGROVE));
+    public static final Block PALE_OAK_MANGROVE_SPIRE = registerBlock("pale_oak_mangrove_spire", new Fence("pale_oak_mangrove_spire"));
+    public static final Block PALE_OAK_MANGROVE_SPIRE_GATE = registerBlock("pale_oak_mangrove_spire_fence_gate", new FenceGate("pale_oak_mangrove_spire_fence_gate", WoodType.MANGROVE));
+
+    public static final Block PALE_OAK_BAMBOO_DECORATION = registerBlock("pale_oak_bamboo_decoration", new Fence("pale_oak_bamboo_decoration"));
+    public static final Block PALE_OAK_BAMBOO_DECORATION_GATE = registerBlock("pale_oak_bamboo_decoration_fence_gate", new FenceGate("pale_oak_bamboo_decoration_fence_gate", WoodType.BAMBOO));
+    public static final Block PALE_OAK_BAMBOO_GARDEN = registerBlock("pale_oak_bamboo_garden", new Fence("pale_oak_bamboo_garden"));
+    public static final Block PALE_OAK_BAMBOO_GARDEN_GATE = registerBlock("pale_oak_bamboo_garden_fence_gate", new FenceGate("pale_oak_bamboo_garden_fence_gate", WoodType.BAMBOO));
+    public static final Block PALE_OAK_BAMBOO_BOLLARD = registerBlock("pale_oak_bamboo_bollard", new Fence("pale_oak_bamboo_bollard"));
+    public static final Block PALE_OAK_BAMBOO_BOLLARD_GATE = registerBlock("pale_oak_bamboo_bollard_fence_gate", new FenceGate("pale_oak_bamboo_bollard_fence_gate", WoodType.BAMBOO));
+    public static final Block PALE_OAK_BAMBOO_STICK = registerBlock("pale_oak_bamboo_stick", new Fence("pale_oak_bamboo_stick"));
+    public static final Block PALE_OAK_BAMBOO_STICK_GATE = registerBlock("pale_oak_bamboo_stick_fence_gate", new FenceGate("pale_oak_bamboo_stick_fence_gate", WoodType.BAMBOO));
+    public static final Block PALE_OAK_BAMBOO_SPIRE = registerBlock("pale_oak_bamboo_spire", new Fence("pale_oak_bamboo_spire"));
+    public static final Block PALE_OAK_BAMBOO_SPIRE_GATE = registerBlock("pale_oak_bamboo_spire_fence_gate", new FenceGate("pale_oak_bamboo_spire_fence_gate", WoodType.BAMBOO));
+
+    public static final Block PALE_OAK_CHERRY_DECORATION = registerBlock("pale_oak_cherry_decoration", new Fence("pale_oak_cherry_decoration"));
+    public static final Block PALE_OAK_CHERRY_DECORATION_GATE = registerBlock("pale_oak_cherry_decoration_fence_gate", new FenceGate("pale_oak_cherry_decoration_fence_gate", WoodType.CHERRY));
+    public static final Block PALE_OAK_CHERRY_GARDEN = registerBlock("pale_oak_cherry_garden", new Fence("pale_oak_cherry_garden"));
+    public static final Block PALE_OAK_CHERRY_GARDEN_GATE = registerBlock("pale_oak_cherry_garden_fence_gate", new FenceGate("pale_oak_cherry_garden_fence_gate", WoodType.CHERRY));
+    public static final Block PALE_OAK_CHERRY_BOLLARD = registerBlock("pale_oak_cherry_bollard", new Fence("pale_oak_cherry_bollard"));
+    public static final Block PALE_OAK_CHERRY_BOLLARD_GATE = registerBlock("pale_oak_cherry_bollard_fence_gate", new FenceGate("pale_oak_cherry_bollard_fence_gate", WoodType.CHERRY));
+    public static final Block PALE_OAK_CHERRY_STICK = registerBlock("pale_oak_cherry_stick", new Fence("pale_oak_cherry_stick"));
+    public static final Block PALE_OAK_CHERRY_STICK_GATE = registerBlock("pale_oak_cherry_stick_fence_gate", new FenceGate("pale_oak_cherry_stick_fence_gate", WoodType.CHERRY));
+    public static final Block PALE_OAK_CHERRY_SPIRE = registerBlock("pale_oak_cherry_spire", new Fence("pale_oak_cherry_spire"));
+    public static final Block PALE_OAK_CHERRY_SPIRE_GATE = registerBlock("pale_oak_cherry_spire_fence_gate", new FenceGate("pale_oak_cherry_spire_fence_gate", WoodType.CHERRY));
+
+
+
+    public static Block registerBlock(String name, Block block) {
+        registerBlockItem(name, block);
+        return Registry.register(Registries.BLOCK, Identifier.of(Main.MOD_ID, name), block);
+    }
+
+    public static void registerBlockItem(String name, Block block) {
+        Registry.register(Registries.ITEM, Identifier.of(Main.MOD_ID, name),
+                new BlockItem(block, new Item.Settings().registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Main.MOD_ID, name))).useBlockPrefixedTranslationKey()));
+    }
+
+    public static void registerModBlocks() {
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
+            entries.add(ModBlocksWoodFenceGateAdvanced.OAK_SPRUCE_DECORATION);
+        });
+    }
+
+}

@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "customfence:block/cherry_bamboo_bollard/cherry_bamboo_bollard"
+    "model": "customfence:block/cherry_bamboo_bollard/cherry_bamboo_bollard_inventory"
   }
 }

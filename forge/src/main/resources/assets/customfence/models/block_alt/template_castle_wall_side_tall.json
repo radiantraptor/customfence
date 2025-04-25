@@ -1,0 +1,33 @@
+{
+    "textures": {
+        "1": "#1"
+    },
+  "elements": [
+    {
+      "name": "Pfeiler",
+      "from": [3, 0, 3],
+      "to": [13, 16, 13],
+      "faces": {
+        "north": {"texture": "#1"},
+        "east": {"texture": "#1"},
+        "south": {"texture": "#1"},
+        "west": {"texture": "#1"},
+        "up": {"texture": "#1"},
+        "down": {"texture": "#1"}
+      }
+    },
+    {
+      "name": "Verbindung",
+      "from": [3, 0, 0],
+      "to": [13, 16, 3],
+      "faces": {
+        "north": {"texture": "#1"},
+        "east": {"texture": "#1"},
+        "south": {"texture": "#1"},
+        "west": {"texture": "#1"},
+        "up": {"texture": "#1"},
+        "down": {"texture": "#1"}
+      }
+    }
+  ]
+}

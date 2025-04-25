@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "customfence:block/iron_mesh_fence_gate/oxidized_iron_mesh_fence_gate_closed"
+    "model": "customfence:block/iron_mesh_fence_gate/waxed_oxidized_iron_mesh_fence_gate_closed"
   }
 }

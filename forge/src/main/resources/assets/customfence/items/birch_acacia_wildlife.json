@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "customfence:block/birch_acacia_wildlife/birch_acacia_wildlife"
+    "model": "customfence:block/birch_acacia_wildlife/birch_acacia_wildlife_inventory"
   }
 }

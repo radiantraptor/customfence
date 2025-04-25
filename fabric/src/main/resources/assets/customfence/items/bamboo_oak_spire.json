@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "customfence:block/bamboo_oak_spire/bamboo_oak_spire"
+    "model": "customfence:block/bamboo_oak_spire/bamboo_oak_spire_inventory"
   }
 }

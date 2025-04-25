@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "customfence:block/crimson_jungle_plank/crimson_jungle_plank"
+    "model": "customfence:block/crimson_jungle_plank/crimson_jungle_plank_inventory"
   }
 }

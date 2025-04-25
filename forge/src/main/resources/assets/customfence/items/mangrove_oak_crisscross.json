@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "customfence:block/mangrove_oak_crisscross/mangrove_oak_crisscross"
+    "model": "customfence:block/mangrove_oak_crisscross/mangrove_oak_crisscross_inventory"
   }
 }

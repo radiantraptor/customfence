@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "customfence:block/oak_wall_building/oak_wall_building"
+    "model": "customfence:block/oak_wall_building/oak_wall_building_inventory"
   }
 }

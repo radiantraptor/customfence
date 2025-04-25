@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "customfence:block/warped_oak_stick/warped_oak_stick_fence_gate_closed"
+  }
+}

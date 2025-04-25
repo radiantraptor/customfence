@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "customfence:block/bamboo_spruce_garden/bamboo_spruce_garden"
+    "model": "customfence:block/bamboo_spruce_garden/bamboo_spruce_garden_inventory"
   }
 }

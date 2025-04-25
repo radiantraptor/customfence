@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "customfence:block/oak_warped_plank/oak_warped_plank"
+    "model": "customfence:block/oak_warped_plank/oak_warped_plank_inventory"
   }
 }

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BAB",
+    "AAA",
+    "C C"
+   ],
+  "key": {
+    "A": "minecraft:crimson_planks",
+    "B": "minecraft:birch_planks",
+    "C": "minecraft:stick"
+  },
+  "result": {
+    "id": "customfence:birch_crimson_spire_fence_gate",
+    "count": 2
+  }
+}

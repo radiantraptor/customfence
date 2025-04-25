@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "B B",
+    "AAA",
+    "CBC"
+   ],
+  "key": {
+    "A": "minecraft:warped_planks",
+    "B": "minecraft:jungle_planks",
+    "C": "minecraft:stick"
+  },
+  "result": {
+    "id": "customfence:jungle_warped_garden",
+    "count": 4
+  }
+}

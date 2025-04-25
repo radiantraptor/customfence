@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "customfence:block/jungle_crisscross/jungle_crisscross_fence_gate_closed"
+  }
+}

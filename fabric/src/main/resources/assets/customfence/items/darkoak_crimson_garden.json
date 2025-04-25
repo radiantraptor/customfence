@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "customfence:block/darkoak_crimson_garden/darkoak_crimson_garden"
+    "model": "customfence:block/darkoak_crimson_garden/darkoak_crimson_garden_inventory"
   }
 }

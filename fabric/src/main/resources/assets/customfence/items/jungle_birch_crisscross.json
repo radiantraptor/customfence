@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "customfence:block/jungle_birch_crisscross/jungle_birch_crisscross"
+    "model": "customfence:block/jungle_birch_crisscross/jungle_birch_crisscross_inventory"
   }
 }

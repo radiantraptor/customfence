@@ -1,0 +1,7 @@
+{
+  "parent": "customfence:block/template_building_wall_inventory",
+  "textures": {
+    "particle": "minecraft:block/spruce_planks",
+    "1": "minecraft:block/spruce_planks"
+  }
+}

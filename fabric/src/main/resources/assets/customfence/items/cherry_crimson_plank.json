@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "customfence:block/cherry_crimson_plank/cherry_crimson_plank"
+    "model": "customfence:block/cherry_crimson_plank/cherry_crimson_plank_inventory"
   }
 }

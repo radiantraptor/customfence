@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "A A",
+    "CBC"
+   ],
+  "key": {
+    "A": "minecraft:crimson_planks",
+    "B": "minecraft:warped_planks",
+    "C": "minecraft:stick"
+  },
+  "result": {
+    "id": "customfence:warped_crimson_plank",
+    "count": 4
+  }
+}

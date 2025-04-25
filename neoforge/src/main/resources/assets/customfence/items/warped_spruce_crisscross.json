@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "customfence:block/warped_spruce_crisscross/warped_spruce_crisscross"
+    "model": "customfence:block/warped_spruce_crisscross/warped_spruce_crisscross_inventory"
   }
 }
