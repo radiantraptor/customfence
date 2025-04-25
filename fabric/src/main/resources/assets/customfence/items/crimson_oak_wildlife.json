@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "customfence:block/crimson_oak_wildlife/crimson_oak_wildlife"
+    "model": "customfence:block/crimson_oak_wildlife/crimson_oak_wildlife_inventory"
   }
 }

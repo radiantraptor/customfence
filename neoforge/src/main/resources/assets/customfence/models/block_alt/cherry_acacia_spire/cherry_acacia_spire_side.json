@@ -1,0 +1,7 @@
+{
+  "parent": "customfence:block/template_spire_fence_side",
+  "textures": {
+    "1": "minecraft:block/cherry_planks",
+    "2": "minecraft:block/acacia_planks"
+  }
+}

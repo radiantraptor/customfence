@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "customfence:block/stone_bricks_building/stone_bricks_building_inventory"
+  }
+}

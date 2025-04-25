@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "customfence:block/copper_mansion_fence_gate/copper_mansion_fence_gate_closed"
+    "model": "customfence:block/copper_mansion_fence_gate/waxed_copper_mansion_fence_gate_closed"
   }
 }

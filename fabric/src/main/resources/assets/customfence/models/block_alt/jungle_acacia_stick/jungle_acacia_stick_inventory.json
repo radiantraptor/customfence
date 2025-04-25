@@ -1,0 +1,7 @@
+{
+  "parent": "customfence:block/template_stick_fence_inventory",
+  "textures": {
+    "1": "minecraft:block/jungle_planks",
+    "2": "minecraft:block/acacia_planks"
+  }
+}

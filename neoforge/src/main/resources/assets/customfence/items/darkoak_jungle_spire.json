@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "customfence:block/darkoak_jungle_spire/darkoak_jungle_spire"
+    "model": "customfence:block/darkoak_jungle_spire/darkoak_jungle_spire_inventory"
   }
 }

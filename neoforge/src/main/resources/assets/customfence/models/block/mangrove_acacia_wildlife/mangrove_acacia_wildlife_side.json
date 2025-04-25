@@ -1,0 +1,8 @@
+{
+  "parent": "customfence:block/template_wildlife_fence_side",
+  "textures": {
+    "particle": "minecraft:block/mangrove_planks",
+    "1": "minecraft:block/mangrove_planks",
+    "2": "minecraft:block/acacia_planks"
+  }
+}

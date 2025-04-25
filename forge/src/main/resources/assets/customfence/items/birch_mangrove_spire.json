@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "customfence:block/birch_mangrove_spire/birch_mangrove_spire"
+    "model": "customfence:block/birch_mangrove_spire/birch_mangrove_spire_inventory"
   }
 }

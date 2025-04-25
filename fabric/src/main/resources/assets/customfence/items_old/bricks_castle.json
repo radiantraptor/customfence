@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "customfence:block/bricks_castle/bricks_castle_inventory"
+  }
+}

@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "customfence:block/jungle_crimson_stick/jungle_crimson_stick"
+    "model": "customfence:block/jungle_crimson_stick/jungle_crimson_stick_inventory"
   }
 }

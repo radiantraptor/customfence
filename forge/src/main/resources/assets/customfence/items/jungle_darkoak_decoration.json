@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "customfence:block/jungle_darkoak_decoration/jungle_darkoak_decoration"
+    "model": "customfence:block/jungle_darkoak_decoration/jungle_darkoak_decoration_inventory"
   }
 }

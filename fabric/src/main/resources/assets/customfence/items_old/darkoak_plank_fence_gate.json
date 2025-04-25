@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "customfence:block/darkoak_plank/darkoak_plank_fence_gate_closed"
+  }
+}

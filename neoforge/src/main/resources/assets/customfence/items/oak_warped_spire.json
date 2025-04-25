@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "customfence:block/oak_warped_spire/oak_warped_spire"
+    "model": "customfence:block/oak_warped_spire/oak_warped_spire_inventory"
   }
 }

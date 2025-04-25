@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "customfence:block/warped_mangrove_wildlife/warped_mangrove_wildlife"
+    "model": "customfence:block/warped_mangrove_wildlife/warped_mangrove_wildlife_inventory"
   }
 }

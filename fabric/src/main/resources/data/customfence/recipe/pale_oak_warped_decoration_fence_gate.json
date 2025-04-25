@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "ABA",
+    "C C"
+   ],
+  "key": {
+    "A": "minecraft:warped_planks",
+    "B": "minecraft:pale_oak_planks",
+    "C": "minecraft:stick"
+  },
+  "result": {
+    "id": "customfence:pale_oak_warped_decoration_fence_gate",
+    "count": 2
+  }
+}

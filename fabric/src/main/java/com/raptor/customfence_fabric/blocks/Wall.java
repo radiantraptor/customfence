@@ -75,10 +75,10 @@ public class Wall extends WallBlock {
     VoxelShape BUILD_SOUTH_CB_TALL = Block.createCuboidShape(4.0F, 0.0F, 4.0F, 12.0F, 24.0F, 16.0F);
     VoxelShape BUILD_WEST_CB_TALL = Block.createCuboidShape(0.0F, 0.0F, 4.0F, 12.0F, 24.0F, 12.0F);
 
-    public static EnumProperty<WallShape> NORTH_WALL = NORTH_SHAPE;
-    public static EnumProperty<WallShape> EAST_WALL = EAST_SHAPE;
-    public static EnumProperty<WallShape> SOUTH_WALL = SOUTH_SHAPE;
-    public static EnumProperty<WallShape> WEST_WALL = WEST_SHAPE;
+    public static EnumProperty<WallShape> NORTH_WALL = NORTH_WALL_SHAPE;
+    public static EnumProperty<WallShape> EAST_WALL = EAST_WALL_SHAPE;
+    public static EnumProperty<WallShape> SOUTH_WALL = SOUTH_WALL_SHAPE;
+    public static EnumProperty<WallShape> WEST_WALL = WEST_WALL_SHAPE;
     public final Map<BlockState, VoxelShape> modernShape;
     public final Map<BlockState, VoxelShape> castleShape;
     public final Map<BlockState, VoxelShape> buildShape;

@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "customfence:block/cherry_acacia_garden/cherry_acacia_garden"
+    "model": "customfence:block/cherry_acacia_garden/cherry_acacia_garden_inventory"
   }
 }

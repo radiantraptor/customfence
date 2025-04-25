@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "AAA",
+    "CBC" 
+   ],
+  "key": {
+    "A": "minecraft:crimson_planks",
+    "B": "minecraft:bamboo_planks",
+    "C": "minecraft:stick"
+  },
+  "result": {
+    "id": "customfence:bamboo_crimson_classic",
+    "count": 4
+  }
+}

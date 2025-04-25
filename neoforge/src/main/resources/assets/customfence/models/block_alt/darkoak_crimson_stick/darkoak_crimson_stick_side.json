@@ -1,0 +1,7 @@
+{
+  "parent": "customfence:block/template_stick_fence_side",
+  "textures": {
+    "1": "minecraft:block/dark_oak_planks",
+    "2": "minecraft:block/crimson_planks"
+  }
+}

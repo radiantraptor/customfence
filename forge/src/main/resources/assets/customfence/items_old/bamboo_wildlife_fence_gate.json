@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "customfence:block/bamboo_wildlife/bamboo_wildlife_fence_gate_closed"
+  }
+}

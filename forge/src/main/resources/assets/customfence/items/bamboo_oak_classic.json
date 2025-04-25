@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "customfence:block/bamboo_oak_classic/bamboo_oak_classic"
+    "model": "customfence:block/bamboo_oak_classic/bamboo_oak_classic_inventory"
   }
 }

@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "customfence:block/warped_mangrove_bollard/warped_mangrove_bollard_fence_gate_closed"
+  }
+}

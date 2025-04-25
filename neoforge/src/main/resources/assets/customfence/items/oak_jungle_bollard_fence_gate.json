@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "customfence:block/oak_jungle_bollard/oak_jungle_bollard_fence_gate_closed"
+  }
+}

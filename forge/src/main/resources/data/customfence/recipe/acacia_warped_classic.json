@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "AAA",
+    "CBC" 
+   ],
+  "key": {
+    "A": "minecraft:warped_planks",
+    "B": "minecraft:acacia_planks",
+    "C": "minecraft:stick"
+  },
+  "result": {
+    "id": "customfence:acacia_warped_classic",
+    "count": 4
+  }
+}

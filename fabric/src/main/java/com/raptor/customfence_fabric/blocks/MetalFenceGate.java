@@ -1,17 +1,13 @@
 package com.raptor.customfence_fabric.blocks;
 
-import net.minecraft.advancement.Advancement;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.FenceGateBlock;
-import net.minecraft.block.WoodType;
+import com.raptor.customfence_fabric.config.ModConfig;
+import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -21,30 +17,33 @@ import net.minecraft.world.block.WireOrientation;
 import net.minecraft.world.event.GameEvent;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.function.Consumer;
+import java.util.Optional;
 
-public class MetalFenceGate extends FenceGateBlock implements WeatheringFence, Consumer<Consumer<Advancement>> {
-    private final WeatheringFence.WeatherState weatherState;
+public class MetalFenceGate extends FenceGateBlock implements Oxidizable {
 
-    public MetalFenceGate(WeatherState weatherstate, Settings settings, WoodType metaltype) {
+    public final Oxidizable.OxidationLevel oxidationLevel;
+
+    public MetalFenceGate(OxidationLevel oxidationLevel, Settings settings, WoodType metaltype) {
         super(metaltype, settings);
-        this.weatherState = weatherstate;
+        this.oxidationLevel = oxidationLevel;
     }
 
-    @Override
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         this.tickDegradation(state, world, pos, random);
     }
 
     public boolean hasRandomTicks(BlockState state) {
-        return WeatheringFence.getIncreasedOxidationBlock(state.getBlock()).isPresent();
+        if (ModConfig.metal_oxidation == true) {
+            return Oxidizable.getIncreasedOxidationBlock(state.getBlock()).isPresent();
+        }
+        else {
+            return false;
+        }
     }
 
-    public WeatheringFence.WeatherState getDegradationLevel() {
-        return this.weatherState;
+    public Oxidizable.OxidationLevel getDegradationLevel() {
+        return this.oxidationLevel;
     }
-
-
 
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult result) {
 
@@ -79,11 +78,6 @@ public class MetalFenceGate extends FenceGateBlock implements WeatheringFence, C
 
     public int openCloseSound(boolean isopen) {
         return isopen ? 1005 : 1011;
-    }
-
-    @Override
-    public void accept(Consumer<Advancement> advancementConsumer) {
-
     }
 
 }

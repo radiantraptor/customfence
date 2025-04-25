@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "B B",
+    "AAA",
+    "CBC"
+   ],
+  "key": {
+    "A": "minecraft:oak_planks",
+    "B": "minecraft:acacia_planks",
+    "C": "minecraft:stick"
+  },
+  "result": {
+    "id": "customfence:acacia_oak_garden",
+    "count": 4
+  }
+}

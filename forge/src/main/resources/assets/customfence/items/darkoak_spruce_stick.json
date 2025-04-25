@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "customfence:block/darkoak_spruce_stick/darkoak_spruce_stick"
+    "model": "customfence:block/darkoak_spruce_stick/darkoak_spruce_stick_inventory"
   }
 }

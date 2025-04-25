@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "customfence:block/bamboo_jungle_classic/bamboo_jungle_classic"
+    "model": "customfence:block/bamboo_jungle_classic/bamboo_jungle_classic_inventory"
   }
 }

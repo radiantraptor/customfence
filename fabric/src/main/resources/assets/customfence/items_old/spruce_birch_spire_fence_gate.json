@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "customfence:block/spruce_birch_spire/spruce_birch_spire_fence_gate_closed"
+  }
+}

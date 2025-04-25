@@ -128,7 +128,8 @@ public class ModBlocksWall {
     public static final RegistryObject<Block> MANGROVE_WALL_BUILDING = registerBlock("mangrove_wall_building", () -> new WoodWall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "mangrove_wall_building"))).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> BAMBOO_WALL_BUILDING = registerBlock("bamboo_wall_building", () -> new WoodWall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "bamboo_wall_building"))).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> CHERRY_WALL_BUILDING = registerBlock("cherry_wall_building", () -> new WoodWall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "cherry_wall_building"))).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
-    
+    public static final RegistryObject<Block> PALE_OAK_WALL_BUILDING = registerBlock("pale_oak_wall_building", () -> new WoodWall(Block.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, "pale_oak_wall_building"))).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+
     //END WOODENWALLS
 
 
@@ -139,7 +140,7 @@ public class ModBlocksWall {
     }
 
     private static <T extends Block> void registerBlockItem(String name, RegistryObject<T> block) {
-        ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()
+        ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().useBlockDescriptionPrefix()
                 .setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, name)))));
     }
 

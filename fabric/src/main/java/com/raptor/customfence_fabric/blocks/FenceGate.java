@@ -1,13 +1,22 @@
 package com.raptor.customfence_fabric.blocks;
 
+import com.raptor.customfence_fabric.Main;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.FenceGateBlock;
 import net.minecraft.block.WoodType;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.util.Identifier;
 
 public class FenceGate extends FenceGateBlock {
 
-    public FenceGate(Settings settings, WoodType woodtype) {
+    WoodType woodtype;
 
-        super(woodtype, settings);
+    public FenceGate(String string, WoodType woodtype) {
+
+        super(woodtype, AbstractBlock.Settings.create().registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Main.MOD_ID, string))).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+        this.woodtype = woodtype;
     }
 
 }

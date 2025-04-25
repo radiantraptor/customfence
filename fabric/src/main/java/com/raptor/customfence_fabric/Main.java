@@ -2,11 +2,8 @@ package com.raptor.customfence_fabric;
 
 import com.raptor.customfence_fabric.blocks.OxidizableFence;
 import com.raptor.customfence_fabric.blocks.WaxableFence;
-import com.raptor.customfence_fabric.blocks.WeatheringFence;
-import com.raptor.customfence_fabric.config.ModTabConfig;
-import com.raptor.customfence_fabric.init.ModItemGroup;
-import com.raptor.customfence_fabric.init.ModBlocks;
-import com.raptor.customfence_fabric.init.ModItems;
+import com.raptor.customfence_fabric.config.ModConfig;
+import com.raptor.customfence_fabric.init.*;
 import net.fabricmc.api.ModInitializer;
 
 import java.util.EventListener;
@@ -19,16 +16,20 @@ public class Main implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        ModTabConfig.load();
 
-        ModBlocks.registerModBlocks();
+        ModConfig.load();
+
+        ModItems.registerModItems();
+        ModBlocksWoodGateBasic.registerModBlocks();
+        ModBlocksWoodFenceBasic.registerModBlocks();
+        ModBlocksWoodFenceGateAdvanced.registerModBlocks();
+        ModBlocksWall.registerModBlocks();
+        ModBlocksMetalFence.registerModBlocks();
         OxidizableFence.oxidizingFences();
-
-
         WaxableFence.waxingFences();
 
-        if (ModTabConfig.more_creative_tabs == true) {
-            ModItemGroup.threeTabs();
+        if (ModConfig.more_creative_tabs == true) {
+            ModItemGroup.moreTabs();
         }
         else {
             ModItemGroup.oneTab();
@@ -36,5 +37,7 @@ public class Main implements ModInitializer {
 
 
     }
+
+
 
 }

@@ -1,0 +1,8 @@
+{
+  "parent": "customfence:block/template_spire_fence_gate_open",
+  "textures": {
+    "particle": "minecraft:block/mangrove_planks",
+    "1": "minecraft:block/crimson_planks",
+    "2": "minecraft:block/mangrove_planks"
+  }
+}

@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "customfence:block/mangrove_cherry_stick/mangrove_cherry_stick"
+    "model": "customfence:block/mangrove_cherry_stick/mangrove_cherry_stick_inventory"
   }
 }

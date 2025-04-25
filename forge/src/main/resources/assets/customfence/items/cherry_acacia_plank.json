@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "customfence:block/cherry_acacia_plank/cherry_acacia_plank"
+    "model": "customfence:block/cherry_acacia_plank/cherry_acacia_plank_inventory"
   }
 }

@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "customfence:block/mangrove_birch_crisscross/mangrove_birch_crisscross"
+    "model": "customfence:block/mangrove_birch_crisscross/mangrove_birch_crisscross_inventory"
   }
 }

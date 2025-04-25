@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "B B",
+    "C C"
+   ],
+  "key": {
+    "A": "minecraft:warped_planks",
+    "B": "minecraft:cherry_planks",
+    "C": "minecraft:stick"
+  },
+  "result": {
+    "id": "customfence:cherry_warped_stick_fence_gate",
+    "count": 2
+  }
+}

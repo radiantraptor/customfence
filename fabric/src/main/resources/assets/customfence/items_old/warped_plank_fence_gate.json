@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "customfence:block/warped_plank/warped_plank_fence_gate_closed"
+  }
+}

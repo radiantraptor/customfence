@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "customfence:block/darkoak_jungle_bollard/darkoak_jungle_bollard"
+    "model": "customfence:block/darkoak_jungle_bollard/darkoak_jungle_bollard_inventory"
   }
 }

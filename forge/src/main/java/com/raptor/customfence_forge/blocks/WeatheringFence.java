@@ -55,7 +55,42 @@ public interface WeatheringFence extends net.minecraft.world.level.block.ChangeO
     });
 
     Supplier<BiMap<Block, Block>> PREVIOUS_BY_BLOCK = Suppliers.memoize(() -> {
-        return NEXT_BY_BLOCK.get().inverse();
+        if (ConfigHandler.COMMON.metal_oxidation.get() == false) {
+            return ImmutableBiMap.<Block, Block>builder()
+
+                    .put(ModBlocksMetalFence.COBBLESTONE_EXPOSED_COPPER_MANSION_FENCE.get(), ModBlocksMetalFence.COBBLESTONE_COPPER_MANSION_FENCE.get())
+                    .put(ModBlocksMetalFence.COBBLESTONE_WEATHERED_COPPER_MANSION_FENCE.get(), ModBlocksMetalFence.COBBLESTONE_EXPOSED_COPPER_MANSION_FENCE.get())
+                    .put(ModBlocksMetalFence.COBBLESTONE_OXIDIZED_COPPER_MANSION_FENCE.get(), ModBlocksMetalFence.COBBLESTONE_WEATHERED_COPPER_MANSION_FENCE.get())
+                    .put(ModBlocksMetalFence.EXPOSED_COPPER_MANSION_FENCE_GATE.get(), ModBlocksMetalFence.COPPER_MANSION_FENCE_GATE.get())
+                    .put(ModBlocksMetalFence.WEATHERED_COPPER_MANSION_FENCE_GATE.get(), ModBlocksMetalFence.EXPOSED_COPPER_MANSION_FENCE_GATE.get())
+                    .put(ModBlocksMetalFence.OXIDIZED_COPPER_MANSION_FENCE_GATE.get(), ModBlocksMetalFence.WEATHERED_COPPER_MANSION_FENCE_GATE.get())
+
+                    .put(ModBlocksMetalFence.COBBLESTONE_EXPOSED_IRON_MANSION_FENCE.get(), ModBlocksMetalFence.COBBLESTONE_IRON_MANSION_FENCE.get())
+                    .put(ModBlocksMetalFence.COBBLESTONE_WEATHERED_IRON_MANSION_FENCE.get(), ModBlocksMetalFence.COBBLESTONE_EXPOSED_IRON_MANSION_FENCE.get())
+                    .put(ModBlocksMetalFence.COBBLESTONE_OXIDIZED_IRON_MANSION_FENCE.get(), ModBlocksMetalFence.COBBLESTONE_WEATHERED_IRON_MANSION_FENCE.get())
+                    .put(ModBlocksMetalFence.EXPOSED_IRON_MANSION_FENCE_GATE.get(), ModBlocksMetalFence.IRON_MANSION_FENCE_GATE.get())
+                    .put(ModBlocksMetalFence.WEATHERED_IRON_MANSION_FENCE_GATE.get(), ModBlocksMetalFence.EXPOSED_IRON_MANSION_FENCE_GATE.get())
+                    .put(ModBlocksMetalFence.OXIDIZED_IRON_MANSION_FENCE_GATE.get(), ModBlocksMetalFence.WEATHERED_IRON_MANSION_FENCE_GATE.get())
+
+                    .put(ModBlocksMetalFence.COBBLESTONE_EXPOSED_COPPER_MESH_FENCE.get(), ModBlocksMetalFence.COBBLESTONE_COPPER_MESH_FENCE.get())
+                    .put(ModBlocksMetalFence.COBBLESTONE_WEATHERED_COPPER_MESH_FENCE.get(), ModBlocksMetalFence.COBBLESTONE_EXPOSED_COPPER_MESH_FENCE.get())
+                    .put(ModBlocksMetalFence.COBBLESTONE_OXIDIZED_COPPER_MESH_FENCE.get(), ModBlocksMetalFence.COBBLESTONE_WEATHERED_COPPER_MESH_FENCE.get())
+                    .put(ModBlocksMetalFence.EXPOSED_COPPER_MESH_FENCE_GATE.get(), ModBlocksMetalFence.COPPER_MESH_FENCE_GATE.get())
+                    .put(ModBlocksMetalFence.WEATHERED_COPPER_MESH_FENCE_GATE.get(), ModBlocksMetalFence.EXPOSED_COPPER_MESH_FENCE_GATE.get())
+                    .put(ModBlocksMetalFence.OXIDIZED_COPPER_MESH_FENCE_GATE.get(), ModBlocksMetalFence.WEATHERED_COPPER_MESH_FENCE_GATE.get())
+
+                    .put(ModBlocksMetalFence.COBBLESTONE_EXPOSED_IRON_MESH_FENCE.get(), ModBlocksMetalFence.COBBLESTONE_IRON_MESH_FENCE.get())
+                    .put(ModBlocksMetalFence.COBBLESTONE_WEATHERED_IRON_MESH_FENCE.get(), ModBlocksMetalFence.COBBLESTONE_EXPOSED_IRON_MESH_FENCE.get())
+                    .put(ModBlocksMetalFence.COBBLESTONE_OXIDIZED_IRON_MESH_FENCE.get(), ModBlocksMetalFence.COBBLESTONE_WEATHERED_IRON_MESH_FENCE.get())
+                    .put(ModBlocksMetalFence.EXPOSED_IRON_MESH_FENCE_GATE.get(), ModBlocksMetalFence.IRON_MESH_FENCE_GATE.get())
+                    .put(ModBlocksMetalFence.WEATHERED_IRON_MESH_FENCE_GATE.get(), ModBlocksMetalFence.EXPOSED_IRON_MESH_FENCE_GATE.get())
+                    .put(ModBlocksMetalFence.OXIDIZED_IRON_MESH_FENCE_GATE.get(), ModBlocksMetalFence.WEATHERED_IRON_MESH_FENCE_GATE.get())
+
+                    .build();
+        }
+        else {
+            return NEXT_BY_BLOCK.get().inverse();
+        }
     });
 
 

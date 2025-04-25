@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "customfence:block/oak_warped_decoration/oak_warped_decoration"
+    "model": "customfence:block/oak_warped_decoration/oak_warped_decoration_inventory"
   }
 }
