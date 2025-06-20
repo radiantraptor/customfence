@@ -10,7 +10,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.properties.WoodType;
-import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.bus.BusGroup;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -19,7 +19,6 @@ import net.minecraftforge.registries.RegistryObject;
 import java.util.function.Supplier;
 
 @SuppressWarnings({"WeakerAccess", "unused"})
-@Mod.EventBusSubscriber(modid = Main.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ModBlocksWoodGateBasic {
 
     public static final DeferredRegister<Block> WOOD_GATE_BASIC = DeferredRegister.create(ForgeRegistries.BLOCKS, Main.MOD_ID);
@@ -98,7 +97,7 @@ public class ModBlocksWoodGateBasic {
     }
 
 
-    public static void register(IEventBus eventBus) {
+    public static void register(BusGroup eventBus) {
         WOOD_GATE_BASIC.register(eventBus);
     }
 

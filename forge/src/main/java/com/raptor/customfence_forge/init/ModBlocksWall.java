@@ -9,7 +9,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
-import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.bus.BusGroup;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -19,7 +19,6 @@ import java.util.function.Supplier;
 
 
 @SuppressWarnings({"WeakerAccess", "unused"})
-@Mod.EventBusSubscriber(modid = Main.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ModBlocksWall {
 
     public static final DeferredRegister<Block> WALL_BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Main.MOD_ID);
@@ -144,7 +143,7 @@ public class ModBlocksWall {
                 .setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, name)))));
     }
 
-    public static void register(IEventBus eventBus) {
+    public static void register(BusGroup eventBus) {
         WALL_BLOCKS.register(eventBus);
     }
 

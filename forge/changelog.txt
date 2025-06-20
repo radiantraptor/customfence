@@ -1,10 +1,48 @@
 1.21.x Changelog
+56.0
+====
+ - 56.0.3 Fix wrong order in filter vanilla commands patch. Fixes #10563
+ - 56.0.2 Fix not being able to break blocks in survival. Closes #10561
+ - 56.0.1 Fix bug with strict bulk registration
+          See EventBus#89 for more details
+ - 56.0.0 1.21.6 - New EventBus 7
+          A full rewrite and redesign of the library that offers much better performance, new features and fixes all previous design flaws
+          See the migration guide here: https://gist.github.com/PaintNinja/ad82c224aecee25efac1ea3e2cf19b91
+          Co-authored-by: Paint_Ninja <PaintNinja@users.noreply.github.com>
+
 55.0
 ====
- - 55.0.1 Fix Mod List Screen's render layout and scroll bars.
- - 55.0.0 Minecraft 1.21.5
-          Co-authored-by: Ven <tudurap.com@gmail.com>
-          Co-authored-by: Jonathing <me@jonathing.me>
+ - 55.0.23 Update MDK to fix OOM error and aid getting Mixin setup (#10559)
+ - 55.0.22 Remove legacy patch that caused tripwires to create a loop. Fixes #10558
+ - 55.0.21 Fix warped and crimson fungi not being able to be placed on nylium. (#10544)
+           Fix other PlantType parity issues, add test for all vanilla PlantType blocks.
+           Co-authored-by: LexManos <LexManos@gmail.com>
+ - 55.0.20 Fix modded keybidings being reset to default when reloading. Fixes: #10531
+ - 55.0.19 Deprecate GatherDataEvent.validate() as validation always happens. And made ExistingFileHelper always function. Closes #10516
+ - 55.0.18 Call getToolModifiedState for AXE_STRIP and AXE_WAX_OFF.
+ - 55.0.17 Fix Wood Stripping sound not playing. Fixes #10525
+ - 55.0.16 Fix dedicated server not loading default language files. Fixes #10555
+ - 55.0.15 Make Loot Function without builders Constructors public (#10521)
+ - 55.0.14 Ensure changes from keyboard in ForgeSlider behave as changes from mouse (#10554)
+ - 55.0.13 Add YourKit mention
+ - 55.0.12 Fix creative inventory not displaying item categories correctly. Fixes #10524
+ - 55.0.11 Make unbound tags non-fatal due to Mojang's registry loading order issues. Closes #10524
+ - 55.0.10 Fix PlayerEquipmentInvWrapper offset. Closes #10532
+ - 55.0.9  Deprecate `DistExecutor` for removal (#10198)
+ - 55.0.8  Cleanup early display's internals a bit more (#10538)
+ - 55.0.7  Add ChunkEvent.LightingCalculated, fixes #8354 (#10533)
+ - 55.0.6  Seal most event hierarchies (#10515)
+           Most events in Forge are not designed to be extended by mod devs but technically allowed it before this PR, leading to a risk of unintentional breaking changes for those that do.
+           If you need to extend a Forge event, please let us know so that we can explicitly support that and design it with extending in mind. Note that this change does not affect making your own events that directly extend from EventBus' `Event` class.
+ - 55.0.5  Fix NPE when breeze deflects a projectile (#10535)
+ - 55.0.4  Fix Swords and Pickaxes not using ToolActions (#10520)
+ - 55.0.3  Fix bundles causing crash upon inserting item. Closes #10509
+ - 55.0.2  Add DeferredRegistryData to help with generating data driven registry entries.
+           Revive GameTest system and make all but one Forge Test mod pass.
+ - 55.0.1  Fix Mod List Screen's render layout and scroll bars.
+ - 55.0.0  Minecraft 1.21.5
+           Co-authored-by: Ven <tudurap.com@gmail.com>
+           Co-authored-by: Jonathing <me@jonathing.me>
 
 54.1
 ====

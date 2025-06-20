@@ -4,6 +4,6 @@ license="GNU GPLv3"
 
 [[mods]]
 modId="customfence"
-version="1-21-5"
+version="1-21-6"
 displayName="Customfence"
 description="A couple of new fences and fence gates and walls"

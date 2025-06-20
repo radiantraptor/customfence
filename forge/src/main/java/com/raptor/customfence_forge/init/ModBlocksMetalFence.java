@@ -13,9 +13,10 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
+import net.minecraftforge.common.util.Result;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.eventbus.api.bus.BusGroup;
+import net.minecraftforge.eventbus.api.listener.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -139,7 +140,7 @@ public class ModBlocksMetalFence {
                 .setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, name)))));
     }
 
-    public static void register(IEventBus eventBus) {
+    public static void register(BusGroup eventBus) {
         METAL_FENCE_BLOCKS.register(eventBus);
     }
 
@@ -152,7 +153,11 @@ public class ModBlocksMetalFence {
     3005 - PARTICLES_SCRAPE
     */
 
-    @SubscribeEvent()
+    //public static void registerEvents() {
+    //    PlayerInteractEvent.RightClickBlock.BUS.addListener(ModBlocksMetalFence::onRightClickBlock);
+    //}
+
+    @SubscribeEvent
     public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
         if (event.getItemStack().getItem() instanceof HoneycombItem) {
             if (WaxedMetal.getWaxed(event.getLevel().getBlockState(event.getPos())).orElse(null) != null) {
@@ -161,7 +166,7 @@ public class ModBlocksMetalFence {
                 if (event.getEntity() != null && !event.getEntity().isCreative()) {
                     event.getItemStack().shrink(1);
                 }
-                event.setCanceled(true);
+                event.setUseBlock(Result.DENY);
                 event.setCancellationResult(InteractionResult.SUCCESS);
             }
         }
@@ -177,7 +182,7 @@ public class ModBlocksMetalFence {
                         event.getLevel().playSound(event.getEntity(), event.getPos(), SoundEvents.ITEM_BREAK.get(), SoundSource.BLOCKS, 1.0f, 1.0f);
                     }
                 }
-                event.setCanceled(true);
+                event.setUseBlock(Result.DENY);
                 event.setCancellationResult(InteractionResult.SUCCESS);
             }
             else if (WeatheringFence.getPrevious(event.getLevel().getBlockState(event.getPos())).orElse(null) != null) {
@@ -191,7 +196,7 @@ public class ModBlocksMetalFence {
                         event.getLevel().playSound(event.getEntity(), event.getPos(), SoundEvents.ITEM_BREAK.get(), SoundSource.BLOCKS, 1.0f, 1.0f);
                     }
                 }
-                event.setCanceled(true);
+                event.setUseBlock(Result.DENY);
                 event.setCancellationResult(InteractionResult.SUCCESS);
             }
         }
