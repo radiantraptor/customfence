@@ -1,36 +1,37 @@
 package com.raptor.customfence_fabric.blocks;
 
 import com.raptor.customfence_fabric.config.ModConfig;
-import net.minecraft.block.*;
-import net.minecraft.server.world.ServerWorld;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.random.Random;
+import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.level.block.FenceBlock;
+import net.minecraft.world.level.block.WeatheringCopper;
+import net.minecraft.world.level.block.state.BlockState;
 
+public class MetalFence extends FenceBlock implements WeatheringCopper {
 
-public class MetalFence extends FenceBlock implements Oxidizable {
+    public final WeatheringCopper.WeatherState weatherState;
 
-    public final Oxidizable.OxidationLevel oxidationLevel;
-
-    public MetalFence(OxidationLevel oxidationLevel, Settings settings) {
-        super(settings);
-        this.oxidationLevel = oxidationLevel;
+    public MetalFence(WeatherState weatherState, Properties properties) {
+        super(properties);
+        this.weatherState = weatherState;
     }
 
-    public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        this.tickDegradation(state, world, pos, random);
+    public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+        this.changeOverTime(state, level, pos, random);
     }
 
-    public boolean hasRandomTicks(BlockState state) {
+    public boolean isRandomlyTicking(BlockState state) {
         if (ModConfig.metal_oxidation == true) {
-            return Oxidizable.getIncreasedOxidationBlock(state.getBlock()).isPresent();
+            return WeatheringCopper.getNext(state.getBlock()).isPresent();
         }
         else {
             return false;
         }
     }
 
-    public Oxidizable.OxidationLevel getDegradationLevel() {
-        return this.oxidationLevel;
+    public WeatheringCopper.WeatherState getAge() {
+        return this.weatherState;
     }
 
 }

@@ -8,16 +8,21 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.FenceGateBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.WoodType;
+import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.level.redstone.Orientation;
 import net.minecraft.world.phys.BlockHitResult;
 import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.ItemAbility;
+import org.jspecify.annotations.Nullable;
 
 
 public class MetalFenceGate extends FenceGateBlock implements WeatheringFence {
@@ -54,7 +59,7 @@ public class MetalFenceGate extends FenceGateBlock implements WeatheringFence {
         return this.weatherState;
     }
 
-    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
+    public InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
         if (state.getValue(OPEN)) {
             state = state.setValue(OPEN, Boolean.valueOf(false));
             level.setBlock(pos, state, 10);
@@ -73,21 +78,21 @@ public class MetalFenceGate extends FenceGateBlock implements WeatheringFence {
     }
 
 
-//    public void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, BlockPos pos2, boolean istrue) {
-//        if (!level.isClientSide) {
-//            if (state.getValue(POWERED) != level.hasNeighborSignal(pos)) {
-//                level.setBlock(pos, state.setValue(POWERED, Boolean.valueOf(level.hasNeighborSignal(pos))).setValue(OPEN, Boolean.valueOf(level.hasNeighborSignal(pos))), 2);
-//                if (state.getValue(OPEN) != level.hasNeighborSignal(pos)) {
-//                    level.levelEvent(null,  openCloseSound(level.hasNeighborSignal(pos)), pos, 0);
-//                    level.playSound((Entity)null, level, pos, istrue);
-//                }
-//            }
-//        }
-//    }
+    public void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, @Nullable Orientation orientation, boolean movedByPiston) {
+        if (!level.isClientSide()) {
+            if (state.getValue(POWERED) != level.hasNeighborSignal(pos)) {
+                level.setBlock(pos, state.setValue(POWERED, Boolean.valueOf(level.hasNeighborSignal(pos))).setValue(OPEN, Boolean.valueOf(level.hasNeighborSignal(pos))), 2);
+                if (state.getValue(OPEN) != level.hasNeighborSignal(pos)) {
+                    level.playSound((Entity)null,  pos, level.hasNeighborSignal(pos) ? SoundEvents.IRON_DOOR_OPEN : SoundEvents.IRON_DOOR_CLOSE, SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.1F + 0.9F);
+                    level.gameEvent((Entity)null, level.hasNeighborSignal(pos) ? GameEvent.BLOCK_OPEN : GameEvent.BLOCK_CLOSE, pos);
+                }
+            }
+        }
+    }
 
-//    public int openCloseSound(boolean isopen) {
-//        return isopen ? 1005 : 1011;
-//    }
+    public int openCloseSound(boolean isopen) {
+        return isopen ? 1005 : 1011;
+    }
 
 
 

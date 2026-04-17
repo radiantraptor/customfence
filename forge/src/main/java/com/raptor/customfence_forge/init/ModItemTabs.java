@@ -19,6 +19,7 @@ public class ModItemTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_TAB_WOOD_FENCE_GATE_ADVANCED = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Main.MOD_ID);
     public static final DeferredRegister<CreativeModeTab> CREATIVE_TAB_WALLS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Main.MOD_ID);
     public static final DeferredRegister<CreativeModeTab> CREATIVE_TAB_METAL_FENCES = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Main.MOD_ID);
+    public static final DeferredRegister<CreativeModeTab> CREATIVE_TAB_GLASS_FENCES = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Main.MOD_ID);
     public static final DeferredRegister<CreativeModeTab> CREATIVE_TAB_ALL = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Main.MOD_ID);
 
     public static void registerTabWoodGateBasic() {
@@ -126,6 +127,27 @@ public class ModItemTabs {
         );
     }
 
+    public static void registerTabGlassFence() {
+        CREATIVE_TAB_GLASS_FENCES.register("customfence_4_glass_fence", () ->
+                CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocksGlassFence.WHITE_CONCRETE_ORANGE_STAINED_GLASS_PLAIN.get()))
+                        .title(Component.translatable("itemGroup.customfence.tab_customfence_glass_fence"))
+                        .displayItems((itemDisplayParameters, output) -> {
+                            // Add blocks
+                            for (Field field : ModBlocksGlassFence.class.getFields()) {
+                                if (field.getType() != RegistryObject.class) continue;
+
+                                try {
+                                    RegistryObject<Block> block = (RegistryObject) field.get(null);
+                                    output.accept(new ItemStack(block.get()));
+                                } catch (IllegalAccessException e) {
+                                }
+                            }
+
+
+                        }).build()
+        );
+    }
+
 
     public static void registerTabAll() {
         CREATIVE_TAB_ALL.register("customfence_all", () ->
@@ -170,6 +192,15 @@ public class ModItemTabs {
                                 }
                             }
                             for (Field field : ModBlocksMetalFence.class.getFields()) {
+                                if (field.getType() != RegistryObject.class) continue;
+
+                                try {
+                                    RegistryObject<Block> block = (RegistryObject) field.get(null);
+                                    output.accept(new ItemStack(block.get()));
+                                } catch (IllegalAccessException e) {
+                                }
+                            }
+                            for (Field field : ModBlocksGlassFence.class.getFields()) {
                                 if (field.getType() != RegistryObject.class) continue;
 
                                 try {

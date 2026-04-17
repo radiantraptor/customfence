@@ -43,6 +43,7 @@ public class Main {
         ModBlocksWoodFenceGateAdvanced.register(modEventBus);
         ModBlocksWall.register(modEventBus);
         ModBlocksMetalFence.register(modEventBus);
+        ModBlocksGlassFence.register(modEventBus);
 
         //ConfigHandler.COMMON.more_creative_tabs.get() funktioniert hier nicht
         if (configData.contains("more_creative_tabs=true")) {
@@ -51,6 +52,7 @@ public class Main {
             ModItemTabs.registerTabWoodFenceGateAdvanced();
             ModItemTabs.registerTabWall();
             ModItemTabs.registerTabMetalFence();
+            ModItemTabs.registerTabGlassFence();
         }
         else {
             ModItemTabs.registerTabAll();

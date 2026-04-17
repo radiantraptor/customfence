@@ -1,84 +1,88 @@
 package com.raptor.customfence_fabric.blocks;
 
-import com.google.common.collect.ImmutableMap;
-import net.minecraft.block.*;
-import net.minecraft.block.enums.WallShape;
-import net.minecraft.state.property.EnumProperty;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.shape.VoxelShape;
-import net.minecraft.util.shape.VoxelShapes;
-import net.minecraft.world.BlockView;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.WallBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.block.state.properties.WallSide;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
 
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Wall extends WallBlock {
 
-    VoxelShape MODERN_POST_BB = Block.createCuboidShape(4.0F, 0.0F, 4.0F, 12.0F, 16.0F, 12.0F);
-    VoxelShape MODERN_NORTH_BB_LOW = Block.createCuboidShape(5.0F, 0.0F, 0.0F, 11.0F, 15.0F, 11.0F);
-    VoxelShape MODERN_EAST_BB_LOW = Block.createCuboidShape(5.0F, 0.0F, 5.0F, 16.0F, 15.0F, 11.0F);
-    VoxelShape MODERN_SOUTH_BB_LOW = Block.createCuboidShape(5.0F, 0.0F, 5.0F, 11.0F, 15.0F, 16.0F);
-    VoxelShape MODERN_WEST_BB_LOW = Block.createCuboidShape(0.0F, 0.0F, 5.0F, 11.0F, 15.0F, 11.0F);
-    VoxelShape MODERN_NORTH_BB_TALL = Block.createCuboidShape(5.0F, 0.0F, 0.0F, 11.0F, 16.0F, 11.0F);
-    VoxelShape MODERN_EAST_BB_TALL = Block.createCuboidShape(5.0F, 0.0F, 5.0F, 16.0F, 16.0F, 11.0F);
-    VoxelShape MODERN_SOUTH_BB_TALL = Block.createCuboidShape(5.0F, 0.0F, 5.0F, 11.0F, 16.0F, 16.0F);
-    VoxelShape MODERN_WEST_BB_TALL = Block.createCuboidShape(0.0F, 0.0F, 5.0F, 11.0F, 16.0F, 11.0F);
+    VoxelShape MODERN_POST_BB = Block.box(4.0F, 0.0F, 4.0F, 12.0F, 16.0F, 12.0F);
+    VoxelShape MODERN_NORTH_BB_LOW = Block.box(5.0F, 0.0F, 0.0F, 11.0F, 15.0F, 11.0F);
+    VoxelShape MODERN_EAST_BB_LOW = Block.box(5.0F, 0.0F, 5.0F, 16.0F, 15.0F, 11.0F);
+    VoxelShape MODERN_SOUTH_BB_LOW = Block.box(5.0F, 0.0F, 5.0F, 11.0F, 15.0F, 16.0F);
+    VoxelShape MODERN_WEST_BB_LOW = Block.box(0.0F, 0.0F, 5.0F, 11.0F, 15.0F, 11.0F);
+    VoxelShape MODERN_NORTH_BB_TALL = Block.box(5.0F, 0.0F, 0.0F, 11.0F, 16.0F, 11.0F);
+    VoxelShape MODERN_EAST_BB_TALL = Block.box(5.0F, 0.0F, 5.0F, 16.0F, 16.0F, 11.0F);
+    VoxelShape MODERN_SOUTH_BB_TALL = Block.box(5.0F, 0.0F, 5.0F, 11.0F, 16.0F, 16.0F);
+    VoxelShape MODERN_WEST_BB_TALL = Block.box(0.0F, 0.0F, 5.0F, 11.0F, 16.0F, 11.0F);
 
-    VoxelShape MODERN_POST_CB = Block.createCuboidShape(4.0F, 0.0F, 4.0F, 12.0F, 24.0F, 12.0F);
-    VoxelShape MODERN_NORTH_CB_LOW = Block.createCuboidShape(5.0F, 0.0F, 0.0F, 11.0F, 24.0F, 11.0F);
-    VoxelShape MODERN_EAST_CB_LOW = Block.createCuboidShape(5.0F, 0.0F, 5.0F, 16.0F, 24.0F, 11.0F);
-    VoxelShape MODERN_SOUTH_CB_LOW = Block.createCuboidShape(5.0F, 0.0F, 5.0F, 11.0F, 24.0F, 16.0F);
-    VoxelShape MODERN_WEST_CB_LOW = Block.createCuboidShape(0.0F, 0.0F, 5.0F, 11.0F, 24.0F, 11.0F);
-    VoxelShape MODERN_NORTH_CB_TALL = Block.createCuboidShape(5.0F, 0.0F, 0.0F, 11.0F, 24.0F, 11.0F);
-    VoxelShape MODERN_EAST_CB_TALL = Block.createCuboidShape(5.0F, 0.0F, 5.0F, 16.0F, 24.0F, 11.0F);
-    VoxelShape MODERN_SOUTH_CB_TALL = Block.createCuboidShape(5.0F, 0.0F, 5.0F, 11.0F, 24.0F, 16.0F);
-    VoxelShape MODERN_WEST_CB_TALL = Block.createCuboidShape(0.0F, 0.0F, 5.0F, 11.0F, 24.0F, 11.0F);
-
-
-    VoxelShape CASTLE_POST_BB = Block.createCuboidShape(3.0F, 0.0F, 3.0F, 13.0F, 16.0F, 13.0F);
-    VoxelShape CASTLE_NORTH_BB_LOW = Block.createCuboidShape(3.0F, 0.0F, 0.0F, 13.0F, 8.0F, 13.0F);
-    VoxelShape CASTLE_EAST_BB_LOW = Block.createCuboidShape(3.0F, 0.0F, 3.0F, 16.0F, 8.0F, 13.0F);
-    VoxelShape CASTLE_SOUTH_BB_LOW = Block.createCuboidShape(3.0F, 0.0F, 3.0F, 13.0F, 8.0F, 16.0F);
-    VoxelShape CASTLE_WEST_BB_LOW = Block.createCuboidShape(0.0F, 0.0F, 3.0F, 13.0F, 8.0F, 13.0F);
-    VoxelShape CASTLE_NORTH_BB_TALL = Block.createCuboidShape(3.0F, 0.0F, 0.0F, 13.0F, 16.0F, 13.0F);
-    VoxelShape CASTLE_EAST_BB_TALL = Block.createCuboidShape(3.0F, 0.0F, 3.0F, 16.0F, 16.0F, 13.0F);
-    VoxelShape CASTLE_SOUTH_BB_TALL = Block.createCuboidShape(3.0F, 0.0F, 3.0F, 13.0F, 16.0F, 16.0F);
-    VoxelShape CASTLE_WEST_BB_TALL = Block.createCuboidShape(0.0F, 0.0F, 3.0F, 13.0F, 16.0F, 13.0F);
-
-    VoxelShape CASTLE_POST_CB = Block.createCuboidShape(3.0F, 0.0F, 3.0F, 13.0F, 24.0F, 13.0F);
-    VoxelShape CASTLE_NORTH_CB_LOW = Block.createCuboidShape(3.0F, 0.0F, 0.0F, 13.0F, 8.0F, 13.0F);
-    VoxelShape CASTLE_EAST_CB_LOW = Block.createCuboidShape(3.0F, 0.0F, 3.0F, 16.0F, 8.0F, 13.0F);
-    VoxelShape CASTLE_SOUTH_CB_LOW = Block.createCuboidShape(3.0F, 0.0F, 3.0F, 13.0F, 8.0F, 16.0F);
-    VoxelShape CASTLE_WEST_CB_LOW = Block.createCuboidShape(0.0F, 0.0F, 3.0F, 13.0F, 8.0F, 13.0F);
-    VoxelShape CASTLE_NORTH_CB_TALL = Block.createCuboidShape(3.0F, 0.0F, 0.0F, 13.0F, 24.0F, 13.0F);
-    VoxelShape CASTLE_EAST_CB_TALL = Block.createCuboidShape(3.0F, 0.0F, 3.0F, 16.0F, 24.0F, 13.0F);
-    VoxelShape CASTLE_SOUTH_CB_TALL = Block.createCuboidShape(3.0F, 0.0F, 3.0F, 13.0F, 24.0F, 16.0F);
-    VoxelShape CASTLE_WEST_CB_TALL = Block.createCuboidShape(0.0F, 0.0F, 3.0F, 13.0F, 24.0F, 13.0F);
+    VoxelShape MODERN_POST_CB = Block.box(4.0F, 0.0F, 4.0F, 12.0F, 24.0F, 12.0F);
+    VoxelShape MODERN_NORTH_CB_LOW = Block.box(5.0F, 0.0F, 0.0F, 11.0F, 24.0F, 11.0F);
+    VoxelShape MODERN_EAST_CB_LOW = Block.box(5.0F, 0.0F, 5.0F, 16.0F, 24.0F, 11.0F);
+    VoxelShape MODERN_SOUTH_CB_LOW = Block.box(5.0F, 0.0F, 5.0F, 11.0F, 24.0F, 16.0F);
+    VoxelShape MODERN_WEST_CB_LOW = Block.box(0.0F, 0.0F, 5.0F, 11.0F, 24.0F, 11.0F);
+    VoxelShape MODERN_NORTH_CB_TALL = Block.box(5.0F, 0.0F, 0.0F, 11.0F, 24.0F, 11.0F);
+    VoxelShape MODERN_EAST_CB_TALL = Block.box(5.0F, 0.0F, 5.0F, 16.0F, 24.0F, 11.0F);
+    VoxelShape MODERN_SOUTH_CB_TALL = Block.box(5.0F, 0.0F, 5.0F, 11.0F, 24.0F, 16.0F);
+    VoxelShape MODERN_WEST_CB_TALL = Block.box(0.0F, 0.0F, 5.0F, 11.0F, 24.0F, 11.0F);
 
 
-    VoxelShape BUILD_POST_BB = Block.createCuboidShape(4.0F, 0.0F, 4.0F, 12.0F, 16.0F, 12.0F);
-    VoxelShape BUILD_NORTH_BB_LOW = Block.createCuboidShape(4.0F, 0.0F, 0.0F, 12.0F, 16.0F, 12.0F);
-    VoxelShape BUILD_EAST_BB_LOW = Block.createCuboidShape(4.0F, 0.0F, 4.0F, 16.0F, 16.0F, 12.0F);
-    VoxelShape BUILD_SOUTH_BB_LOW = Block.createCuboidShape(4.0F, 0.0F, 4.0F, 12.0F, 16.0F, 16.0F);
-    VoxelShape BUILD_WEST_BB_LOW = Block.createCuboidShape(0.0F, 0.0F, 4.0F, 12.0F, 16.0F, 12.0F);
-    VoxelShape BUILD_NORTH_BB_TALL = Block.createCuboidShape(4.0F, 0.0F, 0.0F, 12.0F, 16.0F, 12.0F);
-    VoxelShape BUILD_EAST_BB_TALL = Block.createCuboidShape(4.0F, 0.0F, 4.0F, 16.0F, 16.0F, 12.0F);
-    VoxelShape BUILD_SOUTH_BB_TALL = Block.createCuboidShape(4.0F, 0.0F, 4.0F, 12.0F, 16.0F, 16.0F);
-    VoxelShape BUILD_WEST_BB_TALL = Block.createCuboidShape(0.0F, 0.0F, 4.0F, 12.0F, 16.0F, 12.0F);
+    VoxelShape CASTLE_POST_BB = Block.box(3.0F, 0.0F, 3.0F, 13.0F, 16.0F, 13.0F);
+    VoxelShape CASTLE_NORTH_BB_LOW = Block.box(3.0F, 0.0F, 0.0F, 13.0F, 8.0F, 13.0F);
+    VoxelShape CASTLE_EAST_BB_LOW = Block.box(3.0F, 0.0F, 3.0F, 16.0F, 8.0F, 13.0F);
+    VoxelShape CASTLE_SOUTH_BB_LOW = Block.box(3.0F, 0.0F, 3.0F, 13.0F, 8.0F, 16.0F);
+    VoxelShape CASTLE_WEST_BB_LOW = Block.box(0.0F, 0.0F, 3.0F, 13.0F, 8.0F, 13.0F);
+    VoxelShape CASTLE_NORTH_BB_TALL = Block.box(3.0F, 0.0F, 0.0F, 13.0F, 16.0F, 13.0F);
+    VoxelShape CASTLE_EAST_BB_TALL = Block.box(3.0F, 0.0F, 3.0F, 16.0F, 16.0F, 13.0F);
+    VoxelShape CASTLE_SOUTH_BB_TALL = Block.box(3.0F, 0.0F, 3.0F, 13.0F, 16.0F, 16.0F);
+    VoxelShape CASTLE_WEST_BB_TALL = Block.box(0.0F, 0.0F, 3.0F, 13.0F, 16.0F, 13.0F);
 
-    VoxelShape BUILD_POST_CB = Block.createCuboidShape(4.0F, 0.0F, 4.0F, 12.0F, 24.0F, 12.0F);
-    VoxelShape BUILD_NORTH_CB_LOW = Block.createCuboidShape(4.0F, 0.0F, 0.0F, 12.0F, 24.0F, 12.0F);
-    VoxelShape BUILD_EAST_CB_LOW = Block.createCuboidShape(4.0F, 0.0F, 4.0F, 16.0F, 24.0F, 12.0F);
-    VoxelShape BUILD_SOUTH_CB_LOW = Block.createCuboidShape(4.0F, 0.0F, 4.0F, 12.0F, 24.0F, 16.0F);
-    VoxelShape BUILD_WEST_CB_LOW = Block.createCuboidShape(0.0F, 0.0F, 4.0F, 12.0F, 24.0F, 12.0F);
-    VoxelShape BUILD_NORTH_CB_TALL = Block.createCuboidShape(4.0F, 0.0F, 0.0F, 12.0F, 24.0F, 12.0F);
-    VoxelShape BUILD_EAST_CB_TALL = Block.createCuboidShape(4.0F, 0.0F, 4.0F, 16.0F, 24.0F, 12.0F);
-    VoxelShape BUILD_SOUTH_CB_TALL = Block.createCuboidShape(4.0F, 0.0F, 4.0F, 12.0F, 24.0F, 16.0F);
-    VoxelShape BUILD_WEST_CB_TALL = Block.createCuboidShape(0.0F, 0.0F, 4.0F, 12.0F, 24.0F, 12.0F);
+    VoxelShape CASTLE_POST_CB = Block.box(3.0F, 0.0F, 3.0F, 13.0F, 24.0F, 13.0F);
+    VoxelShape CASTLE_NORTH_CB_LOW = Block.box(3.0F, 0.0F, 0.0F, 13.0F, 8.0F, 13.0F);
+    VoxelShape CASTLE_EAST_CB_LOW = Block.box(3.0F, 0.0F, 3.0F, 16.0F, 8.0F, 13.0F);
+    VoxelShape CASTLE_SOUTH_CB_LOW = Block.box(3.0F, 0.0F, 3.0F, 13.0F, 8.0F, 16.0F);
+    VoxelShape CASTLE_WEST_CB_LOW = Block.box(0.0F, 0.0F, 3.0F, 13.0F, 8.0F, 13.0F);
+    VoxelShape CASTLE_NORTH_CB_TALL = Block.box(3.0F, 0.0F, 0.0F, 13.0F, 24.0F, 13.0F);
+    VoxelShape CASTLE_EAST_CB_TALL = Block.box(3.0F, 0.0F, 3.0F, 16.0F, 24.0F, 13.0F);
+    VoxelShape CASTLE_SOUTH_CB_TALL = Block.box(3.0F, 0.0F, 3.0F, 13.0F, 24.0F, 16.0F);
+    VoxelShape CASTLE_WEST_CB_TALL = Block.box(0.0F, 0.0F, 3.0F, 13.0F, 24.0F, 13.0F);
 
-    public static EnumProperty<WallShape> NORTH_WALL = NORTH_WALL_SHAPE;
-    public static EnumProperty<WallShape> EAST_WALL = EAST_WALL_SHAPE;
-    public static EnumProperty<WallShape> SOUTH_WALL = SOUTH_WALL_SHAPE;
-    public static EnumProperty<WallShape> WEST_WALL = WEST_WALL_SHAPE;
+
+    VoxelShape BUILD_POST_BB = Block.box(4.0F, 0.0F, 4.0F, 12.0F, 16.0F, 12.0F);
+    VoxelShape BUILD_NORTH_BB_LOW = Block.box(4.0F, 0.0F, 0.0F, 12.0F, 16.0F, 12.0F);
+    VoxelShape BUILD_EAST_BB_LOW = Block.box(4.0F, 0.0F, 4.0F, 16.0F, 16.0F, 12.0F);
+    VoxelShape BUILD_SOUTH_BB_LOW = Block.box(4.0F, 0.0F, 4.0F, 12.0F, 16.0F, 16.0F);
+    VoxelShape BUILD_WEST_BB_LOW = Block.box(0.0F, 0.0F, 4.0F, 12.0F, 16.0F, 12.0F);
+    VoxelShape BUILD_NORTH_BB_TALL = Block.box(4.0F, 0.0F, 0.0F, 12.0F, 16.0F, 12.0F);
+    VoxelShape BUILD_EAST_BB_TALL = Block.box(4.0F, 0.0F, 4.0F, 16.0F, 16.0F, 12.0F);
+    VoxelShape BUILD_SOUTH_BB_TALL = Block.box(4.0F, 0.0F, 4.0F, 12.0F, 16.0F, 16.0F);
+    VoxelShape BUILD_WEST_BB_TALL = Block.box(0.0F, 0.0F, 4.0F, 12.0F, 16.0F, 12.0F);
+
+    VoxelShape BUILD_POST_CB = Block.box(4.0F, 0.0F, 4.0F, 12.0F, 24.0F, 12.0F);
+    VoxelShape BUILD_NORTH_CB_LOW = Block.box(4.0F, 0.0F, 0.0F, 12.0F, 24.0F, 12.0F);
+    VoxelShape BUILD_EAST_CB_LOW = Block.box(4.0F, 0.0F, 4.0F, 16.0F, 24.0F, 12.0F);
+    VoxelShape BUILD_SOUTH_CB_LOW = Block.box(4.0F, 0.0F, 4.0F, 12.0F, 24.0F, 16.0F);
+    VoxelShape BUILD_WEST_CB_LOW = Block.box(0.0F, 0.0F, 4.0F, 12.0F, 24.0F, 12.0F);
+    VoxelShape BUILD_NORTH_CB_TALL = Block.box(4.0F, 0.0F, 0.0F, 12.0F, 24.0F, 12.0F);
+    VoxelShape BUILD_EAST_CB_TALL = Block.box(4.0F, 0.0F, 4.0F, 16.0F, 24.0F, 12.0F);
+    VoxelShape BUILD_SOUTH_CB_TALL = Block.box(4.0F, 0.0F, 4.0F, 12.0F, 24.0F, 16.0F);
+    VoxelShape BUILD_WEST_CB_TALL = Block.box(0.0F, 0.0F, 4.0F, 12.0F, 24.0F, 12.0F);
+
+    public static EnumProperty<WallSide> NORTH_WALL = NORTH;
+    public static EnumProperty<WallSide> EAST_WALL = EAST;
+    public static EnumProperty<WallSide> SOUTH_WALL = SOUTH;
+    public static EnumProperty<WallSide> WEST_WALL = WEST;
     public final Map<BlockState, VoxelShape> modernShape;
     public final Map<BlockState, VoxelShape> castleShape;
     public final Map<BlockState, VoxelShape> buildShape;
@@ -86,8 +90,8 @@ public class Wall extends WallBlock {
     public final Map<BlockState, VoxelShape> castleCollisionShape;
     public final Map<BlockState, VoxelShape> buildCollisionShape;
 
-    public Wall(Settings setting) {
-        super(setting);
+    public Wall(Properties properties) {
+        super(properties);
         this.modernShape = this.makeShapes(MODERN_POST_BB, MODERN_NORTH_BB_LOW, MODERN_EAST_BB_LOW, MODERN_SOUTH_BB_LOW, MODERN_WEST_BB_LOW, MODERN_NORTH_BB_TALL,MODERN_EAST_BB_TALL, MODERN_SOUTH_BB_TALL, MODERN_WEST_BB_TALL);
         this.modernCollisionShape = this.makeShapes(MODERN_POST_CB, MODERN_NORTH_CB_LOW, MODERN_EAST_CB_LOW, MODERN_SOUTH_CB_LOW, MODERN_WEST_CB_LOW, MODERN_NORTH_CB_TALL,MODERN_EAST_CB_TALL, MODERN_SOUTH_CB_TALL, MODERN_WEST_CB_TALL);
 
@@ -101,51 +105,51 @@ public class Wall extends WallBlock {
 
 
     public Map<BlockState, VoxelShape> makeShapes(VoxelShape post, VoxelShape north_low, VoxelShape east_low, VoxelShape south_low, VoxelShape west_low, VoxelShape north_tall, VoxelShape east_tall, VoxelShape south_tall, VoxelShape west_tall) {
-        ImmutableMap.Builder<BlockState, VoxelShape> builder = ImmutableMap.builder();
-        for(Boolean is_up : UP.getValues()) {
-            for (WallShape wall_north : NORTH_WALL.getValues()) {
-                for (WallShape wall_east : EAST_WALL.getValues()) {
-                    for (WallShape wall_south : SOUTH_WALL.getValues()) {
-                        for (WallShape wall_west : WEST_WALL.getValues()) {
+        List<Map.Entry<BlockState, VoxelShape>> entries = new java.util.ArrayList<>();
+        for(Boolean is_up : UP.getPossibleValues()) {
+            for (WallSide wall_north : NORTH_WALL.getPossibleValues()) {
+                for (WallSide wall_east : EAST_WALL.getPossibleValues()) {
+                    for (WallSide wall_south : SOUTH_WALL.getPossibleValues()) {
+                        for (WallSide wall_west : WEST_WALL.getPossibleValues()) {
 
                             VoxelShape shape = post;
-                            if (wall_north == WallShape.TALL) {
-                                shape = VoxelShapes.union(shape, north_tall);
+                            if (wall_north == WallSide.TALL) {
+                                shape = Shapes.or(shape, north_tall);
                             }
-                            if (wall_north == WallShape.LOW) {
-                                shape = VoxelShapes.union(shape, north_low);
+                            if (wall_north == WallSide.LOW) {
+                                shape = Shapes.or(shape, north_low);
                             }
-                            if (wall_east == WallShape.TALL) {
-                                shape = VoxelShapes.union(shape, east_tall);
+                            if (wall_east == WallSide.TALL) {
+                                shape = Shapes.or(shape, east_tall);
                             }
-                            if (wall_east == WallShape.LOW) {
-                                shape = VoxelShapes.union(shape, east_low);
+                            if (wall_east == WallSide.LOW) {
+                                shape = Shapes.or(shape, east_low);
                             }
-                            if (wall_south == WallShape.TALL) {
-                                shape = VoxelShapes.union(shape, south_tall);
+                            if (wall_south == WallSide.TALL) {
+                                shape = Shapes.or(shape, south_tall);
                             }
-                            if (wall_south == WallShape.LOW) {
-                                shape = VoxelShapes.union(shape, south_low);
+                            if (wall_south == WallSide.LOW) {
+                                shape = Shapes.or(shape, south_low);
                             }
-                            if (wall_west == WallShape.TALL) {
-                                shape = VoxelShapes.union(shape, west_tall);
+                            if (wall_west == WallSide.TALL) {
+                                shape = Shapes.or(shape, west_tall);
                             }
-                            if (wall_west == WallShape.LOW) {
-                                shape = VoxelShapes.union(shape, west_low);
+                            if (wall_west == WallSide.LOW) {
+                                shape = Shapes.or(shape, west_low);
                             }
-                            BlockState state = this.getDefaultState().with(UP, is_up).with(NORTH_WALL, wall_north).with(EAST_WALL, wall_east).with(SOUTH_WALL, wall_south).with(WEST_WALL, wall_west);
-                            builder.put(state.with(WATERLOGGED, Boolean.valueOf(false)), shape);
-                            builder.put(state.with(WATERLOGGED, Boolean.valueOf(true)), shape);
+                            BlockState state = this.defaultBlockState().setValue(UP, is_up).setValue(NORTH_WALL, wall_north).setValue(EAST_WALL, wall_east).setValue(SOUTH_WALL, wall_south).setValue(WEST_WALL, wall_west);
+                            entries.add(Map.entry(state.setValue(WATERLOGGED, false), shape));
+                            entries.add(Map.entry(state.setValue(WATERLOGGED, true),  shape));
                         }
                     }
                 }
             }
         }
-        return builder.build();
+        return Map.copyOf(entries.stream().collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue)));
     }
 
 
-    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+    public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
         if (state.toString().contains("modern")) {
             return this.modernShape.get(state);
         }
@@ -157,7 +161,7 @@ public class Wall extends WallBlock {
         }
     }
 
-    public VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+    public VoxelShape getCollisionShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
         if (state.toString().contains("modern")) {
             return this.modernCollisionShape.get(state);
         }

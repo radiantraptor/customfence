@@ -34,6 +34,23 @@
     "customfence:cobblestone_waxed_exposed_iron_mesh_fence",
     "customfence:cobblestone_waxed_weathered_iron_mesh_fence",
     "customfence:cobblestone_waxed_oxidized_iron_mesh_fence",
-    "customfence:cobblestone_gold_mesh_fence"
+    "customfence:cobblestone_gold_mesh_fence",
+    "customfence:white_concrete_glass_plain",
+    "customfence:white_concrete_white_stained_glass_plain",
+    "customfence:white_concrete_light_gray_stained_glass_plain",
+    "customfence:white_concrete_gray_stained_glass_plain",
+    "customfence:white_concrete_black_stained_glass_plain",
+    "customfence:white_concrete_brown_stained_glass_plain",
+    "customfence:white_concrete_red_stained_glass_plain",
+    "customfence:white_concrete_orange_stained_glass_plain",
+    "customfence:white_concrete_yellow_stained_glass_plain",
+    "customfence:white_concrete_lime_stained_glass_plain",
+    "customfence:white_concrete_green_stained_glass_plain",
+    "customfence:white_concrete_cyan_stained_glass_plain",
+    "customfence:white_concrete_light_blue_stained_glass_plain",
+    "customfence:white_concrete_blue_stained_glass_plain",
+    "customfence:white_concrete_purple_stained_glass_plain",
+    "customfence:white_concrete_magenta_stained_glass_plain",
+    "customfence:white_concrete_pink_stained_glass_plain"
   ]
 }

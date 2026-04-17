@@ -1,12 +1,14 @@
 package com.raptor.customfence_fabric.init;
 
 import com.raptor.customfence_fabric.Main;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroups;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.util.Identifier;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.item.Item;
+
+import java.util.function.Function;
 
 
 @SuppressWarnings({"WeakerAccess", "unused"})
@@ -16,14 +18,13 @@ public class ModItems {
 
     }
 
-    private static Item registerItem(String name, Item item) {
-        return Registry.register(Registries.ITEM, Identifier.of(Main.MOD_ID, name), item);
+    private static Item registerItem(String name, Function<Item.Properties, Item> factory, Item.Properties settings) {
+        Item item = factory.apply(settings.setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Main.MOD_ID, name))));
+        return Registry.register(BuiltInRegistries.ITEM, ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Main.MOD_ID, name)), item);
     }
 
     public static void registerModItems() {
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
-            entries.add(ModBlocksWoodFenceBasic.SPRUCE_OAK_CLASSIC.asItem());
-        });
+
     }
 
 

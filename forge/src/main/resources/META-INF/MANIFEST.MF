@@ -1,9 +1,2 @@
 Manifest-Version: 1.0
-Specification-Title: examplemod
-Specification-Vendor: YourNameHere, OtherNameHere
-Specification-Version: 1
-Implementation-Title: ForgeTutorial_1-21-6
-Implementation-Version: 1-21-6
-Implementation-Vendor: YourNameHere, OtherNameHere
-Implementation-Timestamp: 2023-11-28T19:11:15+0100
 

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "A A",
+    "AAA"
+   ],
+  "key": {
+    "A": "minecraft:polished_granite"
+  },
+  "result": {
+    "id": "customfence:polished_granite_modern",
+    "count": 5
+  }
+}

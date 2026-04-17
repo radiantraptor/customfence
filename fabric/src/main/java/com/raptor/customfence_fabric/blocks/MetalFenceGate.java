@@ -1,76 +1,80 @@
 package com.raptor.customfence_fabric.blocks;
 
 import com.raptor.customfence_fabric.config.ModConfig;
-import net.minecraft.block.*;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.server.world.ServerWorld;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.hit.BlockHitResult;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
-import net.minecraft.util.math.random.Random;
-import net.minecraft.world.World;
-import net.minecraft.world.block.WireOrientation;
-import net.minecraft.world.event.GameEvent;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.FenceGateBlock;
+import net.minecraft.world.level.block.WeatheringCopper;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.WoodType;
+import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.level.redstone.Orientation;
+import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Optional;
+public class MetalFenceGate extends FenceGateBlock implements WeatheringCopper {
 
-public class MetalFenceGate extends FenceGateBlock implements Oxidizable {
+    public final WeatheringCopper.WeatherState weatherState;
 
-    public final Oxidizable.OxidationLevel oxidationLevel;
-
-    public MetalFenceGate(OxidationLevel oxidationLevel, Settings settings, WoodType metaltype) {
-        super(metaltype, settings);
-        this.oxidationLevel = oxidationLevel;
+    public MetalFenceGate(WeatheringCopper.WeatherState weatherState, WoodType woodtype, BlockBehaviour.Properties properties) {
+        super(woodtype, properties);
+        this.weatherState = weatherState;
     }
 
-    public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        this.tickDegradation(state, world, pos, random);
+    public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+        this.changeOverTime(state, level, pos, random);
     }
 
-    public boolean hasRandomTicks(BlockState state) {
+    public boolean isRandomlyTicking(BlockState state) {
         if (ModConfig.metal_oxidation == true) {
-            return Oxidizable.getIncreasedOxidationBlock(state.getBlock()).isPresent();
+            return WeatheringCopper.getNext(state.getBlock()).isPresent();
         }
         else {
             return false;
         }
     }
 
-    public Oxidizable.OxidationLevel getDegradationLevel() {
-        return this.oxidationLevel;
+    public WeatheringCopper.WeatherState getAge() {
+        return this.weatherState;
     }
 
-    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult result) {
+    public InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult result) {
 
-        if (state.get(OPEN)) {
-            state = state.with(OPEN, false);
-            world.setBlockState(pos, state, 10);
-            world.playSound(player, pos, SoundEvents.BLOCK_IRON_DOOR_CLOSE, SoundCategory.BLOCKS, 1.0f, 1.0f);
+        if (state.getValue(OPEN)) {
+            state = state.setValue(OPEN, false);
+            level.setBlock(pos, state, 10);
+            level.playSound(player, pos, SoundEvents.IRON_DOOR_CLOSE, SoundSource.BLOCKS, 1.0f, level.getRandom().nextFloat() * 0.1F + 0.9F);
 
         } else {
-            Direction direction = player.getHorizontalFacing();
-            if (state.get(FACING) == direction.getOpposite()) {
-                state = state.with(FACING, direction);
+            Direction direction = player.getDirection();
+            if (state.getValue(FACING) == direction.getOpposite()) {
+                state = state.setValue(FACING, direction);
             }
-            state = state.with(OPEN, true);
-            world.setBlockState(pos, state, 10);
-            world.playSound(player, pos, SoundEvents.BLOCK_IRON_DOOR_OPEN, SoundCategory.BLOCKS, 1.0f, 1.0f);
+            state = state.setValue(OPEN, true);
+            level.setBlock(pos, state, 10);
+            level.playSound(player, pos, SoundEvents.IRON_DOOR_OPEN, SoundSource.BLOCKS, 1.0f, level.getRandom().nextFloat() * 0.1F + 0.9F);
         }
-        return ActionResult.SUCCESS;
+        return InteractionResult.SUCCESS;
     }
 
-    public void neighborUpdate(BlockState state, World world, BlockPos pos, Block block, @Nullable WireOrientation wireOrientation, boolean notify) {
-        if (!world.isClient) {
-            if (state.get(POWERED) != world.isReceivingRedstonePower(pos)) {
-                world.setBlockState(pos, (state.with(POWERED, world.isReceivingRedstonePower(pos))).with(OPEN, world.isReceivingRedstonePower(pos)), 2);
-                if (state.get(OPEN) != world.isReceivingRedstonePower(pos)) {
-                    world.playSound((PlayerEntity)null, pos, world.isReceivingRedstonePower(pos) ? SoundEvents.BLOCK_IRON_DOOR_OPEN : SoundEvents.BLOCK_IRON_DOOR_CLOSE, SoundCategory.BLOCKS, 1.0f, 1.0f);
-                    world.emitGameEvent((Entity)null, world.isReceivingRedstonePower(pos) ? GameEvent.BLOCK_OPEN : GameEvent.BLOCK_CLOSE, pos);
+    public void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, @Nullable Orientation orientation, boolean notify) {
+        if (!level.isClientSide()) {
+            boolean hasPower = level.hasNeighborSignal(pos);
+            if (state.getValue(POWERED) != hasPower) {
+                level.setBlock(pos, (state.setValue(POWERED, hasPower)).setValue(OPEN, hasPower), 2);
+                if (state.getValue(OPEN) != hasPower) {
+                    level.playSound((Entity)null, pos, hasPower ? SoundEvents.IRON_DOOR_OPEN : SoundEvents.IRON_DOOR_CLOSE, SoundSource.BLOCKS, 1.0f, level.getRandom().nextFloat() * 0.1F + 0.9F);
+                    level.gameEvent((Entity)null, hasPower ? GameEvent.BLOCK_OPEN : GameEvent.BLOCK_CLOSE, pos);
                 }
             }
         }

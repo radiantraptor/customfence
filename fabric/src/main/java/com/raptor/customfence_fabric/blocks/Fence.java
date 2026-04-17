@@ -1,17 +1,19 @@
 package com.raptor.customfence_fabric.blocks;
 
 import com.raptor.customfence_fabric.Main;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.FenceBlock;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.util.Identifier;
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.level.block.FenceBlock;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.shapes.VoxelShape;
+
+import java.util.function.Function;
+
 
 public class Fence extends FenceBlock {
 
-    public Fence(String string) {
-        super(AbstractBlock.Settings.create().registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Main.MOD_ID, string))).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public Fence(Properties properties) {
+        super(properties);
     }
 
 }

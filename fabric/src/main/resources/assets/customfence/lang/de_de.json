@@ -4,7 +4,8 @@
     "itemGroup.customfence.tab_customfence_wood_fence_basic": "CustomFence Einfache Zäune",
     "itemGroup.customfence.tab_customfence_wood_fence_gate_advanced": "CustomFence Komplexe Zäune+Tore",
     "itemGroup.customfence.tab_customfence_wall": "CustomFence Mauer+Wand",
-    "itemGroup.customfence.tab_customfence_metal_fence": "CustomFence Metallzaun",
+    "itemGroup.customfence.tab_customfence_metal_fence": "CustomFence Metallzäune+Tore",
+    "itemGroup.customfence.tab_customfence_glass_fence": "CustomFence Glaszäune+Tore",
 
     "block.customfence.oak_classic_fence_gate": "Zauntor Classic Eiche",
     "block.customfence.oak_wildlife_fence_gate": "Zauntor Tierwelt Eiche",
@@ -2070,13 +2071,25 @@
     "block.customfence.andesite_building": "Andesitmauer Wand",
     "block.customfence.andesite_castle": "Andesitmauer Burg",
 
+    "block.customfence.polished_andesite_modern": "Polierte Andesitmauer Modern",
+    "block.customfence.polished_andesite_building": "Polierte Andesitmauer Wand",
+    "block.customfence.polished_andesite_castle": "Polierte Andesitmauer Burg",
+
     "block.customfence.diorite_modern": "Dioritmauer Modern",
     "block.customfence.diorite_building": "Dioritmauer Wand",
     "block.customfence.diorite_castle": "Dioritmauer Burg",
 
+    "block.customfence.polished_diorite_modern": "Polierte Dioritmauer Modern",
+    "block.customfence.polished_diorite_building": "Polierte Dioritmauer Wand",
+    "block.customfence.polished_diorite_castle": "Polierte Dioritmauer Burg",
+
     "block.customfence.granite_modern": "Granitmauer Modern",
     "block.customfence.granite_building": "Granitmauer Wand",
     "block.customfence.granite_castle": "Granitmauer Burg",
+
+    "block.customfence.polished_granite_modern": "Polierte Granitmauer Modern",
+    "block.customfence.polished_granite_building": "Polierte Granitmauer Wand",
+    "block.customfence.polished_granite_castle": "Polierte Granitmauer Burg",
 
     "block.customfence.sandstone_modern": "Sandsteinmauer Modern",
     "block.customfence.sandstone_building": "Sandsteinmauer Wand",
@@ -2231,5 +2244,41 @@
     "block.customfence.waxed_oxidized_iron_mesh_fence_gate": "Gewachstes Oxidiertes Eisenzauntor Netz",
 
     "block.customfence.cobblestone_gold_mesh_fence": "Bruchsteingoldzaun Netz",
-    "block.customfence.gold_mesh_fence_gate": "Goldzauntor Netz"
+    "block.customfence.gold_mesh_fence_gate": "Goldzauntor Netz",
+
+    "block.customfence.white_concrete_glass_plain": "Glaszaun Schlicht",
+    "block.customfence.white_concrete_white_stained_glass_plain": "Weißer Glaszaun Schlicht",
+    "block.customfence.white_concrete_light_gray_stained_glass_plain": "Hellgrauer Glaszaun Schlicht",
+    "block.customfence.white_concrete_gray_stained_glass_plain": "Grauer Glaszaun Schlicht",
+    "block.customfence.white_concrete_black_stained_glass_plain": "Schwarzer Glaszaun Schlicht",
+    "block.customfence.white_concrete_brown_stained_glass_plain": "Brauner Glaszaun Schlicht",
+    "block.customfence.white_concrete_red_stained_glass_plain": "Roter Glaszaun Schlicht",
+    "block.customfence.white_concrete_orange_stained_glass_plain": "Orangener Glaszaun Schlicht",
+    "block.customfence.white_concrete_yellow_stained_glass_plain": "Gelber Glaszaun Schlicht",
+    "block.customfence.white_concrete_lime_stained_glass_plain": "Hellgrüner Glaszaun Schlicht",
+    "block.customfence.white_concrete_green_stained_glass_plain": "Grüner Glaszaun Schlicht",
+    "block.customfence.white_concrete_cyan_stained_glass_plain": "Türkiser Glaszaun Schlicht",
+    "block.customfence.white_concrete_light_blue_stained_glass_plain": "Hellblauer Glaszaun Schlicht",
+    "block.customfence.white_concrete_blue_stained_glass_plain": "Blauer Glaszaun Schlicht",
+    "block.customfence.white_concrete_purple_stained_glass_plain": "Violetter Glaszaun Schlicht",
+    "block.customfence.white_concrete_magenta_stained_glass_plain": "Magenta Glaszaun Schlicht",
+    "block.customfence.white_concrete_pink_stained_glass_plain": "Rosa Glaszaun Schlicht",
+
+    "block.customfence.glass_plain_fence_gate": "Glaszauntor Schlicht",
+    "block.customfence.white_stained_glass_plain_fence_gate": "Weißes Glaszauntor Schlicht",
+    "block.customfence.light_gray_stained_glass_plain_fence_gate": "Hellgraues Glaszauntor Schlicht",
+    "block.customfence.gray_stained_glass_plain_fence_gate": "Graues Glaszauntor Schlicht",
+    "block.customfence.black_stained_glass_plain_fence_gate": "Schwarzes Glaszauntor Schlicht",
+    "block.customfence.brown_stained_glass_plain_fence_gate": "Braunes Glaszauntor Schlicht",
+    "block.customfence.red_stained_glass_plain_fence_gate": "Rotes Glaszauntor Schlicht",
+    "block.customfence.orange_stained_glass_plain_fence_gate": "Orangenes Glaszauntor Schlicht",
+    "block.customfence.yellow_stained_glass_plain_fence_gate": "Gelbes Glaszauntor Schlicht",
+    "block.customfence.lime_stained_glass_plain_fence_gate": "Hellgrünes Glaszauntor Schlicht",
+    "block.customfence.green_stained_glass_plain_fence_gate": "Grünes Glaszauntor Schlicht",
+    "block.customfence.cyan_stained_glass_plain_fence_gate": "Türkises Glaszauntor Schlicht",
+    "block.customfence.light_blue_stained_glass_plain_fence_gate": "Hellblaues Glaszauntor Schlicht",
+    "block.customfence.blue_stained_glass_plain_fence_gate": "Blaues Glaszauntor Schlicht",
+    "block.customfence.purple_stained_glass_plain_fence_gate": "Violettes Glaszauntor Schlicht",
+    "block.customfence.magenta_stained_glass_plain_fence_gate": "Magenta Glaszauntor Schlicht",
+    "block.customfence.pink_stained_glass_plain_fence_gate": "Rosa Glaszauntor Schlicht"
 }

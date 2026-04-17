@@ -18,6 +18,7 @@ public class ModItemTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_TAB_WOOD_FENCE_GATE_ADVANCED = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Main.MOD_ID);
     public static final DeferredRegister<CreativeModeTab> CREATIVE_TAB_WALLS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Main.MOD_ID);
     public static final DeferredRegister<CreativeModeTab> CREATIVE_TAB_METAL_FENCES = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Main.MOD_ID);
+    public static final DeferredRegister<CreativeModeTab> CREATIVE_TAB_GLASS_FENCES = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Main.MOD_ID);
     public static final DeferredRegister<CreativeModeTab> CREATIVE_TAB_ALL = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Main.MOD_ID);
 
     public static ArrayList<Block> listOfWoodGateBasicBlocks() {
@@ -2242,13 +2243,25 @@ public class ModItemTabs {
         WALL_BLOCK_LIST.add(ModBlocksWall.ANDESITE_BUILDING.get());
         WALL_BLOCK_LIST.add(ModBlocksWall.ANDESITE_CASTLE.get());
 
+        WALL_BLOCK_LIST.add(ModBlocksWall.POLISHED_ANDESITE_MODERN.get());
+        WALL_BLOCK_LIST.add(ModBlocksWall.POLISHED_ANDESITE_BUILDING.get());
+        WALL_BLOCK_LIST.add(ModBlocksWall.POLISHED_ANDESITE_CASTLE.get());
+
         WALL_BLOCK_LIST.add(ModBlocksWall.DIORITE_MODERN.get());
         WALL_BLOCK_LIST.add(ModBlocksWall.DIORITE_BUILDING.get());
         WALL_BLOCK_LIST.add(ModBlocksWall.DIORITE_CASTLE.get());
 
+        WALL_BLOCK_LIST.add(ModBlocksWall.POLISHED_DIORITE_MODERN.get());
+        WALL_BLOCK_LIST.add(ModBlocksWall.POLISHED_DIORITE_BUILDING.get());
+        WALL_BLOCK_LIST.add(ModBlocksWall.POLISHED_DIORITE_CASTLE.get());
+
         WALL_BLOCK_LIST.add(ModBlocksWall.GRANITE_MODERN.get());
         WALL_BLOCK_LIST.add(ModBlocksWall.GRANITE_BUILDING.get());
         WALL_BLOCK_LIST.add(ModBlocksWall.GRANITE_CASTLE.get());
+
+        WALL_BLOCK_LIST.add(ModBlocksWall.POLISHED_GRANITE_MODERN.get());
+        WALL_BLOCK_LIST.add(ModBlocksWall.POLISHED_GRANITE_BUILDING.get());
+        WALL_BLOCK_LIST.add(ModBlocksWall.POLISHED_GRANITE_CASTLE.get());
 
         WALL_BLOCK_LIST.add(ModBlocksWall.SANDSTONE_MODERN.get());
         WALL_BLOCK_LIST.add(ModBlocksWall.SANDSTONE_BUILDING.get());
@@ -2419,6 +2432,49 @@ public class ModItemTabs {
         return METAL_FENCE_BLOCK_LIST;
     }
 
+    public static ArrayList<Block> listOfGlassFenceBlocks() {
+
+        ArrayList<Block> GLASS_FENCE_BLOCK_LIST = new ArrayList<Block>();
+
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.WHITE_CONCRETE_GLASS_PLAIN.get());
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.WHITE_CONCRETE_WHITE_STAINED_GLASS_PLAIN.get());
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.WHITE_CONCRETE_LIGHT_GRAY_STAINED_GLASS_PLAIN.get());
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.WHITE_CONCRETE_GRAY_STAINED_GLASS_PLAIN.get());
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.WHITE_CONCRETE_BLACK_STAINED_GLASS_PLAIN.get());
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.WHITE_CONCRETE_BROWN_STAINED_GLASS_PLAIN.get());
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.WHITE_CONCRETE_RED_STAINED_GLASS_PLAIN.get());
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.WHITE_CONCRETE_ORANGE_STAINED_GLASS_PLAIN.get());
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.WHITE_CONCRETE_YELLOW_STAINED_GLASS_PLAIN.get());
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.WHITE_CONCRETE_LIME_STAINED_GLASS_PLAIN.get());
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.WHITE_CONCRETE_GREEN_STAINED_GLASS_PLAIN.get());
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.WHITE_CONCRETE_CYAN_STAINED_GLASS_PLAIN.get());
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.WHITE_CONCRETE_LIGHT_BLUE_STAINED_GLASS_PLAIN.get());
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.WHITE_CONCRETE_BLUE_STAINED_GLASS_PLAIN.get());
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.WHITE_CONCRETE_PURPLE_STAINED_GLASS_PLAIN.get());
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.WHITE_CONCRETE_MAGENTA_STAINED_GLASS_PLAIN.get());
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.WHITE_CONCRETE_PINK_STAINED_GLASS_PLAIN.get());
+
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.GLASS_PLAIN_FENCE_GATE.get());
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.WHITE_STAINED_GLASS_PLAIN_FENCE_GATE.get());
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.LIGHT_GRAY_STAINED_GLASS_PLAIN_FENCE_GATE.get());
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.GRAY_STAINED_GLASS_PLAIN_FENCE_GATE.get());
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.BLACK_STAINED_GLASS_PLAIN_FENCE_GATE.get());
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.BROWN_STAINED_GLASS_PLAIN_FENCE_GATE.get());
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.RED_STAINED_GLASS_PLAIN_FENCE_GATE.get());
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.ORANGE_STAINED_GLASS_PLAIN_FENCE_GATE.get());
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.YELLOW_STAINED_GLASS_PLAIN_FENCE_GATE.get());
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.LIME_STAINED_GLASS_PLAIN_FENCE_GATE.get());
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.GREEN_STAINED_GLASS_PLAIN_FENCE_GATE.get());
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.CYAN_STAINED_GLASS_PLAIN_FENCE_GATE.get());
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.LIGHT_BLUE_STAINED_GLASS_PLAIN_FENCE_GATE.get());
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.BLUE_STAINED_GLASS_PLAIN_FENCE_GATE.get());
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.PURPLE_STAINED_GLASS_PLAIN_FENCE_GATE.get());
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.MAGENTA_STAINED_GLASS_PLAIN_FENCE_GATE.get());
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.PINK_STAINED_GLASS_PLAIN_FENCE_GATE.get());
+
+        return GLASS_FENCE_BLOCK_LIST;
+    }
+
 
     public static void registerTabWoodGateBasic() {
         CREATIVE_TAB_WOOD_GATE_BASIC.register("customfence_1_wood_gate_basic", () ->
@@ -2461,7 +2517,7 @@ public class ModItemTabs {
 
     public static void registerTabWall() {
         CREATIVE_TAB_WALLS.register("customfence_2_wall", () ->
-                CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocksWall.STONE_MODERN.get()))
+                CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocksWall.STONE_MODERN))
                         .title(Component.translatable("itemGroup.customfence.tab_customfence_wall"))
                         .displayItems((itemDisplayParameters, output) -> {
                             for (Block block : listOfWallBlocks()) {
@@ -2474,10 +2530,22 @@ public class ModItemTabs {
 
     public static void registerTabMetalFence() {
         CREATIVE_TAB_METAL_FENCES.register("customfence_3_metal_fence", () ->
-                CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocksMetalFence.COBBLESTONE_IRON_MANSION_FENCE.get()))
+                CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocksMetalFence.COBBLESTONE_IRON_MANSION_FENCE))
                         .title(Component.translatable("itemGroup.customfence.tab_customfence_metal_fence"))
                         .displayItems((itemDisplayParameters, output) -> {
                             for (Block block : listOfMetalFenceBlocks()) {
+                                output.accept(block);
+                            }
+                        }).build()
+        );
+    }
+
+    public static void registerTabGlassFence() {
+        CREATIVE_TAB_METAL_FENCES.register("customfence_4_glass_fence", () ->
+                CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocksGlassFence.WHITE_CONCRETE_ORANGE_STAINED_GLASS_PLAIN))
+                        .title(Component.translatable("itemGroup.customfence.tab_customfence_glass_fence"))
+                        .displayItems((itemDisplayParameters, output) -> {
+                            for (Block block : listOfGlassFenceBlocks()) {
                                 output.accept(block);
                             }
                         }).build()
@@ -2503,6 +2571,9 @@ public class ModItemTabs {
                                 output.accept(block);
                             }
                             for (Block block : listOfMetalFenceBlocks()) {
+                                output.accept(block);
+                            }
+                            for (Block block : listOfGlassFenceBlocks()) {
                                 output.accept(block);
                             }
                         }).build()

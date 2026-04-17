@@ -1,7 +1,0 @@
-{
-  "parent": "customfence:block/template_mesh_fence_side",
-  "textures": {
-    "1": "minecraft:block/exposed_copper",
-    "2": "minecraft:block/cobblestone"
-  }
-}

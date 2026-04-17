@@ -1,0 +1,7 @@
+{
+  "parent": "customfence:block/template_modern_wall_inventory",
+  "textures": {
+    "particle": "minecraft:block/polished_granite",
+    "1": "minecraft:block/polished_granite"
+  }
+}

@@ -1,7 +1,0 @@
-{
-  "parent": "customfence:block/template_mansion_fence_post",
-  "textures": {
-    "particle": "minecraft:block/cobblestone",
-    "1": "minecraft:block/cobblestone"
-  }
-}

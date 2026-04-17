@@ -1,0 +1,7 @@
+{
+  "parent": "customfence:block/template_castle_wall_side_tall",
+  "textures": {
+    "particle": "minecraft:block/polished_granite",
+    "1": "minecraft:block/polished_granite"
+  }
+}

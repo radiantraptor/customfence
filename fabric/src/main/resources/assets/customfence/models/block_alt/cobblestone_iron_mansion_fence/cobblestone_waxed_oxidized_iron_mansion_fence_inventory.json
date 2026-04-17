@@ -1,7 +1,0 @@
-{
-  "parent": "customfence:block/template_mansion_fence_inventory",
-  "textures": {
-    "1": "customfence:block/oxidized_iron",
-    "2": "minecraft:block/cobblestone"
-  }
-}

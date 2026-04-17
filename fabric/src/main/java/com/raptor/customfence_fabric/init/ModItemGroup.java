@@ -1,15 +1,18 @@
 package com.raptor.customfence_fabric.init;
 
 import com.raptor.customfence_fabric.Main;
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-import net.minecraft.block.Block;
-import net.minecraft.item.*;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
+import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
+import net.fabricmc.fabric.api.creativetab.v1.FabricCreativeModeTab;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.Block;
+
 
 import java.util.ArrayList;
 
@@ -17,12 +20,19 @@ import java.util.ArrayList;
 public class ModItemGroup {
 
 
-    public static final RegistryKey<ItemGroup> CREATIVE_TAB_WOOD_GATE_BASIC = RegistryKey.of(RegistryKeys.ITEM_GROUP, Identifier.of(Main.MOD_ID, "customfence_1_wood_gate_basic"));
-    public static final RegistryKey<ItemGroup> CREATIVE_TAB_WOOD_FENCE_BASIC = RegistryKey.of(RegistryKeys.ITEM_GROUP, Identifier.of(Main.MOD_ID, "customfence_1_wood_fence_basic"));
-    public static final RegistryKey<ItemGroup> CREATIVE_TAB_WOOD_FENCE_GATE_ADVANCED = RegistryKey.of(RegistryKeys.ITEM_GROUP, Identifier.of(Main.MOD_ID, "customfence_1_wood_fence_gate_advanced"));
-    public static final RegistryKey<ItemGroup> CREATIVE_TAB_WALLS = RegistryKey.of(RegistryKeys.ITEM_GROUP, Identifier.of(Main.MOD_ID, "customfence_2_wall"));
-    public static final RegistryKey<ItemGroup> CREATIVE_TAB_METAL_FENCES = RegistryKey.of(RegistryKeys.ITEM_GROUP, Identifier.of(Main.MOD_ID, "customfence_3_metal_fence"));
-    public static final RegistryKey<ItemGroup> CREATIVE_TAB_ALL = RegistryKey.of(RegistryKeys.ITEM_GROUP, Identifier.of(Main.MOD_ID, "customfence_all"));
+    public static final ResourceKey<CreativeModeTab> CREATIVE_TAB_WOOD_GATE_BASIC = ResourceKey.create(Registries.CREATIVE_MODE_TAB, Identifier.fromNamespaceAndPath(Main.MOD_ID, "customfence_1_wood_gate_basic"));
+    public static final ResourceKey<CreativeModeTab> CREATIVE_TAB_WOOD_FENCE_BASIC = ResourceKey.create(Registries.CREATIVE_MODE_TAB, Identifier.fromNamespaceAndPath(Main.MOD_ID, "customfence_1_wood_fence_basic"));
+    public static final ResourceKey<CreativeModeTab> CREATIVE_TAB_WOOD_FENCE_GATE_ADVANCED = ResourceKey.create(Registries.CREATIVE_MODE_TAB, Identifier.fromNamespaceAndPath(Main.MOD_ID, "customfence_1_wood_fence_gate_advanced"));
+    public static final ResourceKey<CreativeModeTab> CREATIVE_TAB_WALLS = ResourceKey.create(Registries.CREATIVE_MODE_TAB, Identifier.fromNamespaceAndPath(Main.MOD_ID, "customfence_2_wall"));
+    public static final ResourceKey<CreativeModeTab> CREATIVE_TAB_METAL_FENCES = ResourceKey.create(Registries.CREATIVE_MODE_TAB, Identifier.fromNamespaceAndPath(Main.MOD_ID, "customfence_3_metal_fence"));
+    public static final ResourceKey<CreativeModeTab> CREATIVE_TAB_GLASS_FENCES = ResourceKey.create(Registries.CREATIVE_MODE_TAB, Identifier.fromNamespaceAndPath(Main.MOD_ID, "customfence_4_glass_fence"));
+    public static final ResourceKey<CreativeModeTab> CREATIVE_TAB_ALL = ResourceKey.create(Registries.CREATIVE_MODE_TAB, Identifier.fromNamespaceAndPath(Main.MOD_ID, "customfence_all"));
+
+    public static void tabWoodGateBasicBlocks() {
+        CreativeModeTabEvents.modifyOutputEvent(CREATIVE_TAB_WOOD_GATE_BASIC).register(content -> {
+
+        });
+    }
 
     public static ArrayList<Block> listOfWoodGateBasicBlocks() {
 
@@ -2249,13 +2259,25 @@ public class ModItemGroup {
         WALL_BLOCK_LIST.add(ModBlocksWall.ANDESITE_BUILDING);
         WALL_BLOCK_LIST.add(ModBlocksWall.ANDESITE_CASTLE);
 
+        WALL_BLOCK_LIST.add(ModBlocksWall.POLISHED_ANDESITE_MODERN);
+        WALL_BLOCK_LIST.add(ModBlocksWall.POLISHED_ANDESITE_BUILDING);
+        WALL_BLOCK_LIST.add(ModBlocksWall.POLISHED_ANDESITE_CASTLE);
+
         WALL_BLOCK_LIST.add(ModBlocksWall.DIORITE_MODERN);
         WALL_BLOCK_LIST.add(ModBlocksWall.DIORITE_BUILDING);
         WALL_BLOCK_LIST.add(ModBlocksWall.DIORITE_CASTLE);
 
+        WALL_BLOCK_LIST.add(ModBlocksWall.POLISHED_DIORITE_MODERN);
+        WALL_BLOCK_LIST.add(ModBlocksWall.POLISHED_DIORITE_BUILDING);
+        WALL_BLOCK_LIST.add(ModBlocksWall.POLISHED_DIORITE_CASTLE);
+
         WALL_BLOCK_LIST.add(ModBlocksWall.GRANITE_MODERN);
         WALL_BLOCK_LIST.add(ModBlocksWall.GRANITE_BUILDING);
         WALL_BLOCK_LIST.add(ModBlocksWall.GRANITE_CASTLE);
+
+        WALL_BLOCK_LIST.add(ModBlocksWall.POLISHED_GRANITE_MODERN);
+        WALL_BLOCK_LIST.add(ModBlocksWall.POLISHED_GRANITE_BUILDING);
+        WALL_BLOCK_LIST.add(ModBlocksWall.POLISHED_GRANITE_CASTLE);
 
         WALL_BLOCK_LIST.add(ModBlocksWall.SANDSTONE_MODERN);
         WALL_BLOCK_LIST.add(ModBlocksWall.SANDSTONE_BUILDING);
@@ -2423,86 +2445,143 @@ public class ModItemGroup {
         return METAL_FENCE_BLOCK_LIST;
     }
 
+    public static ArrayList<Block> listOfGlassFenceBlocks() {
+
+        ArrayList<Block> GLASS_FENCE_BLOCK_LIST = new ArrayList<Block>();
+
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.WHITE_CONCRETE_GLASS_PLAIN);
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.WHITE_CONCRETE_WHITE_STAINED_GLASS_PLAIN);
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.WHITE_CONCRETE_LIGHT_GRAY_STAINED_GLASS_PLAIN);
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.WHITE_CONCRETE_GRAY_STAINED_GLASS_PLAIN);
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.WHITE_CONCRETE_BLACK_STAINED_GLASS_PLAIN);
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.WHITE_CONCRETE_BROWN_STAINED_GLASS_PLAIN);
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.WHITE_CONCRETE_RED_STAINED_GLASS_PLAIN);
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.WHITE_CONCRETE_ORANGE_STAINED_GLASS_PLAIN);
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.WHITE_CONCRETE_YELLOW_STAINED_GLASS_PLAIN);
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.WHITE_CONCRETE_LIME_STAINED_GLASS_PLAIN);
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.WHITE_CONCRETE_GREEN_STAINED_GLASS_PLAIN);
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.WHITE_CONCRETE_CYAN_STAINED_GLASS_PLAIN);
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.WHITE_CONCRETE_LIGHT_BLUE_STAINED_GLASS_PLAIN);
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.WHITE_CONCRETE_BLUE_STAINED_GLASS_PLAIN);
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.WHITE_CONCRETE_PURPLE_STAINED_GLASS_PLAIN);
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.WHITE_CONCRETE_MAGENTA_STAINED_GLASS_PLAIN);
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.WHITE_CONCRETE_PINK_STAINED_GLASS_PLAIN);
+
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.GLASS_PLAIN_FENCE_GATE);
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.WHITE_STAINED_GLASS_PLAIN_FENCE_GATE);
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.LIGHT_GRAY_STAINED_GLASS_PLAIN_FENCE_GATE);
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.GRAY_STAINED_GLASS_PLAIN_FENCE_GATE);
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.BLACK_STAINED_GLASS_PLAIN_FENCE_GATE);
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.BROWN_STAINED_GLASS_PLAIN_FENCE_GATE);
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.RED_STAINED_GLASS_PLAIN_FENCE_GATE);
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.ORANGE_STAINED_GLASS_PLAIN_FENCE_GATE);
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.YELLOW_STAINED_GLASS_PLAIN_FENCE_GATE);
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.LIME_STAINED_GLASS_PLAIN_FENCE_GATE);
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.GREEN_STAINED_GLASS_PLAIN_FENCE_GATE);
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.CYAN_STAINED_GLASS_PLAIN_FENCE_GATE);
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.LIGHT_BLUE_STAINED_GLASS_PLAIN_FENCE_GATE);
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.BLUE_STAINED_GLASS_PLAIN_FENCE_GATE);
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.PURPLE_STAINED_GLASS_PLAIN_FENCE_GATE);
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.MAGENTA_STAINED_GLASS_PLAIN_FENCE_GATE);
+        GLASS_FENCE_BLOCK_LIST.add(ModBlocksGlassFence.PINK_STAINED_GLASS_PLAIN_FENCE_GATE);
+
+        return GLASS_FENCE_BLOCK_LIST;
+    }
+
     public static void moreTabs() {
 
-            Registry.register(Registries.ITEM_GROUP, CREATIVE_TAB_WOOD_GATE_BASIC, FabricItemGroup.builder()
-                .displayName(Text.translatable("itemGroup.customfence.tab_customfence_wood_gate_basic"))
+            Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, CREATIVE_TAB_WOOD_GATE_BASIC, FabricCreativeModeTab.builder()
+                .title(Component.translatable("itemGroup.customfence.tab_customfence_wood_gate_basic"))
                 .icon(() -> new ItemStack(ModBlocksWoodGateBasic.OAK_CLASSIC_GATE))
-                .entries((enabledFeatures, entries) -> {
+                .displayItems((enabledFeatures, entries) -> {
                     for (Block block : listOfWoodGateBasicBlocks()) {
-                        entries.add(block);
+                        entries.accept(block);
                     }
                 })
                 .build()
             );
 
-            Registry.register(Registries.ITEM_GROUP, CREATIVE_TAB_WOOD_FENCE_BASIC, FabricItemGroup.builder()
-                .displayName(Text.translatable("itemGroup.customfence.tab_customfence_wood_fence_basic"))
+            Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, CREATIVE_TAB_WOOD_FENCE_BASIC, FabricCreativeModeTab.builder()
+                .title(Component.translatable("itemGroup.customfence.tab_customfence_wood_fence_basic"))
                 .icon(() -> new ItemStack(ModBlocksWoodFenceBasic.SPRUCE_OAK_WILDLIFE))
-                .entries((enabledFeatures, entries) -> {
+                .displayItems((enabledFeatures, entries) -> {
                     for (Block block : listOfWoodFenceBasicBlocks()) {
-                        entries.add(block);
+                        entries.accept(block);
                     }
                 })
                 .build()
             );
 
-            Registry.register(Registries.ITEM_GROUP, CREATIVE_TAB_WOOD_FENCE_GATE_ADVANCED, FabricItemGroup.builder()
-                .displayName(Text.translatable("itemGroup.customfence.tab_customfence_wood_fence_gate_advanced"))
+            Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, CREATIVE_TAB_WOOD_FENCE_GATE_ADVANCED, FabricCreativeModeTab.builder()
+                .title(Component.translatable("itemGroup.customfence.tab_customfence_wood_fence_gate_advanced"))
                 .icon(() -> new ItemStack(ModBlocksWoodFenceGateAdvanced.SPRUCE_OAK_DECORATION))
-                .entries((enabledFeatures, entries) -> {
+                .displayItems((enabledFeatures, entries) -> {
                     for (Block block : listOfWoodFenceGateAdvancedBlocks()) {
-                        entries.add(block);
+                        entries.accept(block);
                     }
                 })
                 .build()
             );
 
-            Registry.register(Registries.ITEM_GROUP, CREATIVE_TAB_WALLS, FabricItemGroup.builder()
-                .displayName(Text.translatable("itemGroup.customfence.tab_customfence_wall"))
+            Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, CREATIVE_TAB_WALLS, FabricCreativeModeTab.builder()
+                .title(Component.translatable("itemGroup.customfence.tab_customfence_wall"))
                 .icon(() -> new ItemStack(ModBlocksWall.STONE_MODERN))
-                .entries((enabledFeatures, entries) -> {
+                .displayItems((enabledFeatures, entries) -> {
                     for (Block block : listOfWallBlocks()) {
-                        entries.add(block);
+                        entries.accept(block);
                     }
                 })
                 .build()
             );
 
-            Registry.register(Registries.ITEM_GROUP, CREATIVE_TAB_METAL_FENCES, FabricItemGroup.builder()
-                .displayName(Text.translatable("itemGroup.customfence.tab_customfence_metal_fence"))
+            Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, CREATIVE_TAB_METAL_FENCES, FabricCreativeModeTab.builder()
+                .title(Component.translatable("itemGroup.customfence.tab_customfence_metal_fence"))
                 .icon(() -> new ItemStack(ModBlocksMetalFence.COBBLESTONE_IRON_MANSION_FENCE))
-                .entries((enabledFeatures, entries) -> {
+                .displayItems((enabledFeatures, entries) -> {
                     for (Block block : listOfMetalFenceBlocks()) {
-                        entries.add(block);
+                        entries.accept(block);
                     }
                 })
                 .build()
             );
+
+        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, CREATIVE_TAB_GLASS_FENCES, FabricCreativeModeTab.builder()
+                .title(Component.translatable("itemGroup.customfence.tab_customfence_glass_fence"))
+                .icon(() -> new ItemStack(ModBlocksGlassFence.WHITE_CONCRETE_ORANGE_STAINED_GLASS_PLAIN))
+                .displayItems((enabledFeatures, entries) -> {
+                    for (Block block : listOfGlassFenceBlocks()) {
+                        entries.accept(block);
+                    }
+                })
+                .build()
+        );
 
     };
 
 
     public static void oneTab() {
 
-        Registry.register(Registries.ITEM_GROUP, CREATIVE_TAB_ALL, FabricItemGroup.builder()
-                .displayName(Text.translatable("itemGroup.customfence.tab_customfence"))
+        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, CREATIVE_TAB_ALL, FabricCreativeModeTab.builder()
+                .title(Component.translatable("itemGroup.customfence.tab_customfence"))
                 .icon(() -> new ItemStack(ModBlocksWoodFenceBasic.SPRUCE_OAK_WILDLIFE))
-                .entries((enabledFeatures, entries) -> {
+                .displayItems((enabledFeatures, entries) -> {
                     for (Block block : listOfWoodGateBasicBlocks()) {
-                        entries.add(block);
+                        entries.accept(block);
                     }
                     for (Block block : listOfWoodFenceBasicBlocks()) {
-                        entries.add(block);
+                        entries.accept(block);
                     }
                     for (Block block : listOfWoodFenceGateAdvancedBlocks()) {
-                        entries.add(block);
+                        entries.accept(block);
                     }
                     for (Block block : listOfWallBlocks()) {
-                        entries.add(block);
+                        entries.accept(block);
                     }
                     for (Block block : listOfMetalFenceBlocks()) {
-                        entries.add(block);
+                        entries.accept(block);
+                    }
+                    for (Block block : listOfGlassFenceBlocks()) {
+                        entries.accept(block);
                     }
                 })
                 .build()

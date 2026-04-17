@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:polished_granite",
+  "result": {
+    "id": "customfence:polished_granite_castle",
+    "count": 1
+  }
+}

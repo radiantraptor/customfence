@@ -89,10 +89,4 @@ public class MetalFenceGate extends FenceGateBlock implements WeatheringFence {
 //        return isopen ? 1005 : 1011;
 //    }
 
-
-
-
-
-
-
 }

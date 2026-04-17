@@ -25,6 +25,7 @@ public class Main implements ModInitializer {
         ModBlocksWoodFenceGateAdvanced.registerModBlocks();
         ModBlocksWall.registerModBlocks();
         ModBlocksMetalFence.registerModBlocks();
+        ModBlocksGlassFence.registerModBlocks();
         OxidizableFence.oxidizingFences();
         WaxableFence.waxingFences();
 

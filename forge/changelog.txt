@@ -1,6 +1,159 @@
-1.21.x Changelog
+26.1 Changelog
+62.0
+====
+ - 62.0.1 Fix MDK by bumping to FG 7.0.17
+ - 62.0.0 26.1 Update
+          Minecraft is now Unobfuscated and requires Java 25
+          Lots of changes/code cleanup.
+          See https://github.com/MinecraftForge/MinecraftForge-Experimental/tree/26.1-dev for non-squashed commits.
+          Co-authored-by: Paint_Ninja <PaintNinja@users.noreply.github.com>
+
+61.1
+====
+ - 61.1.5 Fix server data packs from mods using incorrect version. Closes #10794
+ - 61.1.4 Fix wrong color argument for FogColor event
+          Fix incorrect patch for carving pumpinks
+ - 61.1.3 Fix swapped variables being passes to ItemStackedOnOtherEvent Closes #10781
+ - 61.1.2 Remove --validate from forge data tasks, no longer needed
+ - 61.1.1 Skip runtime annotation scanning for MC itself, blacklist common inconsequential annotations (#10773)
+          The results of scan data for MC itself aren't useful nor needed in practice. Skipping this speeds up the scanner and saves a bunch of memory. Also blacklisted common inconsequential annotations and cached common super types for further memory usage savings.
+ - 61.1.0 1.20.11 RB 1
+
+61.0
+====
+ - 61.0.14 Deprecate RuntimeDistCleaner (#10771)
+           - Logs warnings when `@OnlyIn` is used by mod devs in their own code
+           - In a future release, only applies to MC classes during server runs
+           - Future FG7 and installer versions may shift RuntimeDistCleaner's server effects to compile/setup/install time to completely remove the need for runtime stripping
+ - 61.0.13 Bump ASM to 9.9.1
+           Bump EventBus to 7.0.1
+           Bump MixinExtras to 0.5.3
+ - 61.0.12 Fix bookshelves having too much enchanting power. Fixes #10770
+ - 61.0.11 Migrate the MDK to ForgeGradle 7
+ - 61.0.10 Add support for multiple access transformer configs. Closes #10758
+ - 61.0.9  Update discord links in issue templates
+ - 61.0.8  Remove JavaScript CoreMods and Nashorn (#10746)
+           The ASMAPI helper methods have been split off into a separate dep which is included with Forge for Java transformers to use.
+ - 61.0.7  Update SecureModules to address ZipPath bug with brackets. Closes #10755
+ - 61.0.6  Optimize memory allocation for checking entity fluid collisions. Closes #10745
+ - 61.0.5  Allow accessing Registry context from TagValueOutput
+ - 61.0.4  Don't save capabilities if level is null as we don't have enough context
+ - 61.0.3  Fix not being able to sleep. Steve is very tired. (#10736)
+ - 61.0.2  Fix AT lines which didn't work on some old dev environments. Closes #10735
+ - 61.0.1  Bump S2S, fixes patches in UserDev. Closes #1011
+ - 61.0.0  1.21.11 Mounts of Mayhem Release
+           Lots of rendering related changes, specifically for BackedQuad and IQuadTransformers.
+           Removed our deprecated model generators, modders should have been using vanilla's for a while.
+
+60.1
+====
+ - 60.1.5 Expose movevector field for usage with MovementInputUpdateEvent (#10732)
+ - 60.1.4 Mark applyServerBinpatches as a dependency of BundleList.
+          Fixes shim jar config
+ - 60.1.3 Split setup and publish commands in actions
+ - 60.1.2 Github Actions
+ - 60.1.1 Fix `BusGroup.DEFAULT` not being trimmed after mod loading completes, also trim mod BusGroups now too (#10721)
+          Saves some memory by trimming various backing collections of loaded EventBuses on the default BusGroup
+ - 60.1.0 1.21.10 RB
+
+60.0
+====
+ - 60.0.21 Add `c:nuggets/copper` item tag (#10716)
+ - 60.0.20 Fix ItemStack in RenderTooltipEvent always EMPTY, merges RenderTooltipEvent.Background into .Pre (#10655) (#10702)
+ - 60.0.19 Provide LevelRenderState during frame pass construction  Addresses #10867 (#10688)
+ - 60.0.18 Make Mixin dev mode check a little looser (#10713)
+ - 60.0.17 Expand hooks for custom shears (#10704)
+           Fix shearing leads with custom shears (interacting with entity & leash knot)
+           Fix shearing poppy from copper golem for custom shears
+ - 60.0.16 Introduce MixinExtras as an included, optional dependency (#10709)
+           Declare ME in userdev config as an effective compile transitive
+           Co-authored-by: LexManos <LexManos@gmail.com>
+ - 60.0.15 Add workaround for Mixin bug. Closes #10710
+ - 60.0.14 Fix ROIMFS not being on boot classloader for dedicated server.
+ - 60.0.13 Add support for Forge shipping with JarInJar options. (#10683)
+           These are optional libraries that are only loaded when requested by mods.
+           Includes new ReadOnlyInMemoryFileSystem to improve performance of JarInJar parsing.
+ - 60.0.12 Remove generic from AttachCapabilitiesEvent to help prevent modders from having unchecked casts. Closes #10707
+ - 60.0.11 Fix misaligned patch in DedicatedServer
+ - 60.0.10 Revert "Remove runtime mods.toml string substitution (#10698)" (#10701)
+           This reverts commit fc80e3028943237e60024d513f274a30c8457e71, 17ce723edf3f8e53c206db0c0d8838f041db5a04, and 0e6341a23eb206aa946fde648b6429d09e1c8481.
+ - 60.0.9  Add support for custom particle groups (#10692)
+ - 60.0.8  Fix Minecraft version being incorrectly included in Forge mods.toml (#10700)
+ - 60.0.7  Fix universal jar missing Forge version (#10699)
+ - 60.0.6  Remove runtime mods.toml string substitution (#10698)
+ - 60.0.5  Fix Manually created RegistryObjects not being populated. Closes #10686
+           This partially reverts commit 1268d4c3a8acd9f780d2048d5a527206707f8e35.
+           But makes the classes package private so nobody can access.
+ - 60.0.4  Simplify ModLoader#hasCompletedState, some more cleanup to FML internals
+ - 60.0.3  Skip processing vanilla classes in RuntimeDistCleaner when running on a client (#10682)
+ - 60.0.2  Require CapabilityToken subclasses to be anonymous (#10681)
+ - 60.0.1  Improve event javadocs based on community feedback, apply jSpecify to more events
+ - 60.0.0  1.21.10
+
+59.0
+====
+ - 59.0.5 Bump EventBus for more javadocs
+ - 59.0.4 Make `BuildCreativeModeTabContentsEvent` a record
+ - 59.0.3 Fix CustomizeGuiOverlayEvent mistakenly being a RecordEvent
+ - 59.0.2 Move more events away from the mod BusGroup (#10676)
+          Also adds more validation to strict mode. See the GitHub PR for further details.
+ - 59.0.1 Add the new vanilla info object to Keyboard and Mouse related events.
+ - 59.0.0 Minecraft 1.21.9 update.
+          There a lot of performance improvements related to events.
+            No more InheritableEvent for abstract events that you shouldn't add listeners to anyway, like EntityEvent. Use their sub-events.
+            Made a lot more events records and interfaces. Mostly just a binary break, but has better performance.
+            Mod bus posting methods are now static, no more ModLoader.get() for those.
+          ObjectHolder was removed, use RegistryObject.
+          Changed RuntimeEnumExtender to only target Minecraft classes. If you want other modders to interact with your API, use an Interface instead of Enum.
+          Moved some abstract event methods to only the relevant sub-events now, e.g. can no longer check the side of a ClientTickEvent, because it'll always be client
+          Rendering has changed a lot, they now batch most things together so that the game will render faster.
+          RenderHighlightEvent changed a lot
+          See https://github.com/MinecraftForge/MinecraftForge-Experimental/tree/1.21.9-dev for unsquashed commits.
+          Co-authored-by: Paint_Ninja <PaintNinja@users.noreply.github.com>
+
+58.1
+====
+ - 58.1.6 Fix Crafters not inserting into IItemHandlers. Closes #10667
+ - 58.1.5 Optimize ConcatenatedListView's Iterator and fix hidden CreativeTabs taking up page space.
+ - 58.1.4 [1.21.8] Deprecate global `IExtensibleEnum` support (#10662)
+          This is intended for use with Minecraft classes only. Mod devs can support extending enums through other, more efficient means, such as converting their enum to a record and having static final fields of instances that correspond to each enum value.
+ - 58.1.3 Fix alpha channel of creative mode tab title color (#10661)
+ - 58.1.2 Deprecate JS CoreMods, remove Forge's usages of them (#10659)
+ - 58.1.1 Replace Blocks.FARMLAND checks with instanceof FarmBlock (#10647)
+ - 58.1.0 1.21.8 RB 1
+
+58.0
+====
+ - 58.0.10 Add event for adding framepasses (#10612)
+ - 58.0.9  Add ForgeLayeredDraw & AddGuiOverlayLayersEvent as API for gui overlay management. (#10579) (#10611)
+ - 58.0.8  Fix Inactivated activator rails, acting like inactivated powered rails. Closes #10643
+ - 58.0.7  Fix Redstone power propagating between powered and activator rails. Fixed #10642
+ - 58.0.6  Optimize VillagerTradingManager, avoid redundant work. Closes #10577
+ - 58.0.5  Minor cleanup to FML, fix double parsing of mods.toml (#10597)
+ - 58.0.4  Update GradleUtils to 2.6.4 (#10600)
+ - 58.0.3  Sync deps with MC (#10596)
+ - 58.0.2  Allow command suggestions/autocomplete to search all modded paths at once without namespace provided (#10593)
+ - 58.0.1  Optimise WorldWorkerManager (#10578)
+ - 58.0.0  1.21.8 - Intel Graphic Fixes
+
+57.0
+====
+ - 57.0.3 Fix crash when clicking links in modlist without being in-world.
+ - 57.0.2 Use vanilla's entrypoint for GameTest servers
+ - 57.0.1 Fix Forge error screen not rendering text correctly. Closes #10569
+ - 57.0.0 Minecraft 1.21.7 - Lava Chickens!
+
 56.0
 ====
+ - 56.0.9 Bump ASM and EventBus
+          Improves support for Java 25 and better stability of the compile-time EventBus checks, respectively.
+          Co-Authored-By: LexManos <LexManos@gmail.com>
+ - 56.0.8 Add WanderTradesEvent#Pool Constructor with List<ItemListing> and int directly (#10566)
+ - 56.0.7 Fix client commands not working when using clickable commands.
+ - 56.0.6 Add Event for Picture in Picture renderers registration.
+ - 56.0.5 Make more events records
+ - 56.0.4 Fix posting cancellable child events with non-cancellable inheritable parents
+          Also made more events SelfDestructing to save a tad more memory
  - 56.0.3 Fix wrong order in filter vanilla commands patch. Fixes #10563
  - 56.0.2 Fix not being able to break blocks in survival. Closes #10561
  - 56.0.1 Fix bug with strict bulk registration

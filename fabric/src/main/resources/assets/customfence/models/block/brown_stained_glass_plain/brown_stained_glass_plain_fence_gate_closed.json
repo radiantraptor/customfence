@@ -1,0 +1,10 @@
+{
+  "render_type": "minecraft:translucent",
+  "parent": "customfence:block/template_plain_fence_gate_closed",
+  "textures": {
+    "particle": "minecraft:block/brown_stained_glass",
+    "1": "customfence:block/brown_stained_glass_plain_frame",
+    "2": "customfence:block/brown_stained_glass_plain_inventory",
+    "3": "customfence:block/brown_stained_glass_plain_inventory"
+  }
+}

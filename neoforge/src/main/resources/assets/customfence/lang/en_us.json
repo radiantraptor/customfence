@@ -3,8 +3,9 @@
     "itemGroup.customfence.tab_customfence_wood_gate_basic": "CustomFence Basic Wooden Gates",
     "itemGroup.customfence.tab_customfence_wood_fence_basic": "CustomFence Basic Wooden Fences",
     "itemGroup.customfence.tab_customfence_wood_fence_gate_advanced": "CustomFence Advanced Wooden FenceGates",
-    "itemGroup.customfence.tab_customfence_wall": "CustomFence Wall",
-    "itemGroup.customfence.tab_customfence_metal_fence": "CustomFence Metal fence",
+    "itemGroup.customfence.tab_customfence_wall": "CustomFence Walls",
+    "itemGroup.customfence.tab_customfence_metal_fence": "CustomFence Metal Fences and Gates",
+    "itemGroup.customfence.tab_customfence_glass_fence": "CustomFence Glass Fences and Gates",
 
     "block.customfence.oak_classic_fence_gate": "Fence gate Classic oak",
     "block.customfence.oak_wildlife_fence_gate": "Fence gate Wildlife oak",
@@ -2070,13 +2071,25 @@
     "block.customfence.andesite_building": "Andesite Wall Building",
     "block.customfence.andesite_castle": "Andesite Wall Castle",
 
+    "block.customfence.polished_andesite_modern": "Polished Andesite Wall Modern",
+    "block.customfence.polished_andesite_building": "Polished Andesite Wall Building",
+    "block.customfence.polished_andesite_castle": "Polished Andesite Wall Castle",
+
     "block.customfence.diorite_modern": "Diorite Wall Modern",
     "block.customfence.diorite_building": "Diorite Wall Building",
     "block.customfence.diorite_castle": "Diorite Wall Castle",
 
+    "block.customfence.polished_diorite_modern": "Polished Diorite Wall Modern",
+    "block.customfence.polished_diorite_building": "Polished Diorite Wall Building",
+    "block.customfence.polished_diorite_castle": "Polished Diorite Wall Castle",
+
     "block.customfence.granite_modern": "Granite Wall Modern",
     "block.customfence.granite_building": "Granite Wall Building",
     "block.customfence.granite_castle": "Granite Wall Castle",
+
+    "block.customfence.polished_granite_modern": "Polished Granite Wall Modern",
+    "block.customfence.polished_granite_building": "Polished Granite Wall Building",
+    "block.customfence.polished_granite_castle": "Polished Granite Wall Castle",
 
     "block.customfence.sandstone_modern": "Sandstone Wall Modern",
     "block.customfence.sandstone_building": "Sandstone Wall Building",
@@ -2231,5 +2244,41 @@
     "block.customfence.waxed_oxidized_iron_mesh_fence_gate": "Waxed Oxidized Iron Fence Gate Mesh",
 
     "block.customfence.cobblestone_gold_mesh_fence": "Cobblestone Gold Fence Mesh",
-    "block.customfence.gold_mesh_fence_gate": "Gold Fence Gate Mesh"
+    "block.customfence.gold_mesh_fence_gate": "Gold Fence Gate Mesh",
+
+    "block.customfence.white_concrete_glass_plain": "Gass Fence Plain",
+    "block.customfence.white_concrete_white_stained_glass_plain": "White Glass Fence Plain",
+    "block.customfence.white_concrete_light_gray_stained_glass_plain": "Light Gray Glass Fence Plain",
+    "block.customfence.white_concrete_gray_stained_glass_plain": "Gray Glass Fence Plain",
+    "block.customfence.white_concrete_black_stained_glass_plain": "Black Glass Fence Plain",
+    "block.customfence.white_concrete_brown_stained_glass_plain": "Brown Glass Fence Plain",
+    "block.customfence.white_concrete_red_stained_glass_plain": "Red Glass Fence Plain",
+    "block.customfence.white_concrete_orange_stained_glass_plain": "Orange Glass Fence Plain",
+    "block.customfence.white_concrete_yellow_stained_glass_plain": "Yellow Glass Fence Plain",
+    "block.customfence.white_concrete_lime_stained_glass_plain": "Lime Glass Fence Plain",
+    "block.customfence.white_concrete_green_stained_glass_plain": "Green Glass Fence Plain",
+    "block.customfence.white_concrete_cyan_stained_glass_plain": "Cyan Glass Fence Plain",
+    "block.customfence.white_concrete_light_blue_stained_glass_plain": "Light Blue Glass Fence Plain",
+    "block.customfence.white_concrete_blue_stained_glass_plain": "Blue Glass Fence Plain",
+    "block.customfence.white_concrete_purple_stained_glass_plain": "Purple Glass Fence Plain",
+    "block.customfence.white_concrete_magenta_stained_glass_plain": "Magenta Glass Fence Plain",
+    "block.customfence.white_concrete_pink_stained_glass_plain": "Pink Glass Fence Plain",
+
+    "block.customfence.glass_plain_fence_gate": "Gass Fence Gate Plain",
+    "block.customfence.white_stained_glass_plain_fence_gate": "White Glass Fence Gate Plain",
+    "block.customfence.light_gray_stained_glass_plain_fence_gate": "Light Gray Glass Fence Gate Plain",
+    "block.customfence.gray_stained_glass_plain_fence_gate": "Gray Glass Fence Gate Plain",
+    "block.customfence.black_stained_glass_plain_fence_gate": "Black Glass Fence Gate Plain",
+    "block.customfence.brown_stained_glass_plain_fence_gate": "Brown Glass Fence Gate Plain",
+    "block.customfence.red_stained_glass_plain_fence_gate": "Red Glass Fence Gate Plain",
+    "block.customfence.orange_stained_glass_plain_fence_gate": "Orange Glass Fence Gate Plain",
+    "block.customfence.yellow_stained_glass_plain_fence_gate": "Yellow Glass Fence Gate Plain",
+    "block.customfence.lime_stained_glass_plain_fence_gate": "Lime Glass Fence Gate Plain",
+    "block.customfence.green_stained_glass_plain_fence_gate": "Green Glass Fence Gate Plain",
+    "block.customfence.cyan_stained_glass_plain_fence_gate": "Cyan Glass Fence Gate Plain",
+    "block.customfence.light_blue_stained_glass_plain_fence_gate": "Light Blue Glass Fence Gate Plain",
+    "block.customfence.blue_stained_glass_plain_fence_gate": "Blue Glass Fence Gate Plain",
+    "block.customfence.purple_stained_glass_plain_fence_gate": "Purple Glass Fence Gate Plain",
+    "block.customfence.magenta_stained_glass_plain_fence_gate": "Magenta Glass Fence Gate Plain",
+    "block.customfence.pink_stained_glass_plain_fence_gate": "Pink Glass Fence Gate Plain"
 }
