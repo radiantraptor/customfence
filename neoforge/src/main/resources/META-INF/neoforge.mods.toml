@@ -4,7 +4,7 @@ license="GNU GPLv3"
 
 [[mods]]
 modId="customfence"
-version="26-1"
+version="26-2"
 displayName="Customfence"
 authors="RadiantRaptor"
 description="A couple of new fences and fence gates and walls"

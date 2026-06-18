@@ -1,8 +1,8 @@
 {
     "pack": {
         "description": "A couple of new fences and fence gates and walls",
-        "pack_format": 101.1,
-        "forge:resource_pack_format": 84.0,
-        "forge:data_pack_format": 101.1
+        "pack_format": 107.1,
+        "forge:resource_pack_format": 88.0,
+        "forge:data_pack_format": 107.1
     }
 }

@@ -32,6 +32,10 @@ public class MetalFenceGate extends FenceGateBlock implements WeatheringFence {
         this.changeOverTime(state, level, pos, random);
     }
 
+    public boolean isRandomlyTicking(BlockState state) {
+        return WeatheringFence.getNext(state.getBlock()).isPresent();
+    }
+
     public BlockState getToolModifiedState(BlockState state, UseOnContext context, ToolAction toolAction, boolean istrue)
     {
         if(ToolActions.AXE_SCRAPE.equals(toolAction)) {
@@ -43,11 +47,6 @@ public class MetalFenceGate extends FenceGateBlock implements WeatheringFence {
             }
         }
         return super.getToolModifiedState(state, context, toolAction, istrue);
-    }
-
-
-    public boolean isRandomlyTicking(BlockState state) {
-        return WeatheringFence.getNext(state.getBlock()).isPresent();
     }
 
     public WeatheringFence.WeatherState getAge() {

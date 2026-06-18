@@ -1,34 +1,30 @@
 {
-  "schemaVersion": 1,
-  "id": "customfence",
-  "version": "26-1",
-
-  "name": "Customfence",
+	"schemaVersion": 1,
+	"id": "customfence",
+	"version": "${version}",
+	"name": "Customfence",
   "description": "A couple of new fences and fence gates and walls",
-  "authors": [
-    "raptor"
-  ],
-  "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
-  },
-
-  "license": "GNU GPLv3",
-  "icon": "assets/customfence/icon.png",
-
-  "environment": "*",
-  "entrypoints": {
-    "main": [
-      "com.raptor.customfence_fabric.Main"
-    ]
-  },
-  "mixins": [
-    "customfence.mixins.json"
-  ],
-
+	"authors": [
+		"raptor"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "GNU GPLv3",
+	"icon": "assets/customfence/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.raptor.customfence_fabric.Main"
+		]
+	},
+	"mixins": [
+		"customfence.mixins.json"
+	],
 	"depends": {
-		"fabricloader": ">=0.18.5",
-		"minecraft": "~26.1",
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~26.2",
 		"java": ">=25",
 		"fabric-api": "*"
 	}

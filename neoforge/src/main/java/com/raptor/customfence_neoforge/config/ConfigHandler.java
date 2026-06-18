@@ -36,9 +36,9 @@ public class ConfigHandler {
     public static String loadConfig(ModConfigSpec spec, Path file)
     {
         final CommentedFileConfig configData = CommentedFileConfig.builder(file).preserveInsertionOrder()
-                .sync()
-                .autosave()
-                .autoreload()
+                //.sync()
+                //.autosave()
+                //.autoreload()
                 .writingMode(WritingMode.REPLACE)
                 .build();
 
