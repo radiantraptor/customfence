@@ -1,7 +1,0 @@
-{
-  "parent": "customfence:block/template_stick_fence_post",
-  "textures": {
-    "particle": "minecraft:block/acacia_planks",
-    "1": "minecraft:block/acacia_planks"
-  }
-}

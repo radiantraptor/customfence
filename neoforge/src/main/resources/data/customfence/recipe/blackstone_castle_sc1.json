@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "minecraft:blackstone",
-  "result": {
-    "id": "customfence:blackstone_castle",
-    "count": 1
-  }
-}

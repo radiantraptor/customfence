@@ -1,7 +1,0 @@
-{
-  "parent": "customfence:block/template_building_wall_side_low",
-  "textures": {
-    "particle": "minecraft:block/prismarine",
-    "1": "minecraft:block/prismarine"
-  }
-}

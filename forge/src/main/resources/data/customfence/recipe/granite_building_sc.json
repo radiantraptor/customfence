@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "minecraft:granite",
-  "result": {
-    "id": "customfence:granite_building",
-    "count": 1
-  }
-}

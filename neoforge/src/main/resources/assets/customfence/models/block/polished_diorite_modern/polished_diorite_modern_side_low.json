@@ -1,7 +1,0 @@
-{
-  "parent": "customfence:block/template_modern_wall_side_low",
-  "textures": {
-    "particle": "minecraft:block/polished_diorite",
-    "1": "minecraft:block/polished_diorite"
-  }
-}

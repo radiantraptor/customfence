@@ -1,7 +1,0 @@
-{
-  "parent": "customfence:block/template_garden_fence_post",
-  "textures": {
-    "particle": "minecraft:block/warped_planks",
-    "1": "minecraft:block/warped_planks"
-  }
-}

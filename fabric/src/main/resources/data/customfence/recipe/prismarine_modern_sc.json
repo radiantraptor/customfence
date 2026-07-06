@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "minecraft:prismarine",
-  "result": {
-    "id": "customfence:prismarine_modern",
-    "count": 1
-  }
-}

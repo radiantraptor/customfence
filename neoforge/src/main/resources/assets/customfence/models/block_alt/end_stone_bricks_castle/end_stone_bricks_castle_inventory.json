@@ -1,6 +1,0 @@
-{
-  "parent": "customfence:block/template_castle_wall_inventory",
-  "textures": {
-    "1": "minecraft:block/end_stone_bricks"
-  }
-}

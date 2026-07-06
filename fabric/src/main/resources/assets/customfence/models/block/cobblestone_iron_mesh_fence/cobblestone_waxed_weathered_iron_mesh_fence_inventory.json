@@ -1,8 +1,0 @@
-{
-  "parent": "customfence:block/template_mesh_fence_inventory",
-  "textures": {
-    "particle": "customfence:block/weathered_iron",
-    "1": "customfence:block/weathered_iron",
-    "2": "minecraft:block/cobblestone"
-  }
-}

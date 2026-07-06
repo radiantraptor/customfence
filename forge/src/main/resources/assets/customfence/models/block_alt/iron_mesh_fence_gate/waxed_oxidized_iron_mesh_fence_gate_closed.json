@@ -1,7 +1,0 @@
-{
-  "parent": "customfence:block/template_mesh_fence_gate_closed",
-  "textures": {
-    "particle": "customfence:block/oxidized_iron",
-    "2": "customfence:block/oxidized_iron"
-  }
-}

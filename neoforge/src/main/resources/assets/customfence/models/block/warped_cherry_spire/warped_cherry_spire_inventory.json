@@ -1,8 +1,0 @@
-{
-  "parent": "customfence:block/template_spire_fence_inventory",
-  "textures": {
-    "particle": "minecraft:block/warped_planks",
-    "1": "minecraft:block/warped_planks",
-    "2": "minecraft:block/cherry_planks"
-  }
-}

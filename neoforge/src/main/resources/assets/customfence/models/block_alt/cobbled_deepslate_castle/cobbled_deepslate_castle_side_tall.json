@@ -1,6 +1,0 @@
-{
-  "parent": "customfence:block/template_castle_wall_side_tall",
-  "textures": {
-    "1": "minecraft:block/cobbled_deepslate"
-  }
-}

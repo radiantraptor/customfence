@@ -1,7 +1,0 @@
-{
-  "parent": "customfence:block/template_mansion_fence_gate_open",
-  "textures": {
-    "particle": "minecraft:block/gold_block",
-    "2": "minecraft:block/gold_block"
-  }
-}

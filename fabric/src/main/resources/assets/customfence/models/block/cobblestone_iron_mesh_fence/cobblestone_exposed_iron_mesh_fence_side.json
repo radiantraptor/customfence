@@ -1,8 +1,0 @@
-{
-  "parent": "customfence:block/template_mesh_fence_side",
-  "textures": {
-    "particle": "customfence:block/exposed_iron",
-    "1": "customfence:block/exposed_iron",
-    "2": "minecraft:block/cobblestone"
-  }
-}

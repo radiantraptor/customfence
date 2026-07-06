@@ -1,6 +1,0 @@
-{
-  "parent": "customfence:block/template_modern_wall_inventory",
-  "textures": {
-    "1": "minecraft:block/red_nether_bricks"
-  }
-}

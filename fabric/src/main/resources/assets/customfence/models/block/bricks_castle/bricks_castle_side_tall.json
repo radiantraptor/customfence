@@ -1,7 +1,0 @@
-{
-  "parent": "customfence:block/template_castle_wall_side_tall",
-  "textures": {
-    "particle": "minecraft:block/bricks",
-    "1": "minecraft:block/bricks"
-  }
-}

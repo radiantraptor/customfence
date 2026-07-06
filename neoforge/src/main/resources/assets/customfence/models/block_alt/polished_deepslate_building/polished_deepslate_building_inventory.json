@@ -1,6 +1,0 @@
-{
-  "parent": "customfence:block/template_building_wall_inventory",
-  "textures": {
-    "1": "minecraft:block/polished_deepslate"
-  }
-}

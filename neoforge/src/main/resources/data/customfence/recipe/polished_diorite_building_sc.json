@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "minecraft:polished_diorite",
-  "result": {
-    "id": "customfence:polished_diorite_building",
-    "count": 1
-  }
-}

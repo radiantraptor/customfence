@@ -1,7 +1,0 @@
-{
-  "parent": "customfence:block/template_mansion_fence_gate_closed",
-  "textures": {
-    "particle": "customfence:block/exposed_iron",
-    "2": "customfence:block/exposed_iron"
-  }
-}

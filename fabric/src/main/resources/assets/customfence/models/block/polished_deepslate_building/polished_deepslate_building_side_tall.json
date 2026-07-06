@@ -1,7 +1,0 @@
-{
-  "parent": "customfence:block/template_building_wall_side_tall",
-  "textures": {
-    "particle": "minecraft:block/polished_deepslate",
-    "1": "minecraft:block/polished_deepslate"
-  }
-}

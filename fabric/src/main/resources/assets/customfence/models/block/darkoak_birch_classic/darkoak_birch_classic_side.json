@@ -1,8 +1,0 @@
-{
-  "parent": "customfence:block/template_classic_fence_side",
-  "textures": {
-    "particle": "minecraft:block/dark_oak_planks",
-    "1": "minecraft:block/dark_oak_planks",
-    "2": "minecraft:block/birch_planks"
-  }
-}

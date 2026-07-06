@@ -1,8 +1,0 @@
-{
-  "parent": "customfence:block/template_wildlife_fence_side",
-  "textures": {
-    "particle": "minecraft:block/oak_planks",
-    "1": "minecraft:block/oak_planks",
-    "2": "minecraft:block/warped_planks"
-  }
-}

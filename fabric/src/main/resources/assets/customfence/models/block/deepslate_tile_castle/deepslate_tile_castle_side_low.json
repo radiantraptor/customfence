@@ -1,7 +1,0 @@
-{
-  "parent": "customfence:block/template_castle_wall_side_low",
-  "textures": {
-    "particle": "minecraft:block/deepslate_tiles",
-    "1": "minecraft:block/deepslate_tiles"
-  }
-}

@@ -1,7 +1,0 @@
-{
-  "parent": "customfence:block/template_mansion_fence_side",
-  "textures": {
-    "1": "minecraft:block/gold_block",
-    "2": "minecraft:block/cobblestone"
-  }
-}

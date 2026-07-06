@@ -1,8 +1,0 @@
-{
-  "parent": "customfence:block/template_bollard_fence_gate_open",
-  "textures": {
-    "particle": "minecraft:block/cherry_planks",
-    "1": "minecraft:block/dark_oak_planks",
-    "2": "minecraft:block/cherry_planks"
-  }
-}

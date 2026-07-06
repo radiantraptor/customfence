@@ -1,8 +1,0 @@
-{
-  "parent": "customfence:block/template_crisscross_fence_post",
-  "textures": {
-    "particle": "minecraft:block/bamboo_planks",
-    "1": "minecraft:block/bamboo_planks",
-    "2": "minecraft:block/oak_planks"
-  }
-}

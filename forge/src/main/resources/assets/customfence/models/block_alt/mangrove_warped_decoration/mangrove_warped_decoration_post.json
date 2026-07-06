@@ -1,7 +1,0 @@
-{
-  "parent": "customfence:block/template_decoration_fence_post",
-  "textures": {
-    "particle": "minecraft:block/mangrove_planks",
-    "1": "minecraft:block/mangrove_planks"
-  }
-}
